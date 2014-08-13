@@ -1,0 +1,23 @@
+User:
+  github_id: $integer
+  github_url: $string
+  name: $string
+  email: $string@example.com
+  remember_token: $string
+  created_at: $date
+  updated_at: $date
+
+Node:
+  name: $string
+  created_at: $date
+  updated_at: $date
+
+Topic:
+  user_id:
+    type: User
+  node_id:
+    type: Node
+  title: $string
+  body: $text
+  created_at: $date
+  updated_at: $date

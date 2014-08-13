@@ -1,0 +1,91 @@
+<?php
+
+use Phphub\Core\CreatorListener;
+
+class TopicsController extends \BaseController implements CreatorListener 
+{
+    protected $topic;
+
+	public function __construct(Topic $topic)
+    {
+        $this->beforeFilter('auth', ['only' => 'create', 'store']);
+        $this->topic = $topic;
+    }
+
+	public function index()
+	{
+		$filter = $this->topic->present()->getTopicFilter();
+		$topics = $this->topic->getTopicsWithFilter($filter);
+
+		return View::make('topics.index', compact('topics'));
+	}
+
+	public function create()
+	{
+		$node = Node::where('name', '=', Input::get('node'))->where('parent_node', '!=', '')->first();
+		$nodes = Node::allLevelUp();
+		return View::make('topics.create', compact('nodes', 'node'));
+	}
+
+	public function store()
+	{
+		return App::make('Phphub\Topic\TopicCreator')->create($this, Input::except('_token'));
+	}
+
+	public function show($id)
+	{
+		$topic = Topic::findOrFail($id);
+		$replies = $topic->getRepliesWithLimit();
+
+		return View::make('topics.show', compact('topic', 'replies'));
+	}
+
+	public function edit($id)
+	{
+		$topic = Topic::find($id);
+
+		return View::make('topics.edit', compact('topic'));
+	}
+
+	public function update($id)
+	{
+		$topic = Topic::findOrFail($id);
+
+		$validator = Validator::make($data = Input::all(), Topic::$rules);
+
+		if ($validator->fails())
+		{
+			return Redirect::back()->withErrors($validator)->withInput();
+		}
+
+		$topic->update($data);
+
+		return Redirect::route('topics.index');
+	}
+
+	public function destroy($id)
+	{
+		Topic::destroy($id);
+
+		return Redirect::route('topics.index');
+	}
+
+    /**
+     * ----------------------------------------
+     * CreatorListener Delegate
+     * ----------------------------------------
+     */
+
+    public function creatorFailed($errors)
+    {
+        return Redirect::to('/');
+    }
+
+    public function creatorSucceed($topic)
+    {
+        Flash::success('话题创建成功.');
+
+        return Redirect::route('topics.show', array($topic->id));
+    }
+
+}
