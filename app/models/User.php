@@ -17,9 +17,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     //   and ability($roles, $permissions, $options)
     use HasRole;
 
-    const STATE_ACTIVE  = 1;
-    const STATE_BLOCKED = 2;
-
     protected $table      = 'users';
     protected $hidden     = ['github_id'];
     protected $fillable   = ['email', 'name', 'github_url', 'github_id', 'image_url', 'is_banned'];

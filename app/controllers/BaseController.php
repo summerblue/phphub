@@ -1,5 +1,6 @@
 <?php
 
+
 class BaseController extends Controller {
 
 
@@ -32,6 +33,7 @@ class BaseController extends Controller {
 
 		View::share('currentUser', Auth::user());
 		View::share('excellentTopics', Topic::getExcellent());
+		View::share('siteStat', App::make('Phphub\Stat\Stat')->getSiteStat());
 	}
 
 }

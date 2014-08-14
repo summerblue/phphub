@@ -18,8 +18,8 @@ class CreateRepliesTable extends Migration {
 			$table->text('body');
 			$table->integer('user_id');
 			$table->integer('topic_id');
-			$table->boolean('is_block')->default(false);;
-			$table->integer('vote_count')->default(0);;
+			$table->boolean('is_block')->default(false);
+			$table->integer('vote_count')->default(0);
 			$table->timestamps();
 		});
 	}

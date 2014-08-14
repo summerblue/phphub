@@ -87,6 +87,11 @@ class Topic extends \Eloquent
 
 	public static function getExcellent($limit = 8)
 	{
-		return Topic::where('is_excellent', '=', true)->orderBy('created_at', 'desc')->take($limit)->get();
+		return Topic::where('is_excellent', '=', true)
+						->orderBy('created_at', 'desc')
+						->take($limit)
+						->with('user')
+						->remember(2)
+						->get();
 	}
 }

@@ -46,9 +46,9 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li>社区会员: 10351 人</li>
-        <li>帖子数: 15913 个</li>
-        <li>回帖数: 168590 条</li>
+        <li>社区会员: {{ $siteStat->user_count }} 人</li>
+        <li>话题数: {{ $siteStat->topic_count }} 个</li>
+        <li>评论数: {{ $siteStat->reply_count }} 条</li>
       </ul>
     </div>
   </div>
