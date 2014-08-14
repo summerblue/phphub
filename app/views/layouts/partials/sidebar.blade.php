@@ -38,7 +38,9 @@
     <div class="panel-heading text-center">
       <h3 class="panel-title">小贴士</h3>
     </div>
-    <div class="panel-body">laracasts.com 上面有很不错的 Laravel 开发技巧的视频，通通看完你可以学到很多东西</div>
+    <div class="panel-body">
+      {{ $siteTip->body }}
+    </div>
   </div>
   <div class="panel panel-default corner-radius box">
     <div class="panel-heading text-center">
