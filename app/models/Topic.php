@@ -28,6 +28,11 @@ class Topic extends \Eloquent
 		return $this->belongsTo('User');
 	}
 
+	public function lastReplyUser()
+	{
+		return $this->belongsTo('User', 'last_reply_user_id');
+	}
+
 	public function replies()
 	{
 		return $this->hasMany('Reply');
@@ -40,17 +45,25 @@ class Topic extends \Eloquent
 
 	public function getRepliesWithLimit($limit = 10)
 	{
-		return $this->replies()->orderBy('created_at', 'desc')->with('user')->paginate($limit);
+		return $this->replies()
+					->orderBy('created_at', 'desc')
+					->with('user')
+					->paginate($limit);
 	}
 
 	public function getTopicsWithFilter($filter, $limit = 20)
 	{
-		return $this->applyFilter($filter)->with('user')->paginate($limit);
+		return $this->applyFilter($filter)
+					->with('user', 'node', 'lastReplyUser')
+					->paginate($limit);
 	}
 
 	public function getNodeTopicsWithFilter($filter, $node_id, $limit = 20)
 	{
-		return $this->applyFilter($filter)->where('node_id', '=', $node_id)->with('user')->paginate($limit);
+		return $this->applyFilter($filter)
+					->where('node_id', '=', $node_id)
+					->with('user', 'node', 'lastReplyUser')
+					->paginate($limit);
 	}
 
 	public function applyFilter($filter)
@@ -70,5 +83,10 @@ class Topic extends \Eloquent
 				return $this->orderBy('created_at', 'desc');
 				break;
 		}
+	}
+
+	public static function getExcellent($limit = 8)
+	{
+		return Topic::where('is_excellent', '=', true)->orderBy('created_at', 'desc')->take($limit)->get();
 	}
 }

@@ -28,6 +28,9 @@ class TopicCreator
             return $observer->creatorFailed($topic->getErrors());
         }
 
+        Auth::user()->topic_count++;
+        Auth::user()->save();
+        
         return $observer->creatorSucceed($topic);
     }
 }

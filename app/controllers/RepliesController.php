@@ -4,12 +4,10 @@ use Phphub\Core\CreatorListener;
 
 class RepliesController extends \BaseController implements CreatorListener
 {
-
 	public function __construct(Topic $topic)
     {
         $this->beforeFilter('auth', ['only' =>'store']);
     }
-
 
 	public function store()
 	{

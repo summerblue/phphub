@@ -23,9 +23,10 @@ class CreateTopicsTable extends Migration {
 			$table->boolean('is_wiki')->default(false);
 			$table->boolean('is_blocked')->default(false);
 			$table->integer('reply_count')->default(0);
-			$table->integer('view_court')->default(0);
+			$table->integer('view_count')->default(0);
 			$table->integer('favorite_count')->default(0);
 			$table->integer('vote_count')->default(0);
+			$table->integer('last_reply_user_id')->default(0);
 			$table->softDeletes();
 			$table->timestamps();
 		});

@@ -2,7 +2,7 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
-use Reply, Auth;
+use Reply, Auth, Topic;
 
 class ReplyCreator
 {
@@ -28,6 +28,15 @@ class ReplyCreator
             return $observer->creatorFailed($reply->getErrors());
         }
 
+        // 话题最后回复
+        $topic = Topic::find($data['topic_id']);
+        $topic->last_reply_user_id = Auth::user()->id;
+        $topic->reply_count++;
+        $topic->save();
+
+        Auth::user()->reply_count++;
+        Auth::user()->save();
+        
         return $observer->creatorSucceed($reply);
     }
 }

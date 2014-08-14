@@ -14,12 +14,26 @@
 
       <h1 class="panel-title entry-title">{{ $topic->title }}</h1>
 
-      <div class="info leader"><a href="/topics/node28" class="node">其他</a>•<a data-author="true" data-name="Juo" href="/tyaccp_guojian">tyaccp_guojian</a>•
+      <div class="info leader">
+        <a href="{{ route('nodes.show', $topic->node->id) }}" class="node">{{{ $topic->node->name }}}</a>
+        • 
+        <a href="{{ route('users.show', $topic->user->id) }}">
+          {{{ $topic->user->name }}}
+        </a>
+        •
         于<abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>发布
         •
-        最后由 <a data-name="darkbaby123" href="{{{ URL::route('users.show', [$topic->user->id]) }}}">{{{ $topic->user->name }}}}</a> 于<abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr>回复
-        •
-        276次阅读
+
+        @if (count($topic->lastReplyUser))
+          最后由 
+            <a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
+              {{{ $topic->lastReplyUser->name }}}
+            </a>
+           于 <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr>回复
+          •
+        @endif
+
+        {{ $topic->view_count }} 次阅读
       </div>
 		<div class="clearfix"></div>
     </div>

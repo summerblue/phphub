@@ -21,12 +21,16 @@
     </div>
     <div class="panel-body">
       <ul class="list-unstyled little-topic-list">
-        <li>
-          <a href="/doitian">
-            <img alt="17bca47a4961a24f82ef972aa9e1c986" src="holder.js/16x16" class="uface"/>
+
+        @foreach ($excellentTopics as $excellentTopic)
+          <li>
+          <a href="{{ route('users.show', $excellentTopic->user->id) }}">
+            <img src="holder.js/16x16" />
           </a>
-          <a href="/topics/15749"> 这里是置顶话题</a>
+          <a href="{{ route('topics.show', $excellentTopic->id) }}">{{{ str_limit($excellentTopic->title, 20) }}}</a>
           </li>
+        @endforeach
+
       </ul>
     </div>
   </div>

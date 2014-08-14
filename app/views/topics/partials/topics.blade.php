@@ -20,13 +20,23 @@
 		  </div>
 
 		  <div class="media-body">
+		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{ $topic->node->name }}" class="">
+		  		{{ $topic->node->name }}
+			</a>
+		  	<span> • </span>
 		  	<a href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}" class="">
 		  		{{ $topic->user->name }}
 			</a>
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
-		  	<span> • </span>最后回复来自 
-		  	<a href="member.html" title="v4lour">v4lour</a>
+		  	
+			@if (count($topic->lastReplyUser))
+				<span> • </span>最后回复来自 
+			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
+	              {{{ $topic->lastReplyUser->name }}}
+	            </a>
+			@endif
+		  	
 		  </div>
 		  
 		</div>

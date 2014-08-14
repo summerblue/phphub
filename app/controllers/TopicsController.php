@@ -37,6 +37,9 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic = Topic::findOrFail($id);
 		$replies = $topic->getRepliesWithLimit();
 
+		$topic->view_count++;
+		$topic->save();
+
 		return View::make('topics.show', compact('topic', 'replies'));
 	}
 
