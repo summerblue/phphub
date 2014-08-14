@@ -28,7 +28,6 @@ $I->am('a Phphub member');
 $I->signIn();
 
 // Test Login Redirect
-$I->am('a Phphub visitor');
 $I->amOnPage('topics/' . $topic->id );
 
 $I->fillField(['name' => 'body'], 'My first reply body.');

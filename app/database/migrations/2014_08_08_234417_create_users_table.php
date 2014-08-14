@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration {
 			$table->string('remember_token')->nullable();
 			$table->boolean('is_banned')->default(false);
 			$table->string('image_url')->nullable();
-			$table->dateTime('deleted_at')->nullable();
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

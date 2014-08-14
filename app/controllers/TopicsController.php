@@ -63,12 +63,40 @@ class TopicsController extends \BaseController implements CreatorListener
 		return Redirect::route('topics.index');
 	}
 
-	public function destroy($id)
+	public function recomend($id)
 	{
-		Topic::destroy($id);
+		$topic = Topic::findOrFail($id);
+		$topic->is_excellent = (!$topic->is_excellent);
+		$topic->save();
+
+		$message = $topic->is_excellent ? '成功推荐话题' : '成功取消话题推荐';
+		Flash::success($message);
+
+		return Redirect::route('topics.show', $topic->id);
+	}
+
+	public function wiki($id)
+	{
+		$topic = Topic::findOrFail($id);
+		$topic->is_wiki = (!$topic->is_wiki);
+		$topic->save();
+
+		$message = $topic->is_wiki ? '成功加入Wiki' : '成功取消Wiki';
+		Flash::success($message);
+
+		return Redirect::route('topics.show', $topic->id);
+	}
+
+	public function delete($id)
+	{
+		$topic = Topic::find($id);
+		$topic->delete();
+		Flash::success("成功放入垃圾箱.");
 
 		return Redirect::route('topics.index');
 	}
+
+
 
     /**
      * ----------------------------------------

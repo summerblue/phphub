@@ -30,6 +30,11 @@ Route::get('login-required', [
 	'uses' => 'AuthController@loginRequired'
 ]);
 
+Route::get('admin-required', [
+	'as' => 'admin-required',
+	'uses' => 'AuthController@adminRequired'
+]);
+
 Route::get('signup', [
 	'as' => 'signup', 
 	'uses' => 'AuthController@create'
@@ -54,3 +59,25 @@ Route::resource('topics', 'TopicsController');
 Route::resource('replies', 'RepliesController', ['only' => ['store']]);
 Route::resource('votes', 'VotesController');
 Route::resource('users', 'UsersController');
+
+# ------------------ Admin Route ------------------------
+
+Route::get('topics/recomend/{id}',  [
+	'as' => 'topics.recomend', 
+	'uses' => 'TopicsController@recomend',
+	'before' => 'manage_topics'
+]);
+
+Route::get('topics/wiki/{id}',  [
+	'as' => 'topics.wiki',
+	'uses' => 'TopicsController@wiki',
+	'before' => 'manage_topics'
+]);
+
+Route::get('topics/delete/{id}',  [
+	'as' => 'topics.delete', 
+	'uses' => 'TopicsController@delete',
+	'before' => 'manage_topics'
+]);
+
+

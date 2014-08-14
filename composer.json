@@ -10,7 +10,8 @@
         "laracasts/flash": "~1.0",
         "artdarek/oauth-4-laravel": "dev-master",
         "laracasts/presenter": "0.1.*",
-        "itsgoingd/clockwork": "1.*"
+        "itsgoingd/clockwork": "1.*",
+        "zizaco/entrust": "1.2.*@dev"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

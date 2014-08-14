@@ -32,6 +32,11 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         return View::make('auth.loginrequired');
     }
 
+    public function adminRequired()
+    {
+        return View::make('auth.adminrequired');
+    }
+
     /**
      * Shows a user what their new account will look like.
      */

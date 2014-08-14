@@ -1,5 +1,12 @@
 <div class="col-sm-3 side-bar">
   <div class="panel panel-default corner-radius box">
+
+    @if (isset($node))
+      <div class="panel-heading text-center">
+        <h3 class="panel-title">{{ $node->name }}</h3>
+      </div>
+    @endif
+
     <div class="panel-body text-center">
       <div class="btn-group">
         <a href="{{ URL::route('topics.create') }}" class="btn btn-success btn-lg">

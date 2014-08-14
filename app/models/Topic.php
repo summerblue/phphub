@@ -5,8 +5,10 @@ use Laracasts\Presenter\PresentableTrait;
 class Topic extends \Eloquent 
 {
 	use PresentableTrait;
-
 	protected $presenter = 'Phphub\Topic\TopicPresenter';
+
+	use SoftDeletingTrait;
+    protected $dates = ['deleted_at'];
 
 	// Don't forget to fill this array
 	protected $fillable = [

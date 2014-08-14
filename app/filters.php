@@ -88,3 +88,15 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('manage_topics', function()
+{
+	if (Auth::guest())
+	{
+		return Redirect::guest('login-required');
+	} 
+	elseif ( ! Entrust::can('manage_topics') ) // Checks the current user
+    {
+        return Redirect::route('admin-required');
+    }
+});

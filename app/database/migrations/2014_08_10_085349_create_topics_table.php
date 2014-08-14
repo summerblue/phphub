@@ -26,6 +26,7 @@ class CreateTopicsTable extends Migration {
 			$table->integer('view_court')->default(0);
 			$table->integer('favorite_count')->default(0);
 			$table->integer('vote_count')->default(0);
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}
