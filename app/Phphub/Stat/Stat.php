@@ -4,12 +4,12 @@ use Topic, Reply, User, Cache;
 
 class Stat
 {
-    const SITE_CACHE_KEY     = 'site_stat';
-    const SITE_CACHE_MINUTES = 60;
+    const CACHE_KEY     = 'site_stat';
+    const CACHE_MINUTES = 60;
 
     public function getSiteStat()
     {
-        return Cache::remember(self::SITE_CACHE_KEY, self::SITE_CACHE_MINUTES, function()
+        return Cache::remember(self::CACHE_KEY, self::CACHE_MINUTES, function()
         {
             $entity = new StatEntity();
             $entity->topic_count = Topic::count();

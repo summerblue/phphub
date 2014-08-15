@@ -25,6 +25,10 @@
 			{{ $topics->appends(Request::except('page'))->links(); }}
 		</div>
 	</div>
+
+	<!-- Nodes Listing -->
+	@include('nodes.partials.list')
+
 </div>
 
 @include('layouts.partials.sidebar')

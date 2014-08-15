@@ -2,14 +2,14 @@
 
 class Tip extends \Eloquent 
 {
-	const SITE_CACHE_KEY = 'site_tips';
-	const SITE_CACHE_MINUTES = 1440;
+	const CACHE_KEY = 'site_tips';
+	const CACHE_MINUTES = 1440;
 
 	protected $fillable = ['body'];
 
 	public static function getRandTip()
 	{
-		$tips =  Cache::remember(self::SITE_CACHE_KEY, self::SITE_CACHE_MINUTES, function()
+		$tips =  Cache::remember(self::CACHE_KEY, self::CACHE_MINUTES, function()
         {
             return Tip::all();
         });
