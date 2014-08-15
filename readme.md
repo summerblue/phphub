@@ -1,5 +1,35 @@
 # PHPhub 开发环境部署
 
+**Table of Contents**  由 [DocToc](http://doctoc.herokuapp.com/) 生成
+
+- [PHPhub 开发环境部署](#user-content-phphub-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2)
+- [项目代码和文件夹结构](#user-content-%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E5%92%8C%E6%96%87%E4%BB%B6%E5%A4%B9%E7%BB%93%E6%9E%84)
+	- [克隆源代码](#user-content-%E5%85%8B%E9%9A%86%E6%BA%90%E4%BB%A3%E7%A0%81)
+- [虚拟机](#user-content-%E8%99%9A%E6%8B%9F%E6%9C%BA)
+	- [安装 virtualbox 和 vagrant](#user-content-%E5%AE%89%E8%A3%85-virtualbox-%E5%92%8C-vagrant)
+	- [加入 homestead box](#user-content-%E5%8A%A0%E5%85%A5-homestead-box)
+	- [命令行下下载速度太慢的话可以利用工具下载以下链接加速.](#user-content-%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8B%E4%B8%8B%E8%BD%BD%E9%80%9F%E5%BA%A6%E5%A4%AA%E6%85%A2%E7%9A%84%E8%AF%9D%E5%8F%AF%E4%BB%A5%E5%88%A9%E7%94%A8%E5%B7%A5%E5%85%B7%E4%B8%8B%E8%BD%BD%E4%BB%A5%E4%B8%8B%E9%93%BE%E6%8E%A5%E5%8A%A0%E9%80%9F)
+	- [克隆 homestead 项目](#user-content-%E5%85%8B%E9%9A%86-homestead-%E9%A1%B9%E7%9B%AE)
+	- [修改 homestead 的配置](#user-content-%E4%BF%AE%E6%94%B9-homestead-%E7%9A%84%E9%85%8D%E7%BD%AE)
+	- [配置 hosts 文件](#user-content-%E9%85%8D%E7%BD%AE-hosts-%E6%96%87%E4%BB%B6)
+	- [初始化 homestead 虚拟机](#user-content-%E5%88%9D%E5%A7%8B%E5%8C%96-homestead-%E8%99%9A%E6%8B%9F%E6%9C%BA)
+	- [其他配置](#user-content-%E5%85%B6%E4%BB%96%E9%85%8D%E7%BD%AE)
+	- [关于虚拟机里面的软件使用](#user-content-%E5%85%B3%E4%BA%8E%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%87%8C%E9%9D%A2%E7%9A%84%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8)
+		- [PHP](#user-content-php)
+		- [MYSQL](#user-content-mysql)
+- [设置数据库连接](#user-content-%E8%AE%BE%E7%BD%AE%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5)
+- [安装 phphub](#user-content-%E5%AE%89%E8%A3%85-phphub)
+	- [安装依赖包](#user-content-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96%E5%8C%85)
+	- [处理数据库](#user-content-%E5%A4%84%E7%90%86%E6%95%B0%E6%8D%AE%E5%BA%93)
+	- [codeception 与 BDD](#user-content-codeception-%E4%B8%8E-bdd)
+- [assets management](#user-content-assets-management)
+	- [安装 gulp](#user-content-%E5%AE%89%E8%A3%85-gulp)
+- [基本的开发知识](#user-content-%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%BC%80%E5%8F%91%E7%9F%A5%E8%AF%86)
+	- [使用了以下的 package](#user-content-%E4%BD%BF%E7%94%A8%E4%BA%86%E4%BB%A5%E4%B8%8B%E7%9A%84-package)
+	- [规划 blade 模版结构](#user-content-%E8%A7%84%E5%88%92-blade-%E6%A8%A1%E7%89%88%E7%BB%93%E6%9E%84)
+- [Git 版本控制](#user-content-git-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6)
+	- [关于 .gitignore 文件里去除 composer.lock 的原因](#user-content-%E5%85%B3%E4%BA%8E-gitignore-%E6%96%87%E4%BB%B6%E9%87%8C%E5%8E%BB%E9%99%A4-composerlock-%E7%9A%84%E5%8E%9F%E5%9B%A0)
+		
 
 ## 项目代码和文件夹结构
 
