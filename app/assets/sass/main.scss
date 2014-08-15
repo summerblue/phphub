@@ -48,14 +48,11 @@ body {
   padding: 0 0 60px;
 }
 
-.container {
-  width: 1100px;
-}
+
 
 .badge-reply-count {
   margin: 15px 20px;
   background-color: #8BAFCE;
-
 }
 
 .panel {
@@ -279,4 +276,49 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   .operate a {
     color: #d0d0d0;
   }  
+}
+
+
+// desktop
+@media (min-width: 1200px) {
+
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+  width: 1100px;
+} 
+
+}
+
+// ipad
+@media (max-width: 640px) {
+  .col-xs-6 { width: 100%; float: none;}
+}
+
+// ipad
+@media (max-width: 768px) {
+  .node-panel {
+    
+    .remove-padding-vertically {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  .main-col {
+    padding-left: 15px;
+  }
+  .side-bar {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  ul.topic-filter {
+    li {
+      padding-right: 0px;
+    }
+
+    float: left!important;
+    margin-top: 10px;
+  }
+  .badge-reply-count {
+    margin: 20px 0px;
+  }
 }

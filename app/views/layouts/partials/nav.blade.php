@@ -2,6 +2,7 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" data-toggle="collapse" data-target="#top-navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
       <a href="/" class="navbar-brand">PHPHub</a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse collapse">

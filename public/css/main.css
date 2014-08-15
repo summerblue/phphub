@@ -41,9 +41,6 @@ html, body {
   /* Pad bottom by footer height */
   padding: 0 0 60px; }
 
-.container {
-  width: 1100px; }
-
 .badge-reply-count {
   margin: 15px 20px;
   background-color: #8BAFCE; }
@@ -199,3 +196,29 @@ embed {
 
 .replies-index .operate a {
   color: #d0d0d0; }
+
+@media (min-width: 1200px) {
+  .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+    width: 1100px; } }
+
+@media (max-width: 640px) {
+  .col-xs-6 {
+    width: 100%;
+    float: none; } }
+
+@media (max-width: 768px) {
+  .node-panel .remove-padding-vertically {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .main-col {
+    padding-left: 15px; }
+  .side-bar {
+    padding-left: 15px;
+    padding-right: 15px; }
+  ul.topic-filter {
+    float: left !important;
+    margin-top: 10px; }
+    ul.topic-filter li {
+      padding-right: 0px; }
+  .badge-reply-count {
+    margin: 20px 0px; } }
