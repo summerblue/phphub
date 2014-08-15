@@ -3,7 +3,9 @@
 	@foreach ($topics as $topic)
 	 <li class="list-group-item media {{ !$column ?:'col-xs-6'; }}" style="margin-top: 0px;">
 
-		<span class="badge" style="margin: 15px 20px;"> {{ $topic->reply_count }} </span>
+		<a class="pull-right" href="{{ route('topics.show', [$topic->id]) }}" >
+			<span class="badge badge-reply-count"> {{ $topic->reply_count }} </span>
+		</a>
 
 		<div class="avatar pull-left">
 			<a href="{{ route('users.show', [$topic->user_id]) }}">

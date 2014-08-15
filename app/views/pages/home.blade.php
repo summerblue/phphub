@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="panel panel-default">
+<div class="panel panel-default list-panel">
   <div class="panel-heading">
     <h3 class="panel-title text-center">社区精华帖</h3>
   </div>
@@ -19,21 +19,29 @@
 </div>
 
 
-<div class="panel panel-default">
+<div class="panel panel-default node-panel">
   <div class="panel-heading">
     <h3 class="panel-title text-center">节点导航</h3>
   </div>
   
-  <div class="panel-body">
+  <div class="panel-body remove-padding-bottom">
 	<dl class="dl-horizontal">
-	    @foreach ($nodes['top'] as $top_node)
+	    @foreach ($nodes['top'] as $index => $top_node)
 		    <dt>{{{ $top_node->name }}}</dt>
 			<dd>
-				@foreach ($nodes['second'][$top_node->id] as $snode)
-		          <a href="{{ route('nodes.show', [$snode->id]) }}">{{ $snode->name }}</a>
-		        @endforeach
+
+        <ul class="list-inline">
+          @foreach ($nodes['second'][$top_node->id] as $snode)
+              <li><a href="{{ route('nodes.show', [$snode->id]) }}">{{ $snode->name }}</a></li>
+          @endforeach
+        </ul>
+				
 			</dd>
-			<div class="divider"></div>
+
+        @if (count($nodes['top']) != $index +1 )
+          <div class="divider"></div>
+        @endif
+			
 	    @endforeach
 	</dl>
   </div>
