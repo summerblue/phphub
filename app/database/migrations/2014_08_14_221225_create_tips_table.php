@@ -46,6 +46,7 @@ class CreateTipsTable extends Migration {
 			['body' => 'phptherightway.com 上可以更新的 PHP 知识.'],
 			['body' => '<a href="http://www.buzzsprout.com/11908" target="_blank">Laravel.io 博客</a> - 听 Laravel 社区的几个领导者谈论技术.'],
 			['body' => 'Model::remember(5)->get(); 可以缓存 Model 五分钟'],
+			['body' => '使用 CoffeeScript 和 Sass 来写 JavaScript 和 CSS 提高开发效率'],
 		];
 		DB::table('tips')->insert( $tips );
 	}

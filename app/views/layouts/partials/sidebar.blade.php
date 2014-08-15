@@ -20,14 +20,13 @@
       <h3 class="panel-title">置顶话题</h3>
     </div>
     <div class="panel-body">
-      <ul class="list-unstyled little-topic-list">
+      <ul class="list">
 
         @foreach ($excellentTopics as $excellentTopic)
           <li>
-          <a href="{{ route('users.show', $excellentTopic->user->id) }}">
-            <img src="holder.js/16x16" />
+          <a href="{{ route('topics.show', $excellentTopic->id) }}">
+            {{{ $excellentTopic->title }}}
           </a>
-          <a href="{{ route('topics.show', $excellentTopic->id) }}">{{{ str_limit($excellentTopic->title, 20) }}}</a>
           </li>
         @endforeach
 
