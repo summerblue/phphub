@@ -1,7 +1,10 @@
 @extends('layouts.default')
 
-@section('content')
+@section('title')
+社区 Wiki_@parent 
+@stop
 
+@section('content')
 
 <div class="{{ count($topics) > 20 ?: 'col-md-6 col-md-offset-3' }} ">
 

@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+{{ $topic->title }}_@parent 
+@stop
+
 @section('content')
 
 <div class="col-md-9 topics-show main-col">

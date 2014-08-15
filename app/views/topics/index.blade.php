@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+社区_@parent 
+@stop
+
 @section('content')
 
 @if ( ! $topics->isEmpty())

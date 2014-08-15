@@ -3,7 +3,17 @@
 	<head>
 
 		<meta charset="UTF-8">
-		<title>Document</title>
+		
+		<title>
+			@section('title')
+PHPhub - PHP & Laravel的中文社区
+			@show
+		</title>
+
+		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
+		<meta name="author" content="The PHP China Community." />
+		<meta name="description" content="PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。" />
+
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 	

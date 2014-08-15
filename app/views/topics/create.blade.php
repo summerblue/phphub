@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+创建新话题_@parent 
+@stop
+
 @section('styles')
     <link rel="stylesheet" href="{{ cdn("styles/bootstrap-select.min.css") }}"/>
 @stop

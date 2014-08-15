@@ -1,5 +1,9 @@
 @extends('layouts.default')
 
+@section('title')
+用户列表_@parent 
+@stop
+
 @section('content')
 
 <div class="panel panel-default">
