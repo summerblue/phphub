@@ -17,8 +17,9 @@ class TopicsController extends \BaseController implements CreatorListener
 		$filter = $this->topic->present()->getTopicFilter();
 		$topics = $this->topic->getTopicsWithFilter($filter);
 		$nodes  = Node::allLevelUp();
+		$links  = Link::remember(1440)->get();
 
-		return View::make('topics.index', compact('topics', 'nodes'));
+		return View::make('topics.index', compact('topics', 'nodes', 'links'));
 	}
 
 	public function create()

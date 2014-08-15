@@ -18,6 +18,26 @@
     </div>
   </div>
 
+  @if (isset($links) && count($links))
+    <div class="panel panel-default corner-radius box">
+      <div class="panel-heading text-center">
+        <h3 class="panel-title">友情社区</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list">
+
+          @foreach ($links as $link)
+            <li>
+            <a href="{{ $link->link }}">
+              {{{ $link->title }}}
+            </a>
+            </li>
+          @endforeach
+
+        </ul>
+      </div>
+    </div>
+  @endif
 
   @if (isset($nodeTopics) && count($nodeTopics))
     <div class="panel panel-default corner-radius box">

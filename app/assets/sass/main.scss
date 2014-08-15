@@ -189,6 +189,21 @@ embed {
 }
 
 .topics-index {
+  
+  .topic-filter {
+    color: #d0d0d0;
+    font-size: 12px;
+    a {
+      padding: 1px 2px;
+      color: #778087;
+      text-decoration: none;
+    }
+
+    .selected {
+      color: #C0C0C0;
+    }
+  }
+
   .pager-footer {
     .pagination  {
       margin: 9px 0;

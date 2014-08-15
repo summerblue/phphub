@@ -13,7 +13,18 @@ class TopicPresenter extends Presenter
             $query_append = '&'.http_build_query(Input::except('filter')); 
         }
             
-        return URL::to('topics') . '?filter=' . $filter . $query_append;
+        $link = URL::to('topics') . '?filter=' . $filter . $query_append;
+
+        if (Input::get('filter'))
+        {
+            $selected = Input::get('filter') == $filter ? ' class="selected"':'';       
+        }
+        else 
+        {
+            $selected = $filter == 'recent' ? 'class="selected"':'';
+        }
+
+        return 'href="' . $link . '"' . $selected;
     }
 
     public function getTopicFilter() 
