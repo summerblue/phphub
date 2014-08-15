@@ -16,6 +16,13 @@ body {
 .remove-padding-bottom {
   padding-bottom: 0px;
 }
+.remove-padding-horizontal {
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+.remove-margin-bottom {
+  margin-bottom: 0;
+}
 
 #wrap {
   min-height: 100%;
@@ -160,4 +167,12 @@ embed {
     margin-bottom: 15px;
   }
 
+}
+
+.topics-index {
+  .pager-footer {
+    .pagination  {
+      margin: 9px 0;
+    }
+  }
 }

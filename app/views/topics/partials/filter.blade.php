@@ -1,4 +1,4 @@
-<ul class="pull-right list-inline">
+<ul class="pull-right list-inline remove-margin-bottom">
 	<li>
 		<a href="{{ App::make('Topic')->present()->topicFilter('recent') }}">
 	    	<i class="glyphicon glyphicon-time"></i> 最近发表 

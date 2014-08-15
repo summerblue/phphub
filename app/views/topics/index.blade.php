@@ -4,7 +4,7 @@
 
 @if ( ! $topics->isEmpty())
 	
-      <div class="col-md-9">
+      <div class="col-md-9 topics-index">
 
 		<div class="panel panel-default">
 			<div class="panel-heading">
@@ -18,13 +18,13 @@
 	          <div class="clearfix"></div>
 	        </div>
 			
-			<div class="panel-body">
+			<div class="panel-body remove-padding-horizontal">
 				@include('topics.partials.topics', ['column' => false])
-	
-		       <!-- Pager -->
-		        <div class="pull-right" style="padding-right:20px"> 
-				      {{ $topics->appends(Request::except('page'))->links(); }}
-				</div>
+			</div>
+
+			<div class="panel-footer text-right remove-padding-horizontal pager-footer">
+				<!-- Pager --> 
+				{{ $topics->appends(Request::except('page'))->links(); }}
 			</div>
 
 		</div>
