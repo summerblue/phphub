@@ -49,7 +49,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
 	public function edit($id)
 	{
-		$topic = Topic::find($id);
+		$topic = Topic::findOrFail($id);
 
 		return View::make('topics.edit', compact('topic'));
 	}

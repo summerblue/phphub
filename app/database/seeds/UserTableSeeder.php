@@ -11,10 +11,16 @@ class UsersTableSeeder extends Seeder {
 		foreach(range(1, 50) as $index)
 		{
 			User::create([
-                'github_id' => $index,
-                'github_url' => $faker->url(),
-                'name' => $faker->userName(),
-                'email' => $faker->email(),
+				'github_id'        => $index,
+				'github_url'       => $faker->url(),
+				'city'             => $faker->city(),
+				'name'  => $faker->userName(),
+				'twitter_account'  => $faker->userName(),
+				'company'          => $faker->userName(),
+				'personal_website' => $faker->url(),
+				'signature'        => $faker->sentence(),
+				'description'      => $faker->sentence(),
+				'email'            => $faker->email(),
 			]);
 		}
 	}

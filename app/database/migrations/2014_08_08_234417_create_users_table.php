@@ -24,6 +24,12 @@ class CreateUsersTable extends Migration {
 			$table->string('image_url')->nullable();
 			$table->integer('topic_count')->default(0);
 			$table->integer('reply_count')->default(0);
+			$table->string('city')->nullable();
+			$table->string('company')->nullable();
+			$table->string('twitter_account')->nullable();
+			$table->string('personal_website')->nullable();
+			$table->string('signature')->nullable();
+			$table->string('description')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
 		});
