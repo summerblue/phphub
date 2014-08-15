@@ -86,18 +86,6 @@ class Topic extends \Eloquent
 	}
 
 	/**
-	 * 边栏置顶话题列表
-	 */
-	public static function getExcellent($limit = 8)
-	{
-		return Topic::where('is_excellent', '=', true)
-						->orderBy('created_at', 'desc')
-						->take($limit)
-						->remember(60)
-						->get();
-	}
-
-	/**
 	 * 边栏同一节点下的话题列表
 	 */
 	public function getSameNodeTopics($limit = 8)

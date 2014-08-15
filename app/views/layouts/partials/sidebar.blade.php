@@ -39,27 +39,6 @@
       </div>
     </div>
   @endif
- 
-
-  <div class="panel panel-default corner-radius box">
-    <div class="panel-heading text-center">
-      <h3 class="panel-title">置顶话题</h3>
-    </div>
-    <div class="panel-body">
-      <ul class="list">
-
-        @foreach ($excellentTopics as $excellentTopic)
-          <li>
-          <a href="{{ route('topics.show', $excellentTopic->id) }}">
-            {{{ $excellentTopic->title }}}
-          </a>
-          </li>
-        @endforeach
-
-      </ul>
-    </div>
-  </div>
-
 
   <div class="panel panel-default corner-radius box">
     <div class="panel-heading text-center">
