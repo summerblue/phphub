@@ -9,12 +9,26 @@ html, body {
 .divider {
   border-bottom: 1px solid #ddd; }
 
+.main-col {
+  padding-left: 0px; }
+
+.side-bar {
+  padding-left: 0px;
+  padding-right: 0px; }
+
 .remove-padding-bottom {
   padding-bottom: 0px; }
+
+.remove-padding-left {
+  padding-left: 0px !important; }
 
 .remove-padding-horizontal {
   padding-bottom: 0px;
   padding-top: 0px; }
+
+.remove-padding-vertically {
+  padding-left: 0px;
+  padding-right: 0px; }
 
 .remove-margin-bottom {
   margin-bottom: 0; }
@@ -38,12 +52,15 @@ html, body {
   color: #333;
   background-color: #f5f5f5;
   /* border-color: #F5F5F5; */
-  border: 1px solid #ddd; }
+  border: 1px solid #ddd;
+  border-bottom: none; }
   .panel .panel-heading h3 {
     color: #999;
     font-size: 14px; }
 .panel .panel-body {
   border: 1px solid #ddd; }
+.panel .panel-footer {
+  border-top: none; }
 
 .list-panel .panel-body {
   padding: 0px 15px; }
@@ -126,9 +143,50 @@ embed {
 .topics-index .pager-footer .pagination {
   margin: 9px 0; }
 
+.alert {
+  -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.19);
+  box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.19); }
+
 .side-bar ul.list {
   margin: 0;
   padding-left: 11px; }
   .side-bar ul.list li {
     margin-bottom: 4px;
     line-height: 18px; }
+
+.topics-show .topic-title {
+  font-size: 22px;
+  color: #333;
+  text-align: left;
+  line-height: 100%;
+  margin-bottom: 8px;
+  font-weight: bold; }
+.topics-show .meta, .topics-show .operate {
+  color: #d0d0d0;
+  font-size: 12px; }
+  .topics-show .meta a, .topics-show .operate a {
+    padding: 1px 5px;
+    color: #778087;
+    text-decoration: none; }
+.topics-show .ribbon {
+  margin-top: 20px;
+  margin-bottom: -15px; }
+  .topics-show .ribbon .ribbon-excellent {
+    background: #fffce9;
+    border-top: 1px solid #fff3e6;
+    border-bottom: 1px solid #fff3e6;
+    margin: 0px -15px 10px -15px;
+    padding: 4px 15px;
+    color: #da974d;
+    font-size: 12px; }
+  .topics-show .ribbon .ribbon-wiki {
+    background: #d9edf7;
+    border-top: 1px solid #bce8f1;
+    border-bottom: 1px solid #bce8f1;
+    margin: 0px -15px 10px -15px;
+    padding: 4px 15px;
+    color: #31708f;
+    font-size: 12px; }
+
+.replies-index .operate a {
+  color: #d0d0d0; }
