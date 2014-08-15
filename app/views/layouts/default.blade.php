@@ -14,8 +14,10 @@ PHPhub - PHP & Laravel的中文社区
 		<meta name="author" content="The PHP China Community." />
 		<meta name="description" content="PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。" />
 
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css
+">
+		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css
+">
 	
 		<base href="{{ Config::get('app.url') }}">
 		
@@ -55,11 +57,12 @@ PHPhub - PHP & Laravel的中文社区
 			ga('create','UA-XXXXX-X');ga('send','pageview');
 		</script>
 
-		<script src="//code.jquery.com/jquery.js"></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.1/holder.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
-		<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/lang/zh-cn.min.js"></script>
+		<script src="//cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
+		<script src="//cdn.staticfile.org/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="//cdn.staticfile.org/holder/2.3.1/holder.min.js"></script>
+		<script src="//cdn.staticfile.org/moment.js/2.7.0/moment.min.js"></script>
+		<script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js
+"></script>
 		<script src="js/main.js"></script>
     @yield('scripts')
 
