@@ -41,7 +41,9 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic->view_count++;
 		$topic->save();
 
-		return View::make('topics.show', compact('topic', 'replies'));
+		$nodeTopics = $topic->getSameNodeTopics();
+
+		return View::make('topics.show', compact('topic', 'replies', 'nodeTopics'));
 	}
 
 	public function edit($id)

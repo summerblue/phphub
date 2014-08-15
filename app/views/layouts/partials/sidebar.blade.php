@@ -1,4 +1,6 @@
 <div class="col-sm-3 side-bar">
+
+
   <div class="panel panel-default corner-radius box">
 
     @if (isset($node))
@@ -15,6 +17,30 @@
       </div>
     </div>
   </div>
+
+
+  @if (isset($nodeTopics) && count($nodeTopics))
+    <div class="panel panel-default corner-radius box">
+      <div class="panel-heading text-center">
+        <h3 class="panel-title">节点下其他话题</h3>
+      </div>
+      <div class="panel-body">
+        <ul class="list">
+
+          @foreach ($nodeTopics as $nodeTopic)
+            <li>
+            <a href="{{ route('topics.show', $nodeTopic->id) }}">
+              {{{ $nodeTopic->title }}}
+            </a>
+            </li>
+          @endforeach
+
+        </ul>
+      </div>
+    </div>
+  @endif
+ 
+
   <div class="panel panel-default corner-radius box">
     <div class="panel-heading text-center">
       <h3 class="panel-title">置顶话题</h3>
@@ -33,6 +59,8 @@
       </ul>
     </div>
   </div>
+
+
   <div class="panel panel-default corner-radius box">
     <div class="panel-heading text-center">
       <h3 class="panel-title">小贴士</h3>
@@ -41,6 +69,8 @@
       {{ $siteTip->body }}
     </div>
   </div>
+
+
   <div class="panel panel-default corner-radius box">
     <div class="panel-heading text-center">
       <h3 class="panel-title">统计信息</h3>
@@ -53,5 +83,6 @@
       </ul>
     </div>
   </div>
+
 </div>
 <div class="clearfix"></div>
