@@ -13,16 +13,13 @@
   <div class="panel-body">
     @foreach ($users as $user)
     
-      <div class="col-md-1 item">
+      <div class="col-md-1 remove-padding-right">
         <div class="avatar">
           <a href="{{ route('users.show', $user->id) }}">
-            <img src="{{ $user->present()->gravatar }}" class="img-thumbnail avatar"  style="width:48px;height:48px;"/>
+            <img src="{{ $user->present()->gravatar }}" class="img-thumbnail avatar"  style="width:48px;height:48px;margin-bottom: 20px;"/>
           </a>
         </div>
 
-        <div class="name">
-          <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
-        </div>
       </div>
     
     @endforeach
