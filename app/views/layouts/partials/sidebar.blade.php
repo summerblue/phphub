@@ -11,7 +11,9 @@
 
     <div class="panel-body text-center">
       <div class="btn-group">
-        <a href="{{ URL::route('topics.create') }}" class="btn btn-success btn-lg">
+        <a href="
+          {{ isset($node) ? URL::route('topics.create', ['node_id' => $node->id]) : URL::route('topics.create') ; }}
+          " class="btn btn-success btn-lg">
           <i class="glyphicon glyphicon-pencil"> </i> 发 布 新 帖
         </a>
       </div>

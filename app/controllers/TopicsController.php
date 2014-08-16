@@ -24,7 +24,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
 	public function create()
 	{
-		$node = Node::where('name', '=', Input::get('node'))->where('parent_node', '!=', '')->first();
+		$node = Node::find(Input::get('node_id'));
 		$nodes = Node::allLevelUp();
 		return View::make('topics.create', compact('nodes', 'node'));
 	}
@@ -44,7 +44,9 @@ class TopicsController extends \BaseController implements CreatorListener
 
 		$nodeTopics = $topic->getSameNodeTopics();
 
-		return View::make('topics.show', compact('topic', 'replies', 'nodeTopics'));
+		$node = $topic->node;
+
+		return View::make('topics.show', compact('topic', 'replies', 'nodeTopics', 'node'));
 	}
 
 	public function edit($id)

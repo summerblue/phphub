@@ -24,33 +24,25 @@
 
       {{ Form::open(['route' => 'topics.store', 'method' => 'post']) }}
 
-        @if (empty($node))
-          
-          <div class="form-group">
-              <select class="selectpicker form-control" name="node_id" >
-                <option value="" disabled selected>请选择节点</option>
-                @foreach ($nodes['top'] as $top_node)
-                  <optgroup label="{{ $top_node->name }}">
-                    @foreach ($nodes['second'][$top_node->id] as $snode)
-                      <option value="{{ $snode->id }}">{{ $snode->name }}</option>
-                    @endforeach
-                  </optgroup>
-                @endforeach
-              </select> 
-          </div>
+        
+        <div class="form-group">
+            <select class="selectpicker form-control" name="node_id" >
+              
+              <option value="" disabled {{ count($node) ?: 'selected'; }}>请选择节点</option>
 
-          <div class="form-group">
-            {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => "请填写标题"]) }}
-          </div>
+              @foreach ($nodes['top'] as $top_node)
+                <optgroup label="{{ $top_node->name }}">
+                  @foreach ($nodes['second'][$top_node->id] as $snode)
+                    <option value="{{ $snode->id }}" {{ count($node) && ($node->id == $snode->id ) ? 'selected' : ''; }} >{{ $snode->name }}</option>
+                  @endforeach
+                </optgroup>
+              @endforeach
+            </select> 
+        </div>
 
-        @else 
-          
-          <div class="form-group">
-            {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => "请填写标题"]) }}
-          </div>
-          <input type="hidden" name="node_id" value="{{{ $node->id }}}" />
-
-        @endif
+        <div class="form-group">
+          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => "请填写标题"]) }}
+        </div>
 
         <div class="form-group">
           {{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => 20, 'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
