@@ -15,10 +15,14 @@
 
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
       
-      @include('users.partials.replies')
-      <div class="pull-right">
-        {{ $replies->links(); }}
-      </div>
+      @if (count($replies))
+	      @include('users.partials.replies')
+	      <div class="pull-right">
+	        {{ $replies->links(); }}
+	      </div>
+      @else
+	       <div class="empty-block">还未留下任何评论~~</div>
+      @endif
 
     </div>
 

@@ -15,10 +15,12 @@
 
     <div class="panel-body ">
       
-      @include('users.partials.topics')
-      <div>
-        {{ $topics->links(); }}
-      </div>
+      @if (count($topics))
+	      @include('users.partials.topics')
+	      <div> {{ $topics->links(); }} </div>
+      @else
+        <div class="empty-block">还未收藏任何话题~~</div>
+      @endif
 
     </div>
 

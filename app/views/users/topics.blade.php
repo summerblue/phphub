@@ -15,10 +15,14 @@
 
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
       
-      @include('users.partials.topics')
-      <div>
-        {{ $topics->links(); }}
-      </div>
+      @if (count($topics))
+	    @include('users.partials.topics')
+	    <div>
+	        {{ $topics->links(); }}
+	    </div>
+      @else
+        <div class="empty-block">还未发布任何话题~~</div>
+      @endif
 
     </div>
 

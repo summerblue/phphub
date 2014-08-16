@@ -9,6 +9,13 @@ body {
   background: #e5e5e5;
 }
  
+.empty-block {
+  border: 3px dotted #ccc;
+  text-align: center;
+  line-height: 100px;
+  margin: 10px;
+}
+
 .loading {
   font-size: 16px;
 }
@@ -295,7 +302,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   .avatar {
     width: 120px; 
     height: 120px; 
-    margin: 44px 54px 0px 0px;
+    margin: 4px 54px 0px 0px;
   }
 
   dl {

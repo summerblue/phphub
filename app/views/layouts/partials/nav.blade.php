@@ -21,7 +21,7 @@
       <ul class="nav navbar-nav navbar-right github-login" >
         
         @if (Auth::check())
-            <li><a href="{{ url($currentUser->profileUrl) }}"><i class="fa fa-user"></i> {{ $currentUser->name }}</a></li>
+            <li><a href="{{ route('users.show', $currentUser->id) }}"><i class="fa fa-user"></i> {{ $currentUser->name }}</a></li>
             <li><a class="button" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> 退出</a></li>
         @else
             <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">

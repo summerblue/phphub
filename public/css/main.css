@@ -6,6 +6,12 @@ html, body {
   font-family: "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
   background: #e5e5e5; }
 
+.empty-block {
+  border: 3px dotted #ccc;
+  text-align: center;
+  line-height: 100px;
+  margin: 10px; }
+
 .loading {
   font-size: 16px; }
 
@@ -212,7 +218,7 @@ embed {
 .users-show .avatar {
   width: 120px;
   height: 120px;
-  margin: 44px 54px 0px 0px; }
+  margin: 4px 54px 0px 0px; }
 .users-show dl dt {
   width: 110px;
   font-weight: normal;
