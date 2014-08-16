@@ -26,6 +26,7 @@ class TopicsController extends \BaseController implements CreatorListener
 	{
 		$node = Node::find(Input::get('node_id'));
 		$nodes = Node::allLevelUp();
+
 		return View::make('topics.create', compact('nodes', 'node'));
 	}
 
@@ -104,8 +105,6 @@ class TopicsController extends \BaseController implements CreatorListener
 
 		return Redirect::route('topics.index');
 	}
-
-
 
     /**
      * ----------------------------------------

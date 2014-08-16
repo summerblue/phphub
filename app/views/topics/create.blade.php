@@ -28,12 +28,12 @@
         <div class="form-group">
             <select class="selectpicker form-control" name="node_id" >
               
-              <option value="" disabled {{ count($node) ?: 'selected'; }}>请选择节点</option>
+              <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>请选择节点</option>
 
               @foreach ($nodes['top'] as $top_node)
                 <optgroup label="{{ $top_node->name }}">
                   @foreach ($nodes['second'][$top_node->id] as $snode)
-                    <option value="{{ $snode->id }}" {{ count($node) && ($node->id == $snode->id ) ? 'selected' : ''; }} >{{ $snode->name }}</option>
+                    <option value="{{ $snode->id }}" {{ App::make('Topic')->present()->haveDefaultNode($node, $snode) ? 'selected' : ''; }} >{{ $snode->name }}</option>
                   @endforeach
                 </optgroup>
               @endforeach

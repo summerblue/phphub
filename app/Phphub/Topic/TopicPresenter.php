@@ -38,4 +38,18 @@ class TopicPresenter extends Presenter
         return 'recent';
     }
 
+    public function haveDefaultNode($node, $snode)
+    {
+        if (count($node) && ($snode && $node->id == $snode->id )) 
+        {
+            return true;
+        }
+
+        if (Input::old('node_id') && ( $snode && Input::old('node_id') == $snode->id))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
