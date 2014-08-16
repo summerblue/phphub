@@ -23,8 +23,15 @@
     </div>
 
     <div class="body entry-content panel-body">
-      {{ $topic->body }}
+    
+      <div class="loading">
+        <i class="fa fa-spinner fa-spin"></i> Rendering...
+      </div>
 
+      <div class="markdown-body" id="emojify" style="display:none;">
+{{ $topic->body }}  
+      </div>
+      
       @include('topics.partials.ribbon')
     </div>
 

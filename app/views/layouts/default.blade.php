@@ -22,6 +22,7 @@ PHPhub - PHP & Laravel的中文社区
 		<base href="{{ Config::get('app.url') }}">
 		
 		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/markdown.css">
 
     @yield('styles')
 
@@ -56,15 +57,18 @@ PHPhub - PHP & Laravel的中文社区
 			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
 			ga('create','UA-XXXXX-X');ga('send','pageview');
 		</script>
-
+		
 		<script src="//cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//cdn.staticfile.org/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="//cdn.staticfile.org/holder/2.3.1/holder.min.js"></script>
 		<script src="//cdn.staticfile.org/moment.js/2.7.0/moment.min.js"></script>
-		<script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js
-"></script>
+		<script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js"></script>
+
+		<script src="js/emojify.min.js"></script>
+		<script src="js/marked.min.js"></script>
 		<script src="js/main.js"></script>
-    @yield('scripts')
+	    
+	    @yield('scripts')
 
 	</body>
 </html>

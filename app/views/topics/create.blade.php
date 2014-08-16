@@ -12,7 +12,7 @@
 
 <div class="topic_create">
 
-  <div class="col-md-8">
+  <div class="col-md-8 main-col">
 
     <div class="reply-box form box-block">
 
