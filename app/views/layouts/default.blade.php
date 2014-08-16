@@ -14,14 +14,12 @@ PHPhub - PHP & Laravel的中文社区
 		<meta name="author" content="The PHP China Community." />
 		<meta name="description" content="PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。" />
 
-		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css
-">
-		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css
-">
+		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{ cdn('css/main.css') }}">
 		<link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
 
-    @yield('styles')
+	    @yield('styles')
 
 	</head>
 	<body>
@@ -65,6 +63,18 @@ PHPhub - PHP & Laravel的中文社区
 		<script src="{{ cdn('js/marked.min.js') }}"></script>
 		<script src="{{ cdn('js/main.js') }}"></script>
 	    
+	    <script>
+	    emojify.setConfig({
+			    img_dir : '{{ cdn('images/emoji') }}',
+			    ignored_tags : {
+			        'SCRIPT'  : 1,
+			        'TEXTAREA': 1,
+			        'A'       : 1,
+			        'PRE'     : 1,
+			        'CODE'    : 1
+			    }
+			});
+	    </script>
 	    @yield('scripts')
 
 	</body>
