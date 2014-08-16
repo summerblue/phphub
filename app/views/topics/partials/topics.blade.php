@@ -21,12 +21,12 @@
 		  	</a>
 		  </div>
 
-		  <div class="media-body">
-		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{ $topic->node->name }}" class="">
+		  <div class="media-body meta">
+		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{ $topic->node->name }}" class="remove-padding-left">
 		  		{{ $topic->node->name }}
 			</a>
 		  	<span> • </span>
-		  	<a href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}" class="">
+		  	<a href="{{ route('users.show', [$topic->user_id]) }}" title="{{ $topic->user->name }}">
 		  		{{ $topic->user->name }}
 			</a>
 		  	<span> • </span>

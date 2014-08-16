@@ -17,10 +17,15 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     //   and ability($roles, $permissions, $options)
     use HasRole;
 
+    // Enable soft delete
+    use SoftDeletingTrait;
+    protected $dates = ['deleted_at'];
+
+
     protected $table      = 'users';
     protected $hidden     = ['github_id'];
     protected $fillable   = ['email', 'name', 'github_url', 'github_id', 'image_url', 'is_banned'];
-    protected $softDelete = true;
+    
 
     public function topics() 
     {
