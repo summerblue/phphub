@@ -3,9 +3,16 @@
     <a data-followed="false" data-id="15887" href="#" onclick="return Topics.follow(this);" rel="twipsy" data-original-title="">
       <i class="glyphicon glyphicon-eye-open"></i> 关注
     </a>
-    <a data-id="15887" href="#" onclick="return Topics.favorite(this);" rel="twipsy" data-original-title="收藏">
-      <i class="glyphicon glyphicon-bookmark"></i> <span>收藏</span>
-    </a>
+
+    @if ($currentUser && Favorite::isUserFavoritedTopic($currentUser, $topic))
+      <a href="{{ route('favorites.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-bookmark" style="color:#da974d"></i> <span>取消</span>
+      </a>
+    @else
+      <a href="{{ route('favorites.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-bookmark"></i> <span>收藏</span>
+      </a>
+    @endif
 
     @if ($currentUser && $currentUser->can("manage_topics") )
 

@@ -35,6 +35,11 @@ Route::get('/users/{id}/favorites', [
 	'uses' => 'UsersController@favorites'
 ]);
 
+Route::get('/favorites/{id}', [
+	'as' => 'favorites.createOrDelete',
+	'uses' => 'FavoritesController@createOrDelete',
+	'before' => 'auth'
+]);
 
 
 # ------------------ Authentication ------------------------

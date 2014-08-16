@@ -2,7 +2,6 @@
 
 class DatabaseSeeder extends Seeder {
 
-	
     /**
      * @var array
      */
@@ -10,6 +9,7 @@ class DatabaseSeeder extends Seeder {
         'users',
         'topics',
         'replies',
+        'favorites',
     ];
 
     /**
@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder {
         'UsersTableSeeder',
         'TopicsTableSeeder',
         'RepliesTableSeeder',
+        'FavoritesTableSeeder',
     ];
 
 	/**

@@ -21,11 +21,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     use SoftDeletingTrait;
     protected $dates = ['deleted_at'];
 
-
     protected $table      = 'users';
     protected $hidden     = ['github_id'];
     protected $fillable   = ['email', 'name', 'github_url', 'github_id', 'image_url', 'is_banned'];
     
+    public function favoriteTopics()
+    {
+        return $this->belongsToMany('Topic', 'favorites')->withTimestamps();
+    }
 
     public function topics() 
     {

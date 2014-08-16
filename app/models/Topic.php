@@ -18,6 +18,11 @@ class Topic extends \Eloquent
 		'node_id'
 	];
 
+	public function favoritedBy()
+	{
+		return $this->belongsToMany('User', 'favorites');
+	}
+
 	public function node()
 	{
 		return $this->belongsTo('Node');
