@@ -18,11 +18,8 @@ PHPhub - PHP & Laravel的中文社区
 ">
 		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css
 ">
-	
-		<base href="{{ Config::get('app.url') }}">
-		
-		<link rel="stylesheet" href="css/main.css">
-		<link rel="stylesheet" href="css/markdown.css">
+		<link rel="stylesheet" href="{{ cdn('css/main.css') }}">
+		<link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
 
     @yield('styles')
 
@@ -64,9 +61,9 @@ PHPhub - PHP & Laravel的中文社区
 		<script src="//cdn.staticfile.org/moment.js/2.7.0/moment.min.js"></script>
 		<script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js"></script>
 
-		<script src="js/emojify.min.js"></script>
-		<script src="js/marked.min.js"></script>
-		<script src="js/main.js"></script>
+		<script src="{{ cdn('js/emojify.min.js') }}"></script>
+		<script src="{{ cdn('js/marked.min.js') }}"></script>
+		<script src="{{ cdn('js/main.js') }}"></script>
 	    
 	    @yield('scripts')
 
