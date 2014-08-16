@@ -15,13 +15,13 @@
     
       <div class="col-md-1 item">
         <div class="avatar">
-          <a href="member.html">
-            <img alt="2880" src="holder.js/48x48" class="uface"/>
+          <a href="{{ route('users.show', $user->id) }}">
+            <img src="holder.js/48x48" class="img-thumbnail"/>
           </a>
         </div>
 
         <div class="name">
-          <a href="member.html">{{ $user->name }}</a>
+          <a href="{{ route('users.show', $user->id) }}">{{ $user->name }}</a>
         </div>
       </div>
     

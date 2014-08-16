@@ -49,7 +49,6 @@ class TopicsTableSeeder extends Seeder {
 				'node_id'      => $faker->randomElement($nodes),
 				'title'        => $faker->sentence(),
 				'body'         => $faker->text(),
-				'is_wiki' => true
 			]);
 		}
 	}
