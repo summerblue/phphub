@@ -16,8 +16,8 @@
     <div class="panel-body ">
 
         <div style="text-align: center;" class="pull-right col-xs-3">
-          <a href="/summer_charlie">
-            <img src="http://ruby-china.org/avatar/90772cf58eb0f09b4dc41d5f1ca1334c.png?s=240&amp;d=404" class="img-thumbnail avatar">
+          <a href="">
+            <img src="{{ $user->present()->gravatar(180) }}" class="img-thumbnail users-show-avatar" style="width:120px;height:120px;">
           </a>
         </div>
 

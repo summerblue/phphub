@@ -14,7 +14,7 @@ class UsersTableSeeder extends Seeder {
 				'github_id'        => $index,
 				'github_url'       => $faker->url(),
 				'city'             => $faker->city(),
-				'name'  => $faker->userName(),
+				'name'             => $faker->userName(),
 				'twitter_account'  => $faker->userName(),
 				'company'          => $faker->userName(),
 				'personal_website' => $faker->url(),

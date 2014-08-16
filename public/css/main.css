@@ -55,6 +55,8 @@ html, body {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px; }
+  #wrap .img-thumbnail {
+    padding: 1px; }
 
 .meta, .operate {
   color: #d0d0d0;

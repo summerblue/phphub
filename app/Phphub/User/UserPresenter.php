@@ -8,11 +8,11 @@ class UserPresenter extends Presenter
     /**
      * Present a link to the user gravatar
      */
-    public function gravatar($size = 30)
+    public function gravatar($size = 80)
     {
-        $email = md5($this->email);
-
-        return "//gravatar.com/avatar/{$email}?s={$size}";
+        $github_id = $this->github_id;
+        $domainNumber = rand(0,3);
+        return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
     }
 
     public function userinfoNavActive($anchor)

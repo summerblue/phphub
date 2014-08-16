@@ -5,7 +5,7 @@
 
     <div class="avatar pull-left">
       <a href="{{ route('users.show', [$reply->user_id]) }}">
-        <img class="media-object img-thumbnail" alt="{{ $reply->user->name }}" src="holder.js/48x48"/>
+        <img class="media-object img-thumbnail avatar" alt="{{ $reply->user->name }}" src="{{ $reply->user->present()->gravatar }}"  style="width:48px;height:48px;"/>
       </a>
     </div>
 

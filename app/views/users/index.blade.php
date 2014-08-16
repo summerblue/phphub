@@ -16,7 +16,7 @@
       <div class="col-md-1 item">
         <div class="avatar">
           <a href="{{ route('users.show', $user->id) }}">
-            <img src="holder.js/48x48" class="img-thumbnail"/>
+            <img src="{{ $user->present()->gravatar }}" class="img-thumbnail avatar"  style="width:48px;height:48px;"/>
           </a>
         </div>
 

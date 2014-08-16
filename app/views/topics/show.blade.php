@@ -14,7 +14,7 @@
 
       <div class="pull-right avatar_large">
         <a href="{{ route('users.show', $topic->user->id) }}">
-          <img src="holder.js/52x52"/>
+          <img src="{{ $topic->user->present()->gravatar }}" style="width:52px; height:52px;" class="img-thumbnail avatar" />
         </a>
       </div>
 
@@ -61,10 +61,22 @@
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
       <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
       <div class="form-group">
-        {{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => 5, 'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
+
+        @if ($currentUser)
+          {{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => 5, 'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
+        @else
+          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => "登录用户才能发表评论."]) }}
+        @endif
+        
       </div>
       <div class="form-group status-post-submit">
-        {{ Form::submit('提交回复', ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
+
+        @if ($currentUser)
+          {{ Form::submit('提交回复', ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
+        @else
+          {{ Form::submit('提交回复', ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
+        @endif
+
       </div>
       <ul class="helpblock">
         <li>支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code></li>

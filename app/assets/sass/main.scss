@@ -63,6 +63,10 @@ body {
   margin: 0 auto -60px;
   /* Pad bottom by footer height */
   padding: 0 0 60px;
+
+  .avatar {
+    padding: 1px;
+  }
 }
 
 .meta, .operate {
@@ -299,9 +303,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 .users-show{
 
-  .avatar {
-    width: 120px; 
-    height: 120px; 
+  .users-show-avatar {
     margin: 4px 54px 0px 0px;
   }
 
