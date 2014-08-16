@@ -48,7 +48,19 @@ body {
   padding: 0 0 60px;
 }
 
+.meta, .operate {
+  color: #d0d0d0;
+  font-size: 12px;
 
+  a {
+    padding: 1px 5px;
+    color: #778087;
+    text-decoration: none;
+  }
+  .timeago {
+    font-size: 11px;
+  }
+}
 
 .badge-reply-count {
   margin: 15px 20px;
@@ -235,17 +247,6 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     font-weight: bold;
   }
 
-  .meta, .operate {
-    color: #d0d0d0;
-    font-size: 12px;
-
-    a {
-      padding: 1px 5px;
-      color: #778087;
-      text-decoration: none;
-    }
-  }
-
   .ribbon {
     margin-top: 20px;
     margin-bottom: -15px;
@@ -278,6 +279,38 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   }  
 }
 
+
+.users-show{
+
+  .avatar {
+    width: 120px; 
+    height: 120px; 
+    margin: 44px 54px 0px 0px;
+  }
+
+  dl {
+
+    dt {
+      width: 110px;
+      font-weight: normal;
+      color: #bbb;
+    }
+
+    dd {
+      margin-left: 127px;
+    }
+
+    dt, dd {
+      font-size: 14px;
+      line-height: 180%;
+      border-bottom: 1px dashed #eee;
+    }
+  }
+
+  .user-info-nav {
+    border: none;
+  }
+} 
 
 // desktop
 @media (min-width: 1200px) {

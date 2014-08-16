@@ -18,6 +18,25 @@ Route::get('/wiki', [
 	'uses' => 'PagesController@wiki'
 ]);
 
+# ------------------ User stuff ------------------------
+
+Route::get('/users/{id}/replies', [
+	'as' => 'users.replies',
+	'uses' => 'UsersController@replies'
+]);
+
+Route::get('/users/{id}/topics', [
+	'as' => 'users.topics',
+	'uses' => 'UsersController@topics'
+]);
+
+Route::get('/users/{id}/favorites', [
+	'as' => 'users.favorites',
+	'uses' => 'UsersController@favorites'
+]);
+
+
+
 # ------------------ Authentication ------------------------
 
 Route::get('login', [

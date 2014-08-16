@@ -41,6 +41,16 @@ html, body {
   /* Pad bottom by footer height */
   padding: 0 0 60px; }
 
+.meta, .operate {
+  color: #d0d0d0;
+  font-size: 12px; }
+  .meta a, .operate a {
+    padding: 1px 5px;
+    color: #778087;
+    text-decoration: none; }
+  .meta .timeago, .operate .timeago {
+    font-size: 11px; }
+
 .badge-reply-count {
   margin: 15px 20px;
   background-color: #8BAFCE; }
@@ -167,13 +177,6 @@ embed {
   line-height: 100%;
   margin-bottom: 8px;
   font-weight: bold; }
-.topics-show .meta, .topics-show .operate {
-  color: #d0d0d0;
-  font-size: 12px; }
-  .topics-show .meta a, .topics-show .operate a {
-    padding: 1px 5px;
-    color: #778087;
-    text-decoration: none; }
 .topics-show .ribbon {
   margin-top: 20px;
   margin-bottom: -15px; }
@@ -196,6 +199,23 @@ embed {
 
 .replies-index .operate a {
   color: #d0d0d0; }
+
+.users-show .avatar {
+  width: 120px;
+  height: 120px;
+  margin: 44px 54px 0px 0px; }
+.users-show dl dt {
+  width: 110px;
+  font-weight: normal;
+  color: #bbb; }
+.users-show dl dd {
+  margin-left: 127px; }
+.users-show dl dt, .users-show dl dd {
+  font-size: 14px;
+  line-height: 180%;
+  border-bottom: 1px dashed #eee; }
+.users-show .user-info-nav {
+  border: none; }
 
 @media (min-width: 1200px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {

@@ -27,6 +27,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         $this->hasMany('Topic');
     }
 
+    public function replies() 
+    {
+        $this->hasMany('Reply');
+    }
+
     public function getByGithubId($id)
     {
         return $this->where('github_id', '=', $id)->first();

@@ -20,6 +20,15 @@ class RepliesTableSeeder extends Seeder {
 				'body'   => $faker->sentence(),
 			]);
 		}
+
+		foreach(range(1, 60) as $index)
+		{
+			Reply::create([
+				'user_id' => 1,
+				'topic_id' => $faker->randomElement($topics),
+				'body'   => $faker->sentence(),
+			]);
+		}
 	}
 
 }

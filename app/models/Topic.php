@@ -96,4 +96,17 @@ class Topic extends \Eloquent
 						->remember(10)
 						->get();
 	}
+
+	public static function userRecentTopics($user_id, $limit = 10)
+	{
+		return Topic::where('user_id', $user_id)->with('node')->limit($limit)->get();
+	}
+
+	public static function userTopicsWithPagination($user_id, $limit = 20)
+	{
+		return Topic::where('user_id', '=', $user_id)
+						->orderBy('created_at', 'desc')
+						->with('node')
+						->paginate($limit);
+	}
 }
