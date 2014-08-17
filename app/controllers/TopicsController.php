@@ -1,6 +1,7 @@
 <?php
 
 use Phphub\Core\CreatorListener;
+use Phphub\Forms\TopicCreationForm;
 
 class TopicsController extends \BaseController implements CreatorListener 
 {
@@ -8,7 +9,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
 	public function __construct(Topic $topic)
     {
-        $this->beforeFilter('auth', ['only' => 'create', 'store']);
+        $this->beforeFilter('auth', ['except' => ['index', 'show']]);
         $this->topic = $topic;
     }
 
@@ -38,6 +39,7 @@ class TopicsController extends \BaseController implements CreatorListener
 	public function show($id)
 	{
 		$topic = Topic::findOrFail($id);
+		$this->authorOrAdminPermissioinRequire($topic);
 		$replies = $topic->getRepliesWithLimit();
 
 		$topic->view_count++;
@@ -53,24 +55,25 @@ class TopicsController extends \BaseController implements CreatorListener
 	public function edit($id)
 	{
 		$topic = Topic::findOrFail($id);
+		$this->authorOrAdminPermissioinRequire($topic);
+		$nodes = Node::allLevelUp();
+		$node = $topic->node;
 
-		return View::make('topics.edit', compact('topic'));
+		return View::make('topics.create', compact('topic', 'nodes', 'node'));
 	}
 
 	public function update($id)
 	{
 		$topic = Topic::findOrFail($id);
+		$data = Input::only('title', 'body', 'node_id');
 
-		$validator = Validator::make($data = Input::all(), Topic::$rules);
-
-		if ($validator->fails())
-		{
-			return Redirect::back()->withErrors($validator)->withInput();
-		}
+        // Validation
+		App::make('Phphub\Forms\TopicCreationForm')->validate($data);
 
 		$topic->update($data);
 
-		return Redirect::route('topics.index');
+		Flash::success('话题更新成功.');
+		return Redirect::route('topics.show', $topic->id);
 	}
 
 	public function recomend($id)

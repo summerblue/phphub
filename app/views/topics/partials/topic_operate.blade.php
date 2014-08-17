@@ -1,5 +1,6 @@
 <div class="panel-footer operate">
   <div class="pull-right">
+
     <a data-followed="false" data-id="15887" href="#" onclick="return Topics.follow(this);" rel="twipsy" data-original-title="">
       <i class="glyphicon glyphicon-eye-open"></i> 关注
     </a>
@@ -15,19 +16,23 @@
     @endif
 
     @if ($currentUser && $currentUser->can("manage_topics") )
-
       <a id="topic-recomend-button" href="{{ route('topics.recomend', [$topic->id]) }}" >
         <i class="fa fa-trophy"></i> <span>{{ $topic->is_excellent ? '取消' : '推荐' }}</span>
       </a>
 
-      <a id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}" rel="">
+      <a id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}">
         <i class="fa fa-graduation-cap"></i> <span>{{ $topic->is_wiki ? '取消' : 'Wiki' }}</span>
       </a>
 
-      <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" rel="" onclick=" return confirm('确定要删除此话题吗?')">
+      <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" onclick=" return confirm('确定要删除此话题吗?')">
         <i class="fa fa-trash-o"></i> <span>删除</span>
       </a>
+    @endif
 
+    @if ($currentUser && $currentUser->can("manage_topics") )
+      <a id="topic-delete-button" href="{{ route('topics.edit', [$topic->id]) }}">
+        <i class="fa fa-pencil-square-o"></i> <span>编辑</span>
+      </a>
     @endif
 
   </div>
