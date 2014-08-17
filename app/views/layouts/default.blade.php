@@ -44,15 +44,6 @@ PHPhub - PHP & Laravel的中文社区
 	    </div>
 	  </div>
 
-		<script>
-			(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-			function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-			e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-			e.src='//www.google-analytics.com/analytics.js';
-			r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-			ga('create','UA-XXXXX-X');ga('send','pageview');
-		</script>
-		
 		<script src="//cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//cdn.staticfile.org/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="//cdn.staticfile.org/holder/2.3.1/holder.min.js"></script>
@@ -76,6 +67,17 @@ PHPhub - PHP & Laravel的中文社区
 			});
 	    </script>
 	    @yield('scripts')
+
+		
+		<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-53903425-1', 'auto');
+		  ga('send', 'pageview');
+		</script>
 
 	</body>
 </html>
