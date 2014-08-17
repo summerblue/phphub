@@ -13,7 +13,7 @@ Route::get('/about', [
 ]);
 
 Route::get('/wiki', [
-	'as' => 'pages.wiki',
+	'as' => 'wiki',
 	'uses' => 'PagesController@wiki'
 ]);
 
