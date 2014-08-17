@@ -39,7 +39,12 @@
     </div>
 
     <div class="panel-body">
-      @include('topics.partials.replies')  
+
+      @if (count($replies))
+        @include('topics.partials.replies')  
+      @else
+         <div class="empty-block">还未有人评论~~</div>
+      @endif
 
       <!-- Pager -->
       <div class="pull-right" style="padding-right:20px"> 

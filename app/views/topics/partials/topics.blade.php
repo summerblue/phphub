@@ -1,5 +1,8 @@
-<ul class="list-group row">
 
+
+@if (count($topics))
+  
+<ul class="list-group row">
 	@foreach ($topics as $topic)
 	 <li class="list-group-item media {{ !$column ?:'col-xs-6'; }}" style="margin-top: 0px;">
 
@@ -20,7 +23,6 @@
 		  		{{ $column ? str_limit($topic->title, '50') : str_limit($topic->title, '100') }}
 		  	</a>
 		  </div>
-
 		  <div class="media-body meta">
 		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{ $topic->node->name }}" class="remove-padding-left">
 		  		{{ $topic->node->name }}
@@ -31,20 +33,23 @@
 			</a>
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
-		  	
 			@if (count($topic->lastReplyUser))
 				<span> • </span>最后回复来自 
 			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
 	              {{{ $topic->lastReplyUser->name }}}
 	            </a>
 			@endif
-		  	
 		  </div>
 		  
 		</div>
 
 	</li>
 	@endforeach
-
 </ul>
+
+@else
+   <div class="empty-block">还未有话题~~</div>
+@endif
+
+
 

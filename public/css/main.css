@@ -10,7 +10,8 @@ html, body {
   border: 3px dotted #ccc;
   text-align: center;
   line-height: 100px;
-  margin: 10px; }
+  margin: 10px;
+  color: #ccc; }
 
 .panel {
   border: none; }
