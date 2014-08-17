@@ -2,7 +2,7 @@ html,
 body {
   /* for sticky footer */
   height: 100%;
-  
+   
   font-size: 13px;
   color: #333333;
   font-family: "Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
@@ -10,13 +10,19 @@ body {
 }
  
 .empty-block {
-  border: 3px dotted #ccc;
+  border: 3px dotted #ccc; 
   text-align: center;
   line-height: 100px;
   margin: 10px;
   color: #ccc;
 }
-
+.box {
+  background-color: #fff;
+  padding: 10px;
+  margin: 0 0 20px 0;
+  border-radius: 3px;
+  box-shadow: 0 0px 2px rgba(0,0,0,0.07);
+}
 .panel {
   border: none;
 }

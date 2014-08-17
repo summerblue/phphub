@@ -9,3 +9,5 @@ composer.phar
 Thumbs.db
 
 tests/_output/*
+
+Envoy.blade.php

@@ -19,9 +19,7 @@
   .markdown-body img {
     border: 0; }
   .markdown-body hr {
-    -moz-box-sizing: content-box;
-    -webkit-box-sizing: content-box;
-            box-sizing: content-box;
+    box-sizing: content-box;
     height: 0; }
   .markdown-body pre {
     overflow: auto; }
@@ -34,9 +32,7 @@
   .markdown-body td, .markdown-body th {
     padding: 0; }
   .markdown-body * {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+    box-sizing: border-box; }
   .markdown-body a {
     color: #4183c4;
     text-decoration: none; }
@@ -178,17 +174,14 @@
     background-color: #f8f8f8; }
   .markdown-body img {
     max-width: 100%;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+    box-sizing: border-box; }
   .markdown-body code {
     padding: 0;
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
     background-color: rgba(0, 0, 0, 0.04);
-    -webkit-border-radius: 3px;
-            border-radius: 3px; }
+    border-radius: 3px; }
   .markdown-body code:before, .markdown-body code:after {
     letter-spacing: -0.2em;
     content: "\00a0"; }
@@ -206,8 +199,7 @@
     overflow: auto;
     line-height: 1.45;
     background-color: #f7f7f7;
-    -webkit-border-radius: 3px;
-            border-radius: 3px; }
+    border-radius: 3px; }
   .markdown-body .highlight pre {
     margin-bottom: 0; }
   .markdown-body pre {
