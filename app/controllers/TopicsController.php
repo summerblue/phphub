@@ -39,7 +39,6 @@ class TopicsController extends \BaseController implements CreatorListener
 	public function show($id)
 	{
 		$topic = Topic::findOrFail($id);
-		$this->authorOrAdminPermissioinRequire($topic);
 		$replies = $topic->getRepliesWithLimit();
 
 		$topic->view_count++;
@@ -67,6 +66,8 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic = Topic::findOrFail($id);
 		$data = Input::only('title', 'body', 'node_id');
 
+		$this->authorOrAdminPermissioinRequire($topic);
+		
         // Validation
 		App::make('Phphub\Forms\TopicCreationForm')->validate($data);
 
