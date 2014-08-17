@@ -343,7 +343,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 } 
 
 // desktop
-@media (min-device-width: 1000px) {
+@media (min-width: 1000px) { 
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
   width: 1000px;
@@ -352,12 +352,12 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 }
 
 // ipad
-@media (max-device-width: 640px) {
+@media (max-width: 640px) {
   .col-xs-6 { width: 100%; float: none;}
 }
 
 // ipad
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .node-panel {
     
     .remove-padding-vertically {

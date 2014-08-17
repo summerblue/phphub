@@ -245,16 +245,16 @@ embed {
 .users-show .user-info-nav {
   border: none; }
 
-@media (min-device-width: 1000px) {
+@media (min-width: 1000px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
     width: 1000px; } }
 
-@media (max-device-width: 640px) {
+@media (max-width: 640px) {
   .col-xs-6 {
     width: 100%;
     float: none; } }
 
-@media (max-device-width: 768px) {
+@media (max-width: 768px) {
   .node-panel .remove-padding-vertically {
     padding-left: 15px;
     padding-right: 15px; }
