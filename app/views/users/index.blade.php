@@ -9,7 +9,6 @@
 <div class="panel panel-default">
   <div class="panel-heading text-center">会员列表</div>
 
-
   <div class="panel-body">
     @foreach ($users as $user)
     

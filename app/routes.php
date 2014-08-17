@@ -3,12 +3,12 @@
 # ------------------ Page Route ------------------------
 
 Route::get('/', [
-    'as' => 'pages.home',
+    'as' => 'home',
     'uses'=>'PagesController@home'
 ]);
 
 Route::get('/about', [
-    'as' => 'pages.about',
+    'as' => 'about',
     'uses' => 'PagesController@about'
 ]);
 
