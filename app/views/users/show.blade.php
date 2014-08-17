@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="col-md-8 col-md-offset-2 users-show">
+<div class="col-md-8 col-md-offset-2 users-show main-col">
 
   <div class="panel panel-default">
 

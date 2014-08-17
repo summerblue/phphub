@@ -8,7 +8,8 @@ body {
   font-family: "Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
   background: #e5e5e5;
 }
- 
+
+
 .empty-block {
   border: 3px dotted #ccc; 
   text-align: center;
@@ -47,6 +48,11 @@ body {
 .side-bar {
   padding-left: 0px;
   padding-right: 0px;
+}
+
+.add-padding-vertically {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .remove-padding-bottom {
@@ -367,21 +373,36 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   }
 
   .main-col {
-    padding-left: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   .side-bar {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
   }
   ul.topic-filter {
     li {
+      padding-left: 1px;
       padding-right: 0px;
+      font-size: 11px;
     }
 
     float: left!important;
-    margin-top: 10px;
+    margin-top: 2px;
   }
   .badge-reply-count {
     margin: 20px 0px;
+  }
+
+  .users-index {
+    .col-md-1.remove-padding-right {
+      float: left;
+    }
+  }
+
+  .users-show {
+    dl dd {
+      margin-left: inherit;
+    }
   }
 }

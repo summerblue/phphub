@@ -44,6 +44,10 @@ html, body {
   padding-left: 0px;
   padding-right: 0px; }
 
+.add-padding-vertically {
+  padding-left: 15px;
+  padding-right: 15px; }
+
 .remove-padding-bottom {
   padding-bottom: 0px; }
 
@@ -259,14 +263,21 @@ embed {
     padding-left: 15px;
     padding-right: 15px; }
   .main-col {
-    padding-left: 15px; }
+    padding-left: 0px;
+    padding-right: 0px; }
   .side-bar {
-    padding-left: 15px;
-    padding-right: 15px; }
+    padding-left: 0px;
+    padding-right: 0px; }
   ul.topic-filter {
     float: left !important;
-    margin-top: 10px; }
+    margin-top: 2px; }
     ul.topic-filter li {
-      padding-right: 0px; }
+      padding-left: 1px;
+      padding-right: 0px;
+      font-size: 11px; }
   .badge-reply-count {
-    margin: 20px 0px; } }
+    margin: 20px 0px; }
+  .users-index .col-md-1.remove-padding-right {
+    float: left; }
+  .users-show dl dd {
+    margin-left: inherit; } }

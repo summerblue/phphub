@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="col-md-8 col-md-offset-2 users-show">
+<div class="col-md-8 col-md-offset-2 users-show main-col">
 
   <div class="panel panel-default">
 
@@ -17,7 +17,7 @@
       
       @if (count($replies))
 	      @include('users.partials.replies')
-	      <div class="pull-right">
+	      <div class="pull-right add-padding-vertically">
 	        {{ $replies->links(); }}
 	      </div>
       @else

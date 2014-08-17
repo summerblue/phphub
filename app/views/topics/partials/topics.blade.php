@@ -4,7 +4,7 @@
   
 <ul class="list-group row">
 	@foreach ($topics as $topic)
-	 <li class="list-group-item media {{ !$column ?:'col-xs-6'; }}" style="margin-top: 0px;">
+	 <li class="list-group-item media {{ !$column ?:'col-sm-6'; }}" style="margin-top: 0px;">
 
 		<a class="pull-right" href="{{ route('topics.show', [$topic->id]) }}" >
 			<span class="badge badge-reply-count"> {{ $topic->reply_count }} </span>

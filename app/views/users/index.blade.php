@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="panel panel-default">
+<div class="panel panel-default users-index">
   <div class="panel-heading text-center">会员列表</div>
 
   <div class="panel-body">

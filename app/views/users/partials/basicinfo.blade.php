@@ -1,10 +1,10 @@
-<div style="text-align: center;" class="pull-right col-xs-3">
+<div style="text-align: center;" class="pull-right col-md-3">
   <a href="">
     <img src="{{ $user->present()->gravatar(180) }}" class="img-thumbnail users-show-avatar" style="width:120px;height:120px;">
   </a>
 </div>
 
-<dl class="dl-horizontal pull-left col-xs-9">
+<dl class="dl-horizontal pull-left col-md-9">
   
   <dt><lable>&nbsp; </lable></dt><dd>第 {{ $user->id }} 位会员</dd>
 

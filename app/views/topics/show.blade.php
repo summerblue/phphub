@@ -6,10 +6,10 @@
 
 @section('content')
 
-<div class="col-md-9 topics-show main-col">
+<div class="col-sm-9 topics-show main-col">
 
   <!-- Topic Detial -->
-  <div class="topic hentry panel panel-default">
+  <div class="topic panel panel-default">
     <div class="infos panel-heading">
 
       <div class="pull-right avatar_large">

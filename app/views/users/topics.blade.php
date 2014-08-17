@@ -7,7 +7,7 @@
 @section('content')
 
 
-<div class="col-md-8 col-md-offset-2 users-show">
+<div class="col-md-8 col-md-offset-2 users-show main-col">
 
   <div class="panel panel-default">
 
@@ -17,7 +17,7 @@
       
       @if (count($topics))
 	    @include('users.partials.topics')
-	    <div>
+	    <div class="pull-right add-padding-vertically">
 	        {{ $topics->links(); }}
 	    </div>
       @else
