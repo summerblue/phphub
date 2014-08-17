@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="panel panel-default">
-  <div class="panel-heading text-center">TOP 108 活跃会员 (目前已经有 10381 位会员加入了 PHPhub。)</div>
+  <div class="panel-heading text-center">会员列表</div>
 
 
   <div class="panel-body">
