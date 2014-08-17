@@ -16,6 +16,7 @@
     
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
 
+    @if (count($topics))
       <div class="list-group">
         @foreach ($topics as $topic)
           <a class="list-group-item {{ count($topics) <= 20 ?: 'col-md-6' }}" href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
@@ -23,6 +24,9 @@
           </a>
         @endforeach
       </div>
+    @else
+      <div class="empty-block">还未有主题~~</div>  
+    @endif
 
     </div>
 
