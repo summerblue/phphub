@@ -102,7 +102,7 @@
     outline: none; }
   .markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4, .markdown-body h5, .markdown-body h6 {
     position: relative;
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 16px;
     font-weight: bold;
     line-height: 1.4; }
