@@ -36,5 +36,15 @@ class PagesController extends \BaseController {
 		$topics = $this->topic->getWikiList();
 		return View::make('pages.wiki', compact('topics'));
 	}
+	
+	/**
+	 * 搜索功能
+	 */
+	public function search()
+	{
+		$query = Input::get('q');
+		return Redirect::away('https://www.google.com/search?q=site:phphub.org ' . $query, 301);
+	}
+
 
 }

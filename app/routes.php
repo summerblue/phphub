@@ -1,6 +1,6 @@
 <?php
 
-# ------------------ Pages Route ------------------------
+# ------------------ Page Route ------------------------
 
 Route::get('/', [
     'as' => 'pages.home',
@@ -12,10 +12,14 @@ Route::get('/about', [
     'uses' => 'PagesController@about'
 ]);
 
-
 Route::get('/wiki', [
 	'as' => 'pages.wiki',
 	'uses' => 'PagesController@wiki'
+]);
+
+Route::get('/search', [
+	'as' => 'search',
+	'uses' => 'PagesController@search'
 ]);
 
 # ------------------ User stuff ------------------------

@@ -12,14 +12,15 @@
         <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">会员</a></li>
         <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('pages.about') }}">关于</a></li>
       </ul>
-      <form role="search" class="navbar-form navbar-left">
+
+      {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
         <div class="form-group">
-          <input type="text" placeholder="搜索" class="form-control mac-style"/>
+          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => "搜索"]) }}
         </div>
-        <button type="submit" class="btn btn-default btn-circle"><i class="glyphicon glyphicon-search"></i></button>
-      </form>
+        <button type="submit" class="btn btn-default btn-circle"><i class="fa fa-search"></i></button>
+      {{ Form::close() }}
+
       <ul class="nav navbar-nav navbar-right github-login" >
-        
         @if (Auth::check())
             <li><a href="{{ route('users.show', $currentUser->id) }}"><i class="fa fa-user"></i> {{ $currentUser->name }}</a></li>
             <li><a class="button" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> 退出</a></li>
