@@ -1,7 +1,7 @@
 <div class="col-sm-3 side-bar">
 
 
-  <div class="panel panel-default corner-radius box">
+  <div class="panel panel-default corner-radius">
 
     @if (isset($node))
       <div class="panel-heading text-center">
@@ -21,7 +21,7 @@
   </div>
 
   @if (isset($links) && count($links))
-    <div class="panel panel-default corner-radius box">
+    <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
         <h3 class="panel-title">友情社区</h3>
       </div>
@@ -42,7 +42,7 @@
   @endif
 
   @if (isset($nodeTopics) && count($nodeTopics))
-    <div class="panel panel-default corner-radius box">
+    <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
         <h3 class="panel-title">节点下其他话题</h3>
       </div>
@@ -62,7 +62,7 @@
     </div>
   @endif
 
-  <div class="panel panel-default corner-radius box">
+  <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
       <h3 class="panel-title">小贴士</h3>
     </div>
@@ -72,7 +72,7 @@
   </div>
 
 
-  <div class="panel panel-default corner-radius box">
+  <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
       <h3 class="panel-title">统计信息</h3>
     </div>

@@ -62,7 +62,7 @@
     
     @if ( $node )
 
-    <div class="panel panel-default corner-radius box help-box">
+    <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
         <h3 class="panel-title">当前节点 : {{{ $node->name }}}</h3>
       </div>
@@ -73,7 +73,7 @@
 
     @endif
 
-    <div class="panel panel-default corner-radius box help-box">
+    <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
         <h3 class="panel-title">格式说明</h3>
       </div>
@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <div class="panel panel-default corner-radius box help-box">
+    <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
         <h3 class="panel-title">以下类型的信息会污染我们的社区</h3>
       </div>
@@ -102,7 +102,7 @@
       </div>
     </div>
 
-    <div class="panel panel-default corner-radius box help-box">
+    <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
         <h3 class="panel-title">在高质量优秀社区的我们</h3>
       </div>
