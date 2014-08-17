@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ $user->name }} 的收藏列表_@parent 
+{{{ $user->name }}} 的收藏列表_@parent 
 @stop
 
 @section('content')

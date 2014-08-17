@@ -31,7 +31,7 @@
               <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>请选择节点</option>
 
               @foreach ($nodes['top'] as $top_node)
-                <optgroup label="{{ $top_node->name }}">
+                <optgroup label="{{{ $top_node->name }}}">
                   @foreach ($nodes['second'][$top_node->id] as $snode)
                     <option value="{{ $snode->id }}" {{ App::make('Topic')->present()->haveDefaultNode($node, $snode) ? 'selected' : ''; }} >{{ $snode->name }}</option>
                   @endforeach
@@ -64,7 +64,7 @@
 
     <div class="panel panel-default corner-radius box help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">当前节点 : {{ $node->name }}</h3>
+        <h3 class="panel-title">当前节点 : {{{ $node->name }}}</h3>
       </div>
       <div class="panel-body">
         {{ $node->description }}

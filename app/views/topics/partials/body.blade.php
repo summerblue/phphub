@@ -3,5 +3,5 @@
 </div>
 
 <div class="markdown-body" id="emojify" style="display:none;">
-{{ $body }}  
+{{{ $body }}}
 </div>

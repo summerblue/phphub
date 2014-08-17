@@ -18,8 +18,8 @@
 
       <div class="list-group">
         @foreach ($topics as $topic)
-          <a class="list-group-item {{ count($topics) <= 20 ?: 'col-md-6' }}" href="{{ route('topics.show', [$topic->id]) }}" title="{{ $topic->title }}">
-            {{ str_limit($topic->title, '100') }}
+          <a class="list-group-item {{ count($topics) <= 20 ?: 'col-md-6' }}" href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
+            {{{ str_limit($topic->title, '100') }}}
           </a>
         @endforeach
       </div>

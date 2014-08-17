@@ -12,7 +12,7 @@
 
         <ul class="list-inline">
           @foreach ($nodes['second'][$top_node->id] as $snode)
-              <li><a href="{{ route('nodes.show', [$snode->id]) }}">{{ $snode->name }}</a></li>
+              <li><a href="{{ route('nodes.show', [$snode->id]) }}">{{{ $snode->name }}}</a></li>
           @endforeach
         </ul>
         

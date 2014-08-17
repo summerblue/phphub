@@ -15,7 +15,7 @@
 
 			<div class="panel-heading">
 		      @if (isset($node))
-		      	<div class="pull-left panel-title">当前节点: {{ $node->name }}</div>
+		      	<div class="pull-left panel-title">当前节点: {{{ $node->name }}}</div>
 		      @endif
 
 			  @include('topics.partials.filter')

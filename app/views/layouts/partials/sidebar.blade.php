@@ -5,7 +5,7 @@
 
     @if (isset($node))
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ $node->name }}</h3>
+        <h3 class="panel-title">{{{ $node->name }}}</h3>
       </div>
     @endif
 

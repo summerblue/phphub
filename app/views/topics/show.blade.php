@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ $topic->title }}_@parent 
+{{{ $topic->title }}}_@parent 
 @stop
 
 @section('content')
@@ -18,7 +18,7 @@
         </a>
       </div>
 
-      <h1 class="panel-title topic-title">{{ $topic->title }}</h1>
+      <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
       @include('topics.partials.meta')
     </div>
 

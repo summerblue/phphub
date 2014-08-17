@@ -5,15 +5,15 @@
 
     <div class="avatar pull-left">
       <a href="{{ route('users.show', [$reply->user_id]) }}">
-        <img class="media-object img-thumbnail avatar" alt="{{ $reply->user->name }}" src="{{ $reply->user->present()->gravatar }}"  style="width:48px;height:48px;"/>
+        <img class="media-object img-thumbnail avatar" alt="{{{ $reply->user->name }}}" src="{{ $reply->user->present()->gravatar }}"  style="width:48px;height:48px;"/>
       </a>
     </div>
 
     <div class="infos">
 
       <div class="media-heading meta">
-        <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{ $reply->user->name }}" class="remove-padding-left">
-            {{ $reply->user->name }}
+        <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{{ $reply->user->name }}}" class="remove-padding-left">
+            {{{ $reply->user->name }}}
         </a>
         
         <a class="reply-floor" href="#reply{{ $index+1 }}">{{ $index +1 }}楼</a> · <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
@@ -26,7 +26,7 @@
       </div>
 
       <div class="media-body">
-        {{ $reply->body }}
+        {{{ $reply->body }}}
       </div>
       
     </div>
