@@ -25,8 +25,8 @@
       
       </div>
 
-      <div class="media-body">
-        {{{ $reply->body }}}
+      <div class="media-body markdown-reply">
+{{{ $reply->body }}}
       </div>
       
     </div>
