@@ -6,28 +6,38 @@
 
 @section('content')
 
-@if ( ! $topics->isEmpty())
+
 
 <div class="col-md-9 topics-index main-col">
 	<div class="panel panel-default">
-		<div class="panel-heading">
-	      @if (isset($node))
-	      	<div class="pull-left panel-title">当前节点: {{ $node->name }}</div>
-	      @endif
 
-		  @include('topics.partials.filter')
+		@if ( ! $topics->isEmpty())
 
-	      <div class="clearfix"></div>
-	    </div>
-		
-		<div class="panel-body remove-padding-horizontal">
-			@include('topics.partials.topics', ['column' => false])
-		</div>
+			<div class="panel-heading">
+		      @if (isset($node))
+		      	<div class="pull-left panel-title">当前节点: {{ $node->name }}</div>
+		      @endif
 
-		<div class="panel-footer text-right remove-padding-horizontal pager-footer">
-			<!-- Pager --> 
-			{{ $topics->appends(Request::except('page'))->links(); }}
-		</div>
+			  @include('topics.partials.filter')
+
+		      <div class="clearfix"></div>
+		    </div>
+			
+			<div class="panel-body remove-padding-horizontal">
+				@include('topics.partials.topics', ['column' => false])
+			</div>
+
+			<div class="panel-footer text-right remove-padding-horizontal pager-footer">
+				<!-- Pager --> 
+				{{ $topics->appends(Request::except('page'))->links(); }}
+			</div>
+
+		@else
+			
+			<div class="empty-block">还未有主题~~</div>
+
+		@endif
+
 	</div>
 
 	<!-- Nodes Listing -->
@@ -37,8 +47,5 @@
 
 @include('layouts.partials.sidebar')
 
-@else
-	There are no topics
-@endif
 
 @stop
