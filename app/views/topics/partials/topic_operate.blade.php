@@ -29,7 +29,7 @@
       </a>
     @endif
 
-    @if ($currentUser && $currentUser->can("manage_topics") )
+    @if ($currentUser->id == $topic->id && $currentUser->can("manage_topics") )
       <a id="topic-delete-button" href="{{ route('topics.edit', [$topic->id]) }}">
         <i class="fa fa-pencil-square-o"></i> <span>编辑</span>
       </a>
