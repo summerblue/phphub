@@ -48,10 +48,10 @@ class Topic extends \Eloquent
 		return $this->where('is_wiki', '=', true)->orderBy('created_at', 'desc')->get();
 	}
 
-	public function getRepliesWithLimit($limit = 10)
+	public function getRepliesWithLimit($limit = 30)
 	{
 		return $this->replies()
-					->orderBy('created_at', 'desc')
+					->orderBy('created_at', 'asc')
 					->with('user')
 					->paginate($limit);
 	}
