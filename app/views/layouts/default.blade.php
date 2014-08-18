@@ -57,10 +57,10 @@ PHPhub - PHP & Laravel的中文社区
 		</div>
 		
 	  <div id="footer" class="footer">
-	    <div class="container">
+	    <div class="container small">
 	      <p class="pull-left">
-	      	<i class="fa fa-heart-o red"></i> Lovingly Made By The EST Group. <br>
-			&nbsp;<i class="fa fa-lightbulb-o" style="color:rgb(87, 87, 87)"></i> Inspire by v2ex & ruby-china.
+	      	<i class="fa fa-heart red"></i> Lovingly Made By The EST Group. <br>
+			&nbsp;<i class="fa fa-lightbulb-o"></i> Inspire by v2ex & ruby-china.
 	      </p>
 
 	      <p class="pull-right">
