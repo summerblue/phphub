@@ -10,16 +10,20 @@
 <div class="col-md-8 col-md-offset-2 users-show main-col">
 
   <div class="panel panel-default">
-
     @include('users.partials.infonav', ['current' => 'basicinfo'])
 
       <div class="panel-body ">
         @include('users.partials.basicinfo')
+    </div>
+  </div>  
+
+  <div class="panel panel-default">
+      <div class="panel-heading">
+          Github Card
       </div>
+      <iframe src="http://lab.lepture.com/github-cards/card.html?user={{ $user->name }}" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
+  </div>  
 
-    </div>  
-
-  
   <div class="panel panel-default">
 
     <ul class="nav nav-tabs user-info-nav" role="tablist">
