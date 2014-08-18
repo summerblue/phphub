@@ -10,6 +10,13 @@
 
   <dt><label>Name:</label></dt><dd><strong>{{{ $user->name }}}</strong></dd>
   
+  <dt><label>Github:</label></dt>
+  <dd>
+    <a href="https://github.com/{{ $user->name }}" target="_blank">
+      <i class="fa fa-github-alt"></i> {{ $user->name }}
+    </a>
+  </dd>
+  
   @if (isset($user->company))
     <dt class="adr"><label>公司:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>  
   @endif
@@ -17,7 +24,7 @@
   @if (isset($user->twitter_account))
   <dt><label><span>Twitter</span>:</label></dt>
   <dd>
-    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter">{{{ '@' . $user->twitter_account }}}
+    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank">{{{ '@' . $user->twitter_account }}}
     </a>
   </dd>
   @endif
