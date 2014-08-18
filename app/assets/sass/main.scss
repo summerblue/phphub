@@ -5,10 +5,13 @@ body {
    
   font-size: 13px;
   color: #333333;
-  font-family: "Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
+  font-family: "Heiti SC Light","Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
   background: #e5e5e5;
 }
 
+.red {
+  color: red;
+}
 
 .empty-block {
   border: 3px dotted #ccc; 
@@ -77,9 +80,9 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -60px;
+  margin: 0 auto -80px;
   /* Pad bottom by footer height */
-  padding: 0 0 60px;
+  padding: 0 0 80px;
 
   .avatar {
     padding: 1px;
@@ -147,13 +150,17 @@ body {
 
 
 #footer {
-  height: 60px;
+  height: 80px;
   background-color: #f5f5f5;
 }
 .footer {
   padding-top: 19px;
-  color: #777;
+  color: #B4B4B4;
+  font-size: 12px;
   border-top: 1px dotted #e5e5e5;
+  i {
+    font-size: 110%;
+  }
 }
 
 embed {

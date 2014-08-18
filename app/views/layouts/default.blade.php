@@ -1,3 +1,19 @@
+<!--
+______                            _              _                                     _  
+| ___ \                          | |            | |                                   | | 
+| |_/ /___ __      __ ___  _ __  | |__   _   _  | |      __ _  _ __  __ _ __   __ ___ | | 
+|  __// _ \\ \ /\ / // _ \| '__| | '_ \ | | | | | |     / _` || '__|/ _` |\ \ / // _ \| | 
+| |  | (_) |\ V  V /|  __/| |    | |_) || |_| | | |____| (_| || |  | (_| | \ V /|  __/| | 
+\_|   \___/  \_/\_/  \___||_|    |_.__/  \__, | \_____/ \__,_||_|   \__,_|  \_/  \___||_| 
+                                          __/ |                                           
+                                         |___/                                            
+  ========================================================
+                                           phphub.org
+
+  --------------------------------------------------------
+  Laravel: v4.2.8
+-->
+
 <!DOCTYPE html>
 <html lang="zh">
 	<head>
@@ -42,7 +58,14 @@ PHPhub - PHP & Laravel的中文社区
 		
 	  <div id="footer" class="footer">
 	    <div class="container">
-	      <p class="small"><i class="glyphicon glyphicon-heart text-danger"></i> Lovingly Made By The EST Group.</p>
+	      <p class="pull-left">
+	      	<i class="fa fa-heart-o red"></i> Lovingly Made By The EST Group. <br>
+			&nbsp;<i class="fa fa-lightbulb-o" style="color:rgb(87, 87, 87)"></i> Inspire by v2ex & ruby-china.
+	      </p>
+
+	      <p class="pull-right">
+	      	<i class="fa fa-cloud"></i> Power by <a href="https://www.linode.com/?r=3cfb2c09c29cf2b6e6c87cc1f71ffdc2f9ea5722" target="_blank">Linode <i class="fa fa-external-link"></i></a>.
+	      </p>
 	    </div>
 	  </div>
 
