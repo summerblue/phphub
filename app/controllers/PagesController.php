@@ -42,7 +42,7 @@ class PagesController extends \BaseController {
 	 */
 	public function search()
 	{
-		$query = Input::get('q');
+		$query = Security::clean(Input::get('q'));
 		return Redirect::away('https://www.google.com/search?q=site:phphub.org ' . $query, 301);
 	}
 

@@ -11,7 +11,8 @@
         "artdarek/oauth-4-laravel": "dev-master",
         "laracasts/presenter": "0.1.*",
         "itsgoingd/clockwork": "1.*",
-        "zizaco/entrust": "1.2.*@dev"
+        "zizaco/entrust": "1.2.*@dev",
+        "graham-campbell/security": "~2.0"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",
