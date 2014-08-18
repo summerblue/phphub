@@ -21,5 +21,5 @@ $(document).ready(function(){
 
 	setTimeout(function(){ 
 		emojify.run();
-	}, 1000); 
+	}, 500); 
 })
