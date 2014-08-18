@@ -358,12 +358,8 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 }
 
 // ipad
-@media (max-width: 640px) {
-  .col-xs-6 { width: 100%; float: none;}
-}
-
-// ipad
 @media (max-width: 768px) {
+  .col-xs-6 { width: 100%; float: none;}
   .node-panel {
     
     .remove-padding-vertically {

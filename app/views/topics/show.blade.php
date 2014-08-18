@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="col-sm-9 topics-show main-col">
+<div class="col-md-9 topics-show main-col">
 
   <!-- Topic Detial -->
   <div class="topic panel panel-default">

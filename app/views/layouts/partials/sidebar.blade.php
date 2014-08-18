@@ -1,4 +1,4 @@
-<div class="col-sm-3 side-bar">
+<div class="col-md-3 side-bar">
 
 
   <div class="panel panel-default corner-radius">
