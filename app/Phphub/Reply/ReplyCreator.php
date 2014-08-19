@@ -2,7 +2,7 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
-use Reply, Auth, Topic, Notification;
+use Reply, Auth, Topic, Notification, Carbon;
 
 class ReplyCreator
 {
@@ -32,6 +32,7 @@ class ReplyCreator
         $topic = Topic::find($data['topic_id']);
         $topic->last_reply_user_id = Auth::user()->id;
         $topic->reply_count++;
+        $topic->updated_at = Carbon::now()->toDateTimeString();
         $topic->save();
 
         // 通知帖子作者

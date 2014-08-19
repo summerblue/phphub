@@ -4,6 +4,9 @@ use Laracasts\Presenter\PresentableTrait;
 
 class Topic extends \Eloquent 
 {
+	// manually maintian
+	public $timestamps = false;
+
 	use PresentableTrait;
 	protected $presenter = 'Phphub\Topic\TopicPresenter';
 
@@ -15,7 +18,9 @@ class Topic extends \Eloquent
 		'title', 
 		'body', 
 		'user_id', 
-		'node_id'
+		'node_id',
+		'created_at',
+		'updated_at'
 	];
 
 	public function favoritedBy()

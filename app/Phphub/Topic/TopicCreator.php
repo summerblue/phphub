@@ -2,7 +2,7 @@
 
 use Phphub\Forms\TopicCreationForm;
 use Phphub\Core\CreatorListener;
-use Topic, Auth;
+use Topic, Auth, Carbon;
 
 class TopicCreator
 {
@@ -18,6 +18,7 @@ class TopicCreator
     public function create(CreatorListener $observer, $data)
     {
         $data['user_id'] = Auth::user()->id;
+        $data['created_at'] = Carbon::now()->toDateTimeString();
 
         // Validation
         $this->form->validate($data);
