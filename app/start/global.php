@@ -60,6 +60,14 @@ App::error(function(Laracasts\Validation\FormValidationException $exception, $co
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });
 
+/**
+ *  Manage Topics Permission error handling.
+ */
+App::error(function(Phphub\Exceptions\ManageTopicsException $exception, $code)
+{
+    return Redirect::route('admin-required');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

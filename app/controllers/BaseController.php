@@ -1,5 +1,6 @@
 <?php
 
+use Phphub\Exceptions\ManageTopicsException;
 
 class BaseController extends Controller {
 
@@ -8,7 +9,7 @@ class BaseController extends Controller {
     {
         $this->beforeFilter('csrf', array('on' => 'post'));
 
-        // for clockwork debuger 
+        // for clockwork debuger
         $this->beforeFilter(function()
 		{
 		    Event::fire('clockwork.controller.start');
@@ -41,9 +42,9 @@ class BaseController extends Controller {
 	 */
 	public function authorOrAdminPermissioinRequire($model)
 	{
-		if (! Entrust::can('manage_topics') && $model->user_id != Auth::user()->id) 
+		if (! Entrust::can('manage_topics') && $model->user_id != Auth::user()->id)
 		{
-			return Redirect::route('admin-required');
+			throw new ManageTopicsException("permission-required");
 		}
 	}
 
