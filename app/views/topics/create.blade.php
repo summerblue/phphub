@@ -81,13 +81,14 @@
         <h3 class="panel-title">格式说明</h3>
       </div>
       <div class="panel-body">
-        <ul class="list-unstyled">
+        <ul class="list">
+          <li>请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a></li>
           <li>支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code></li>
           <li>支持表情，见<a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a></li>
           <li>@name  会链接到用户页面，并会通知他</li>
           <li>![Alt text here](http://foo.com/bar.jpg) 显示图片</li>
           <li>http://example.org 自动加链接</li>
-          <li>在标题中写入城市名称会自动归类到对应的城市节点上. </li>
+          <li>在标题中写入城市名称会自动归类到对应的城市节点上. [还未实现]</li>
         </ul>
       </div>
     </div>
@@ -97,7 +98,7 @@
         <h3 class="panel-title">以下类型的信息会污染我们的社区</h3>
       </div>
       <div class="panel-body">
-        <ul class="list-unstyled">
+        <ul class="list">
           <li>这里放一些关于论坛的基本说明</li>
           <li>请尽量分享技术相关的话题, 谢绝发布社会, 政治等相关新闻</li>
           <li>这里绝对不讨论任何有关盗版软件、音乐、电影如何获得的问题</li>
@@ -110,7 +111,7 @@
         <h3 class="panel-title">在高质量优秀社区的我们</h3>
       </div>
       <div class="panel-body">
-        <ul class="list-unstyled">
+        <ul class="list">
           <li>分享生活见闻, 分享知识</li>
           <li>接触新技术, 讨论技术解决方案</li>
           <li>为自己的创业项目找合伙人, 遇见志同道合的人</li>

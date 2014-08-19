@@ -9,6 +9,15 @@ body {
   background: #e5e5e5;
 }
 
+ul.list {
+  margin: 0;
+  padding-left: 11px;
+  li {
+    margin-bottom: 4px;
+    line-height: 16px;
+  }
+}
+
 .red {
   color: red;
 }
