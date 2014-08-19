@@ -50,8 +50,8 @@
 					  		 • 发生在 • <span class="timeago">{{ $notification->created_at }}</span>
 					  	</span>
 					  </div>
-					  <div class="media-body">
-					  	{{{ $notification->body }}}
+					  <div class="media-body markdown-reply">
+{{{ $notification->body }}}
 					  </div>
 					  
 					</div>

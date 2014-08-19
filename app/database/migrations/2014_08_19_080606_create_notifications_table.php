@@ -19,12 +19,11 @@ class CreateNotificationsTable extends Migration {
 			$table->integer('user_id');
 			$table->integer('topic_id');
 			$table->integer('reply_id')->nullable();
-			$table->string('body')->nullable();
+			$table->text('body')->nullable();
 			$table->string('type');
 			$table->timestamps();
 		});
 	}
-
 
 	/**
 	 * Reverse the migrations.

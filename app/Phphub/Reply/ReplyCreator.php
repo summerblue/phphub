@@ -2,22 +2,26 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
+use Phphub\Core\Mention;
 use Reply, Auth, Topic, Notification, Carbon;
 
 class ReplyCreator
 {
     protected $replyModel;
     protected $form;
+    protected $parser;
 
-    public function __construct(Reply $replyModel, ReplyCreationForm $form)
+    public function __construct(Reply $replyModel, ReplyCreationForm $form, Mention $parser)
     {
         $this->userModel  = $replyModel;
         $this->form = $form;
+        $this->parser = $parser;
     }
 
     public function create(CreatorListener $observer, $data)
     {
         $data['user_id'] = Auth::user()->id;
+        $data['body'] = $this->parser->parse($data['body']);
 
         // Validation
         $this->form->validate($data);
@@ -42,7 +46,7 @@ class ReplyCreator
         Notification::batchNotify('attention', Auth::user(), $topic->attentedBy, $topic, $reply);
         
         // 如果有 "@" 某个用户的话, 一并通知
-        
+        Notification::batchNotify('at', Auth::user(), $this->parser->users, $topic, $reply);
 
         Auth::user()->reply_count++;
         Auth::user()->save();
