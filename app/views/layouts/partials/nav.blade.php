@@ -22,6 +22,9 @@
 
       <ul class="nav navbar-nav navbar-right github-login" >
         @if (Auth::check())
+
+            <li><a href="{{ route('notifications.index') }}" class="text-warning"><span class="badge badge-{{ $currentUser->notifications > 0 ? 'important' : 'fade'; }}">{{ $currentUser->notifications }}</span></a></li>
+
             <li><a href="{{ route('users.show', $currentUser->id) }}"><i class="fa fa-user"></i> {{{ $currentUser->name }}}</a></li>
             <li><a class="button" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> 退出</a></li>
         @else

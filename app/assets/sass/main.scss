@@ -12,7 +12,12 @@ body {
 .red {
   color: red;
 }
-
+.badge-important{
+  background-color: #d15b47!important;
+}
+.badge-fade{
+  background-color: #EBE8E8;
+}
 .empty-block {
   border: 3px dotted #ccc; 
   text-align: center;
@@ -200,6 +205,8 @@ embed {
         font-size: 14px;
       }
     }
+
+
     
   }
 

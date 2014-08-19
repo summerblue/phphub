@@ -45,6 +45,12 @@ Route::get('/favorites/{id}', [
 	'before' => 'auth'
 ]);
 
+Route::get('/notifications', [
+	'as' => 'notifications.index',
+	'uses' => 'NotificationsController@index',
+	'before' => 'auth'
+]);
+
 
 # ------------------ Authentication ------------------------
 

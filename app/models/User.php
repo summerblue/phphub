@@ -32,12 +32,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function topics() 
     {
-        $this->hasMany('Topic');
+        return $this->hasMany('Topic');
     }
 
     public function replies() 
     {
-        $this->hasMany('Reply');
+        return $this->hasMany('Reply');
+    }
+
+    public function notifications() 
+    {
+        return $this->hasMany('Notification')->with('topic', 'fromUser')->paginate(20);
     }
 
     public function getByGithubId($id)

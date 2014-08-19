@@ -8,16 +8,6 @@ class UsersController extends \BaseController {
 		return View::make('users.index', compact('users'));
 	}
 
-	public function create()
-	{
-		//
-	}
-
-	public function store()
-	{
-		//
-	}
-
 	public function show($id)
 	{
 		$user = User::findOrFail($id);

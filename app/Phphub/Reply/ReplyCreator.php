@@ -2,7 +2,7 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
-use Reply, Auth, Topic;
+use Reply, Auth, Topic, Notification;
 
 class ReplyCreator
 {
@@ -28,11 +28,20 @@ class ReplyCreator
             return $observer->creatorFailed($reply->getErrors());
         }
 
-        // 话题最后回复
+        // 话题最后回复的用户还有更新时间戳
         $topic = Topic::find($data['topic_id']);
         $topic->last_reply_user_id = Auth::user()->id;
         $topic->reply_count++;
         $topic->save();
+
+        // 通知帖子作者
+        Notification::notify('new_reply', Auth::user(), $topic->user, $topic, $reply);
+        
+        // 关注此贴的用户也提醒下
+        
+        
+        // 如果有 "@" 某个用户的话, 一并通知
+        
 
         Auth::user()->reply_count++;
         Auth::user()->save();
