@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="box text-center">
-  功能正在完善中，欢迎 <a href="https://github.com/summerblue/phphub">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub/issues">提交 Issue</a>。
+  功能正在完善中，欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub/issues">提交 Issue</a>。
 </div>
 
 <div class="panel panel-default list-panel">
