@@ -5,6 +5,17 @@ $(document).ready(function(){
 		$(this).text( moment( $(this).text() ).fromNow());	  
 	});
 
+	marked.setOptions({
+	  renderer: new marked.Renderer(),
+	  gfm: true,
+	  tables: true,
+	  breaks: false,
+	  pedantic: false,
+	  sanitize: true,
+	  smartLists: true,
+	  smartypants: false
+	});
+
 	marked($('.markdown-body').text(), function (err, content) {
 	  $('.markdown-body').html(content);
 	  
