@@ -19,6 +19,7 @@ class TopicCreator
     {
         $data['user_id'] = Auth::user()->id;
         $data['created_at'] = Carbon::now()->toDateTimeString();
+        $data['updated_at'] = Carbon::now()->toDateTimeString();
 
         // Validation
         $this->form->validate($data);
