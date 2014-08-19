@@ -3,7 +3,11 @@
 @section('content')
 
 <div class="box text-center">
-  功能正在完善中，欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub/issues">提交 Issue</a>。
+  PHPHub 是积极向上的 PHP & Laravel 开发者社区, 更多介绍 <a href="{{ route('about') }}">见这里</a>.
+</div>
+
+<div class="box text-center">
+  功能正在完善中, 欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub/issues">提交 Issue</a>.
 </div>
 
 <div class="panel panel-default list-panel">
