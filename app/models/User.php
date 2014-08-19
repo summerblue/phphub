@@ -30,6 +30,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->belongsToMany('Topic', 'favorites')->withTimestamps();
     }
 
+    public function attentTopics()
+    {
+        return $this->belongsToMany('Topic', 'attentions')->withTimestamps();
+    }
+
     public function topics() 
     {
         return $this->hasMany('Topic');
@@ -42,7 +47,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     public function notifications() 
     {
-        return $this->hasMany('Notification')->with('topic', 'fromUser')->paginate(20);
+        return $this->hasMany('Notification')->Recent()->with('topic', 'fromUser')->paginate(20);
     }
 
     public function getByGithubId($id)

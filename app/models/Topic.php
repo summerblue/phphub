@@ -28,6 +28,11 @@ class Topic extends \Eloquent
 		return $this->belongsToMany('User', 'favorites');
 	}
 
+	public function attentedBy()
+	{
+		return $this->belongsToMany('User', 'attentions');
+	}
+
 	public function node()
 	{
 		return $this->belongsTo('Node');

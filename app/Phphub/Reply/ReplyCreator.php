@@ -36,10 +36,10 @@ class ReplyCreator
         $topic->save();
 
         // 通知帖子作者
-        Notification::notify('new_reply', Auth::user(), $topic->user, $topic, $reply);
+        Notification::batchNotify('new_reply', Auth::user(), [$topic->user], $topic, $reply);
         
         // 关注此贴的用户也提醒下
-        
+        Notification::batchNotify('attention', Auth::user(), $topic->attentedBy, $topic, $reply);
         
         // 如果有 "@" 某个用户的话, 一并通知
         

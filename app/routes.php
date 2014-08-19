@@ -51,6 +51,11 @@ Route::get('/notifications', [
 	'before' => 'auth'
 ]);
 
+Route::get('/attentions/{id}', [
+	'as' => 'attentions.createOrDelete',
+	'uses' => 'AttentionsController@createOrDelete',
+	'before' => 'auth'
+]);
 
 # ------------------ Authentication ------------------------
 

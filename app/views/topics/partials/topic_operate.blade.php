@@ -1,13 +1,19 @@
 <div class="panel-footer operate">
   <div class="pull-right">
 
-    <a data-followed="false" data-id="15887" href="#" onclick="return Topics.follow(this);" rel="twipsy" data-original-title="">
-      <i class="glyphicon glyphicon-eye-open"></i> 关注
-    </a>
+    @if ($currentUser && Attention::isUserAttentedTopic($currentUser, $topic))
+      <a href="{{ route('attentions.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-eye-open" style="color:#ce8a81"></i> <span>取消</span>
+      </a>
+    @else
+      <a href="{{ route('attentions.createOrDelete', $topic->id) }}">
+        <i class="glyphicon glyphicon-eye-open"></i> <span>关注</span>
+      </a>
+    @endif
 
     @if ($currentUser && Favorite::isUserFavoritedTopic($currentUser, $topic))
       <a href="{{ route('favorites.createOrDelete', $topic->id) }}">
-        <i class="glyphicon glyphicon-bookmark" style="color:#da974d"></i> <span>取消</span>
+        <i class="glyphicon glyphicon-bookmark" style="color:#ce8a81"></i> <span>取消</span>
       </a>
     @else
       <a href="{{ route('favorites.createOrDelete', $topic->id) }}">
