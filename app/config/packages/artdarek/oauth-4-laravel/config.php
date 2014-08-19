@@ -20,7 +20,7 @@ return [
         'GitHub' => [
             'client_id'     => getenv('client_id'),
             'client_secret' => getenv('client_secret'),
-            'scope'         => ['user'],
+            'scope'         => ['user:email'],
         ],
     ],
 
