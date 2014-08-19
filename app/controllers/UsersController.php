@@ -11,8 +11,8 @@ class UsersController extends \BaseController {
 	public function show($id)
 	{
 		$user = User::findOrFail($id);
-		$topics = Topic::userRecentTopics($user->id);
-		$replies = Reply::userRecentReplies($user->id);
+		$topics = Topic::Whose($user->id)->Recent()->limit(10)->get();
+		$replies = Reply::Whose($user->id)->Recent()->limit(10)->get();
 		return View::make('users.show', compact('user', 'topics', 'replies'));
 	}
 
@@ -34,14 +34,14 @@ class UsersController extends \BaseController {
 	public function replies($id)
 	{
 		$user = User::findOrFail($id);
-		$replies = Reply::userRepliesWithPagination($user->id, 15);
+		$replies = Reply::Whose($user->id)->Recent()->paginate(15);
 		return View::make('users.replies', compact('user', 'replies'));
 	}
 
 	public function topics($id)
 	{
 		$user = User::findOrFail($id);
-		$topics = Topic::userTopicsWithPagination($user->id, 15);
+		$topics = Topic::Whose($user->id)->Recent()->paginate(15);
 		return View::make('users.topics', compact('user', 'topics'));
 	}
 

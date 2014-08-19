@@ -102,16 +102,13 @@ class Topic extends \Eloquent
 						->get();
 	}
 
-	public static function userRecentTopics($user_id, $limit = 10)
+	public function scopeWhose($query, $user_id)
 	{
-		return Topic::where('user_id', $user_id)->with('node')->limit($limit)->get();
-	}
+        return $query->where('user_id','=',$user_id)->with('node'); 
+    }
 
-	public static function userTopicsWithPagination($user_id, $limit = 20)
-	{
-		return Topic::where('user_id', '=', $user_id)
-						->orderBy('created_at', 'desc')
-						->with('node')
-						->paginate($limit);
-	}
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at','desc');
+    }
 }

@@ -18,17 +18,13 @@ class Reply extends \Eloquent {
 		return $this->belongsTo('Topic');
 	}
 
-	public static function userRecentReplies($user_id, $limit = 10)
+	public function scopeWhose($query, $user_id)
 	{
-		return Reply::where('user_id', '=', $user_id)->with('topic')->limit($limit)->get();
-	}
+        return $query->where('user_id','=',$user_id)->with('topic'); 
+    }
 
-	public static function userRepliesWithPagination($user_id, $limit = 20)
-	{
-		return Reply::where('user_id', '=', $user_id)
-						->orderBy('created_at', 'desc')
-						->with('topic')
-						->paginate($limit);
-	}
-
+    public function scopeRecent($query)
+    {
+        return $query->orderBy('created_at','desc');
+    }
 }
