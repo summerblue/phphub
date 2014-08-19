@@ -5,7 +5,7 @@ use User;
 class Mention
 {
     public $body_parsed;
-    public $users;
+    public $users = [];
     public $usernames;
     public $body_original;
 
@@ -39,8 +39,8 @@ class Mention
 		$this->body_original = $body;
 
 		$this->usernames = $this->getMentionedUsername();
-		$this->users = User::whereIn('name', $this->usernames)->get();
-		
+		count($this->usernames) > 0 && $this->users = User::whereIn('name', $this->usernames)->get();
+			
 		$this->replace();
 		return $this->body_parsed;
 	}
