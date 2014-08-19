@@ -16,7 +16,7 @@
       <a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
         {{{ $topic->lastReplyUser->name }}}
       </a>
-     于 <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr> 回复
+     于 <abbr title="{{ $replies->last()->created_at }}" class="timeago">{{ $replies->last()->created_at }}</abbr> 回复
     •
   @endif
 
