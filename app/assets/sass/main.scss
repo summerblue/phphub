@@ -9,6 +9,9 @@ body {
   background: #e5e5e5;
 }
 
+textarea.form-control{
+  font-size: 13px;
+}
 ul.list {
   margin: 0;
   padding-left: 11px;
@@ -17,7 +20,9 @@ ul.list {
     line-height: 16px;
   }
 }
-
+.display-none {
+  display: none
+}
 .red {
   color: red;
 }
@@ -371,6 +376,28 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   }
 } 
 
+.editor-tool {
+  li {
+    font-size: 12px;
+    line-height: 1;
+    text-align: center;
+  }
+
+  li.active {
+    background: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    min-width: 10px;
+    padding: 4px 5px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 10px;
+  }
+  li>a {
+    color: #666;
+  }
+}
+
 // desktop
 @media (min-width: 1000px) { 
 
@@ -425,3 +452,5 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     }
   }
 }
+
+

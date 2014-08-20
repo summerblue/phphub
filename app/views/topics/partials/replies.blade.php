@@ -20,7 +20,7 @@
         
 
         <span class="operate pull-right">
-            <a class="fa fa-reply" data-floor="1" data-login="dfang" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');"></a>
+            <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');"></a>
         </span>
       
       </div>

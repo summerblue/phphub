@@ -55,14 +55,29 @@
 
   <!-- Reply Box -->
   <div class="reply-box form box-block">
+
+    <ul class="list-inline editor-tool">
+      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >编辑</a></li>
+      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >预览</a></li>
+    </ul>
+
     @include('layouts.partials.errors')
+
+    <div class="preview display-none markdown-reply box">
+没有内容..
+    </div>
 
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
       <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
       <div class="form-group">
 
         @if ($currentUser)
-          {{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => 5, 'placeholder' => "请使用 Markdown 格式书写 ;-)", 'id' => 'reply_content']) }}
+          {{ Form::textarea('body', null, ['class' => 'form-control', 
+                                            'rows' => 5, 
+                                            'placeholder' => "请使用 Markdown 格式书写 ;-)", 
+                                            'onkeyup' => "textAreaAdjust(this)", 
+                                            'style' => "overflow:hidden", 
+                                            'id' => 'reply_content']) }}
         @else
           {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => "登录用户才能发表评论."]) }}
         @endif

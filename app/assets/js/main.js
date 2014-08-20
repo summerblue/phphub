@@ -36,6 +36,35 @@ $(document).ready(function()
 	}, 500); 
 
 })
+function textAreaAdjust(o) {
+    if (o.scrollHeight > 105) 
+    	o.style.height = "1px";
+    	o.style.height = (25+o.scrollHeight)+"px";	
+   } 
+}
+function preview(){
+	replyContent = $("#reply_content");
+	oldContent = replyContent.val();
+	replyContent.fadeOut();
+
+	if (oldContent) {
+		marked(oldContent, function (err, content) {
+		  $('.preview').html(content);
+		});
+	}
+	
+	$('.preview').fadeIn();
+	$('#edit-btn').toggleClass('active');
+	$('#preview-btn').toggleClass('active');
+}
+
+function showEditor(){
+	$('.preview').fadeOut();
+	$('#reply_content').fadeIn();
+
+	$('#edit-btn').toggleClass('active');
+	$('#preview-btn').toggleClass('active');
+}
 
 // reply a reply
 function replyOne(username){
