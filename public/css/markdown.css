@@ -201,12 +201,14 @@
   .markdown-body .highlight, .markdown-reply .highlight {
     margin-bottom: 16px; }
   .markdown-body .highlight pre, .markdown-body pre, .markdown-reply .highlight pre, .markdown-reply pre {
-    padding: 16px;
+    padding: 14px;
     overflow: auto;
     line-height: 1.45;
-    background-color: #f7f7f7;
+    background-color: #4e4e4e;
     -webkit-border-radius: 3px;
-            border-radius: 3px; }
+            border-radius: 3px;
+    color: #fff;
+    border: 1px dashed #ccc; }
   .markdown-body .highlight pre, .markdown-reply .highlight pre {
     margin-bottom: 0; }
   .markdown-body pre, .markdown-reply pre {
