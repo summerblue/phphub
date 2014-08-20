@@ -155,48 +155,48 @@ ul.list {
 embed {
   display: none; }
 
-.navbar {
+.topnav {
   min-height: 40px;
   -webkit-box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1);
           box-shadow: 0 0px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(0, 0, 0, 0.1); }
-  .navbar .btn {
+  .topnav .btn {
     -webkit-border-radius: 2px;
             border-radius: 2px; }
-  .navbar .navbar-brand {
+  .topnav .navbar-brand {
     height: 38px;
     padding-top: 11px; }
-  .navbar .nav > li > a {
+  .topnav .nav > li > a {
     float: none;
     padding: 12px 10px 9px;
     line-height: 19px;
     color: #444;
     text-decoration: none; }
-  .navbar .navbar-nav.navbar-right:last-child {
+  .topnav .navbar-nav.navbar-right:last-child {
     margin-right: 0px; }
-  .navbar .github-login .btn {
+  .topnav .github-login .btn {
     margin-top: 5px;
     font-size: 13px;
     padding: 5px 12px; }
-    .navbar .github-login .btn i {
+    .topnav .github-login .btn i {
       font-size: 14px; }
-  .navbar .navbar-form {
+  .topnav .navbar-form {
     padding: 0px 20px;
     margin-top: 7px;
     margin-bottom: 4px; }
-    .navbar .navbar-form .form-control {
+    .topnav .navbar-form .form-control {
       font-size: 13px;
       height: 28px;
       -webkit-border-radius: 2px;
               border-radius: 2px; }
-    .navbar .navbar-form .btn {
+    .topnav .navbar-form .btn {
       font-size: 13px;
       color: #808080;
       padding: 4px 9px; }
-    .navbar .navbar-form .mac-style {
+    .topnav .navbar-form .mac-style {
       width: 180px;
       -webkit-transition: width 1s ease-in-out;
               transition: width 1s ease-in-out; }
-    .navbar .navbar-form .mac-style:focus {
+    .topnav .navbar-form .mac-style:focus {
       width: 260px; }
 
 .node-panel dt {
@@ -297,6 +297,20 @@ embed {
     width: 1000px; } }
 
 @media (max-width: 768px) {
+  .topnav .nav > li {
+    display: inline-block; }
+  .topnav .navbar-collapse {
+    padding-right: 15px;
+    padding-left: 22px; }
+  .topnav .navbar-form {
+    padding-left: 12px; }
+    .topnav .navbar-form .form-group {
+      display: inline-block;
+      margin-top: 5px; }
+    .topnav .navbar-form .mac-style {
+      width: 200px; }
+    .topnav .navbar-form .mac-style:focus {
+      width: 220px; }
   .col-xs-6 {
     width: 100%;
     float: none; }
@@ -322,3 +336,13 @@ embed {
     float: left; }
   .users-show dl dd {
     margin-left: inherit; } }
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .topnav .navbar-form .form-group {
+    display: inline-block;
+    margin-top: 0px; }
+  .topnav .navbar-form .mac-style {
+    width: 120px; }
+  .topnav .navbar-form .mac-style:focus {
+    width: 150px; } }
