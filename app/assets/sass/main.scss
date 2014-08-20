@@ -425,8 +425,8 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     }
 
     .navbar-form {
-      padding-left: 12px;
-
+      padding-left: 18px;
+      margin-left: -22px;
       .form-group {
         display: inline-block;
         margin-top: 5px;
@@ -498,6 +498,7 @@ and (max-device-width : 1024px)
 and (orientation : portrait) {
  .topnav {
     .navbar-form {
+      margin-left: 0px;
       .form-group {
         display: inline-block;
         margin-top: 0px;

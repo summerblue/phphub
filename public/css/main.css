@@ -303,7 +303,8 @@ embed {
     padding-right: 15px;
     padding-left: 22px; }
   .topnav .navbar-form {
-    padding-left: 12px; }
+    padding-left: 18px;
+    margin-left: -22px; }
     .topnav .navbar-form .form-group {
       display: inline-block;
       margin-top: 5px; }
@@ -339,10 +340,12 @@ embed {
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  .topnav .navbar-form .form-group {
-    display: inline-block;
-    margin-top: 0px; }
-  .topnav .navbar-form .mac-style {
-    width: 120px; }
-  .topnav .navbar-form .mac-style:focus {
-    width: 150px; } }
+  .topnav .navbar-form {
+    margin-left: 0px; }
+    .topnav .navbar-form .form-group {
+      display: inline-block;
+      margin-top: 0px; }
+    .topnav .navbar-form .mac-style {
+      width: 120px; }
+    .topnav .navbar-form .mac-style:focus {
+      width: 150px; } }
