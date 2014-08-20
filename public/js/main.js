@@ -37,7 +37,7 @@ $(document).ready(function()
 
 })
 function textAreaAdjust(o) {
-    if (o.scrollHeight > 105) 
+    if (o.scrollHeight > 105) {
     	o.style.height = "1px";
     	o.style.height = (25+o.scrollHeight)+"px";	
    } 
