@@ -13,6 +13,9 @@
 
 PHPHub 是积极向上的 PHP & Laravel 开发者社区. 
 
+在这里没有商业广告, 没有灌水, 没有千篇一律新手问答, 有的是关于新技术的讨论和分享. 
+
+本项目 [源代码在此 at Github](https://github.com/summerblue/phphub), 欢迎贡献代码, Feature Request 和 Bug Report [请到此发表](https://github.com/summerblue/phphub/issues).
 
 ## 在这里的我们
 
