@@ -6,6 +6,9 @@ html, body {
   font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
   background: #e5e5e5; }
 
+.inline-block {
+  display: inline-block; }
+
 textarea.form-control {
   font-size: 13px; }
 
@@ -353,7 +356,9 @@ embed {
   .users-index .col-md-1.remove-padding-right {
     float: left; }
   .users-show dl dd {
-    margin-left: inherit; } }
+    margin-left: inherit; }
+  .users-show .dl-horizontal dd {
+    margin-left: 0px; } }
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
@@ -370,4 +375,36 @@ embed {
     .topnav .navbar-form .mac-style {
       width: 120px; }
     .topnav .navbar-form .mac-style:focus {
-      width: 150px; } }
+      width: 150px; }
+  .users-show .dl-horizontal dd {
+    margin-left: 58px; } }
+
+.votes {
+  display: inline-block;
+  margin-right: 8px; }
+
+.vote:link, .vote:visited, .vote {
+  text-decoration: none;
+  font-size: 10px;
+  line-height: 1;
+  padding: 2px 8px 2px 8px;
+  border: 1px solid #C4C4C4;
+  -webkit-border-radius: 3px;
+          border-radius: 3px;
+  color: #778;
+  display: inline-block;
+  vertical-align: baseline;
+  text-align: center;
+  background-color: #fff; }
+
+.vote:hover {
+  color: #667;
+  border: 1px solid #667;
+  text-decoration: none;
+  background-color: #F0F0F0; }
+
+.vote:active {
+  background-color: #f0f0f0;
+  border: 1px solid #aaa;
+  -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset; }
