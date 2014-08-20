@@ -56,7 +56,6 @@
 没有内容..
     </div>
 
-
         <div class="form-group">
           {{ Form::textarea('body', null, ['class' => 'form-control', 
                                             'rows' => 20, 
@@ -71,7 +70,6 @@
         </div>
 
       {{ Form::close() }}
-
 
     </div>
   </div>
