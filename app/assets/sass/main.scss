@@ -415,6 +415,11 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 @media (max-width: 768px) {
   
   .topnav {
+    .github-login .btn {
+      margin-left: 12px;
+      margin-bottom: 7px;
+    }
+
     .nav>li {
       display: inline-block;
     }
@@ -422,6 +427,8 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     .navbar-collapse {
       padding-right: 15px;
       padding-left: 22px;
+      word-spacing: 2px;
+      padding-right: 18px;
     }
 
     .navbar-form {
@@ -429,7 +436,8 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
       margin-left: -22px;
       .form-group {
         display: inline-block;
-        margin-top: 5px;
+        margin-top: 11px;
+        margin-bottom: 11px;
       }
 
       .mac-style {
@@ -497,11 +505,18 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px) 
 and (orientation : portrait) {
  .topnav {
+    ul.github-login {
+      margin-right: -15px!important;
+      .btn {
+        margin-bottom: 5px;
+      }
+    }
     .navbar-form {
       margin-left: 0px;
       .form-group {
         display: inline-block;
         margin-top: 0px;
+        margin-bottom: 0px;
       }
       .mac-style {
         width: 120px;

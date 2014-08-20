@@ -297,17 +297,23 @@ embed {
     width: 1000px; } }
 
 @media (max-width: 768px) {
+  .topnav .github-login .btn {
+    margin-left: 12px;
+    margin-bottom: 7px; }
   .topnav .nav > li {
     display: inline-block; }
   .topnav .navbar-collapse {
     padding-right: 15px;
-    padding-left: 22px; }
+    padding-left: 22px;
+    word-spacing: 2px;
+    padding-right: 18px; }
   .topnav .navbar-form {
     padding-left: 18px;
     margin-left: -22px; }
     .topnav .navbar-form .form-group {
       display: inline-block;
-      margin-top: 5px; }
+      margin-top: 11px;
+      margin-bottom: 11px; }
     .topnav .navbar-form .mac-style {
       width: 200px; }
     .topnav .navbar-form .mac-style:focus {
@@ -340,11 +346,16 @@ embed {
 
 /* iPads (portrait) ----------- */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .topnav ul.github-login {
+    margin-right: -15px !important; }
+    .topnav ul.github-login .btn {
+      margin-bottom: 5px; }
   .topnav .navbar-form {
     margin-left: 0px; }
     .topnav .navbar-form .form-group {
       display: inline-block;
-      margin-top: 0px; }
+      margin-top: 0px;
+      margin-bottom: 0px; }
     .topnav .navbar-form .mac-style {
       width: 120px; }
     .topnav .navbar-form .mac-style:focus {

@@ -30,7 +30,7 @@
         @else
             <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">
               <i class="fa fa-github-alt"></i> 
-              登录
+              登 录
             </a>
         @endif
 
