@@ -66,6 +66,10 @@ ul.list {
   padding-left: 0px;
   padding-right: 0px; }
 
+.left-col {
+  padding-left: 15px;
+  padding-right: 0px; }
+
 .add-padding-vertically {
   padding-left: 15px;
   padding-right: 15px; }
@@ -267,11 +271,18 @@ embed {
 .users-show dl dd {
   margin-left: 127px; }
 .users-show dl dt, .users-show dl dd {
-  font-size: 14px;
-  line-height: 180%;
+  font-size: 13px;
+  line-height: 150%;
   border-bottom: 1px dashed #eee; }
 .users-show .user-info-nav {
   border: none; }
+.users-show .dl-horizontal dt {
+  width: 50px;
+  white-space: nowrap;
+  font-weight: normal;
+  color: #999; }
+.users-show .dl-horizontal dd {
+  margin-left: 58px; }
 
 .editor-tool {
   margin-left: 0px; }

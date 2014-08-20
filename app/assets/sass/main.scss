@@ -72,6 +72,10 @@ ul.list {
   padding-right: 0px;
 }
 
+.left-col {
+  padding-left: 15px;
+  padding-right: 0px;
+}
 .add-padding-vertically {
   padding-left: 15px;
   padding-right: 15px;
@@ -366,14 +370,27 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     }
 
     dt, dd {
-      font-size: 14px;
-      line-height: 180%;
+      font-size: 13px;
+      line-height: 150%;
       border-bottom: 1px dashed #eee;
     }
   }
 
   .user-info-nav {
     border: none;
+  }
+
+  .dl-horizontal {
+
+    dt {
+      width: 50px;
+      white-space: nowrap;
+      font-weight: normal;
+      color: #999;
+    }
+    dd {
+      margin-left: 58px;
+    }
   }
 } 
 

@@ -1,10 +1,10 @@
-<div style="text-align: center;" class="pull-right col-sm-3">
+<div style="text-align: center;">
   <a href="">
-    <img src="{{ $user->present()->gravatar(180) }}" class="img-thumbnail users-show-avatar" style="width:120px;height:120px;">
+    <img src="{{ $user->present()->gravatar(180) }}" class="img-thumbnail users-show-avatar" style="width:190px;margin:0 20px;">
   </a>
 </div>
 
-<dl class="dl-horizontal pull-left col-sm-9">
+<dl class="dl-horizontal">
   
   <dt><lable>&nbsp; </lable></dt><dd>第 {{ $user->id }} 位会员</dd>
 
@@ -33,7 +33,7 @@
   <dt><label>博客:</label></dt>
   <dd>
     <a href="{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
-      {{{ str_limit($user->personal_website, 30) }}}
+      {{{ str_limit($user->personal_website, 25) }}}
     </a>
   </dd>
   @endif
@@ -43,7 +43,7 @@
   @endif
 
   @if (isset($user->description))
-    <dt><label>个人简介:</label></dt><dd><span>{{{ $user->description }}}</span></dd>
+    <dt><label>简介:</label></dt><dd><span>{{{ $user->description }}}</span></dd>
   @endif
 
   <dt>

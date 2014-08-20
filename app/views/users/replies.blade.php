@@ -7,7 +7,14 @@
 @section('content')
 
 
-<div class="users-show main-col">
+<div class="users-show">
+
+  <div class="col-md-3 box" style="padding: 15px 15px;">
+    @include('users.partials.basicinfo')
+  </div>
+
+  <div class="main-col col-md-9 left-col">
+
 
   <div class="panel panel-default">
 
@@ -27,6 +34,7 @@
     </div>
 
   </div>
+</div>
 </div>
 
 @stop
