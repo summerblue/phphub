@@ -57,8 +57,7 @@ class Notification extends \Eloquent
 				'updated_at'   => $nowTimestamp
 			];
 
-			$toUser->notifications++;
-			$toUser->save();
+			$toUser->increment('notifications', 1);
 		}
 
 		Notification::insert($data);

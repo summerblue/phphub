@@ -40,13 +40,10 @@ class TopicsController extends \BaseController implements CreatorListener
 	{
 		$topic = Topic::findOrFail($id);
 		$replies = $topic->getRepliesWithLimit();
-
-		$topic->view_count++;
-		$topic->save();
-
+		$node = $topic->node;
 		$nodeTopics = $topic->getSameNodeTopics();
 
-		$node = $topic->node;
+        $topic->increment('view_count', 1);
 
 		return View::make('topics.show', compact('topic', 'replies', 'nodeTopics', 'node'));
 	}

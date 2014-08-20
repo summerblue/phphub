@@ -6,12 +6,10 @@ use Topic, Auth, Carbon;
 
 class TopicCreator
 {
-    protected $topicModel;
     protected $form;
 
-    public function __construct(Topic $topicModel, TopicCreationForm $form)
+    public function __construct(TopicCreationForm $form)
     {
-        $this->userModel  = $topicModel;
         $this->form = $form;
     }
 
@@ -30,9 +28,8 @@ class TopicCreator
             return $observer->creatorFailed($topic->getErrors());
         }
 
-        Auth::user()->topic_count++;
-        Auth::user()->save();
-        
+        Auth::user()->increment('topic_count', 1);
+
         return $observer->creatorSucceed($topic);
     }
 }

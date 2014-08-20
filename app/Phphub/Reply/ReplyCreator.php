@@ -7,13 +7,11 @@ use Reply, Auth, Topic, Notification, Carbon;
 
 class ReplyCreator
 {
-    protected $replyModel;
     protected $form;
     protected $parser;
 
-    public function __construct(Reply $replyModel, ReplyCreationForm $form, Mention $parser)
+    public function __construct(ReplyCreationForm $form, Mention $parser)
     {
-        $this->userModel  = $replyModel;
         $this->form = $form;
         $this->parser = $parser;
     }
@@ -39,6 +37,8 @@ class ReplyCreator
         $topic->updated_at = Carbon::now()->toDateTimeString();
         $topic->save();
 
+        Auth::user()->increment('reply_count', 1);
+
         // 通知帖子作者
         Notification::batchNotify('new_reply', Auth::user(), [$topic->user], $topic, $reply);
         
@@ -47,9 +47,6 @@ class ReplyCreator
         
         // 如果有 "@" 某个用户的话, 一并通知
         Notification::batchNotify('at', Auth::user(), $this->parser->users, $topic, $reply);
-
-        Auth::user()->reply_count++;
-        Auth::user()->save();
         
         return $observer->creatorSucceed($reply);
     }
