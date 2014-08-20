@@ -2,24 +2,25 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
-use Phphub\Core\Mention;
-use Reply, Auth, Topic, Notification, Carbon;
+use Phphub\Notification\Mention;
+use Phphub\Notification\Notifier;
+use Reply, Auth, Topic, Notification, Carbon, App;
 
 class ReplyCreator
 {
     protected $form;
-    protected $parser;
+    protected $mentionParser;
 
-    public function __construct(ReplyCreationForm $form, Mention $parser)
+    public function __construct(ReplyCreationForm $form, Mention $mentionParser)
     {
         $this->form = $form;
-        $this->parser = $parser;
+        $this->mentionParser = $mentionParser;
     }
 
     public function create(CreatorListener $observer, $data)
     {
         $data['user_id'] = Auth::user()->id;
-        $data['body'] = $this->parser->parse($data['body']);
+        $data['body'] = $this->mentionParser->parse($data['body']);
 
         // Validation
         $this->form->validate($data);
@@ -38,16 +39,9 @@ class ReplyCreator
         $topic->save();
 
         Auth::user()->increment('reply_count', 1);
+        
+        App::make('Phphub\Notification\Notifier')->notify(Auth::user(), $this->mentionParser, $topic, $reply);
 
-        // 通知帖子作者
-        Notification::batchNotify('new_reply', Auth::user(), [$topic->user], $topic, $reply);
-        
-        // 关注此贴的用户也提醒下
-        Notification::batchNotify('attention', Auth::user(), $topic->attentedBy, $topic, $reply);
-        
-        // 如果有 "@" 某个用户的话, 一并通知
-        Notification::batchNotify('at', Auth::user(), $this->parser->users, $topic, $reply);
-        
         return $observer->creatorSucceed($reply);
     }
 }
