@@ -107,6 +107,60 @@ class TopicsController extends \BaseController implements CreatorListener
 		return Redirect::route('topics.index');
 	}
 
+	public function upvote($id)
+	{
+		$topic = Topic::find($id);
+
+		if ($topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count()) 
+		{
+			// click twice for remove upvote
+			$topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->delete();
+			$topic->decrement('vote_count', 1);
+		}
+		elseif ($topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count()) 
+		{
+			// user already clicked downvote once
+			$topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->delete();
+			$topic->votes()->create(['user_id' => Auth::user()->id, 'is' => 'upvote']);
+			$topic->increment('vote_count', 2);
+		}
+		else 
+		{
+			// first time click
+			$topic->votes()->create(['user_id' => Auth::user()->id, 'is' => 'upvote']);
+			$topic->increment('vote_count', 1);
+		}
+
+		return Redirect::back();
+	}
+
+	public function downvote($id)
+	{
+		$topic = Topic::find($id);
+
+		if ($topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count()) 
+		{
+			// click second time for remove downvote
+			$topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->delete();
+			$topic->increment('vote_count', 1);
+		}
+		elseif ($topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count()) 
+		{
+			// user already clicked upvote once
+			$topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->delete();
+			$topic->votes()->create(['user_id' => Auth::user()->id, 'is' => 'downvote']);
+			$topic->decrement('vote_count', 2);
+		}
+		else 
+		{
+			// click first time
+			$topic->votes()->create(['user_id' => Auth::user()->id, 'is' => 'downvote']);
+			$topic->decrement('vote_count', 1);
+		}
+
+		return Redirect::back();
+	}
+
     /**
      * ----------------------------------------
      * CreatorListener Delegate

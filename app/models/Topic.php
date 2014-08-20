@@ -23,6 +23,11 @@ class Topic extends \Eloquent
 		'updated_at'
 	];
 
+	public function votes()
+	{
+		return $this->morphMany('Vote', 'votable');
+	}
+
 	public function favoritedBy()
 	{
 		return $this->belongsToMany('User', 'favorites');

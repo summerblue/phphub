@@ -408,3 +408,8 @@ embed {
   border: 1px solid #aaa;
   -webkit-box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset;
           box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2) inset; }
+
+.vote.active {
+  background-color: #698ebf;
+  color: white;
+  border: 1px solid #E7E7E7; }

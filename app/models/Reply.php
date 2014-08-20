@@ -8,6 +8,11 @@ class Reply extends \Eloquent {
 		'topic_id'
 	];
 
+	public function votes()
+	{
+		return $this->morphMany('Vote', 'votable');
+	}
+
 	public function user()
 	{
 		return $this->belongsTo('User');

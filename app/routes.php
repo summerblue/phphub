@@ -99,6 +99,26 @@ Route::resource('replies', 'RepliesController', ['only' => ['store']]);
 Route::resource('votes', 'VotesController');
 Route::resource('users', 'UsersController');
 
+# ------------------ Votes ------------------------
+
+Route::get('/topics/{id}/upvote', [
+	'as' => 'topics.upvote',
+	'uses' => 'TopicsController@upvote',
+	'before' => 'auth'
+]);
+
+Route::get('/topics/{id}/downvote', [
+	'as' => 'topics.downvote',
+	'uses' => 'TopicsController@downvote',
+	'before' => 'auth'
+]);
+
+Route::get('/replies/{id}/vote', [
+	'as' => 'topics.vote',
+	'uses' => 'RepliesController@vote',
+	'before' => 'auth'
+]);
+
 # ------------------ Admin Route ------------------------
 
 Route::get('topics/recomend/{id}',  [

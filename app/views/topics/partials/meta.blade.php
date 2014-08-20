@@ -1,4 +1,4 @@
-<div class="meta">
+<div class="meta inline-block" >
 
   <a href="{{ route('nodes.show', $topic->node->id) }}" class="remove-padding-left">
     {{{ $topic->node->name }}}
@@ -20,6 +20,6 @@
     •
   @endif
 
-  {{ $topic->view_count }} 次阅读
+  {{ $topic->view_count }} 阅读
 </div>
 <div class="clearfix"></div>

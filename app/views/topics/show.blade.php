@@ -19,6 +19,16 @@
       </div>
 
       <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
+
+      <div class="votes">
+        <a href="{{ route('topics.upvote', $topic->id) }}" class="vote {{ $topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count() ? 'active' :''; }}">
+          <li class="fa fa-chevron-up"></li> {{ $topic->vote_count }}
+        </a> &nbsp;
+        <a href="{{ route('topics.downvote', $topic->id) }}" class="vote {{ $topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count() ? 'active' :''; }}">
+          <li class="fa fa-chevron-down"></li>
+        </a>
+      </div>
+
       @include('topics.partials.meta')
     </div>
 
