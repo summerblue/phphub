@@ -273,22 +273,24 @@ embed {
 .users-show .user-info-nav {
   border: none; }
 
-.editor-tool li {
-  font-size: 12px;
-  line-height: 1;
-  text-align: center; }
-.editor-tool li.active {
-  background: #fff;
-  border: 1px solid #ddd;
-  display: inline-block;
-  min-width: 10px;
-  padding: 4px 5px;
-  white-space: nowrap;
-  vertical-align: baseline;
-  -webkit-border-radius: 10px;
-          border-radius: 10px; }
-.editor-tool li > a {
-  color: #666; }
+.editor-tool {
+  margin-left: 0px; }
+  .editor-tool li {
+    font-size: 12px;
+    line-height: 1;
+    text-align: center; }
+  .editor-tool li.active {
+    background: #fff;
+    border: 1px solid #ddd;
+    display: inline-block;
+    min-width: 10px;
+    padding: 4px 5px;
+    white-space: nowrap;
+    vertical-align: baseline;
+    -webkit-border-radius: 10px;
+            border-radius: 10px; }
+  .editor-tool li > a {
+    color: #666; }
 
 @media (min-width: 1000px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {

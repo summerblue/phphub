@@ -5,7 +5,7 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ cdn("styles/bootstrap-select.min.css") }}"/>
+    
 @stop
 
 @section('content')
@@ -47,8 +47,23 @@
           {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => "请填写标题"]) }}
         </div>
 
+<ul class="list-inline editor-tool">
+      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >编辑</a></li>
+      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >预览</a></li>
+    </ul>
+
+    <div class="preview display-none markdown-reply box">
+没有内容..
+    </div>
+
+
         <div class="form-group">
-          {{ Form::textarea('body', null, ['class' => 'form-control', 'rows' => 20, 'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
+          {{ Form::textarea('body', null, ['class' => 'form-control', 
+                                            'rows' => 20, 
+                                            'onkeyup' => "textAreaAdjust(this, 375)", 
+                                            'style' => "overflow:hidden", 
+                                            'id' => 'reply_content',
+                                            'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
         </div>
 
         <div class="form-group status-post-submit">
@@ -127,14 +142,4 @@
 
 </div>
 
-@stop
-
-@section('scripts')
-    <script src="scripts/bootstrap-select.min.js"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('.selectpicker').selectpicker();
-        })
-    </script>
 @stop
