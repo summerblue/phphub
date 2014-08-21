@@ -6,6 +6,9 @@ html, body {
   font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
   background: #e5e5e5; }
 
+.topic-list .list-group-item {
+  height: 71px; }
+
 a.stats {
   display: block;
   margin-top: 10px;

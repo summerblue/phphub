@@ -2,7 +2,7 @@
 
 @if (count($topics))
   
-<ul class="list-group row">
+<ul class="list-group row topic-list">
 	@foreach ($topics as $topic)
 	 <li class="list-group-item media {{ !$column ?:'col-sm-6'; }}" style="margin-top: 0px;">
 
