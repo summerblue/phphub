@@ -14,7 +14,7 @@
 
   <div class="main-col col-md-9 left-col">
   
-    @if (isset($user->description))
+    @if ($user->description)
       <div class="box">{{{ $user->description }}}</div>
     @endif
 

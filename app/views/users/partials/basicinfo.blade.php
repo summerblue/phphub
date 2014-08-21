@@ -17,15 +17,15 @@
     </a>
   </dd>
   
-  @if (isset($user->company))
+  @if ($user->company)
     <dt class="adr"><label>公司:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>  
   @endif
 
-  @if (isset($user->city))
+  @if ($user->city)
     <dt class="adr"><label>城市:</label></dt><dd><span class="org"><i class="fa fa-map-marker"></i> {{{ $user->city }}}</span></dd>  
   @endif
   
-  @if (isset($user->twitter_account))
+  @if ($user->twitter_account)
   <dt><label><span>Twitter</span>:</label></dt>
   <dd>
     <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ '@' . $user->twitter_account }}}
@@ -33,7 +33,7 @@
   </dd>
   @endif
   
-  @if (isset($user->personal_website))
+  @if ($user->personal_website)
   <dt><label>博客:</label></dt>
   <dd>
     <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
@@ -42,7 +42,7 @@
   </dd>
   @endif
   
-  @if (isset($user->signature))
+  @if ($user->signature)
     <dt><label>签名:</label></dt><dd><span>{{{ $user->signature }}}</span></dd>
   @endif
 
