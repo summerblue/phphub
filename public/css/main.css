@@ -6,6 +6,20 @@ html, body {
   font-family: "Heiti SC Light", "Helvetica Neue", Verdana, 微软雅黑, Arial, sans-serif;
   background: #e5e5e5; }
 
+a.stats {
+  display: block;
+  margin-top: 10px;
+  color: #888;
+  margin-right: 18px; }
+  a.stats i.fa {
+    font-size: 15px; }
+
+a.stats:hover {
+  text-decoration: none; }
+
+.col-sm-6 a.stats {
+  margin-right: 0px; }
+
 .deleted {
   color: #aaa;
   text-decoration: line-through;
@@ -114,7 +128,7 @@ ul.list {
   color: #d0d0d0;
   font-size: 12px; }
   .meta a, .operate a {
-    padding: 1px 5px;
+    padding: 1px 2px;
     color: #778087;
     text-decoration: none; }
   .meta .timeago, .operate .timeago {

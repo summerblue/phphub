@@ -24,7 +24,15 @@
 		  	</a>
 		  </div>
 		  <div class="media-body meta">
-		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{{ $topic->node->name }}}" class="remove-padding-left">
+
+		  	@if ($topic->vote_count > 0)
+		  		<a href="{{ route('topics.show', [$topic->id]) }}" class="remove-padding-left">
+				  	<span class="fa fa-thumbs-o-up"> {{ $topic->vote_count }} </span>
+			  	</a>
+			  	<span> •  </span>
+		  	@endif
+		  	
+		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{{ $topic->node->name }}}" {{ $topic->vote_count == 0 || 'class="remove-padding-left"'}}>
 		  		{{{ $topic->node->name }}}
 			</a>
 		  	<span> • </span>
@@ -34,7 +42,7 @@
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
 			@if (count($topic->lastReplyUser))
-				<span> • </span>最后回复来自 
+				<span> • </span>最后由 
 			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
 	              {{{ $topic->lastReplyUser->name }}}
 	            </a>
