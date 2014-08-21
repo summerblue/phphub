@@ -20,7 +20,7 @@
 
 		  <div class="media-heading">
 		  	<a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-		  		{{{ $column ? str_limit($topic->title, '50') : str_limit($topic->title, '100') }}}
+		  		{{{ $column ? str_limit($topic->title, '30') : str_limit($topic->title, '100') }}}
 		  	</a>
 		  </div>
 		  <div class="media-body meta">
