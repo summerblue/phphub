@@ -4,6 +4,10 @@
 {{{ $topic->title }}}_@parent 
 @stop
 
+@section('description')
+{{{ str_limit($topic->body, 160) }}}
+@stop
+
 @section('content')
 
 <div class="col-md-9 topics-show main-col">

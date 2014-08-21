@@ -30,7 +30,7 @@ PHPhub - PHP & Laravel的中文社区
 		
 		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
 		<meta name="author" content="The PHP China Community." />
-		<meta name="description" content="PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。" />
+		<meta name="description" content="@section('description') PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
 
 		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css">
