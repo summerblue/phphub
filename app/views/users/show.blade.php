@@ -15,7 +15,7 @@
   <div class="main-col col-md-9 left-col">
   
     @if ($user->description)
-      <div class="box">{{{ $user->description }}}</div>
+      <div class="box text-center">{{{ $user->description }}}</div>
     @endif
 
     <div class="panel panel-default">
