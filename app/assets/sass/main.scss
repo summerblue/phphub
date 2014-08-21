@@ -8,6 +8,12 @@ body {
   font-family: "Heiti SC Light","Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
   background: #e5e5e5;
 }
+.deleted {
+  color: #aaa;
+  text-decoration: line-through;
+  font-size: 12px;
+  text-align: center;
+}
 .inline-block {
   display: inline-block;
 }
@@ -591,3 +597,4 @@ and (orientation : portrait) {
     color: white;
     border: 1px solid #E7E7E7;
 }
+
