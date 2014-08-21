@@ -23,8 +23,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
 
     protected $table      = 'users';
     protected $hidden     = ['github_id'];
-    protected $fillable   = ['email', 'name', 'github_url', 'github_id', 'image_url', 'is_banned'];
-    
+    protected $guarded    = ['id', 'notifications', 'is_banned'];
+
     public function favoriteTopics()
     {
         return $this->belongsToMany('Topic', 'favorites')->withTimestamps();

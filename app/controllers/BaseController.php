@@ -37,12 +37,9 @@ class BaseController extends Controller {
 		View::share('siteTip', Tip::getRandTip());
 	}
 
-	/**
-	 * Only when the model have property 'user_id' can use
-	 */
-	public function authorOrAdminPermissioinRequire($model)
+	public function authorOrAdminPermissioinRequire($author_id)
 	{
-		if (! Entrust::can('manage_topics') && $model->user_id != Auth::user()->id)
+		if (! Entrust::can('manage_topics') && $author_id != Auth::user()->id)
 		{
 			throw new ManageTopicsException("permission-required");
 		}

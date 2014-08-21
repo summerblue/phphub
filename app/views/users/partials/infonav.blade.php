@@ -1,4 +1,5 @@
 
+
 <ul class="nav nav-tabs user-info-nav" role="tablist">
   <li class="{{ $user->present()->userinfoNavActive('users.show') }}">
   	<a href="{{ route('users.show', $user->id) }}" >个人信息</a>

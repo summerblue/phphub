@@ -20,11 +20,15 @@
   @if (isset($user->company))
     <dt class="adr"><label>公司:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>  
   @endif
+
+  @if (isset($user->city))
+    <dt class="adr"><label>城市:</label></dt><dd><span class="org"><i class="fa fa-map-marker"></i> {{{ $user->city }}}</span></dd>  
+  @endif
   
   @if (isset($user->twitter_account))
   <dt><label><span>Twitter</span>:</label></dt>
   <dd>
-    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank">{{{ '@' . $user->twitter_account }}}
+    <a href="https://twitter.com/{{ $user->twitter_account }}" rel="nofollow" class="twitter" target="_blank"><i class="fa fa-twitter"></i> {{{ '@' . $user->twitter_account }}}
     </a>
   </dd>
   @endif
@@ -32,8 +36,8 @@
   @if (isset($user->personal_website))
   <dt><label>博客:</label></dt>
   <dd>
-    <a href="{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
-      {{{ str_limit($user->personal_website, 25) }}}
+    <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
+      <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 25) }}}
     </a>
   </dd>
   @endif
@@ -42,13 +46,15 @@
     <dt><label>签名:</label></dt><dd><span>{{{ $user->signature }}}</span></dd>
   @endif
 
-  @if (isset($user->description))
-    <dt><label>简介:</label></dt><dd><span>{{{ $user->description }}}</span></dd>
-  @endif
-
   <dt>
     <label>Since:</label>
   </dt>
   <dd><span>{{ $user->created_at }}</span></dd>
 </dl>
 <div class="clearfix"></div>
+
+@if ($currentUser && $currentUser->id == $user->id)
+  <a class="btn btn-primary btn-block" href="{{ route('users.edit', $user->id) }}">
+    <i class="icon-edit"></i> 编辑个人资料
+  </a>
+@endif

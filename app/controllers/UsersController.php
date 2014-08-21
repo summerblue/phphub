@@ -18,17 +18,27 @@ class UsersController extends \BaseController {
 
 	public function edit($id)
 	{
-		//
+		$user = User::findOrFail($id);
+		$this->authorOrAdminPermissioinRequire($user->id);
+		return View::make('users.edit', compact('user', 'topics', 'replies'));
 	}
 
 	public function update($id)
 	{
-		//
+		$user = User::findOrFail($id);
+		$this->authorOrAdminPermissioinRequire($user->id);
+		$data = Input::only('city', 'company', 'twitter_account', 'personal_website', 'signature', 'description');
+		App::make('Phphub\Forms\UserUpdateForm')->validate($data);
+		
+		$user->update($data);
+
+		Flash::success('话题更新成功.');
+		return Redirect::back();
 	}
 
 	public function destroy($id)
 	{
-		//
+		$this->authorOrAdminPermissioinRequire($topic->user_id);
 	}
 
 	public function replies($id)

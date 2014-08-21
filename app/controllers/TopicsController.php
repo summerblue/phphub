@@ -28,7 +28,7 @@ class TopicsController extends \BaseController implements CreatorListener
 		$node = Node::find(Input::get('node_id'));
 		$nodes = Node::allLevelUp();
 
-		return View::make('topics.create', compact('nodes', 'node'));
+		return View::make('topics.create_edit', compact('nodes', 'node'));
 	}
 
 	public function store()
@@ -51,11 +51,11 @@ class TopicsController extends \BaseController implements CreatorListener
 	public function edit($id)
 	{
 		$topic = Topic::findOrFail($id);
-		$this->authorOrAdminPermissioinRequire($topic);
+		$this->authorOrAdminPermissioinRequire($topic->user_id);
 		$nodes = Node::allLevelUp();
 		$node = $topic->node;
 
-		return View::make('topics.create', compact('topic', 'nodes', 'node'));
+		return View::make('topics.create_edit', compact('topic', 'nodes', 'node'));
 	}
 
 	public function update($id)
@@ -63,10 +63,10 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic = Topic::findOrFail($id);
 		$data = Input::only('title', 'body', 'node_id');
 
-		$this->authorOrAdminPermissioinRequire($topic);
+		$this->authorOrAdminPermissioinRequire($topic->user_id);
 		
         // Validation
-		App::make('Phphub\Forms\TopicCreationForm')->validate($data);
+		App::make('Phphub\Forms\UserSignupForm')->validate($data);
 
 		$topic->update($data);
 
