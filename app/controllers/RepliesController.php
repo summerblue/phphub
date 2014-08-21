@@ -14,6 +14,13 @@ class RepliesController extends \BaseController implements CreatorListener
 		return App::make('Phphub\Reply\ReplyCreator')->create($this, Input::except('_token'));
 	}
 
+    public function vote($id)
+    {
+        $reply = Reply::find($id);
+        App::make('Phphub\Vote\Voter')->replyUpVote($reply);
+        return Redirect::back();
+    }
+
     /**
      * ----------------------------------------
      * CreatorListener Delegate

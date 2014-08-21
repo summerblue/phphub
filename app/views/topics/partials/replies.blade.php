@@ -12,15 +12,23 @@
     <div class="infos">
 
       <div class="media-heading meta">
+
         <a href="{{ route('users.show', [$reply->user_id]) }}" title="{{{ $reply->user->name }}}" class="remove-padding-left">
             {{{ $reply->user->name }}}
         </a>
-        
-        <a class="reply-floor" href="#reply{{ $index+1 }}">{{ $index +1 }}楼</a> · <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
-        
+        <span> •  </span>
+        <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
+        <span> •  </span>
+        <a name="reply{{ $reply->id }}" class="anchor" href="#reply{{ $reply->id }}" aria-hidden="true">#{{ $reply->id }}</a>
 
         <span class="operate pull-right">
-            <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');"></a>
+
+          <a href="{{ route('replies.vote', $reply->id) }}" title="赞一个">
+            <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i>
+            {{ $reply->vote_count }}
+          </a>
+          <span> •  </span>
+          <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');" title="回复 {{{ $reply->user->name }}}"></a>
         </span>
       
       </div>

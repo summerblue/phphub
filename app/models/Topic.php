@@ -66,6 +66,7 @@ class Topic extends \Eloquent
 	public function getRepliesWithLimit($limit = 30)
 	{
 		return $this->replies()
+					->orderBy('vote_count', 'desc')
 					->orderBy('created_at', 'asc')
 					->with('user')
 					->paginate($limit);

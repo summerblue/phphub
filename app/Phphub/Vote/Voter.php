@@ -52,4 +52,31 @@ class Voter
         }
     }
 
+    public function replyUpVote(Reply $reply)
+    {
+        if (Auth::user()->id == $reply->user_id) {
+            \Flash::warning('不允许给自己点赞.');
+            return;
+        }
+        if ($reply->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count()) 
+        {
+            // click twice for remove upvote
+            $reply->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->delete();
+            $reply->decrement('vote_count', 1);
+        }
+        elseif ($reply->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count()) 
+        {
+            // user already clicked downvote once
+            $reply->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->delete();
+            $reply->votes()->create(['user_id' => Auth::user()->id, 'is' => 'upvote']);
+            $reply->increment('vote_count', 2);
+        }
+        else 
+        {
+            // first time click
+            $reply->votes()->create(['user_id' => Auth::user()->id, 'is' => 'upvote']);
+            $reply->increment('vote_count', 1);
+        }
+    }
+
 }

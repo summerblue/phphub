@@ -114,7 +114,7 @@ Route::get('/topics/{id}/downvote', [
 ]);
 
 Route::get('/replies/{id}/vote', [
-	'as' => 'topics.vote',
+	'as' => 'replies.vote',
 	'uses' => 'RepliesController@vote',
 	'before' => 'auth'
 ]);
