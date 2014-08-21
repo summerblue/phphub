@@ -66,7 +66,7 @@ class TopicsController extends \BaseController implements CreatorListener
 		$this->authorOrAdminPermissioinRequire($topic->user_id);
 		
         // Validation
-		App::make('Phphub\Forms\UserSignupForm')->validate($data);
+		App::make('Phphub\Forms\TopicCreationForm')->validate($data);
 
 		$topic->update($data);
 
