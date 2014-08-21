@@ -19,43 +19,46 @@
 			<ul class="list-group row">
 				@foreach ($notifications as $notification)
 				 <li class="list-group-item media" style="margin-top: 0px;">
+				 
+					@if (count($notification->topic))
+						<div class="avatar pull-left">
+							<a href="{{ route('users.show', [$notification->from_user_id]) }}">
+								<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:48px;height:48px;"/>
+							</a>
+						</div>
 
-					<div class="avatar pull-left">
-						<a href="{{ route('users.show', [$notification->from_user_id]) }}">
-							<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:48px;height:48px;"/>
-						</a>
-					</div>
+						<div class="infos">
 
-					<div class="infos">
+						  <div class="media-heading">
 
-					  <div class="media-heading">
+						  	<a href="{{ route('users.show', [$notification->from_user_id]) }}">
+								{{{ $notification->fromUser->name }}}
+							</a>
+							 • 
+							@if ($notification->type == 'new_reply')
+								回复了你的主题: 
+							@elseif ($notification->type == 'attention')
+								回复了你关注的主题: 
+							@elseif ($notification->type == 'at')
+								在话题中提及你: 
+							@endif
 
-					  	<a href="{{ route('users.show', [$notification->from_user_id]) }}">
-							{{{ $notification->fromUser->name }}}
-						</a>
-						 • 
-						@if ($notification->type == 'new_reply')
-							回复了你的主题: 
-						@elseif ($notification->type == 'attention')
-							回复了你关注的主题: 
-						@elseif ($notification->type == 'at')
-							在话题中提及你: 
-						@endif
+						  	<a href="{{ route('topics.show', [$notification->topic->id]) }}" title="{{{ $notification->topic->title }}}">
+						  		{{{ str_limit($notification->topic->title, '100') }}}
+						  	</a>
 
-					  	<a href="{{ route('topics.show', [$notification->topic->id]) }}" title="{{{ $notification->topic->title }}}">
-					  		{{{ str_limit($notification->topic->title, '100') }}}
-					  	</a>
-
-					  	<span class="meta">
-					  		 • 发生在 • <span class="timeago">{{ $notification->created_at }}</span>
-					  	</span>
-					  </div>
-					  <div class="media-body markdown-reply">
+						  	<span class="meta">
+						  		 • 发生在 • <span class="timeago">{{ $notification->created_at }}</span>
+						  	</span>
+						  </div>
+						  <div class="media-body markdown-reply">
 {{{ $notification->body }}}
-					  </div>
-					  
-					</div>
-
+						  </div>
+						  
+						</div>
+					@else
+				      <div class="deleted text-center">信息已被删除.</div>
+				    @endif
 				</li>
 				@endforeach
 			</ul>
