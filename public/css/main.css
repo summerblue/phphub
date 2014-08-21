@@ -136,6 +136,8 @@ ul.list {
     text-decoration: none; }
   .meta .timeago, .operate .timeago {
     font-size: 11px; }
+  .meta a.anchor, .operate a.anchor {
+    color: #d0d0d0; }
 
 .badge-reply-count {
   margin: 15px 20px;
