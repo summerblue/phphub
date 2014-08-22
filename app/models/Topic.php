@@ -91,10 +91,10 @@ class Topic extends \Eloquent
 	{
 		switch ($filter) {
 			case 'noreply':
-				return $this->Pin()->orderBy('reply_count', 'asc')->Recent();
+				return $this->orderBy('reply_count', 'asc')->Recent();
 				break;
 			case 'vote':
-				return $this->Pin()->Recent();
+				return $this->orderBy('vote_count', 'desc')->Recent();
 				break;
 			case 'excellent':
 				return $this->where('is_excellent', '=', true)->Recent();
