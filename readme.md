@@ -348,3 +348,12 @@ Homestead 里已经安装了 nodejs , npm, gulp.
 > 跟踪 `composer.lock` 的好处是当你执行 `composer update` 的时候, 有些 `package` 会更新, 有时候这个更新会威胁到项目的稳定性, 这个时候如果有这个文件来跟踪刚刚到底更新了哪些 `package`, 之前可用的 `package` 是哪个版本的话, 会很有帮助. 
 
 同时可以发现文件 `.env.local.php` 并不会被加入到 git 的版本控制里面. 
+
+
+## License
+
+Copyright (c) 2014 PHPHub.org
+
+Released under the MIT license:
+
+> [www.opensource.org/licenses/MIT](http://www.opensource.org/licenses/MIT)
