@@ -4,7 +4,7 @@
     <a class="" href="http://service.weibo.com/share/share.php?url={{ urlencode(Request::url()) }}&type=3&pic=&title={{{ $topic->title }}}" target="_blank" title="分享到微博">
       <i class="fa fa-weibo"></i>
     </a>
-    <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::url()) }}&text={{{ $topic->title }}}&via=phphub" class=""  target="_blank" title="分享到 Twitter">
+    <a href="https://twitter.com/intent/tweet?url={{ urlencode(Request::url()) }}&text={{{ $topic->title }}}&via=phphub.org" class=""  target="_blank" title="分享到 Twitter">
       <i class="fa fa-twitter"></i>
     </a>
     <a href="http://www.facebook.com/sharer.php?u={{ urlencode(Request::url()) }}" class=""  target="_blank" title="分享到 Facebook">
