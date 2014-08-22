@@ -100,8 +100,10 @@ class Topic extends \Eloquent
 				return $this->where('is_excellent', '=', true)->Recent();
 				break;
 			case 'recent':
-			default:
 				return $this->Pin()->Recent();
+				break;
+			default:
+				return $this->Pin()->RecentReply();
 				break;
 		}
 	}
@@ -131,5 +133,10 @@ class Topic extends \Eloquent
     public function scopePin($query)
     {
         return $query->orderBy('order','desc');
+    }
+
+    public function scopeRecentReply($query)
+    {
+        return $query->where('created_at', '>', Carbon::today()->subMonth())->orderBy('updated_at', 'desc');
     }
 }

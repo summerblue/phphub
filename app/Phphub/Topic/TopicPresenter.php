@@ -21,7 +21,7 @@ class TopicPresenter extends Presenter
         }
         else 
         {
-            $selected = $filter == 'recent' ? 'class="selected"':'';
+            $selected = '';
         }
 
         return 'href="' . $link . '"' . $selected;
@@ -35,7 +35,7 @@ class TopicPresenter extends Presenter
         {
             return $request_filter;
         }
-        return 'recent';
+        return 'default';
     }
 
     public function haveDefaultNode($node, $snode)

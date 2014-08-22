@@ -44,11 +44,13 @@
 			</a>
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
-			@if (count($topic->lastReplyUser))
+			@if ($topic->reply_count > 0 && count($topic->lastReplyUser))
 				<span> • </span>最后由 
 			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
 	              {{{ $topic->lastReplyUser->name }}}
 	            </a>
+	            <span> • </span>
+			  	<span class="timeago">{{ $topic->updated_at }}</span>
 			@endif
 		  </div>
 		  
