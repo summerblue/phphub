@@ -27,6 +27,8 @@ class RepliesController extends \BaseController implements CreatorListener
         $this->authorOrAdminPermissioinRequire($reply->user_id);
         $reply->delete();
 
+        $reply->topic->decrement('reply_count', 1);
+
         Flash::success("成功放入垃圾箱.");
 
         return Redirect::route('topics.show', $reply->topic_id);
