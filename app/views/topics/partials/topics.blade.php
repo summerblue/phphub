@@ -22,8 +22,8 @@
 		  	<a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
 		  		{{{ $column ? str_limit($topic->title, '30') : str_limit($topic->title, '100') }}}
 		  	</a>
-		  	@if ($topic->order > 0 && !Input::get('filter'))
-		  		<i class="fa fa-thumb-tack" style="color:#969595;"></i>
+		  	@if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
+		  		<i class="fa fa-thumb-tack" style="color:#969595;padding-left: 2px;"></i>
 		  	@endif
 		  </div>
 		  <div class="media-body meta">
