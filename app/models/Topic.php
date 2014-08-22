@@ -91,17 +91,17 @@ class Topic extends \Eloquent
 	{
 		switch ($filter) {
 			case 'noreply':
-				return $this->Pin()->orderBy('reply_count', 'asc')->orderBy('created_at', 'desc');
+				return $this->Pin()->orderBy('reply_count', 'asc')->Recent();
 				break;
 			case 'vote':
-				return $this->Pin()->orderBy('vote_count', 'desc');
+				return $this->Pin()->Recent();
 				break;
 			case 'excellent':
-				return $this->where('is_excellent', '=', true)->Pin()->orderBy('created_at', 'desc');
+				return $this->where('is_excellent', '=', true)->Recent();
 				break;
 			case 'recent':
 			default:
-				return $this->Pin()->orderBy('created_at', 'desc');
+				return $this->Pin()->Recent();
 				break;
 		}
 	}
@@ -112,7 +112,7 @@ class Topic extends \Eloquent
 	public function getSameNodeTopics($limit = 8)
 	{
 		return Topic::where('node_id', '=', $this->node_id)
-						->orderBy('created_at', 'desc')
+						->Recent()
 						->take($limit)
 						->remember(10)
 						->get();
