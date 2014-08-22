@@ -106,8 +106,9 @@ PHPhub - PHP & Laravel的中文社区
 		
 		<script type="text/javascript">
 		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9b5b915ba88e02f9ba7c4a6dbf88b101' type='text/javascript'%3E%3C/script%3E"));
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c9bedc0d968b38ed0ab8ce47d86c80e' type='text/javascript'%3E%3C/script%3E"));
 		</script>
+
 
 	</body>
 </html>
