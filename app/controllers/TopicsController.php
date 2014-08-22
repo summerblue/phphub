@@ -124,6 +124,13 @@ class TopicsController extends \BaseController implements CreatorListener
 		return Redirect::route('topics.show', $topic->id);
 	}
 
+	public function pin($id)
+	{
+		$topic = Topic::findOrFail($id);
+		($topic->order > 0) ? $topic->decrement('order', 1) : $topic->increment('order', 1);
+		return Redirect::route('topics.show', $topic->id);
+	}
+
 	public function delete($id)
 	{
 		$topic = Topic::find($id);

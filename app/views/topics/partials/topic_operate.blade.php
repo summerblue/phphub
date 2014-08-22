@@ -22,22 +22,26 @@
     @endif
 
     @if ($currentUser && $currentUser->can("manage_topics") )
-      <a id="topic-recomend-button" href="{{ route('topics.recomend', [$topic->id]) }}" >
-        <i class="fa fa-trophy"></i> <span>{{ $topic->is_excellent ? '取消' : '推荐' }}</span>
+      <a id="topic-recomend-button" href="{{ route('topics.recomend', [$topic->id]) }}" class="admin {{ $topic->is_excellent ? 'active' :'';}}">
+        <i class="fa fa-trophy"></i>
       </a>
 
-      <a id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}">
-        <i class="fa fa-graduation-cap"></i> <span>{{ $topic->is_wiki ? '取消' : 'Wiki' }}</span>
+      <a id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}" class="admin {{ $topic->is_wiki ? 'active' : '' }}">
+        <i class="fa fa-graduation-cap"></i>
       </a>
 
-      <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" onclick=" return confirm('确定要删除此话题吗?')">
-        <i class="fa fa-trash-o"></i> <span>删除</span>
+      <a id="topic-wiki-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}">
+        <i class="fa fa-thumb-tack"></i>
+      </a>
+
+      <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" onclick=" return confirm('确定要删除此话题吗?')" title="删除此话题" class="admin">
+        <i class="fa fa-trash-o"></i>
       </a>
     @endif
 
     @if ( $currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $topic->user_id) )
-      <a id="topic-delete-button" href="{{ route('topics.edit', [$topic->id]) }}">
-        <i class="fa fa-pencil-square-o"></i> <span>编辑</span>
+      <a id="topic-delete-button" href="{{ route('topics.edit', [$topic->id]) }}" title="编辑" class="admin">
+        <i class="fa fa-pencil-square-o"></i>
       </a>
     @endif
 

@@ -22,6 +22,9 @@
 		  	<a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
 		  		{{{ $column ? str_limit($topic->title, '30') : str_limit($topic->title, '100') }}}
 		  	</a>
+		  	@if ($topic->order > 0)
+		  		<i class="fa fa-bolt" style="color:#EB872B;"></i>
+		  	@endif
 		  </div>
 		  <div class="media-body meta">
 

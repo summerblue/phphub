@@ -139,6 +139,14 @@ ul.list {
   .meta a.anchor, .operate a.anchor {
     color: #d0d0d0; }
 
+.operate .active {
+  color: #ce8a81; }
+.operate .fa {
+  font-size: 15px; }
+.operate a.admin {
+  display: inline-block;
+  margin-left: 11px; }
+
 .badge-reply-count {
   margin: 15px 20px;
   background-color: #8BAFCE; }

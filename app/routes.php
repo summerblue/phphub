@@ -141,6 +141,12 @@ Route::get('topics/wiki/{id}',  [
 	'before' => 'manage_topics'
 ]);
 
+Route::get('topics/pin/{id}',  [
+	'as' => 'topics.pin',
+	'uses' => 'TopicsController@pin',
+	'before' => 'manage_topics'
+]);
+
 Route::get('topics/delete/{id}',  [
 	'as' => 'topics.delete', 
 	'uses' => 'TopicsController@delete',

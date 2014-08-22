@@ -157,6 +157,19 @@ ul.list {
   }
 }
 
+.operate {
+  .active {
+    color:#ce8a81
+  }
+  .fa {
+    font-size: 15px;
+  }
+  a.admin {
+    display: inline-block;
+    margin-left: 11px;
+  }
+}
+
 .badge-reply-count {
   margin: 15px 20px;
   background-color: #8BAFCE;

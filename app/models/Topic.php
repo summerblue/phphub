@@ -91,17 +91,17 @@ class Topic extends \Eloquent
 	{
 		switch ($filter) {
 			case 'noreply':
-				return $this->orderBy('reply_count', 'asc')->orderBy('created_at', 'desc');
+				return $this->Pin()->orderBy('reply_count', 'asc')->orderBy('created_at', 'desc');
 				break;
 			case 'vote':
-				return $this->orderBy('vote_count', 'desc');
+				return $this->Pin()->orderBy('vote_count', 'desc');
 				break;
 			case 'excellent':
-				return $this->where('is_excellent', '=', true)->orderBy('created_at', 'desc');
+				return $this->where('is_excellent', '=', true)->Pin()->orderBy('created_at', 'desc');
 				break;
 			case 'recent':
 			default:
-				return $this->orderBy('created_at', 'desc');
+				return $this->Pin()->orderBy('created_at', 'desc');
 				break;
 		}
 	}
@@ -126,5 +126,10 @@ class Topic extends \Eloquent
     public function scopeRecent($query)
     {
         return $query->orderBy('created_at','desc');
+    }
+
+    public function scopePin($query)
+    {
+        return $query->orderBy('order','desc');
     }
 }
