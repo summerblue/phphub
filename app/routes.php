@@ -95,9 +95,17 @@ Route::get('oauth', 'AuthController@getOauth');
 
 Route::resource('nodes', 'NodesController');
 Route::resource('topics', 'TopicsController');
-Route::resource('replies', 'RepliesController', ['only' => ['store']]);
 Route::resource('votes', 'VotesController');
 Route::resource('users', 'UsersController');
+
+# ------------------ Votes ------------------------
+
+Route::resource('replies', 'RepliesController', ['only' => ['store']]);
+Route::get('replies/delete/{id}',  [
+	'as' => 'replies.delete', 
+	'uses' => 'RepliesController@delete',
+	'before' => 'auth'
+]);
 
 # ------------------ Votes ------------------------
 

@@ -21,6 +21,17 @@ class RepliesController extends \BaseController implements CreatorListener
         return Redirect::back();
     }
 
+    public function delete($id)
+    {
+        $reply = Reply::find($id);
+        $this->authorOrAdminPermissioinRequire($reply->user_id);
+        $reply->delete();
+
+        Flash::success("成功放入垃圾箱.");
+
+        return Redirect::route('topics.show', $reply->topic_id);
+    }
+
     /**
      * ----------------------------------------
      * CreatorListener Delegate

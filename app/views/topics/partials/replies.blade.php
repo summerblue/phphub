@@ -22,12 +22,18 @@
         <a name="reply{{ $reply->id }}" class="anchor" href="#reply{{ $reply->id }}" aria-hidden="true">#{{ $reply->id }}</a>
 
         <span class="operate pull-right">
-
           <a href="{{ route('replies.vote', $reply->id) }}" title="赞一个">
             <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i>
             {{ $reply->vote_count }}
           </a>
           <span> •  </span>
+          
+          @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
+            <a id="topic-delete-button" href="{{ route('replies.delete', [$reply->id]) }}" onclick=" return confirm('确定要删除此话题吗?')">
+              <i class="fa fa-trash-o"></i> 
+            </a>
+            <span> •  </span>
+          @endif
           <a class="fa fa-reply" href="javascript:void(0)" onclick="replyOne('{{{ $reply->user->name }}}');" title="回复 {{{ $reply->user->name }}}"></a>
         </span>
       
