@@ -103,6 +103,11 @@ PHPhub - PHP & Laravel的中文社区
 		  ga('create', 'UA-53903425-1', 'auto');
 		  ga('send', 'pageview');
 		</script>
+		
+		<script type="text/javascript">
+		var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+		document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9b5b915ba88e02f9ba7c4a6dbf88b101' type='text/javascript'%3E%3C/script%3E"));
+		</script>
 
 	</body>
 </html>
