@@ -15,15 +15,15 @@ class CreateUsersTable extends Migration {
 		Schema::create('users', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('github_id');
+			$table->integer('github_id')->index();
 			$table->string('github_url');
-			$table->string('email')->nullable();
-			$table->string('name')->nullable();
+			$table->string('email')->nullable()->index();
+			$table->string('name')->nullable()->index();
 			$table->string('remember_token')->nullable();
-			$table->boolean('is_banned')->default(false);
+			$table->boolean('is_banned')->default(false)->index();
 			$table->string('image_url')->nullable();
-			$table->integer('topic_count')->default(0);
-			$table->integer('reply_count')->default(0);
+			$table->integer('topic_count')->default(0)->index();
+			$table->integer('reply_count')->default(0)->index();
 			$table->string('city')->nullable();
 			$table->string('company')->nullable();
 			$table->string('twitter_account')->nullable();
