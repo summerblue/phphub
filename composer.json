@@ -12,7 +12,8 @@
         "laracasts/presenter": "0.1.*",
         "itsgoingd/clockwork": "1.*",
         "zizaco/entrust": "1.2.*@dev",
-        "graham-campbell/security": "~2.0"
+        "graham-campbell/security": "~2.0",
+        "roumen/feed": "dev-master"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

@@ -12,7 +12,13 @@
 
 <div class="panel panel-default list-panel">
   <div class="panel-heading">
-    <h3 class="panel-title text-center">社区精华帖</h3>
+    <h3 class="panel-title text-center">
+      社区精华帖 &nbsp;
+      <a href="{{ route('feed') }}" style="color: #E5974E; font-size: 14px;" target="_blank">
+         <i class="fa fa-rss"></i> 
+      </a>
+    </h3>
+
   </div>
   
   <div class="panel-body">
@@ -20,6 +26,7 @@
   </div>
 
   <div class="panel-footer text-right">
+    
   	<a href="topics?filter=excellent">
   		查看更多精华帖...
   	</a>

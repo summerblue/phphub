@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "632075af587a182df0298dc9a5a09c4a",
+    "hash": "c8709f47de5d0c89117858caeb925312",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -1233,6 +1233,53 @@
             "time": "2012-12-21 11:40:51"
         },
         {
+            "name": "roumen/feed",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RoumenDamianoff/laravel-feed.git",
+                "reference": "713053978bba2cc3bd6f0ce94d4d1880f28bf280"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RoumenDamianoff/laravel-feed/zipball/713053978bba2cc3bd6f0ce94d4d1880f28bf280",
+                "reference": "713053978bba2cc3bd6f0ce94d4d1880f28bf280",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Roumen\\Feed": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roumen Damianoff",
+                    "email": "roumen@dawebs.com",
+                    "homepage": "http://roumen.it",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A simple feed generator for Laravel 4.",
+            "homepage": "http://roumen.it/projects/laravel-feed",
+            "keywords": [
+                "feed",
+                "laravel"
+            ],
+            "time": "2014-06-13 17:15:48"
+        },
+        {
             "name": "stack/builder",
             "version": "v1.0.2",
             "source": {
@@ -2179,23 +2226,23 @@
     "packages-dev": [
         {
             "name": "codeception/codeception",
-            "version": "2.0.4",
+            "version": "2.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Codeception/Codeception.git",
-                "reference": "ad5eecbb8991b9432e6f2a236d7b2e6a82c46864"
+                "reference": "0314ca60e48e1d2ae62139029efd942362f37542"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/ad5eecbb8991b9432e6f2a236d7b2e6a82c46864",
-                "reference": "ad5eecbb8991b9432e6f2a236d7b2e6a82c46864",
+                "url": "https://api.github.com/repos/Codeception/Codeception/zipball/0314ca60e48e1d2ae62139029efd942362f37542",
+                "reference": "0314ca60e48e1d2ae62139029efd942362f37542",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "ext-mbstring": "*",
                 "facebook/webdriver": "~0.4",
-                "guzzlehttp/guzzle": "4.*",
+                "guzzlehttp/guzzle": "~4.0",
                 "php": ">=5.4.0",
                 "phpunit/phpunit": "~4.0",
                 "symfony/browser-kit": "~2.4",
@@ -2207,11 +2254,12 @@
                 "symfony/yaml": "~2.4"
             },
             "require-dev": {
-                "codeception/specify": "*",
-                "facebook/php-sdk": "3.*",
-                "monolog/monolog": "*",
-                "phpseclib/phpseclib": "0.3.6",
-                "videlalvaro/php-amqplib": "*"
+                "codeception/specify": "~0.3",
+                "facebook/php-sdk": "~3.2",
+                "monolog/monolog": "~1.8",
+                "pda/pheanstalk": "~2.0",
+                "phpseclib/phpseclib": "~0.3.6",
+                "videlalvaro/php-amqplib": "~2.4"
             },
             "suggest": {
                 "codeception/phpbuiltinserver": "Extension to start and stop PHP built-in web server for your tests",
@@ -2249,7 +2297,7 @@
                 "functional testing",
                 "unit testing"
             ],
-            "time": "2014-08-05 02:15:03"
+            "time": "2014-08-21 03:21:23"
         },
         {
             "name": "facebook/webdriver",
@@ -2343,16 +2391,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "4.2.0",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "cc79aa76054e3e5e45dfd87f7b0f61f54b3a759d"
+                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/cc79aa76054e3e5e45dfd87f7b0f61f54b3a759d",
-                "reference": "cc79aa76054e3e5e45dfd87f7b0f61f54b3a759d",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/47ca212e985d962b3cbd67675eec54bb72d66062",
+                "reference": "47ca212e985d962b3cbd67675eec54bb72d66062",
                 "shasum": ""
             },
             "require": {
@@ -2404,7 +2452,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2014-08-18 00:48:35"
+            "time": "2014-08-20 05:30:12"
         },
         {
             "name": "guzzlehttp/streams",
@@ -3437,9 +3485,9 @@
     "stability-flags": {
         "artdarek/oauth-4-laravel": 20,
         "zizaco/entrust": 20,
+        "roumen/feed": 20,
         "mockery/mockery": 20
     },
-    "prefer-stable": false,
     "platform": [
 
     ],

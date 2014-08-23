@@ -22,6 +22,11 @@ Route::get('/search', [
 	'uses' => 'PagesController@search'
 ]);
 
+Route::get('/feed', [
+	'as' => 'feed',
+	'uses' => 'PagesController@feed'
+]);
+
 # ------------------ User stuff ------------------------
 
 Route::get('/users/{id}/replies', [

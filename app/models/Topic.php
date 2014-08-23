@@ -97,7 +97,7 @@ class Topic extends \Eloquent
 				return $this->orderBy('vote_count', 'desc')->Recent();
 				break;
 			case 'excellent':
-				return $this->where('is_excellent', '=', true)->Recent();
+				return $this->Excellent()->Recent();
 				break;
 			case 'recent':
 				return $this->Pin()->Recent();
@@ -138,5 +138,10 @@ class Topic extends \Eloquent
     public function scopeRecentReply($query)
     {
         return $query->where('created_at', '>', Carbon::today()->subMonth())->orderBy('updated_at', 'desc');
+    }
+
+    public function scopeExcellent($query)
+    {
+        return $query->where('is_excellent', '=', true);
     }
 }
