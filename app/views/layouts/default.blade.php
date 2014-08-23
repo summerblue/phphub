@@ -1,12 +1,12 @@
 <!--
-______                            _              _                                     _  
-| ___ \                          | |            | |                                   | | 
-| |_/ /___ __      __ ___  _ __  | |__   _   _  | |      __ _  _ __  __ _ __   __ ___ | | 
-|  __// _ \\ \ /\ / // _ \| '__| | '_ \ | | | | | |     / _` || '__|/ _` |\ \ / // _ \| | 
-| |  | (_) |\ V  V /|  __/| |    | |_) || |_| | | |____| (_| || |  | (_| | \ V /|  __/| | 
-\_|   \___/  \_/\_/  \___||_|    |_.__/  \__, | \_____/ \__,_||_|   \__,_|  \_/  \___||_| 
-                                          __/ |                                           
-                                         |___/                                            
+______                            _              _                                     _
+| ___ \                          | |            | |                                   | |
+| |_/ /___ __      __ ___  _ __  | |__   _   _  | |      __ _  _ __  __ _ __   __ ___ | |
+|  __// _ \\ \ /\ / // _ \| '__| | '_ \ | | | | | |     / _` || '__|/ _` |\ \ / // _ \| |
+| |  | (_) |\ V  V /|  __/| |    | |_) || |_| | | |____| (_| || |  | (_| | \ V /|  __/| |
+\_|   \___/  \_/\_/  \___||_|    |_.__/  \__, | \_____/ \__,_||_|   \__,_|  \_/  \___||_|
+                                          __/ |
+                                         |___/
   ========================================================
                                            phphub.org
 
@@ -19,15 +19,15 @@ ______                            _              _                              
 	<head>
 
 		<meta charset="UTF-8">
-		
+
 		<title>
 			@section('title')
 PHPhub - PHP & Laravel的中文社区
 			@show
 		</title>
-		
+
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		
+
 		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
 		<meta name="author" content="The PHP China Community." />
 		<meta name="description" content="@section('description') PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
@@ -43,19 +43,19 @@ PHPhub - PHP & Laravel的中文社区
 	<body>
 
 		<div id="wrap">
-			
+
 			@include('layouts.partials.nav')
 
 			<div class="container">
 
 				@include('flash::message')
-			
+
 				@yield('content')
-				
+
 			</div>
-	
+
 		</div>
-		
+
 	  <div id="footer" class="footer">
 	    <div class="container small">
 	      <p class="pull-left">
@@ -78,7 +78,7 @@ PHPhub - PHP & Laravel的中文社区
 		<script src="{{ cdn('js/emojify.min.js') }}"></script>
 		<script src="{{ cdn('js/marked.min.js') }}"></script>
 		<script src="{{ cdn('js/main.js') }}"></script>
-	    
+
 	    <script>
 	    emojify.setConfig({
 			    img_dir : '{{ cdn('images/emoji') }}',
@@ -93,7 +93,7 @@ PHPhub - PHP & Laravel的中文社区
 	    </script>
 	    @yield('scripts')
 
-		
+
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -103,15 +103,15 @@ PHPhub - PHP & Laravel的中文社区
 		  ga('create', 'UA-53903425-1', 'auto');
 		  ga('send', 'pageview');
 		</script>
-		
+
 		<div class="hide">
-				
+
 			<script type="text/javascript">
 			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c9bedc0d968b38ed0ab8ce47d86c80e' type='text/javascript'%3E%3C/script%3E"));
 			</script>
 		</div>
 
-
+<style>#forkongithub a{background:#ddd;color:#000;text-decoration:none;font-family:arial,sans-serif;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;}#forkongithub a:hover{background:#c11;color:#fff;}#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}#forkongithub a::after{bottom:1px;top:auto;}@media screen and (min-width:800px){#forkongithub{position:fixed;display:block;top:0;left:0;width:200px;overflow:hidden;height:200px;z-index:9999;}#forkongithub a{width:200px;position:absolute;top:40px;left:-46px;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);box-shadow:4px 4px 10px rgba(151, 151, 151, 0.8);}}</style><span id="forkongithub"><a href="https://github.com/summerblue/phphub" target="_blank">Fork me on GitHub</a></span>
 	</body>
 </html>
