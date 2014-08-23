@@ -6,6 +6,8 @@ class PagesController extends \BaseController {
 
 	public function __construct(Topic $topic)
     {
+    	parent::__construct();
+    	
         $this->topic = $topic;
     }
 

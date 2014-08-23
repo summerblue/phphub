@@ -9,6 +9,8 @@ class TopicsController extends \BaseController implements CreatorListener
 
 	public function __construct(Topic $topic)
     {
+    	parent::__construct();
+    	
         $this->beforeFilter('auth', ['except' => ['index', 'show']]);
         $this->topic = $topic;
     }

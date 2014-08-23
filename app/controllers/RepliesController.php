@@ -6,6 +6,8 @@ class RepliesController extends \BaseController implements CreatorListener
 {
 	public function __construct(Topic $topic)
     {
+        parent::__construct();
+        
         $this->beforeFilter('auth', ['only' =>'store']);
     }
 

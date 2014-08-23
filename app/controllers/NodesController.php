@@ -6,6 +6,8 @@ class NodesController extends \BaseController {
 
 	public function __construct(Topic $topic)
     {
+    	parent::__construct();
+    	
         $this->beforeFilter('auth', ['only' => 'create', 'store']);
         $this->topic = $topic;
     }
