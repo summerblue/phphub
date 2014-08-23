@@ -13,7 +13,7 @@
         "itsgoingd/clockwork": "1.*",
         "zizaco/entrust": "1.2.*@dev",
         "graham-campbell/security": "~2.0",
-        "roumen/feed": "dev-master"
+        "thujohn/rss": "dev-master"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

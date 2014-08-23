@@ -130,7 +130,7 @@ return array(
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
-        'Roumen\Feed\FeedServiceProvider',
+        'Thujohn\Rss\RssServiceProvider',
 
 	),
 
@@ -205,7 +205,7 @@ return array(
 		'GitHub'            => 'Phphub\GitHub\GitHubFacade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
 		'Security'          => 'GrahamCampbell\Security\Facades\Security',
-		'Feed'              => 'Roumen\Feed\Facades\Feed',
+		'Rss'               => 'Thujohn\Rss\RssFacade',
 	),
 
 );

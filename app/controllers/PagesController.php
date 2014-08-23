@@ -53,41 +53,24 @@ class PagesController extends \BaseController {
 	 */
 	public function feed()
 	{
-	    // creating rss feed with our most recent 20 topicss
-	    $topics = Topic::Excellent()->orderBy('created_at', 'desc')->with('user')->limit(30)->get();
-	    $feed = Feed::make();
+		$topics = Topic::Excellent()->orderBy('created_at', 'desc')->with('user')->limit(20)->get();
 
-	    // set your feed's title, description, link, pubdate and language
-	    $feed->title = 'PHPhub - PHP & Laravel的中文社区';
-	    $feed->description = 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。';
-	    $feed->logo = '';
-	    $feed->link = URL::route('feed');
-	    $feed->pubdate = $topics[0]->created_at;
-	    $feed->lang = 'en';
+		$feed = Rss::feed('2.0', 'UTF-8');
+	    $feed->channel([
+	    		'title' => 'PHPhub - PHP & Laravel的中文社区', 
+	    		'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。', 
+	    		'link' => URL::route('feed')
+	    		]);
 
 	    foreach ($topics as $topic)
 	    {
-	        // set item's title, author, url, pubdate, description and content
-	        $feed->add(
-		        		$topic->title, 
-		        		$topic->user->name, 
-		        		URL::route('topics.show', $topic->id), 
-		        		$topic->created_at, 
-		        		$topic->body
-	        		);
+	        $feed->item([
+		        		'title' => $topic->title, 
+		        		'description|cdata' => str_limit($topic->body, 200), 
+		        		'link' => URL::route('topics.show', $topic->id), 
+	        		]);
 	    }
 
-	    // show your feed (options: 'atom' (recommended) or 'rss')
-	    // return $feed->render('atom');
-
-	    // show your feed with cache for 60 minutes
-	    // second param can be integer, carbon or datetime
-	    // optional: you can set custom cache key with 3rd param as string
-	    return $feed->render('atom', 60);
-
-	    // to return your feed as a string set second param to -1
-	    // $xml = $feed->render('atom', -1);
+	    return Response::make($feed, 200, array('Content-Type' => 'text/xml'));
 	}
-
-
 }
