@@ -69,12 +69,11 @@ class PagesController extends \BaseController {
 	    {
 	        // set item's title, author, url, pubdate, description and content
 	        $feed->add(
-	        		$topic->title, 
-	        		$topic->user->name, 
-	        		URL::route('topics.show', $topic->id), 
-	        		$topic->created_at, 
-	        		$topic->description, 
-	        		$topic->content
+		        		$topic->title, 
+		        		$topic->user->name, 
+		        		URL::route('topics.show', $topic->id), 
+		        		$topic->created_at, 
+		        		$topic->body
 	        		);
 	    }
 
