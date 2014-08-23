@@ -53,14 +53,19 @@ class PagesController extends \BaseController {
 	 */
 	public function feed()
 	{
-		$topics = Topic::Excellent()->orderBy('created_at', 'desc')->with('user')->limit(20)->get();
+		$topics = Topic::Excellent()->orderBy('created_at', 'desc')
+									->with('user')
+									->limit(20)
+									->get();
+		$channel =[
+    		'title' => 'PHPhub - PHP & Laravel的中文社区', 
+    		'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。', 
+    		'link' => URL::route('feed')
+    	];
 
 		$feed = Rss::feed('2.0', 'UTF-8');
-	    $feed->channel([
-	    		'title' => 'PHPhub - PHP & Laravel的中文社区', 
-	    		'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。', 
-	    		'link' => URL::route('feed')
-	    		]);
+	    
+	    $feed->channel($channel);
 
 	    foreach ($topics as $topic)
 	    {
