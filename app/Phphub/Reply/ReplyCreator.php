@@ -26,7 +26,7 @@ class ReplyCreator
         $this->form->validate($data);
 
         $reply = Reply::create($data);
-        if ( ! $reply) 
+        if ( ! $reply)
         {
             return $observer->creatorFailed($reply->getErrors());
         }
@@ -39,7 +39,7 @@ class ReplyCreator
         $topic->save();
 
         Auth::user()->increment('reply_count', 1);
-        
+
         App::make('Phphub\Notification\Notifier')->notify(Auth::user(), $this->mentionParser, $topic, $reply);
 
         return $observer->creatorSucceed($reply);

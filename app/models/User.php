@@ -13,7 +13,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     use PresentableTrait;
     public $presenter = 'Phphub\User\UserPresenter';
 
-    // Enable hasRole( $name ), can( $permission ), 
+    // Enable hasRole( $name ), can( $permission ),
     //   and ability($roles, $permissions, $options)
     use HasRole;
 
@@ -35,19 +35,19 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->belongsToMany('Topic', 'attentions')->withTimestamps();
     }
 
-    public function topics() 
+    public function topics()
     {
         return $this->hasMany('Topic');
     }
 
-    public function replies() 
+    public function replies()
     {
         return $this->hasMany('Reply');
     }
 
-    public function notifications() 
+    public function notifications()
     {
-        return $this->hasMany('Notification')->Recent()->with('topic', 'fromUser')->paginate(20);
+        return $this->hasMany('Notification')->recent()->with('topic', 'fromUser')->paginate(20);
     }
 
     public function getByGithubId($id)
@@ -55,7 +55,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->where('github_id', '=', $id)->first();
     }
 
-    // UserInterface
+    /**
+     * ----------------------------------------
+     * UserInterface
+     * ----------------------------------------
+     */
+
     public function getAuthIdentifier()
     {
         return $this->getKey();
@@ -66,7 +71,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->password;
     }
 
-    // RemindableInterface
+    /**
+     * ----------------------------------------
+     * RemindableInterface
+     * ----------------------------------------
+     */
+
     public function getReminderEmail()
     {
         return $this->email;

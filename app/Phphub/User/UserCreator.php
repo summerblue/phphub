@@ -24,14 +24,13 @@ class UserCreator
     {
         // Validation
         $this->signupForm->validate($data);
-
         return $this->createValidUserRecord($observer, $data);
     }
 
     private function createValidUserRecord($observer, $data)
     {
         $user = User::create($data);
-        if ( ! $user) 
+        if ( ! $user)
         {
             return $observer->userValidationError($user->getErrors());
         }

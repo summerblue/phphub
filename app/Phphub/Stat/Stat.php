@@ -5,7 +5,7 @@ use Topic, Reply, User, Cache;
 class Stat
 {
     const CACHE_KEY     = 'site_stat';
-    const CACHE_MINUTES = 60;
+    const CACHE_MINUTES = 10;
 
     public function getSiteStat()
     {

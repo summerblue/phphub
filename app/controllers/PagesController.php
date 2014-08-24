@@ -7,7 +7,6 @@ class PagesController extends \BaseController {
 	public function __construct(Topic $topic)
     {
     	parent::__construct();
-
         $this->topic = $topic;
     }
 
@@ -53,7 +52,7 @@ class PagesController extends \BaseController {
 	 */
 	public function feed()
 	{
-		$topics = Topic::Excellent()->orderBy('created_at', 'desc')
+		$topics = Topic::excellent()->orderBy('created_at', 'desc')
                                     ->with('user')
                                     ->limit(20)
                                     ->get();

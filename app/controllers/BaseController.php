@@ -7,6 +7,7 @@ class BaseController extends Controller {
 
     public function __construct()
     {
+        // csrf check for every post request
         $this->beforeFilter('csrf', array('on' => 'post'));
 
         // for clockwork debuger

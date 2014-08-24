@@ -11,8 +11,8 @@ class UsersController extends \BaseController {
 	public function show($id)
 	{
 		$user = User::findOrFail($id);
-		$topics = Topic::Whose($user->id)->Recent()->limit(10)->get();
-		$replies = Reply::Whose($user->id)->Recent()->limit(10)->get();
+		$topics = Topic::whose($user->id)->recent()->limit(10)->get();
+		$replies = Reply::whose($user->id)->recent()->limit(10)->get();
 		return View::make('users.show', compact('user', 'topics', 'replies'));
 	}
 
@@ -29,10 +29,10 @@ class UsersController extends \BaseController {
 		$this->authorOrAdminPermissioinRequire($user->id);
 		$data = Input::only('city', 'company', 'twitter_account', 'personal_website', 'signature', 'description');
 		App::make('Phphub\Forms\UserUpdateForm')->validate($data);
-		
+
 		$user->update($data);
 
-		Flash::success('话题更新成功.');
+		Flash::success('用户资料更新成功.');
 		return Redirect::back();
 	}
 
@@ -44,14 +44,14 @@ class UsersController extends \BaseController {
 	public function replies($id)
 	{
 		$user = User::findOrFail($id);
-		$replies = Reply::Whose($user->id)->Recent()->paginate(15);
+		$replies = Reply::whose($user->id)->recent()->paginate(15);
 		return View::make('users.replies', compact('user', 'replies'));
 	}
 
 	public function topics($id)
 	{
 		$user = User::findOrFail($id);
-		$topics = Topic::Whose($user->id)->Recent()->paginate(15);
+		$topics = Topic::whose($user->id)->recent()->paginate(15);
 		return View::make('users.topics', compact('user', 'topics'));
 	}
 

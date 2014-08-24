@@ -4,11 +4,10 @@ use Phphub\Core\CreatorListener;
 
 class RepliesController extends \BaseController implements CreatorListener
 {
-	public function __construct(Topic $topic)
+	public function __construct()
     {
         parent::__construct();
-        
-        $this->beforeFilter('auth', ['only' =>'store']);
+        $this->beforeFilter('auth');
     }
 
 	public function store()
@@ -53,5 +52,5 @@ class RepliesController extends \BaseController implements CreatorListener
         Flash::success('评论发布成功.');
         return Redirect::route('topics.show', array(Input::get('topic_id')));
     }
-	
+
 }
