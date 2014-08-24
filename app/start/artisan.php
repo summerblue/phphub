@@ -12,3 +12,4 @@
 */
 
 Artisan::add(new TopicMarkdownConvertionCommand);
+Artisan::add(new TopicMakeExcerptCommand);

@@ -1,11 +1,11 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $topic->title }}}_@parent 
+{{{ $topic->title }}}_@parent
 @stop
 
 @section('description')
-{{{ str_limit($topic->body, 160) }}}
+{{{ $topic->excerpt }}}
 @stop
 
 @section('content')
@@ -37,9 +37,9 @@
     </div>
 
     <div class="body entry-content panel-body">
-    
+
       @include('topics.partials.body', array('body' => $topic->body))
-      
+
       @include('topics.partials.ribbon')
     </div>
 
@@ -49,19 +49,19 @@
   <!-- Reply List -->
   <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
-      <div class="total">共收到 <b>{{ $replies->getTotal() }}</b> 条回复</div>    
+      <div class="total">共收到 <b>{{ $replies->getTotal() }}</b> 条回复</div>
     </div>
 
     <div class="panel-body">
 
       @if (count($replies))
-        @include('topics.partials.replies')  
+        @include('topics.partials.replies')
       @else
          <div class="empty-block">还未有人评论~~</div>
       @endif
 
       <!-- Pager -->
-      <div class="pull-right" style="padding-right:20px"> 
+      <div class="pull-right" style="padding-right:20px">
         {{ $replies->appends(Request::except('page'))->links(); }}
       </div>
     </div>
@@ -86,16 +86,16 @@
       <div class="form-group">
 
         @if ($currentUser)
-          {{ Form::textarea('body', null, ['class' => 'form-control', 
-                                            'rows' => 5, 
-                                            'placeholder' => "请使用 Markdown 格式书写 ;-)", 
-                                            'onkeyup' => "textAreaAdjust(this, 105)", 
-                                            'style' => "overflow:hidden", 
+          {{ Form::textarea('body', null, ['class' => 'form-control',
+                                            'rows' => 5,
+                                            'placeholder' => "请使用 Markdown 格式书写 ;-)",
+                                            'onkeyup' => "textAreaAdjust(this, 105)",
+                                            'style' => "overflow:hidden",
                                             'id' => 'reply_content']) }}
         @else
           {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => "登录用户才能发表评论."]) }}
         @endif
-        
+
       </div>
       <div class="form-group status-post-submit">
 
@@ -106,7 +106,7 @@
         @endif
 
       </div>
-      
+
         <ul class="helpblock list">
           <li>请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a></li>
           <li>支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code></li>

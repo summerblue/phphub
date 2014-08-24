@@ -72,6 +72,7 @@ class TopicsController extends \BaseController implements CreatorListener
         $markdown = new Markdown;
         $data['body_original'] = $data['body'];
         $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
+        $data['excerpt'] = Topic::makeExcerpt($data['body']);
 
         // Validation
 		App::make('Phphub\Forms\TopicCreationForm')->validate($data);

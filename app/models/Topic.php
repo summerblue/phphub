@@ -17,6 +17,7 @@ class Topic extends \Eloquent
 	protected $fillable = [
 		'title',
         'body',
+        'excerpt',
 		'body_original',
 		'user_id',
 		'node_id',
@@ -144,5 +145,12 @@ class Topic extends \Eloquent
     public function scopeExcellent($query)
     {
         return $query->where('is_excellent', '=', true);
+    }
+
+    public static function makeExcerpt($body)
+    {
+        $html = $body;
+        $excerpt = trim(preg_replace('/\s\s+/', ' ', strip_tags($html)));
+        return str_limit($excerpt, 200);
     }
 }
