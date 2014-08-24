@@ -4,7 +4,7 @@ class UsersController extends \BaseController {
 
 	public function index()
 	{
-		$users = User::all();
+		$users = User::recent()->take(48)->get();
 		return View::make('users.index', compact('users'));
 	}
 
