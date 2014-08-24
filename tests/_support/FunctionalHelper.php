@@ -14,8 +14,9 @@ class FunctionalHelper extends \Codeception\Module
         $user = $this->haveAnAccount();
         $I = $this->getModule('Laravel4');
 
-        // login user 
+        // login user
         $I->amLoggedAs($user);
+        return $user;
     }
 
     public function signInAsAdmin()
@@ -26,7 +27,7 @@ class FunctionalHelper extends \Codeception\Module
         $founder = Role::where('name', 'Founder')->get()->first();
         $user->attachRole($founder);
 
-        // login user 
+        // login user
         $I->amLoggedAs($user);
     }
 
