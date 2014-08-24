@@ -12,10 +12,10 @@
         "laracasts/presenter": "0.1.*",
         "itsgoingd/clockwork": "1.*",
         "zizaco/entrust": "1.2.*@dev",
-        "graham-campbell/security": "~2.0",
         "thujohn/rss": "dev-master",
         "michelf/php-markdown": "1.4.*",
-        "nickcernis/html-to-markdown": "2.1.*"
+        "nickcernis/html-to-markdown": "2.1.*",
+        "mews/purifier": "dev-master"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

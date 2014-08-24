@@ -40,6 +40,10 @@ class TopicMarkdownConvertionCommand extends Command {
         $topics = Topic::all();
 
         $markdown = new Markdown;
+
+        $transfer_count = 0;
+        $convert_count = 0;
+
         foreach ($topics as $topic) {
             if (empty($topic->body_original))
             {
@@ -47,11 +51,19 @@ class TopicMarkdownConvertionCommand extends Command {
                 $topic->body_original = $topic->body;
                 // convert to markdown
                 $topic->body = $markdown->convertMarkdownToHtml($topic->body);
-
                 $topic->save();
+                $transfer_count++;
+            }
+            else
+            {
+                // convert to markdown
+                $topic->body = $markdown->convertMarkdownToHtml($topic->body_original);
+                $topic->save();
+                $convert_count++;
             }
         }
+        $this->info("Transfer old data count: " . $transfer_count);
+        $this->info("Convert original to body count: " . $convert_count);
         $this->info("It's Done, have a good day.");
-
 	}
 }

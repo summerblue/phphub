@@ -2,7 +2,7 @@
 
 use HTML_To_Markdown;
 use Michelf\MarkdownExtra;
-use Security;
+use Purifier;
 
 class Markdown
 {
@@ -26,6 +26,6 @@ class Markdown
     public function convertMarkdownToHtml($markdown)
     {
         $convertedHmtl = $this->markdownParser->transform($markdown);
-        return Security::clean($convertedHmtl);
+        return Purifier::clean($convertedHmtl, 'user_topic_body');
     }
 }

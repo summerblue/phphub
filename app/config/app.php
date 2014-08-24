@@ -129,9 +129,9 @@ return array(
         'Artdarek\OAuth\OAuthServiceProvider',
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
         'Zizaco\Entrust\EntrustServiceProvider',
-        'GrahamCampbell\Security\SecurityServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
         'Phphub\Markdown\MarkdownServiceProvider',
+        'Mews\Purifier\PurifierServiceProvider',
 
 	),
 
@@ -205,9 +205,9 @@ return array(
 		'OAuth'             => 'Artdarek\OAuth\Facade\OAuth',
 		'GitHub'            => 'Phphub\GitHub\GitHubFacade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
-		'Security'          => 'GrahamCampbell\Security\Facades\Security',
         'Rss'               => 'Thujohn\Rss\RssFacade',
 		'Markdown'          => 'Phphub\Markdown\Markdown',
+        'Purifier'          => 'Mews\Purifier\Facades\Purifier',
 	),
 
 );
