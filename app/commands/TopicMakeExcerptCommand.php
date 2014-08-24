@@ -41,12 +41,12 @@ class TopicMakeExcerptCommand extends Command {
         $transfer_count = 0;
 
         foreach ($topics as $topic) {
-            // if (empty($topic->excerpt))
-            // {
+            if (empty($topic->excerpt))
+            {
                 $topic->excerpt = Topic::makeExcerpt($topic->body);
                 $topic->save();
                 $transfer_count++;
-            // }
+            }
         }
         $this->info("Transfer old data count: " . $transfer_count);
         $this->info("It's Done, have a good day.");
