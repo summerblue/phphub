@@ -1,7 +1,7 @@
 
 
 @if (count($topics))
-  
+
 <ul class="list-group row topic-list">
 	@foreach ($topics as $topic)
 	 <li class="list-group-item media {{ !$column ?:'col-sm-6'; }}" style="margin-top: 0px;">
@@ -29,12 +29,12 @@
 		  <div class="media-body meta">
 
 		  	@if ($topic->vote_count > 0)
-		  		<a href="{{ route('topics.show', [$topic->id]) }}" class="remove-padding-left">
+		  		<a href="{{ route('topics.show', [$topic->id]) }}" class="remove-padding-left" id="pin-{{ $topic->id }}">
 				  	<span class="fa fa-thumbs-o-up"> {{ $topic->vote_count }} </span>
 			  	</a>
 			  	<span> •  </span>
 		  	@endif
-		  	
+
 		  	<a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{{ $topic->node->name }}}" {{ $topic->vote_count == 0 || 'class="remove-padding-left"'}}>
 		  		{{{ $topic->node->name }}}
 			</a>
@@ -45,7 +45,7 @@
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
 			@if ($topic->reply_count > 0 && count($topic->lastReplyUser))
-				<span> • </span>最后由 
+				<span> • </span>最后由
 			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
 	              {{{ $topic->lastReplyUser->name }}}
 	            </a>
@@ -53,7 +53,7 @@
 			  	<span class="timeago">{{ $topic->updated_at }}</span>
 			@endif
 		  </div>
-		  
+
 		</div>
 
 	</li>

@@ -21,3 +21,12 @@ Topic:
   body: $text
   created_at: $date
   updated_at: $date
+
+Reply:
+  user_id:
+    type: User
+  topic_id:
+    type: Topic
+  body: $text
+  created_at: $date
+  updated_at: $date

@@ -3,7 +3,7 @@
   <div class="panel-heading">
     <h3 class="panel-title text-center">节点导航</h3>
   </div>
-  
+
   <div class="panel-body remove-padding-vertically remove-padding-bottom">
   <dl class="dl-horizontal">
       @foreach ($nodes['top'] as $index => $top_node)
@@ -15,16 +15,16 @@
               <li><a href="{{ route('nodes.show', [$snode->id]) }}">{{{ $snode->name }}}</a></li>
           @endforeach
         </ul>
-        
+
       </dd>
 
         @if (count($nodes['top']) != $index +1 )
           <div class="divider"></div>
         @endif
-      
+
       @endforeach
   </dl>
   </div>
 </div>
-  
+
 @endif

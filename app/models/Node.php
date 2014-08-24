@@ -1,13 +1,13 @@
 <?php
 
-class Node extends \Eloquent 
+class Node extends \Eloquent
 {
     const CACHE_KEY     = 'site_nodes';
     const CACHE_MINUTES = 60;
 
 	protected $fillable = [];
 
-	public function topics($filter) 
+	public function topics($filter)
 	{
 		return $this->hasMany('Topic')->getTopicsWithFilter($filter);;
 	}

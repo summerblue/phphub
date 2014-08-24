@@ -24,7 +24,6 @@ class PagesControllerCest
         $I->wantTo('Visit home page.');
         $I->amOnPage('/');
         $I->seeElement('body');
-
     }
 
     public function about(FunctionalTester $I)
@@ -33,5 +32,20 @@ class PagesControllerCest
         $I->wantTo('Visit about page.');
         $I->amOnPage('/about');
         $I->seeElement('body');
+    }
+
+    public function wiki(FunctionalTester $I)
+    {
+
+    }
+
+    public function search(FunctionalTester $I)
+    {
+
+    }
+
+    public function feed(FunctionalTester $I)
+    {
+
     }
 }
