@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-用户列表_@parent
+新加入的会员列表_@parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
 <div class="panel panel-default users-index">
 
     <div class="panel-heading text-center">
-        会员列表 ( 当前用户数量 {{ $siteStat->user_count }} )
+        新加入的会员列表 ( 当前会员数量 {{ $siteStat->user_count }} )
     </div>
 
     <div class="panel-body">
