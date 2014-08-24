@@ -101,7 +101,7 @@ class Topic extends \Eloquent
 				return $this->Excellent()->Recent();
 				break;
 			case 'recent':
-				return $this->Pin()->Recent();
+				return $this->Recent();
 				break;
 			default:
 				return $this->Pin()->RecentReply();
