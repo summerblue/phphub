@@ -2,7 +2,7 @@
 
 use Laracasts\Presenter\PresentableTrait;
 
-class Topic extends \Eloquent 
+class Topic extends \Eloquent
 {
 	// manually maintian
 	public $timestamps = false;
@@ -15,9 +15,10 @@ class Topic extends \Eloquent
 
 	// Don't forget to fill this array
 	protected $fillable = [
-		'title', 
-		'body', 
-		'user_id', 
+		'title',
+        'body',
+		'body_original',
+		'user_id',
 		'node_id',
 		'created_at',
 		'updated_at'
@@ -122,7 +123,7 @@ class Topic extends \Eloquent
 
 	public function scopeWhose($query, $user_id)
 	{
-        return $query->where('user_id','=',$user_id)->with('node'); 
+        return $query->where('user_id','=',$user_id)->with('node');
     }
 
     public function scopeRecent($query)

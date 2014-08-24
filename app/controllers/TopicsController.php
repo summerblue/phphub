@@ -3,14 +3,14 @@
 use Phphub\Core\CreatorListener;
 use Phphub\Forms\TopicCreationForm;
 
-class TopicsController extends \BaseController implements CreatorListener 
+class TopicsController extends \BaseController implements CreatorListener
 {
     protected $topic;
 
 	public function __construct(Topic $topic)
     {
     	parent::__construct();
-    	
+
         $this->beforeFilter('auth', ['except' => ['index', 'show']]);
         $this->topic = $topic;
     }
@@ -57,6 +57,8 @@ class TopicsController extends \BaseController implements CreatorListener
 		$nodes = Node::allLevelUp();
 		$node = $topic->node;
 
+        $topic->body = $topic->body_original;
+
 		return View::make('topics.create_edit', compact('topic', 'nodes', 'node'));
 	}
 
@@ -66,7 +68,11 @@ class TopicsController extends \BaseController implements CreatorListener
 		$data = Input::only('title', 'body', 'node_id');
 
 		$this->authorOrAdminPermissioinRequire($topic->user_id);
-		
+
+        $markdown = new Markdown;
+        $data['body_original'] = $data['body'];
+        $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
+
         // Validation
 		App::make('Phphub\Forms\TopicCreationForm')->validate($data);
 
@@ -81,7 +87,7 @@ class TopicsController extends \BaseController implements CreatorListener
      * User Topic Vote function
      * ----------------------------------------
      */
-    
+
 	public function upvote($id)
 	{
 		$topic = Topic::find($id);
@@ -101,7 +107,7 @@ class TopicsController extends \BaseController implements CreatorListener
      * Admin Topic Management
      * ----------------------------------------
      */
-    
+
 	public function recomend($id)
 	{
 		$topic = Topic::findOrFail($id);

@@ -131,6 +131,7 @@ return array(
         'Zizaco\Entrust\EntrustServiceProvider',
         'GrahamCampbell\Security\SecurityServiceProvider',
         'Thujohn\Rss\RssServiceProvider',
+        'Phphub\Markdown\MarkdownServiceProvider',
 
 	),
 
@@ -159,7 +160,7 @@ return array(
 	*/
 
 	'aliases' => array(
-		
+
 		'App'               => 'Illuminate\Support\Facades\App',
 		'Artisan'           => 'Illuminate\Support\Facades\Artisan',
 		'Auth'              => 'Illuminate\Support\Facades\Auth',
@@ -198,14 +199,15 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		
+
 		'Flash'             => 'Laracasts\Flash\Flash',
 		'Carbon'            => 'Carbon\Carbon',
 		'OAuth'             => 'Artdarek\OAuth\Facade\OAuth',
 		'GitHub'            => 'Phphub\GitHub\GitHubFacade',
 		'Entrust'           => 'Zizaco\Entrust\EntrustFacade',
 		'Security'          => 'GrahamCampbell\Security\Facades\Security',
-		'Rss'               => 'Thujohn\Rss\RssFacade',
+        'Rss'               => 'Thujohn\Rss\RssFacade',
+		'Markdown'          => 'Phphub\Markdown\Markdown',
 	),
 
 );
