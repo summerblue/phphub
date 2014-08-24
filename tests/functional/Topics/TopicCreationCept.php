@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * ------------------------------------
@@ -18,8 +18,8 @@ $I->amOnPage('topics/create');
 $I->seeCurrentUrlEquals('/login-required');
 
 // Test as a member
-$I->am('a Phphub member');
 $I->signIn();
+$I->am('as a Phphub member');
 $I->amOnPage('topics/create');
 
 $I->selectOption('form select[name=node_id]', 'php');

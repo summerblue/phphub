@@ -14,7 +14,7 @@ class AddNotificationsFieldToUserTable extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->integer('notifications')->default(0);
+			$table->integer('notification_count')->default(0);
 		});
 	}
 
@@ -27,7 +27,7 @@ class AddNotificationsFieldToUserTable extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->dropColumn('notifications');
+			$table->dropColumn('notification_count');
 		});
 	}
 

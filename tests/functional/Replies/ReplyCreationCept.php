@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * ------------------------------------
@@ -24,8 +24,8 @@ $I->click('#reply-create-submit');
 $I->seeCurrentUrlEquals('/login-required');
 
 // Test as a member
-$I->am('a Phphub member');
 $I->signIn();
+$I->am('as a Phphub member');
 
 // Test Login Redirect
 $I->amOnPage('topics/' . $topic->id );

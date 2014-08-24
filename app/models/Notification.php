@@ -1,6 +1,6 @@
 <?php
 
-class Notification extends \Eloquent 
+class Notification extends \Eloquent
 {
 	// Don't forget to fill this array
 	protected $fillable = [
@@ -41,11 +41,11 @@ class Notification extends \Eloquent
 		$nowTimestamp = Carbon::now()->toDateTimeString();
 		$data = [];
 
-		foreach ($users as $toUser) 
+		foreach ($users as $toUser)
 		{
-			if ($fromUser->id == $toUser->id) 
+			if ($fromUser->id == $toUser->id)
 				continue;
-				
+
 			$data[] = [
 				'from_user_id' => $fromUser->id,
 				'user_id'      => $toUser->id,
@@ -57,7 +57,7 @@ class Notification extends \Eloquent
 				'updated_at'   => $nowTimestamp
 			];
 
-			$toUser->increment('notifications', 1);
+			$toUser->increment('notification_count', 1);
 		}
 
 		Notification::insert($data);

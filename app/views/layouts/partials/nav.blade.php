@@ -22,14 +22,26 @@
 
       <ul class="nav navbar-nav navbar-right github-login" >
         @if (Auth::check())
-
-            <li><a href="{{ route('notifications.index') }}" class="text-warning"><span class="badge badge-{{ $currentUser->notifications > 0 ? 'important' : 'fade'; }}">{{ $currentUser->notifications }}</span></a></li>
-
-            <li><a href="{{ route('users.show', $currentUser->id) }}"><i class="fa fa-user"></i> {{{ $currentUser->name }}}</a></li>
-            <li><a class="button" href="{{ URL::route('logout') }}"><i class="fa fa-sign-out"></i> 退出</a></li>
+            <li>
+                <a href="{{ route('notifications.index') }}" class="text-warning">
+                    <span class="badge badge-{{ $currentUser->notification_count > 0 ? 'important' : 'fade'; }}">
+                        {{ $currentUser->notification_count }}
+                    </span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ route('users.show', $currentUser->id) }}">
+                    <i class="fa fa-user"></i> {{{ $currentUser->name }}}
+                </a>
+            </li>
+            <li>
+                <a class="button" href="{{ URL::route('logout') }}">
+                    <i class="fa fa-sign-out"></i> 退出
+                </a>
+            </li>
         @else
             <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">
-              <i class="fa fa-github-alt"></i> 
+              <i class="fa fa-github-alt"></i>
               登 录
             </a>
         @endif
