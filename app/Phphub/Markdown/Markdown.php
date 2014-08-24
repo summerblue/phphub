@@ -16,6 +16,7 @@ class Markdown
 
         $this->markdownParser = new MarkdownExtra;
         $this->markdownParser->no_markup = true;
+        $this->markdownParser->code_class_prefix = 'language-';
     }
 
     public function convertHtmlToMarkdown($html)

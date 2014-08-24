@@ -123,3 +123,15 @@
 @include('layouts.partials.sidebar')
 
 @stop
+
+
+@section('styles')
+    <link rel="stylesheet" href="{{ cdn('css/prism.css') }}">
+@stop
+
+@section('scripts')
+    <script src="{{ cdn('js/prism.js') }}"></script>
+    <script>
+        Prism.highlightElement('code');
+    </script>
+@stop
