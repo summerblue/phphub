@@ -8,7 +8,7 @@
       <i class="fa fa-twitter"></i>
     </a>
     <a href="http://www.facebook.com/sharer.php?u={{ urlencode(Request::url()) }}" class=""  target="_blank" title="分享到 Facebook">
-      <i class="fa fa-facebook"></i> 
+      <i class="fa fa-facebook"></i>
     </a>
     <a href="https://plus.google.com/share?url={{ urlencode(Request::url()) }}" class=""  target="_blank" title="分享到 Google Plus">
       <i class="fa fa-google-plus"></i>
@@ -47,7 +47,7 @@
         <i class="fa fa-graduation-cap"></i>
       </a>
 
-      <a id="topic-wiki-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="置顶此话题">
+      <a id="topic-excellent-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="置顶此话题">
         <i class="fa fa-thumb-tack"></i>
       </a>
 
@@ -57,7 +57,7 @@
     @endif
 
     @if ( $currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $topic->user_id) )
-      <a id="topic-delete-button" href="{{ route('topics.edit', [$topic->id]) }}" title="编辑" class="admin">
+      <a id="topic-edit-button" href="{{ route('topics.edit', [$topic->id]) }}" title="编辑" class="admin">
         <i class="fa fa-pencil-square-o"></i>
       </a>
     @endif

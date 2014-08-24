@@ -1,11 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-创建新话题_@parent 
-@stop
-
-@section('styles')
-    
+创建新话题_@parent
 @stop
 
 @section('content')
@@ -21,16 +17,16 @@
       </div>
 
       @include('layouts.partials.errors')
-    
+
       @if(isset($topic))
           {{ Form::model($topic, ['route' => ['topics.update', $topic->id], 'method' => 'patch']) }}
       @else
           {{ Form::open(['route' => 'topics.store', 'method' => 'post']) }}
       @endif
-        
+
         <div class="form-group">
             <select class="selectpicker form-control" name="node_id" >
-              
+
               <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>请选择节点</option>
 
               @foreach ($nodes['top'] as $top_node)
@@ -40,7 +36,7 @@
                   @endforeach
                 </optgroup>
               @endforeach
-            </select> 
+            </select>
         </div>
 
         <div class="form-group">
@@ -57,10 +53,9 @@
         </div>
 
         <div class="form-group">
-          {{ Form::textarea('body', null, ['class' => 'form-control', 
-                                            'rows' => 20, 
-                                            'onkeyup' => "textAreaAdjust(this, 375)", 
-                                            'style' => "overflow:hidden", 
+          {{ Form::textarea('body', null, ['class' => 'form-control',
+                                            'rows' => 20,
+                                            'style' => "overflow:hidden",
                                             'id' => 'reply_content',
                                             'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
         </div>
@@ -75,7 +70,7 @@
   </div>
 
   <div class="col-sm-4 side-bar">
-    
+
     @if ( $node )
 
     <div class="panel panel-default corner-radius help-box">
@@ -136,8 +131,16 @@
     </div>
 
   </div>
-
-
 </div>
 
+@stop
+
+@section('scripts')
+    <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('textarea').autosize();
+        });
+    </script>
 @stop

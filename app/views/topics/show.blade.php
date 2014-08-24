@@ -89,7 +89,6 @@
           {{ Form::textarea('body', null, ['class' => 'form-control',
                                             'rows' => 5,
                                             'placeholder' => "请使用 Markdown 格式书写 ;-)",
-                                            'onkeyup' => "textAreaAdjust(this, 105)",
                                             'style' => "overflow:hidden",
                                             'id' => 'reply_content']) }}
         @else
@@ -130,8 +129,11 @@
 @stop
 
 @section('scripts')
+    <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
     <script src="{{ cdn('js/prism.js') }}"></script>
     <script>
-        Prism.highlightElement('code');
+        $(document).ready(function(){
+            $('textarea').autosize();
+        });
     </script>
 @stop
