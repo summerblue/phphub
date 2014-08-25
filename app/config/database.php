@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST') ? getenv('DB_HOST') : 'localhost',
-			'database'  => getenv('DB_NAME') ? getenv('DB_NAME') : 'phphub',
-			'username'  => getenv('DB_USERNAME') ? getenv('DB_USERNAME') : 'root',
-			'password'  => getenv('DB_PASSWORD') ? getenv('DB_PASSWORD') : '' ,
+			'host'      => getenv('DB_HOST') ?: 'localhost',
+			'database'  => getenv('DB_NAME') ?: 'phphub',
+			'username'  => getenv('DB_USERNAME') ?: 'root',
+			'password'  => getenv('DB_PASSWORD') ?: '' ,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
