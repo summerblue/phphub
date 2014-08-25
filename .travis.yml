@@ -1,0 +1,23 @@
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+branches:
+  except:
+    - gh-pages
+
+before_script:
+  - "mysql -e 'create database `phphub`;'"
+  - composer install -n --prefer-source
+  - php artisan migrate --seed -n
+  - ./vendor/bin/codecept build
+
+script:
+  - ./vendor/bin/codecept run
