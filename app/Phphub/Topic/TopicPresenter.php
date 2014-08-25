@@ -8,7 +8,7 @@ class TopicPresenter extends Presenter
     public function topicFilter($filter)
     {
         $query_append = '';
-        if ( !empty(Input::except('filter')) )
+        if (Input::except('filter'))
         {
             $query_append = '&'.http_build_query(Input::except('filter'));
         }
