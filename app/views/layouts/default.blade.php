@@ -37,6 +37,7 @@ PHPhub - PHP & Laravel的中文社区
 		<link rel="stylesheet" href="{{ cdn('css/main.css') }}">
 		<link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
 
+        <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
 	    @yield('styles')
 
 	</head>
