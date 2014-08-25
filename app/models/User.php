@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Laracasts\Presenter\PresentableTrait;
 use Zizaco\Entrust\HasRole;
 
-class User extends Eloquent implements UserInterface, RemindableInterface
+class User extends \Eloquent implements UserInterface, RemindableInterface
 {
     // Using: $user->present()->anyMethodYourWant()
     use PresentableTrait;
