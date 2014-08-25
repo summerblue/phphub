@@ -2,6 +2,15 @@
 
 class UsersController extends \BaseController {
 
+
+    public function __construct(Topic $topic)
+    {
+        parent::__construct();
+
+        $this->beforeFilter('auth', ['only' => ['edit', 'update', 'destroy']]);
+        $this->topic = $topic;
+    }
+
 	public function index()
 	{
 		$users = User::recent()->take(48)->get();
@@ -27,7 +36,7 @@ class UsersController extends \BaseController {
 	{
 		$user = User::findOrFail($id);
 		$this->authorOrAdminPermissioinRequire($user->id);
-		$data = Input::only('city', 'company', 'twitter_account', 'personal_website', 'signature', 'description');
+		$data = Input::only('city', 'company', 'twitter_account', 'personal_website', 'signature', 'introduction');
 		App::make('Phphub\Forms\UserUpdateForm')->validate($data);
 
 		$user->update($data);

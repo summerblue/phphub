@@ -29,7 +29,7 @@ class CreateUsersTable extends Migration {
 			$table->string('twitter_account')->nullable();
 			$table->string('personal_website')->nullable();
 			$table->string('signature')->nullable();
-			$table->string('description')->nullable();
+			$table->string('introduction')->nullable();
 			$table->softDeletes();
 			$table->timestamps();
 		});

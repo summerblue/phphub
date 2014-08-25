@@ -16,7 +16,7 @@
     @foreach ($users as $user)
         <div class="col-md-1 remove-padding-right">
             <div class="avatar">
-              <a href="{{ route('users.show', $user->id) }}">
+              <a href="{{ route('users.show', $user->id) }}" class="users-index-{{ $user->id }}">
                 <img src="{{ $user->present()->gravatar }}" class="img-thumbnail avatar"  style="width:48px;height:48px;margin-bottom: 20px;"/>
               </a>
             </div>

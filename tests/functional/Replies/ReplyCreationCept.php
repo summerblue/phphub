@@ -16,20 +16,19 @@ $topic = $I->have('Topic');
 
 // Test Login Redirect
 $I->am('a Phphub visitor');
-$I->amOnPage('topics/' . $topic->id );
+$I->amOnRoute('topics.show', $topic->id);
 
 $I->fillField(['name' => 'body'], 'My first reply body.');
 $I->click('#reply-create-submit');
 
-$I->seeCurrentUrlEquals('/login-required');
+$I->seeCurrentRouteIs('login-required');
+
 
 // Test as a member
 $I->signIn();
 $I->am('as a Phphub member');
 
-// Test Login Redirect
-$I->amOnPage('topics/' . $topic->id );
-
+$I->amOnRoute('topics.show', $topic->id);
 $I->fillField(['name' => 'body'], 'My first reply body.');
 $I->click('#reply-create-submit');
 

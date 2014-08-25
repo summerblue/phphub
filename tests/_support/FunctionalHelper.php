@@ -9,10 +9,12 @@ use Auth, Role, User;
 
 class FunctionalHelper extends \Codeception\Module
 {
-	public function signIn()
+    public function signIn($user = null)
     {
-        $user = $this->haveAnAccount();
+        $user = $user ? $user : $this->haveAnAccount();
         $I = $this->getModule('Laravel4');
+
+        $I->logout();
 
         // login user
         $I->amLoggedAs($user);
@@ -23,6 +25,8 @@ class FunctionalHelper extends \Codeception\Module
     {
         $user = $this->haveAnAccount();
         $I = $this->getModule('Laravel4');
+
+        $I->logout();
 
         $founder = Role::where('name', 'Founder')->get()->first();
         $user->attachRole($founder);

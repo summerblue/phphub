@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-编辑个人资料_@parent 
+编辑个人资料_@parent
 @stop
 
 @section('content')
@@ -15,7 +15,7 @@
   <div class="main-col col-md-9 left-col">
 
     <div class="panel panel-default">
-      
+
       <div class="panel-body ">
 
         <div class="alert alert-warning">
@@ -23,7 +23,7 @@
         </div>
 
         @include('layouts.partials.errors')
-          
+
         {{ Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) }}
 
           <div class="form-group">
@@ -43,14 +43,14 @@
           </div>
 
           <div class="form-group">
-            {{ Form::textarea('signature', null, ['class' => 'form-control', 
-                                              'rows' => 3, 
+            {{ Form::textarea('signature', null, ['class' => 'form-control',
+                                              'rows' => 3,
                                               'placeholder' => "签名/座右铭"]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::textarea('description', null, ['class' => 'form-control', 
-                                              'rows' => 3, 
+            {{ Form::textarea('introduction', null, ['class' => 'form-control',
+                                              'rows' => 3,
                                               'placeholder' => "个人简介"]) }}
           </div>
 

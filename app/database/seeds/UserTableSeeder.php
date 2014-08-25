@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder {
 				'company'          => $faker->userName(),
 				'personal_website' => $faker->url(),
 				'signature'        => $faker->sentence(),
-				'description'      => $faker->sentence(),
+				'introduction'      => $faker->sentence(),
 				'email'            => $faker->email(),
 			]);
 		}

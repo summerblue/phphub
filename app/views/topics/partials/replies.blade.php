@@ -29,7 +29,7 @@
           <span> •  </span>
 
           @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
-            <a id="topic-delete-button" href="{{ route('replies.delete', [$reply->id]) }}" onclick=" return confirm('确定要删除此话题吗?')">
+            <a id="reply-delete-{{ $reply->id }}" href="{{ route('replies.delete', [$reply->id]) }}" onclick=" return confirm('确定要删除此话题吗?')">
               <i class="fa fa-trash-o"></i>
             </a>
             <span> •  </span>

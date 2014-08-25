@@ -22,7 +22,7 @@ class PagesControllerCest
     {
         $I->am('a guest');
         $I->wantTo('Visit home page.');
-        $I->amOnPage('/');
+        $I->amOnRoute('home');
         $I->seeElement('body');
     }
 
@@ -30,7 +30,7 @@ class PagesControllerCest
     {
         $I->am('a guest');
         $I->wantTo('Visit about page.');
-        $I->amOnPage('/about');
+        $I->amOnRoute('about');
         $I->seeElement('body');
     }
 

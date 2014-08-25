@@ -30,3 +30,9 @@ Reply:
   body: $text
   created_at: $date
   updated_at: $date
+
+Favorite:
+  user_id:
+    type: User
+  topic_id:
+    type: Topic

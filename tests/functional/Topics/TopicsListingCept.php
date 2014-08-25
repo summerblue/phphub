@@ -13,7 +13,7 @@ $I->wantTo('List all topics which are created for PHPHUB');
 $I->postATopic(['title' => 'Foo']);
 $I->postATopic(['title' => 'Bar']);
 
-$I->amOnPage('/topics');
+$I->amOnRoute('topics.index');
 
 $I->see('Foo');
 $I->see('Bar');
