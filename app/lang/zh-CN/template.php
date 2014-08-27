@@ -98,6 +98,7 @@ return array(
     'Recent Replies' => '最新评论',
     'Recent Topics' => '最近话题',
     'Reply' => '回复',
+    'User Login Required for commenting.' => '需要登录后才能发表评论.',
 
 
     'site_intro' => 'PHPHub 是积极向上的 PHP & Laravel 开发者社区, 更多介绍 <a href="about">见这里</a>.',

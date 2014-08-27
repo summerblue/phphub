@@ -103,7 +103,7 @@ return array (
     'signature_placeholder' => 'Signature',
     'introduction_placeholder' => 'My Introduction',
 
-
+    'User Login Required for commenting.' => 'User Login Required for commenting.',
     'Successfully remove attention.' => 'Successfully remove attention.',
     'Successfully_attention' => 'Successfully add attention, system will notify you when reply created.',
     'Operation succed.' => 'Operation succed.',
