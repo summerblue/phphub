@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} 的话题列表_@parent
+{{{ $user->name }}} {{ trans('template.Topic List') }}_@parent
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
 	        {{ $topics->links(); }}
 	    </div>
       @else
-        <div class="empty-block">还未发布任何话题~~</div>
+        <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
       @endif
 
     </div>

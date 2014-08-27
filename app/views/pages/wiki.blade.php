@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-社区 Wiki_@parent 
+{{ trans('template.Community Wiki') }}_@parent
 @stop
 
 @section('content')
@@ -11,9 +11,9 @@
   <div class="panel panel-default">
 
     <div class="panel-heading">
-      <h3 class="panel-title text-center">社区 Wiki</h3>
+      <h3 class="panel-title text-center">{{ trans('template.Community Wiki') }}</h3>
     </div>
-    
+
     <div class="panel-body remove-padding-vertically remove-padding-horizontal">
 
     @if (count($topics))
@@ -25,12 +25,12 @@
         @endforeach
       </div>
     @else
-      <div class="empty-block">还未有主题~~</div>  
+      <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
     @endif
 
     </div>
 
-  </div>  
+  </div>
 
 </div>
 

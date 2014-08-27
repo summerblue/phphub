@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-关于我们_@parent
+{{ trans('template.About Us') }}_@parent
 @stop
 
 @section('content')

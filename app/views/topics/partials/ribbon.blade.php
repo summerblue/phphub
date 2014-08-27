@@ -3,14 +3,14 @@
   <div class="ribbon">
     @if ($topic->is_excellent)
       <div class="ribbon-excellent">
-          <i class="fa fa-trophy"></i> 本帖已被设为精华帖！
+          <i class="fa fa-trophy"></i> {{ trans('template.This topic has been mark as Excenllent Topic.') }}
       </div>
     @endif
 
     @if ($topic->is_wiki)
       <div class="ribbon-wiki">
-          <i class="fa fa-graduation-cap"></i> 本帖已被设为社区 Wiki！
+          <i class="fa fa-graduation-cap"></i> {{ trans('template.This is a Community Wiki.') }}
       </div>
-    @endif  
+    @endif
   </div>
 @endif

@@ -79,7 +79,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
 		$topic->update($data);
 
-		Flash::success('话题更新成功.');
+		Flash::success(trans('template.Operation succed.'));
 		return Redirect::route('topics.show', $topic->id);
 	}
 
@@ -115,8 +115,7 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic->is_excellent = (!$topic->is_excellent);
 		$topic->save();
 
-		$message = $topic->is_excellent ? '成功推荐话题' : '成功取消话题推荐';
-		Flash::success($message);
+		Flash::success(trans('template.Operation succed.'));
 
 		return Redirect::route('topics.show', $topic->id);
 	}
@@ -127,8 +126,7 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic->is_wiki = (!$topic->is_wiki);
 		$topic->save();
 
-		$message = $topic->is_wiki ? '成功加入Wiki' : '成功取消Wiki';
-		Flash::success($message);
+		Flash::success(trans('template.Operation succed.'));
 
 		return Redirect::route('topics.show', $topic->id);
 	}
@@ -144,7 +142,7 @@ class TopicsController extends \BaseController implements CreatorListener
 	{
 		$topic = Topic::find($id);
 		$topic->delete();
-		Flash::success("成功放入垃圾箱.");
+		Flash::success(trans('template.Operation succed.'));
 
 		return Redirect::route('topics.index');
 	}
@@ -162,7 +160,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
     public function creatorSucceed($topic)
     {
-        Flash::success('话题创建成功.');
+        Flash::success(trans('template.Operation succed.'));
 
         return Redirect::route('topics.show', array($topic->id));
     }

@@ -8,17 +8,17 @@
       </a>
 
       <span class="meta">
-        
+
         <a href="{{ route('nodes.show', [$topic->node->id]) }}" title="{{{ $topic->node->name }}}">
           {{{ $topic->node->name }}}
-        </a> 
+        </a>
         <span> • </span>
-        {{ $topic->reply_count }} 回复 
+        {{ $topic->reply_count }} {{ trans('template.Replies') }}
         <span> • </span>
         <span class="timeago">{{ $topic->created_at }}</span>
 
       </span>
-      
+
   </li>
   @endforeach
 

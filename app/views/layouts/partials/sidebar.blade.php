@@ -14,7 +14,7 @@
         <a href="
           {{ isset($node) ? URL::route('topics.create', ['node_id' => $node->id]) : URL::route('topics.create') ; }}
           " class="btn btn-success btn-lg">
-          <i class="glyphicon glyphicon-pencil"> </i> 发 布 新 帖
+          <i class="glyphicon glyphicon-pencil"> </i> {{ trans('template.New Topic') }}
         </a>
       </div>
     </div>
@@ -23,7 +23,7 @@
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">友情社区</h3>
+        <h3 class="panel-title">{{ trans('template.Links') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -44,7 +44,7 @@
   @if (isset($nodeTopics) && count($nodeTopics))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">节点下其他话题</h3>
+        <h3 class="panel-title">{{ trans('template.Same Node Topics') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -64,7 +64,7 @@
 
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">小贴士</h3>
+      <h3 class="panel-title">{{ trans('template.Tips and Tricks') }}</h3>
     </div>
     <div class="panel-body">
       {{ $siteTip->body }}
@@ -74,13 +74,13 @@
 
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">统计信息</h3>
+      <h3 class="panel-title">{{ trans('template.Site Status') }}</h3>
     </div>
     <div class="panel-body">
       <ul>
-        <li>社区会员: {{ $siteStat->user_count }} 人</li>
-        <li>话题数: {{ $siteStat->topic_count }} 个</li>
-        <li>评论数: {{ $siteStat->reply_count }} 条</li>
+        <li>{{ trans('template.Total User') }}: {{ $siteStat->user_count }} </li>
+        <li>{{ trans('template.Total Topic') }}: {{ $siteStat->topic_count }} </li>
+        <li>{{ trans('template.Total Reply') }}: {{ $siteStat->reply_count }} </li>
       </ul>
     </div>
   </div>

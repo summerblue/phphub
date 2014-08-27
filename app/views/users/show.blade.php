@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} 的个人资料_@parent
+{{{ $user->name }}} {{ trans('template.Basic Info') }}_@parent
 @stop
 
 @section('content')
@@ -27,8 +27,8 @@
     <div class="panel panel-default">
 
       <ul class="nav nav-tabs user-info-nav" role="tablist">
-        <li class="active"><a href="#recent_replies" role="tab" data-toggle="tab">最新评论</a></li>
-        <li><a href="#recent_topics" role="tab" data-toggle="tab">最近话题</a></li>
+        <li class="active"><a href="#recent_replies" role="tab" data-toggle="tab">{{ trans('template.Recent Replies') }}</a></li>
+        <li><a href="#recent_topics" role="tab" data-toggle="tab">{{ trans('template.Recent Topics') }}</a></li>
       </ul>
 
       <div class="panel-body remove-padding-vertically remove-padding-horizontal">
@@ -40,7 +40,7 @@
             @if (count($replies))
               @include('users.partials.replies')
             @else
-              <div class="empty-block">还未留下任何评论~~</div>
+              <div class="empty-block">{{ trans('template.Dont have any comment yet') }}~~</div>
             @endif
 
           </div>
@@ -49,7 +49,7 @@
             @if (count($topics))
               @include('users.partials.topics')
             @else
-              <div class="empty-block">还未发布任何话题~~</div>
+              <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
             @endif
           </div>
 

@@ -7,15 +7,15 @@
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">社区</a></li>
-        <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">Wiki</a></li>
-        <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">会员</a></li>
-        <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">关于</a></li>
+        <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ trans('template.Topics') }}</a></li>
+        <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ trans('template.Wiki') }}</a></li>
+        <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">{{ trans('template.Users') }}</a></li>
+        <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ trans('template.About') }}</a></li>
       </ul>
 
       {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
         <div class="form-group">
-          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => "搜索"]) }}
+          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => trans('template.Search')]) }}
         </div>
         <button type="submit" class="btn btn-default btn-circle"><i class="fa fa-search"></i></button>
       {{ Form::close() }}
@@ -36,13 +36,13 @@
             </li>
             <li>
                 <a class="button" href="{{ URL::route('logout') }}">
-                    <i class="fa fa-sign-out"></i> 退出
+                    <i class="fa fa-sign-out"></i> {{ trans('template.Logout') }}
                 </a>
             </li>
         @else
             <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">
               <i class="fa fa-github-alt"></i>
-              登 录
+              {{ trans('template.Login') }}
             </a>
         @endif
 

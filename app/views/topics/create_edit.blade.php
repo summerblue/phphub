@@ -13,7 +13,7 @@
     <div class="reply-box form box-block">
 
       <div class="alert alert-warning">
-        我们希望 PHPHub 能够成为技术氛围最好的 PHP 社区，而实现这个目标，需要我们所有人的共同努力：友善，公平，尊重知识和事实。
+          {{ trans('template.be_nice') }}
       </div>
 
       @include('layouts.partials.errors')
@@ -27,7 +27,7 @@
         <div class="form-group">
             <select class="selectpicker form-control" name="node_id" >
 
-              <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>请选择节点</option>
+              <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>{{ trans('template.Pick a node') }}</option>
 
               @foreach ($nodes['top'] as $top_node)
                 <optgroup label="{{{ $top_node->name }}}">
@@ -40,16 +40,16 @@
         </div>
 
         <div class="form-group">
-          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => "请填写标题"]) }}
+          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => trans('template.Please write down a topic')]) }}
         </div>
 
         <ul class="list-inline editor-tool">
-          <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >编辑</a></li>
-          <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >预览</a></li>
+          <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ trans('template.Edit') }}</a></li>
+          <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ trans('template.Preview') }}</a></li>
         </ul>
 
         <div class="preview display-none markdown-reply box">
-没有内容..
+{{ trans('template.No content.') }}..
         </div>
 
         <div class="form-group">
@@ -57,11 +57,11 @@
                                             'rows' => 20,
                                             'style' => "overflow:hidden",
                                             'id' => 'reply_content',
-                                            'placeholder' => "请使用 Markdown 格式书写 ;-)"]) }}
+                                            'placeholder' => trans('template.Please using markdown.')]) }}
         </div>
 
         <div class="form-group status-post-submit">
-          {{ Form::submit('发 布', ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
+          {{ Form::submit(trans('template.Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
         </div>
 
       {{ Form::close() }}
@@ -75,7 +75,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">当前节点 : {{{ $node->name }}}</h3>
+        <h3 class="panel-title">{{ trans('template.Current Node') }} : {{{ $node->name }}}</h3>
       </div>
       <div class="panel-body">
         {{ $node->description }}
@@ -86,7 +86,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">格式说明</h3>
+        <h3 class="panel-title">{{ trans('template.Writting Format Notice') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -103,7 +103,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">以下类型的信息会污染我们的社区</h3>
+        <h3 class="panel-title">{{ trans('template.This kind of topic is not allowed.') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -116,7 +116,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">在高质量优秀社区的我们</h3>
+        <h3 class="panel-title">{{ trans('template.We can benefit from it.') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">

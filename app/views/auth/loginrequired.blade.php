@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-用户登录提示_@parent 
+{{ trans('template.User Login Require') }}_@parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">登 录</h3>
+          <h3 class="panel-title">{{ trans('template.Login') }}</h3>
         </div>
         <div class="panel-body">
 
@@ -17,10 +17,9 @@
 
             <fieldset>
               <div class="alert alert-warning">
-                需要登录后才能继续操作. <br>
-                当前只允许通过 Github 帐号登录. 
+                  {{ trans('template.You need to login to proceed.') }}
               </div>
-              {{ Form::submit('使用 Github 帐号登录', ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
+              {{ Form::submit(trans('Login with Github'), ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
             </fieldset>
 
           {{ Form::close() }}

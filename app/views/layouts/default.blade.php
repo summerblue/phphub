@@ -74,7 +74,9 @@ PHPhub - PHP & Laravel的中文社区
 		<script src="//cdn.staticfile.org/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script src="//cdn.staticfile.org/holder/2.3.1/holder.min.js"></script>
 		<script src="//cdn.staticfile.org/moment.js/2.7.0/moment.min.js"></script>
-		<script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js"></script>
+        @if (Lang::locale() == 'zh-CN')
+            <script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js"></script>
+        @endif
 
 		<script src="{{ cdn('js/emojify.min.js') }}"></script>
 		<script src="{{ cdn('js/marked.min.js') }}"></script>

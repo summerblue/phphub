@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-管理员权限提示
+{{ trans('template.Permission Deny') }}
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">提 示</h3>
+          <h3 class="panel-title">{{ trans('template.Notice') }}</h3>
         </div>
         <div class="panel-body">
 
@@ -17,10 +17,14 @@
 
             <fieldset>
               <div class="alert alert-warning">
-                很抱歉, 当前用户没有权限继续操作. <br>
-                有什么问题请联系管理员.
+                {{ trans('template.You dont have permission to proceed.') }}
               </div>
-              {{ Form::submit('使用 Github 帐号登录', ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
+
+            @if ( ! $currentUser)
+                {{ Form::submit(trans('template.Login with Github'), ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
+            @endif
+
+
             </fieldset>
 
           {{ Form::close() }}

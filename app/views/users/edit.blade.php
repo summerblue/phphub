@@ -19,7 +19,7 @@
       <div class="panel-body ">
 
         <div class="alert alert-warning">
-          如需修改头像, 请到 <a href="https://github.com/settings/profile" target="_blank">Github 的个人设置</a> 页面修改, 注意头像会有缓存, 估计一个小时内会见效.
+          {{ trans('template.avatar_notice') }}
         </div>
 
         @include('layouts.partials.errors')
@@ -27,39 +27,39 @@
         {{ Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) }}
 
           <div class="form-group">
-            {{ Form::text('real_name', null, ['class' => 'form-control', 'placeholder' => "真实姓名"]) }}
+            {{ Form::text('real_name', null, ['class' => 'form-control', 'placeholder' => trans('template.Real Name')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => "现在所在的城市"]) }}
+            {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => trans('template.City')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => "你目前的公司"]) }}
+            {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => trans('template.Company')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('twitter_account', null, ['class' => 'form-control', 'placeholder' => "你的 Twitter 帐号, 不需要加前缀 https://twitter.com/"]) }}
+            {{ Form::text('twitter_account', null, ['class' => 'form-control', 'placeholder' => trans('template.twitter_placeholder')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('personal_website', null, ['class' => 'form-control', 'placeholder' => "你的个人网站, 不需要加前缀 http://"]) }}
+            {{ Form::text('personal_website', null, ['class' => 'form-control', 'placeholder' => trans('template.personal_website_placebolder')]) }}
           </div>
 
           <div class="form-group">
             {{ Form::textarea('signature', null, ['class' => 'form-control',
                                               'rows' => 3,
-                                              'placeholder' => "签名/座右铭"]) }}
+                                              'placeholder' => trans('template.signature_placeholder')]) }}
           </div>
 
           <div class="form-group">
             {{ Form::textarea('introduction', null, ['class' => 'form-control',
                                               'rows' => 3,
-                                              'placeholder' => "个人简介"]) }}
+                                              'placeholder' => trans('template.introduction_placeholder')]) }}
           </div>
 
           <div class="form-group status-post-submit">
-            {{ Form::submit('发 布', ['class' => 'btn btn-primary', 'id' => 'user-edit-submit']) }}
+            {{ Form::submit(trans('template.Publish'), ['class' => 'btn btn-primary', 'id' => 'user-edit-submit']) }}
           </div>
 
         {{ Form::close() }}

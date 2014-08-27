@@ -14,9 +14,9 @@
 {{{ $reply->body }}}
       </div>
     @else
-      <div class="deleted text-center">信息已被删除.</div>
+      <div class="deleted text-center">{{ trans('template.Data has been deleted.') }}</div>
     @endif
-      
+
   </li>
   @endforeach
 </ul>

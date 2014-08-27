@@ -1,7 +1,7 @@
 @if (isset($nodes) && count($nodes))
 <div class="panel panel-default node-panel">
   <div class="panel-heading">
-    <h3 class="panel-title text-center">节点导航</h3>
+    <h3 class="panel-title text-center">{{ trans('template.All Nodes') }}</h3>
   </div>
 
   <div class="panel-body remove-padding-vertically remove-padding-bottom">

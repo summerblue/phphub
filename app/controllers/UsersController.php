@@ -41,7 +41,7 @@ class UsersController extends \BaseController {
 
 		$user->update($data);
 
-		Flash::success('用户资料更新成功.');
+		Flash::success(trans('template.Operation succed.'));
 		return Redirect::back();
 	}
 

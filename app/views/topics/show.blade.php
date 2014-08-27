@@ -49,7 +49,7 @@
   <!-- Reply List -->
   <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
-      <div class="total">共收到 <b>{{ $replies->getTotal() }}</b> 条回复</div>
+      <div class="total">{{ trans('template.Total Reply Count') }}: <b>{{ $replies->getTotal() }}</b> </div>
     </div>
 
     <div class="panel-body">
@@ -57,7 +57,7 @@
       @if (count($replies))
         @include('topics.partials.replies')
       @else
-         <div class="empty-block">还未有人评论~~</div>
+         <div class="empty-block">{{ trans('template.No comments') }}~~</div>
       @endif
 
       <!-- Pager -->
@@ -71,14 +71,14 @@
   <div class="reply-box form box-block">
 
     <ul class="list-inline editor-tool">
-      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >编辑</a></li>
-      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >预览</a></li>
+      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ trans('template.Edit') }}</a></li>
+      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ trans('template.Preview') }}</a></li>
     </ul>
 
     @include('layouts.partials.errors')
 
     <div class="preview display-none markdown-reply box">
-没有内容..
+{{ trans('template.No content.') }}.
     </div>
 
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
@@ -88,29 +88,29 @@
         @if ($currentUser)
           {{ Form::textarea('body', null, ['class' => 'form-control',
                                             'rows' => 5,
-                                            'placeholder' => "请使用 Markdown 格式书写 ;-)",
+                                            'placeholder' => trans('template.Please using markdown.'),
                                             'style' => "overflow:hidden",
                                             'id' => 'reply_content']) }}
         @else
-          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => "登录用户才能发表评论."]) }}
+          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => trans('template.User Login Required for commenting.')]) }}
         @endif
 
       </div>
       <div class="form-group status-post-submit">
 
         @if ($currentUser)
-          {{ Form::submit('提交回复', ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
+          {{ Form::submit(trans('template.Reply'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
         @else
-          {{ Form::submit('提交回复', ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
+          {{ Form::submit(trans('template.Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
         @endif
 
       </div>
 
         <ul class="helpblock list">
-          <li>请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a></li>
-          <li>支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code></li>
-          <li>支持表情，见 <a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a></li>
-          <li>@name 会链接到用户页面，并会通知他</li>
+          <li>{{ trans('template.publish_typography') }}</li>
+          <li>{{ trans('template.publish_markdown') }}</li>
+          <li>{{ trans('template.publish_emoji') }}</li>
+          <li>{{ trans('template.publish_at_user') }}</li>
         </ul>
         <br>
         <br>

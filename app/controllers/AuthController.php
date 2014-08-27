@@ -23,7 +23,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
     public function logout()
     {
         Auth::logout();
-        Flash::success('成功退出.');
+        Flash::success(trans('template.Operation succed.'));
         return Redirect::route('home');
     }
 
@@ -80,7 +80,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         Auth::login($user, true);
         Session::forget('userGithubData');
 
-        Flash::success('恭喜, 你已经成功加入 Phphub.');
+        Flash::success(trans('template.Congratulation and Welcome!'));
 
         return Redirect::intended();
     }
@@ -104,7 +104,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         Auth::login($user, true);
         Session::forget('userGithubData');
 
-        Flash::success('成功登录.');
+        Flash::success(trans('template.Operation succed.'));
 
         return Redirect::intended();
     }

@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-我的提醒 @parent 
+{{ trans('template.My Notifications') }} @parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
 <div class="panel panel-default">
 
 	<div class="panel-heading">
-      我的提醒
+      {{ trans('template.My Notifications') }}
     </div>
 
 	@if (count($notifications))
@@ -19,7 +19,7 @@
 			<ul class="list-group row">
 				@foreach ($notifications as $notification)
 				 <li class="list-group-item media" style="margin-top: 0px;">
-				 
+
 					@if (count($notification->topic))
 						<div class="avatar pull-left">
 							<a href="{{ route('users.show', [$notification->from_user_id]) }}">
@@ -34,13 +34,13 @@
 						  	<a href="{{ route('users.show', [$notification->from_user_id]) }}">
 								{{{ $notification->fromUser->name }}}
 							</a>
-							 • 
+							 •
 							@if ($notification->type == 'new_reply')
-								回复了你的主题: 
+								{{ trans('template.Your topic have new reply: ') }}
 							@elseif ($notification->type == 'attention')
-								回复了你关注的主题: 
+								{{ trans('template.Attented topic has new reply: ') }}
 							@elseif ($notification->type == 'at')
-								在话题中提及你: 
+								{{ trans('template.Mention you At: ') }}
 							@endif
 
 						  	<a href="{{ route('topics.show', [$notification->topic->id]) }}" title="{{{ $notification->topic->title }}}">
@@ -48,16 +48,16 @@
 						  	</a>
 
 						  	<span class="meta">
-						  		 • 发生在 • <span class="timeago">{{ $notification->created_at }}</span>
+						  		 • {{ trans('template.at') }} • <span class="timeago">{{ $notification->created_at }}</span>
 						  	</span>
 						  </div>
 						  <div class="media-body markdown-reply">
 {{{ $notification->body }}}
 						  </div>
-						  
+
 						</div>
 					@else
-				      <div class="deleted text-center">信息已被删除.</div>
+				      <div class="deleted text-center">{{ trans('template.Data has been deleted.') }}</div>
 				    @endif
 				</li>
 				@endforeach
@@ -67,13 +67,13 @@
 		</div>
 
 		<div class="panel-footer text-right remove-padding-horizontal pager-footer">
-			<!-- Pager --> 
+			<!-- Pager -->
 			{{ $notifications->links(); }}
 		</div>
 
 	@else
 		<div class="panel-body">
-			<div class="empty-block">还未收到提醒!</div>	
+			<div class="empty-block">{{ trans('template.You dont have any notice yet!') }}</div>
 		</div>
 	@endif
 

@@ -45,7 +45,7 @@
 		  	<span> • </span>
 		  	<span class="timeago">{{ $topic->created_at }}</span>
 			@if ($topic->reply_count > 0 && count($topic->lastReplyUser))
-				<span> • </span>最后由
+				<span> • </span>{{ trans('template.Last Reply by') }}
 			  	<a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
 	              {{{ $topic->lastReplyUser->name }}}
 	            </a>
@@ -61,7 +61,7 @@
 </ul>
 
 @else
-   <div class="empty-block">还未有话题~~</div>
+   <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
 @endif
 
 

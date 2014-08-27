@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} 的帖子列表_@parent
+{{{ $user->name }}} {{ trans('template.Reply List') }}_@parent
 @stop
 
 @section('content')
@@ -28,7 +28,7 @@
 	        {{ $replies->links(); }}
 	      </div>
       @else
-	       <div class="empty-block">还未留下任何评论~~</div>
+	       <div class="empty-block">{{ trans('template.Dont have any comment yet') }}~~</div>
       @endif
 
     </div>

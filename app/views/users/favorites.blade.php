@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} 的收藏列表_@parent
+{{{ $user->name }}} {{ trans('template.Favorites') }}_@parent
 @stop
 
 @section('content')
@@ -26,7 +26,7 @@
 	      @include('users.partials.topics')
 	      <div class="pull-right add-padding-vertically"> {{ $topics->links(); }} </div>
       @else
-        <div class="empty-block">还未收藏任何话题~~</div>
+        <div class="empty-block">{{ trans('template.Dont have any favorites yet') }}~~</div>
       @endif
 
     </div>
