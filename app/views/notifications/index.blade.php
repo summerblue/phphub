@@ -52,7 +52,7 @@
 						  	</span>
 						  </div>
 						  <div class="media-body markdown-reply">
-{{{ $notification->body }}}
+{{ $notification->body }}
 						  </div>
 
 						</div>

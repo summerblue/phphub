@@ -11,7 +11,7 @@
          at <span class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</span>
       </span>
       <div class="reply-body markdown-reply">
-{{{ $reply->body }}}
+{{ $reply->body }}
       </div>
     @else
       <div class="deleted text-center">{{ trans('template.Data has been deleted.') }}</div>
