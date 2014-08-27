@@ -37,9 +37,6 @@ class GithubAuthenticator
             return $listener->userIsBanned($user);
         }
 
-        $user->fill($githubData);
-        $user->save();
-
         return $listener->userFound($user);
     }
 }
