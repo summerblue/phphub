@@ -4,7 +4,7 @@ use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
 use Phphub\Notification\Mention;
 use Phphub\Notification\Notifier;
-use Reply, Auth, Topic, Notification, Carbon, App;
+use Reply, Auth, Topic, Notification, Carbon, App, Markdown;
 
 class ReplyCreator
 {
@@ -21,6 +21,10 @@ class ReplyCreator
     {
         $data['user_id'] = Auth::user()->id;
         $data['body'] = $this->mentionParser->parse($data['body']);
+
+        $markdown = new Markdown;
+        $data['body_original'] = $data['body'];
+        $data['body'] = $markdown->convertMarkdownToHtml($data['body']);
 
         // Validation
         $this->form->validate($data);

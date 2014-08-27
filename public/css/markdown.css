@@ -368,3 +368,30 @@
   .markdown-body .highlight .gc, .markdown-reply .highlight .gc {
     color: #999;
     background-color: #EAF2F5; }
+
+.markdown-reply h1, .markdown-reply h2, .markdown-reply h3, .markdown-reply h4, .markdown-reply h5, .markdown-reply h6 {
+  position: relative;
+  margin-top: 0.5em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4; }
+.markdown-reply h1 {
+  padding-bottom: 0.3em;
+  font-size: 1.4em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee; }
+.markdown-reply h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.25em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee; }
+.markdown-reply h3 {
+  font-size: 1.2em;
+  line-height: 1.43; }
+.markdown-reply h4 {
+  font-size: 1.1em; }
+.markdown-reply h5 {
+  font-size: 1em; }
+.markdown-reply h6 {
+  font-size: 1em;
+  color: #777; }

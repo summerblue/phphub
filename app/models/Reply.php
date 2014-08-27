@@ -3,9 +3,10 @@
 class Reply extends \Eloquent {
 
 	protected $fillable = [
-		'body', 
-		'user_id', 
-		'topic_id'
+		'body',
+		'user_id',
+        'topic_id',
+		'body_original',
 	];
 
 	public function votes()
@@ -25,7 +26,7 @@ class Reply extends \Eloquent {
 
 	public function scopeWhose($query, $user_id)
 	{
-        return $query->where('user_id','=',$user_id)->with('topic'); 
+        return $query->where('user_id','=',$user_id)->with('topic');
     }
 
     public function scopeRecent($query)

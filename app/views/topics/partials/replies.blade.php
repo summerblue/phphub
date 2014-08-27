@@ -40,7 +40,7 @@
       </div>
 
       <div class="media-body markdown-reply">
-{{{ $reply->body }}}
+{{ $reply->body }}
       </div>
 
     </div>

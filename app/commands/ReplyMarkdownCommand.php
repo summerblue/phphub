@@ -4,14 +4,14 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class TopicMarkdownConvertionCommand extends Command {
+class ReplyMarkdownCommand extends Command {
 
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'topic:marked';
+	protected $name = 'reply:marked';
 
 	/**
 	 * The console command description.
@@ -37,28 +37,28 @@ class TopicMarkdownConvertionCommand extends Command {
 	 */
 	public function fire()
 	{
-        $topics = Topic::all();
+        $replies = Reply::all();
 
         $markdown = new Markdown;
 
         $transfer_count = 0;
         $convert_count = 0;
 
-        foreach ($topics as $topic) {
-            if (empty($topic->body_original))
+        foreach ($replies as $reply) {
+            if (empty($reply->body_original))
             {
                 // store the original data
-                $topic->body_original = $topic->body;
+                $reply->body_original = $reply->body;
                 // convert to markdown
-                $topic->body = $markdown->convertMarkdownToHtml($topic->body);
-                $topic->save();
+                $reply->body = $markdown->convertMarkdownToHtml($reply->body);
+                $reply->save();
                 $transfer_count++;
             }
             else
             {
                 // convert to markdown
-                $topic->body = $markdown->convertMarkdownToHtml($topic->body_original);
-                $topic->save();
+                $reply->body = $markdown->convertMarkdownToHtml($reply->body_original);
+                $reply->save();
                 $convert_count++;
             }
         }
