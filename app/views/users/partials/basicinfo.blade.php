@@ -10,10 +10,14 @@
 
   <dt><label>Name:</label></dt><dd><strong>{{{ $user->name }}}</strong></dd>
 
+  @if ($user->real_name)
+    <dt class="adr"><label>姓名:</label></dt><dd><span class="org">{{{ $user->real_name }}}</span></dd>
+  @endif
+
   <dt><label>Github:</label></dt>
   <dd>
-    <a href="https://github.com/{{ $user->name }}" target="_blank">
-      <i class="fa fa-github-alt"></i> {{ $user->name }}
+    <a href="https://github.com/{{ $user->github_name }}" target="_blank">
+      <i class="fa fa-github-alt"></i> {{ $user->github_name }}
     </a>
   </dd>
 

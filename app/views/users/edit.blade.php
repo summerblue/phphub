@@ -27,6 +27,10 @@
         {{ Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) }}
 
           <div class="form-group">
+            {{ Form::text('real_name', null, ['class' => 'form-control', 'placeholder' => "真实姓名"]) }}
+          </div>
+
+          <div class="form-group">
             {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => "现在所在的城市"]) }}
           </div>
 

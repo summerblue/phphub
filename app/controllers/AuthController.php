@@ -10,8 +10,8 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
      */
     public function login()
     {
-        // Redirect from Github 
-        if (Input::has('code')) 
+        // Redirect from Github
+        if (Input::has('code'))
         {
             return App::make('Phphub\Github\GithubAuthenticator')->authByCode($this, Input::get('code'));
         }
@@ -42,12 +42,11 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
      */
     public function create()
     {
-        if ( ! Session::has('userGithubData')) 
+        if ( ! Session::has('userGithubData'))
         {
             return Redirect::route('login');
         }
-        $githubUser = Session::get('userGithubData');
-
+        $githubUser = array_merge(Session::get('userGithubData'), Session::get('_old_input', []));
         return View::make('auth.signupconfirm', compact('githubUser'));
     }
 
@@ -56,11 +55,12 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
      */
     public function store()
     {
-        if ( ! Session::has('userGithubData')) 
+        if ( ! Session::has('userGithubData'))
         {
             return Redirect::route('login');
         }
-        return App::make('Phphub\User\UserCreator')->create($this, Session::get('userGithubData'));
+        $githubUser = array_merge(Session::get('userGithubData'), Input::only('name', 'github_name'));
+        return App::make('Phphub\User\UserCreator')->create($this, $githubUser);
     }
 
 

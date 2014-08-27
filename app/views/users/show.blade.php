@@ -21,7 +21,7 @@
     <div class="panel panel-default">
       @include('users.partials.infonav', ['current' => 'basicinfo'])
 
-      <iframe src="http://lab.lepture.com/github-cards/card.html?user={{ $user->name }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
+      <iframe src="http://lab.lepture.com/github-cards/card.html?user={{ $user->github_name }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
     </div>
 
     <div class="panel panel-default">

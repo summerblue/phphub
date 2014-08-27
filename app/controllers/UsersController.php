@@ -36,7 +36,7 @@ class UsersController extends \BaseController {
 	{
 		$user = User::findOrFail($id);
 		$this->authorOrAdminPermissioinRequire($user->id);
-		$data = Input::only('city', 'company', 'twitter_account', 'personal_website', 'signature', 'introduction');
+		$data = Input::only('real_name', 'city', 'company', 'twitter_account', 'personal_website', 'signature', 'introduction');
 		App::make('Phphub\Forms\UserUpdateForm')->validate($data);
 
 		$user->update($data);
