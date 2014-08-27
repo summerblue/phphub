@@ -14,3 +14,4 @@
 Artisan::add(new TopicMarkdownConvertionCommand);
 Artisan::add(new TopicMakeExcerptCommand);
 Artisan::add(new UserRenameCommand);
+Artisan::add(new UserMigrateGithubUsernameCommand);
