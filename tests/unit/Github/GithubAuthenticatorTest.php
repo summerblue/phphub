@@ -32,7 +32,7 @@ class GithubAuthenticatorTest extends \UnitTestCase
         $auth = $this->getAuthenticator($users, $reader);
 
         // create a fake listener
-        $observer = m::mock('Phphub\Github\GithubAuthenticatorListener');
+        $observer = m::mock('Phphub\Listeners\GithubAuthenticatorListener');
         $observer->shouldReceive('userFound')->once();
 
         // Our goal here is to ensure that when a non-banned user
@@ -54,7 +54,7 @@ class GithubAuthenticatorTest extends \UnitTestCase
 
         $auth = $this->getAuthenticator($users, $reader);
 
-        $observer = m::mock('Phphub\Github\GithubAuthenticatorListener');
+        $observer = m::mock('Phphub\Listeners\GithubAuthenticatorListener');
         $observer->shouldReceive('userIsBanned')->once();
 
         // when a banned user is found by its Github id, the
@@ -74,7 +74,7 @@ class GithubAuthenticatorTest extends \UnitTestCase
 
         $auth = $this->getAuthenticator($users, $reader);
 
-        $observer = m::mock('Phphub\Github\GithubAuthenticatorListener');
+        $observer = m::mock('Phphub\Listeners\GithubAuthenticatorListener');
         $observer->shouldReceive('userNotFound')->once();
 
         $auth->authByCode($observer, 'foo');

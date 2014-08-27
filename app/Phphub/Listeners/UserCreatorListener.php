@@ -1,4 +1,4 @@
-<?php namespace Phphub\User;
+<?php namespace Phphub\Listeners;
 
 interface UserCreatorListener
 {

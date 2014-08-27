@@ -8,7 +8,7 @@ class Topic extends \Eloquent
 	public $timestamps = false;
 
 	use PresentableTrait;
-	protected $presenter = 'Phphub\Topic\TopicPresenter';
+	protected $presenter = 'Phphub\Presenters\TopicPresenter';
 
 	use SoftDeletingTrait;
     protected $dates = ['deleted_at'];

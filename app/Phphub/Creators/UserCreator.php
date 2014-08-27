@@ -1,6 +1,7 @@
-<?php namespace Phphub\User;
+<?php namespace Phphub\Creators;
 
 use Phphub\Forms\UserSignupForm;
+use Phphub\Listeners\UserCreatorListener;
 use User;
 
 /**

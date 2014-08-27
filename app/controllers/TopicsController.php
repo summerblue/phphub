@@ -35,7 +35,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
 	public function store()
 	{
-		return App::make('Phphub\Topic\TopicCreator')->create($this, Input::except('_token'));
+		return App::make('Phphub\Creators\TopicCreator')->create($this, Input::except('_token'));
 	}
 
 	public function show($id)

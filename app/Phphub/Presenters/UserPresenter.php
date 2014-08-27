@@ -1,4 +1,4 @@
-<?php namespace Phphub\User;
+<?php namespace Phphub\Presenters;
 
 use Laracasts\Presenter\Presenter;
 use Route;

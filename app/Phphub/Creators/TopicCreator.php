@@ -1,4 +1,4 @@
-<?php namespace Phphub\Topic;
+<?php namespace Phphub\Creators;
 
 use Phphub\Forms\TopicCreationForm;
 use Phphub\Core\CreatorListener;

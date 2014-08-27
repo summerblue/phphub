@@ -1,7 +1,7 @@
 <?php
 
-use Phphub\Github\GithubAuthenticatorListener;
-use Phphub\User\UserCreatorListener;
+use Phphub\Listeners\GithubAuthenticatorListener;
+use Phphub\Listeners\UserCreatorListener;
 
 class AuthController extends BaseController implements GithubAuthenticatorListener, UserCreatorListener
 {
@@ -60,7 +60,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
             return Redirect::route('login');
         }
         $githubUser = array_merge(Session::get('userGithubData'), Input::only('name', 'github_name'));
-        return App::make('Phphub\User\UserCreator')->create($this, $githubUser);
+        return App::make('Phphub\Creators\UserCreator')->create($this, $githubUser);
     }
 
 

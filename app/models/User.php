@@ -11,7 +11,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
 {
     // Using: $user->present()->anyMethodYourWant()
     use PresentableTrait;
-    public $presenter = 'Phphub\User\UserPresenter';
+    public $presenter = 'Phphub\Presenters\UserPresenter';
 
     // Enable hasRole( $name ), can( $permission ),
     //   and ability($roles, $permissions, $options)

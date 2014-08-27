@@ -1,4 +1,4 @@
-<?php namespace Phphub\Github;
+<?php namespace Phphub\Listeners;
 
 interface GithubAuthenticatorListener
 {

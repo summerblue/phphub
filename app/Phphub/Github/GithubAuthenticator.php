@@ -1,5 +1,6 @@
 <?php namespace Phphub\Github;
 
+use Phphub\Listeners\GithubAuthenticatorListener;
 use User;
 
 /**

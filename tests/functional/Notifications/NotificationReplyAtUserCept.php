@@ -22,7 +22,7 @@ $randomUser = $I->signIn();
 $I->amOnRoute('topics.show', $topic->id );
 $I->fillField(['name' => 'body'], 'The Awsome Reply. @SuperMan');
 $I->click('#reply-create-submit');
-$I->see('The Awsome Reply. [@SuperMan](' .route('users.show', $SuperMan->id).')');
+$I->see('The Awsome Reply. <a href="'.route('users.show', $SuperMan->id).'">@SuperMan</a>');
 
 // sign in the author
 $user = $I->signIn($SuperMan);
@@ -34,7 +34,7 @@ $I->seeRecord('users', [
 
 $I->amOnRoute('notifications.index');
 $I->see('My Awsome Topic.');
-$I->see('The Awsome Reply. [@SuperMan](' .route('users.show', $SuperMan->id).')');
+$I->see('The Awsome Reply. <a href="'.route('users.show', $SuperMan->id).'">@SuperMan</a>');
 $I->see($randomUser->name);
 
 $I->seeRecord('users', [

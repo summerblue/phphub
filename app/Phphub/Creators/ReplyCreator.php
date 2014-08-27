@@ -1,4 +1,4 @@
-<?php namespace Phphub\Reply;
+<?php namespace Phphub\Creators;
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;

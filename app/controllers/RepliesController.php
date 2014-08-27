@@ -12,7 +12,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
 	public function store()
 	{
-		return App::make('Phphub\Reply\ReplyCreator')->create($this, Input::except('_token'));
+		return App::make('Phphub\Creators\ReplyCreator')->create($this, Input::except('_token'));
 	}
 
     public function vote($id)
