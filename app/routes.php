@@ -1,5 +1,8 @@
 <?php
 
+# ------------------ Route patterns---------------------
+Route::pattern('id', '[0-9]+');
+
 # ------------------ Page Route ------------------------
 
 Route::get('/', [
@@ -114,48 +117,43 @@ Route::get('replies/delete/{id}',  [
 
 # ------------------ Votes ------------------------
 
-Route::get('/topics/{id}/upvote', [
-	'as' => 'topics.upvote',
-	'uses' => 'TopicsController@upvote',
-	'before' => 'auth'
-]);
+Route::group(['before' => 'auth'], function(){
+	Route::get('/topics/{id}/upvote', [
+		'as' => 'topics.upvote',
+		'uses' => 'TopicsController@upvote',
+	]);
 
-Route::get('/topics/{id}/downvote', [
-	'as' => 'topics.downvote',
-	'uses' => 'TopicsController@downvote',
-	'before' => 'auth'
-]);
+	Route::get('/topics/{id}/downvote', [
+		'as' => 'topics.downvote',
+		'uses' => 'TopicsController@downvote',
+	]);
 
-Route::get('/replies/{id}/vote', [
-	'as' => 'replies.vote',
-	'uses' => 'RepliesController@vote',
-	'before' => 'auth'
-]);
+	Route::get('/replies/{id}/vote', [
+		'as' => 'replies.vote',
+		'uses' => 'RepliesController@vote',
+	]);
+});
 
 # ------------------ Admin Route ------------------------
 
-Route::get('topics/recomend/{id}',  [
-	'as' => 'topics.recomend',
-	'uses' => 'TopicsController@recomend',
-	'before' => 'manage_topics'
-]);
+Route::group(['before' => 'manage_topics'], function(){
+	Route::get('topics/recomend/{id}',  [
+		'as' => 'topics.recomend',
+		'uses' => 'TopicsController@recomend',
+	]);
 
-Route::get('topics/wiki/{id}',  [
-	'as' => 'topics.wiki',
-	'uses' => 'TopicsController@wiki',
-	'before' => 'manage_topics'
-]);
+	Route::get('topics/wiki/{id}',  [
+		'as' => 'topics.wiki',
+		'uses' => 'TopicsController@wiki',
+	]);
 
-Route::get('topics/pin/{id}',  [
-	'as' => 'topics.pin',
-	'uses' => 'TopicsController@pin',
-	'before' => 'manage_topics'
-]);
+	Route::get('topics/pin/{id}',  [
+		'as' => 'topics.pin',
+		'uses' => 'TopicsController@pin',
+	]);
 
-Route::get('topics/delete/{id}',  [
-	'as' => 'topics.delete',
-	'uses' => 'TopicsController@delete',
-	'before' => 'manage_topics'
-]);
-
-
+	Route::get('topics/delete/{id}',  [
+		'as' => 'topics.delete',
+		'uses' => 'TopicsController@delete',
+	]);
+});
