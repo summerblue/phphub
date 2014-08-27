@@ -52,10 +52,8 @@ class PagesController extends \BaseController {
 	 */
 	public function feed()
 	{
-		$topics = Topic::excellent()->orderBy('created_at', 'desc')
-                                    ->with('user')
-                                    ->limit(20)
-                                    ->get();
+		$topics = Topic::excellent()->recent()->limit(20)->get();
+
 		$channel =[
             'title' => 'PHPhub - PHP & Laravel的中文社区',
             'description' => 'PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。',
