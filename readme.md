@@ -5,9 +5,17 @@ PHPHub is a `Forum project` written in `Laravel4.2`, and it is also the project 
 
 The [phphub.org](http://phphub.org) site is entirely open source, and community involvement is not only encouraged, but required in order to ensure the future success of the project.
 
-If you have any questions please don't hesitate to ask them in an issue or email me at phphub.org@gmail.com.
+ If you have any questions please don't hesitate to ask them in an issue or email me at phphub.org@gmail.com.
 
 [![Build Status](https://api.travis-ci.org/summerblue/phphub.svg?branch=master)](https://travis-ci.org/summerblue/phphub)
+
+### Screen Shots
+
+![](http://ww3.sinaimg.cn/large/6d86d850gw1ejre58qql6j21kw177tif.jpg)
+
+![](http://ww3.sinaimg.cn/large/6d86d850gw1ejre5gl0sjj21kw16z7ch.jpg)
+
+![](http://ww3.sinaimg.cn/large/6d86d850gw1ejre8frigyj20td0ma77d.jpg)
 
 ## Requirements and Environment
 
