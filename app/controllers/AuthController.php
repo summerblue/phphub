@@ -16,6 +16,10 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
             return App::make('Phphub\Github\GithubAuthenticator')->authByCode($this, Input::get('code'));
         }
 
+        if (!Session::has('url.intended'))
+        {
+            Session::put('url.intended', URL::previous());
+        }
         // redirect to the github authentication url
         return Redirect::to((string) OAuth::consumer('GitHub')->getAuthorizationUri());
     }
@@ -24,7 +28,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
     {
         Auth::logout();
         Flash::success(trans('template.Operation succed.'));
-        return Redirect::route('home');
+        return Redirect::back();
     }
 
     public function loginRequired()
