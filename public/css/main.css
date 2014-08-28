@@ -482,3 +482,14 @@ embed {
 
 /* iPhone 4 ----------- */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) { }
+
+/* Image style */
+#scrollUp {
+  background-image: url("../images/top.png");
+  bottom: 20px;
+  right: 20px;
+  width: 38px;
+  /* Width of image */
+  height: 38px;
+  /* Height of image */
+  text-indent: -999999px; }

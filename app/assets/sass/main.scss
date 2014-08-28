@@ -2,7 +2,7 @@ html,
 body {
   /* for sticky footer */
   height: 100%;
-   
+
   font-size: 13px;
   color: #333333;
   font-family: "Heiti SC Light","Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
@@ -61,7 +61,7 @@ ul.list {
   background-color: #EBE8E8;
 }
 .empty-block {
-  border: 3px dotted #ccc; 
+  border: 3px dotted #ccc;
   text-align: center;
   line-height: 100px;
   margin: 10px;
@@ -89,7 +89,7 @@ ul.list {
 }
 
 .divider {
-  border-bottom: 1px solid #ddd; 
+  border-bottom: 1px solid #ddd;
 }
 
 .main-col {
@@ -223,7 +223,7 @@ ul.list {
 .footer {
   padding-top: 22px;
   color: #8A8A8A;
-  
+
   border-top: 1px dotted #e5e5e5;
   i {
     font-size: 110%;
@@ -256,10 +256,10 @@ embed {
     text-decoration: none;
   }
   .navbar-nav.navbar-right:last-child{
-    margin-right: 0px; 
+    margin-right: 0px;
   }
   .github-login {
-    
+
     .btn {
       margin-top: 5px;
       font-size: 13px;
@@ -270,7 +270,7 @@ embed {
     }
 
 
-    
+
   }
 
   .navbar-form{
@@ -278,7 +278,7 @@ embed {
     margin-top: 7px;
     margin-bottom: 4px;
 
-    
+
     .form-control {
       font-size: 13px;
       height: 28px;
@@ -313,7 +313,7 @@ embed {
 }
 
 .topics-index {
-  
+
   .topic-filter {
     color: #d0d0d0;
     font-size: 12px;
@@ -391,7 +391,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 .replies-index {
   .operate a {
     color: #d0d0d0;
-  }  
+  }
 }
 
 
@@ -436,7 +436,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
       margin-left: 58px;
     }
   }
-} 
+}
 
 .editor-tool {
   margin-left: 0px;
@@ -462,11 +462,11 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 }
 
 // desktop
-@media (min-width: 1000px) { 
+@media (min-width: 1000px) {
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
   width: 1000px;
-} 
+}
 
 }
 
@@ -474,7 +474,7 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 // ipad below
 @media (max-width: 768px) {
-  
+
   .topnav {
     .github-login .btn {
       margin-left: 12px;
@@ -511,12 +511,12 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
     }
   }
 
-  .col-xs-6 { 
-    width: 100%; 
+  .col-xs-6 {
+    width: 100%;
     float: none;
   }
   .node-panel {
-    
+
     .remove-padding-vertically {
       padding-left: 15px;
       padding-right: 15px;
@@ -565,9 +565,9 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 // ipad below
 /* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : portrait) {
  .topnav {
     ul.github-login {
@@ -595,7 +595,7 @@ and (orientation : portrait) {
     margin-left: 58px;
   }
 
-} 
+}
 
 .votes {
     display: inline-block;
@@ -637,10 +637,10 @@ and (orientation : portrait) {
 
 
 /* Smartphones (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 120px) 
+@media only screen
+and (min-device-width : 120px)
 and (max-device-width : 480px) {
-    
+
   .meta, .operate {
     float: none!important;
     display: block;
@@ -658,48 +658,48 @@ and (max-device-width : 480px) {
 }
 
 /* Smartphones (landscape) ----------- */
-@media only screen 
+@media only screen
 and (min-width : 321px) {
 /* Styles */
 }
 
 /* Smartphones (portrait) ----------- */
-@media only screen 
+@media only screen
 and (max-width : 320px) {
 /* Styles */
 }
 
 /* iPads (portrait and landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
+@media only screen
+and (min-device-width : 768px)
 and (max-device-width : 1024px) {
 /* Styles */
 }
 
 /* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape) {
 /* Styles */
 }
 
 /* iPads (portrait) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : portrait) {
 /* Styles */
 }
 
 /* Desktops and laptops ----------- */
-@media only screen 
+@media only screen
 and (min-width : 1224px) {
 /* Styles */
 }
 
 /* Large screens ----------- */
-@media only screen 
+@media only screen
 and (min-width : 1824px) {
 /* Styles */
 }
@@ -710,3 +710,14 @@ only screen and (-webkit-min-device-pixel-ratio : 1.5),
 only screen and (min-device-pixel-ratio : 1.5) {
 /* Styles */
 }
+
+/* Image style */
+#scrollUp {
+    background-image: url("../images/top.png");
+    bottom: 20px;
+    right: 20px;
+    width: 38px;    /* Width of image */
+    height: 38px;   /* Height of image */
+    text-indent: -999999px;
+}
+

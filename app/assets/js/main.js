@@ -19,6 +19,8 @@ $(document).ready(function()
     });
 
 	emojify.run();
+
+    $.scrollUp();
 })
 function preview(){
 	replyContent = $("#reply_content");
