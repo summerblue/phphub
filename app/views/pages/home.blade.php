@@ -29,7 +29,7 @@
   <div class="panel-footer text-right">
 
   	<a href="topics?filter=excellent">
-  		{{ trans('template.More Excellent Topics...') }}...
+  		{{ trans('template.More Excellent Topics') }}...
   	</a>
   </div>
 </div>
