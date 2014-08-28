@@ -11,7 +11,7 @@ class PagesController extends \BaseController {
     }
 
 	/**
-	 * 首页
+	 * The home page
 	 */
 	public function home()
 	{
@@ -22,7 +22,7 @@ class PagesController extends \BaseController {
 	}
 
 	/**
-	 * 关于我们
+	 * About us page
 	 */
 	public function about()
 	{
@@ -30,7 +30,7 @@ class PagesController extends \BaseController {
 	}
 
 	/**
-	 * 社区 WIKI
+	 * Community WIKI
 	 */
 	public function wiki()
 	{
@@ -39,7 +39,7 @@ class PagesController extends \BaseController {
 	}
 
 	/**
-	 * 搜索功能
+	 * Search page, using google's.
 	 */
 	public function search()
 	{
@@ -48,7 +48,7 @@ class PagesController extends \BaseController {
 	}
 
 	/**
-	 * feed
+	 * Feed function
 	 */
 	public function feed()
 	{

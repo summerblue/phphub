@@ -35,7 +35,7 @@ class ReplyCreator
             return $observer->creatorFailed($reply->getErrors());
         }
 
-        // 话题最后回复的用户还有更新时间戳
+        // Add the reply user
         $topic = Topic::find($data['topic_id']);
         $topic->last_reply_user_id = Auth::user()->id;
         $topic->reply_count++;

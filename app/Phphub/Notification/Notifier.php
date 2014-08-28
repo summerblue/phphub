@@ -11,37 +11,38 @@ class Notifier
 
     public function notify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)
     {
-        // 通知帖子作者
+        // Notify the author
         Notification::batchNotify(
-                    'new_reply', 
-                    $fromUser, 
+                    'new_reply',
+                    $fromUser,
                     $this->removeDuplication([$topic->user]),
-                    $topic, 
+                    $topic,
                     $reply);
 
-        // 关注此贴的用户也提醒下
+        // Notify attented users
         Notification::batchNotify(
-                    'attention', 
-                    $fromUser, 
+                    'attention',
+                    $fromUser,
                     $this->removeDuplication($topic->attentedBy),
-                    $topic, 
+                    $topic,
                     $reply);
-        
-        // 如果有 "@" 某个用户的话, 一并通知
+
+        // Notify mentioned users
         Notification::batchNotify(
-                    'at', 
-                    $fromUser, 
-                    $this->removeDuplication($mentionParser->users), 
-                    $topic, 
+                    'at',
+                    $fromUser,
+                    $this->removeDuplication($mentionParser->users),
+                    $topic,
                     $reply);
     }
 
+    // in case of a user get a lot of the same notification
     public function removeDuplication($users)
     {
         $notYetNotifyUsers = [];
-        foreach ($users as $user) 
+        foreach ($users as $user)
         {
-            if (!in_array($user->id, $this->notifiedUsers)) 
+            if (!in_array($user->id, $this->notifiedUsers))
             {
                 $notYetNotifyUsers[] = $user;
                 $this->notifiedUsers[] = $user->id;

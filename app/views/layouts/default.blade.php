@@ -80,6 +80,7 @@ PHPhub - PHP & Laravel的中文社区
 
 		<script src="{{ cdn('js/emojify.min.js') }}"></script>
 		<script src="{{ cdn('js/marked.min.js') }}"></script>
+        <script src="{{ cdn('js/jquery.scrollUp.js') }}"></script>
 		<script src="{{ cdn('js/main.js') }}"></script>
 
 	    <script>
