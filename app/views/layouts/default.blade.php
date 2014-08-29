@@ -35,13 +35,14 @@ PHPhub - PHP & Laravel的中文社区
 		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css">
 		<link rel="stylesheet" href="{{ cdn('css/main.css') }}">
-		<link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
+        <link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
+		<link rel="stylesheet" href="{{ cdn('css/nprogress.css') }}">
 
         <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
 	    @yield('styles')
 
 	</head>
-	<body>
+	<body id="body">
 
 		<div id="wrap">
 
@@ -81,7 +82,9 @@ PHPhub - PHP & Laravel的中文社区
 		<script src="{{ cdn('js/emojify.min.js') }}"></script>
 		<script src="{{ cdn('js/marked.min.js') }}"></script>
         <script src="{{ cdn('js/jquery.scrollUp.js') }}"></script>
-		<script src="{{ cdn('js/main.js') }}"></script>
+        <script src="{{ cdn('js/jquery.pjax.js') }}"></script>
+		<script src="{{ cdn('js/nprogress.js') }}"></script>
+        <script src="{{ cdn('js/main.js') }}"></script>
 
 	    <script>
 	    emojify.setConfig({
@@ -107,15 +110,6 @@ PHPhub - PHP & Laravel的中文社区
 		  ga('create', 'UA-53903425-1', 'auto');
 		  ga('send', 'pageview');
 		</script>
-
-		<div class="hide">
-
-			<script type="text/javascript">
-			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c9bedc0d968b38ed0ab8ce47d86c80e' type='text/javascript'%3E%3C/script%3E"));
-			</script>
-		</div>
-
 
 	</body>
 </html>

@@ -15,7 +15,8 @@
         "thujohn/rss": "dev-master",
         "michelf/php-markdown": "1.4.*",
         "nickcernis/html-to-markdown": "2.1.*",
-        "mews/purifier": "dev-master"
+        "mews/purifier": "dev-master",
+        "rcrowe/turbo": "0.2.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9f83038a8f8a169fe902d7b4e8101318",
+    "hash": "417f1c7c990f3e0f68fa169b050928ad",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -944,16 +944,16 @@
         },
         {
             "name": "mustache/mustache",
-            "version": "v2.6.1",
+            "version": "v2.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bobthecow/mustache.php.git",
-                "reference": "1430ca884912eaba2b3830856b45685733b16789"
+                "reference": "fdf41dd673dc99b41d60992470dbae94ae0b6ba1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/1430ca884912eaba2b3830856b45685733b16789",
-                "reference": "1430ca884912eaba2b3830856b45685733b16789",
+                "url": "https://api.github.com/repos/bobthecow/mustache.php/zipball/fdf41dd673dc99b41d60992470dbae94ae0b6ba1",
+                "reference": "fdf41dd673dc99b41d60992470dbae94ae0b6ba1",
                 "shasum": ""
             },
             "require": {
@@ -985,20 +985,20 @@
                 "mustache",
                 "templating"
             ],
-            "time": "2014-06-20 19:34:49"
+            "time": "2014-08-26 19:50:10"
         },
         {
             "name": "nesbot/carbon",
-            "version": "1.10.0",
+            "version": "1.11.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
-                "reference": "9b42a1aec56011c2ac4d75c0ddad0794762344fc"
+                "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/9b42a1aec56011c2ac4d75c0ddad0794762344fc",
-                "reference": "9b42a1aec56011c2ac4d75c0ddad0794762344fc",
+                "url": "https://api.github.com/repos/briannesbitt/Carbon/zipball/2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
+                "reference": "2b60366be6dcb9f9cd3e244ab25eb98eaea99551",
                 "shasum": ""
             },
             "require": {
@@ -1031,7 +1031,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2014-07-18 03:44:47"
+            "time": "2014-08-26 03:18:44"
         },
         {
             "name": "nickcernis/html-to-markdown",
@@ -1364,6 +1364,48 @@
                 "psr-3"
             ],
             "time": "2012-12-21 11:40:51"
+        },
+        {
+            "name": "rcrowe/turbo",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rcrowe/Turbo.git",
+                "reference": "f870d6bbfb969a30841de67e62df2cfa3426c739"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rcrowe/Turbo/zipball/f870d6bbfb969a30841de67e62df2cfa3426c739",
+                "reference": "f870d6bbfb969a30841de67e62df2cfa3426c739",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Turbo": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Crowe",
+                    "email": "hello@vivalacrowe.com",
+                    "homepage": "http://vivalacrowe.com"
+                }
+            ],
+            "description": "Think turbolinks but for your PHP application. Powered by pjax.",
+            "keywords": [
+                "laravel",
+                "pjax",
+                "turbolinks"
+            ],
+            "time": "2013-06-06 16:44:35"
         },
         {
             "name": "stack/builder",
@@ -2689,12 +2731,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "217e04f061861c88ce56677225f8b0cf1eac9e79"
+                "reference": "deb75302acd737e1efa4a975fbe8257798c9ddb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/217e04f061861c88ce56677225f8b0cf1eac9e79",
-                "reference": "217e04f061861c88ce56677225f8b0cf1eac9e79",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/deb75302acd737e1efa4a975fbe8257798c9ddb0",
+                "reference": "deb75302acd737e1efa4a975fbe8257798c9ddb0",
                 "shasum": ""
             },
             "require": {
@@ -2747,20 +2789,20 @@
                 "test double",
                 "testing"
             ],
-            "time": "2014-08-11 12:38:44"
+            "time": "2014-08-28 11:39:03"
         },
         {
             "name": "ocramius/instantiator",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Ocramius/Instantiator.git",
-                "reference": "a7abbb5fc9df6e7126af741dd6c140d1a7369435"
+                "reference": "e24a12178906ff2e7471b8aaf3a0eb789b59f881"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Ocramius/Instantiator/zipball/a7abbb5fc9df6e7126af741dd6c140d1a7369435",
-                "reference": "a7abbb5fc9df6e7126af741dd6c140d1a7369435",
+                "url": "https://api.github.com/repos/Ocramius/Instantiator/zipball/e24a12178906ff2e7471b8aaf3a0eb789b59f881",
+                "reference": "e24a12178906ff2e7471b8aaf3a0eb789b59f881",
                 "shasum": ""
             },
             "require": {
@@ -2802,7 +2844,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2014-08-14 15:10:55"
+            "time": "2014-08-25 14:48:16"
         },
         {
             "name": "ocramius/lazy-map",
@@ -3112,16 +3154,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a33fa68ece9f8c68589bfc2da8d2794e27b820bc"
+                "reference": "3985cd437c1da2934421c99e54ebdf24f0362a7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a33fa68ece9f8c68589bfc2da8d2794e27b820bc",
-                "reference": "a33fa68ece9f8c68589bfc2da8d2794e27b820bc",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3985cd437c1da2934421c99e54ebdf24f0362a7a",
+                "reference": "3985cd437c1da2934421c99e54ebdf24f0362a7a",
                 "shasum": ""
             },
             "require": {
@@ -3182,7 +3224,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-08-18 05:12:30"
+            "time": "2014-08-28 13:38:26"
         },
         {
             "name": "phpunit/phpunit-mock-objects",

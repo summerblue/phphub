@@ -1,27 +1,60 @@
 
+(function($){
+    var PHPHub = {
+
+        init: function(){
+            var self = this;
+            $(document).pjax('a', 'body');
+            $(document).on('pjax:start', function() {
+                NProgress.start();
+            });
+            $(document).on('pjax:end', function() {
+                NProgress.done();
+                self.siteBootUp();
+            });
+            self.siteBootUp();
+        },
+        siteBootUp: function(){
+            var self = this;
+            self.initExternalLink();
+            self.initTimeAgo();
+            self.initEmoji();
+            self.initScrollToTop();
+        },
+        initExternalLink: function(){
+            // Open External Links In New Window
+            $('a[href^="http://"], a[href^="https://"]').each(function() {
+               var a = new RegExp('/' + window.location.host + '/');
+               if(!a.test(this.href) ) {
+                   $(this).click(function(event) {
+                       event.preventDefault();
+                       event.stopPropagation();
+                       window.open(this.href, '_blank');
+                   });
+               }
+            });
+        },
+        initTimeAgo: function(){
+            moment.lang('zh-cn');
+            $('.timeago').each(function(){
+                $(this).text( moment( $(this).text() ).fromNow());
+            });
+        },
+        initEmoji: function(){
+            emojify.run();
+        },
+        initScrollToTop: function(){
+            $.scrollUp();
+        }
+    }
+    window.PHPHub = PHPHub;
+})(jQuery);
+
 $(document).ready(function()
 {
-    moment.lang('zh-cn');
-	$('.timeago').each(function(){
-		$(this).text( moment( $(this).text() ).fromNow());
-	});
+    PHPHub.init();
+});
 
-    // Open External Links In New Window
-    $('a[href^="http://"], a[href^="https://"]').each(function() {
-       var a = new RegExp('/' + window.location.host + '/');
-       if(!a.test(this.href) ) {
-           $(this).click(function(event) {
-               event.preventDefault();
-               event.stopPropagation();
-               window.open(this.href, '_blank');
-           });
-       }
-    });
-
-	emojify.run();
-
-    $.scrollUp();
-})
 function preview(){
 	replyContent = $("#reply_content");
 	oldContent = replyContent.val();

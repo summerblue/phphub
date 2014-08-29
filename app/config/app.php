@@ -132,6 +132,7 @@ return array(
         'Thujohn\Rss\RssServiceProvider',
         'Phphub\Markdown\MarkdownServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
+        'Turbo\Provider\Laravel\TurboServiceProvider'
 
 	),
 
