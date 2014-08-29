@@ -14,7 +14,7 @@
 
 	@if (count($notifications))
 
-		<div class="panel-body remove-padding-horizontal">
+		<div class="panel-body remove-padding-horizontal notification-index">
 
 			<ul class="list-group row">
 				@foreach ($notifications as $notification)
@@ -23,7 +23,7 @@
 					@if (count($notification->topic))
 						<div class="avatar pull-left">
 							<a href="{{ route('users.show', [$notification->from_user_id]) }}">
-								<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:32px;height:32px;"/>
+								<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:38px;height:38px;"/>
 							</a>
 						</div>
 

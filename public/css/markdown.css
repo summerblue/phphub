@@ -127,7 +127,7 @@
     color: #777; }
   .markdown-body p, .markdown-body blockquote, .markdown-body ul, .markdown-body ol, .markdown-body dl, .markdown-body table, .markdown-body pre, .markdown-reply p, .markdown-reply blockquote, .markdown-reply ul, .markdown-reply ol, .markdown-reply dl, .markdown-reply table, .markdown-reply pre {
     margin-top: 0;
-    margin-bottom: 16px; }
+    margin-bottom: 10px; }
   .markdown-body hr, .markdown-reply hr {
     height: 4px;
     padding: 0;

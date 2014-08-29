@@ -339,9 +339,12 @@ embed {
   .editor-tool li > a {
     color: #666; }
 
+.notification-index .list-group .list-group-item {
+  padding: 7px 15px; }
+
 @media (min-width: 1000px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-    width: 1000px; } }
+    width: 1030px; } }
 
 @media (max-width: 768px) {
   .topnav .github-login .btn {

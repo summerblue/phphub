@@ -461,11 +461,17 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
   }
 }
 
+.notification-index {
+    .list-group .list-group-item {
+        padding: 7px 15px;
+    }
+}
+
 // desktop
 @media (min-width: 1000px) {
 
 .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-  width: 1000px;
+  width: 1030px;
 }
 
 }
