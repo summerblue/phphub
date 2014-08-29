@@ -344,7 +344,7 @@ embed {
 
 @media (min-width: 1000px) {
   .container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-    width: 1030px; } }
+    width: 1000px; } }
 
 @media (max-width: 768px) {
   .topnav .github-login .btn {
