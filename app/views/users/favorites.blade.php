@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ trans('template.Favorites') }}_@parent
+{{{ $user->name }}} {{ lang('Favorites') }}_@parent
 @stop
 
 @section('content')
@@ -26,7 +26,7 @@
 	      @include('users.partials.topics')
 	      <div class="pull-right add-padding-vertically"> {{ $topics->links(); }} </div>
       @else
-        <div class="empty-block">{{ trans('template.Dont have any favorites yet') }}~~</div>
+        <div class="empty-block">{{ lang('Dont have any favorites yet') }}~~</div>
       @endif
 
     </div>

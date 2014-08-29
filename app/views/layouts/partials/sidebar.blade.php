@@ -14,7 +14,7 @@
         <a href="
           {{ isset($node) ? URL::route('topics.create', ['node_id' => $node->id]) : URL::route('topics.create') ; }}
           " class="btn btn-success btn-lg">
-          <i class="glyphicon glyphicon-pencil"> </i> {{ trans('template.New Topic') }}
+          <i class="glyphicon glyphicon-pencil"> </i> {{ lang('New Topic') }}
         </a>
       </div>
     </div>
@@ -23,7 +23,7 @@
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.Links') }}</h3>
+        <h3 class="panel-title">{{ lang('Links') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -44,7 +44,7 @@
   @if (isset($nodeTopics) && count($nodeTopics))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.Same Node Topics') }}</h3>
+        <h3 class="panel-title">{{ lang('Same Node Topics') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -64,7 +64,7 @@
 
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ trans('template.Tips and Tricks') }}</h3>
+      <h3 class="panel-title">{{ lang('Tips and Tricks') }}</h3>
     </div>
     <div class="panel-body">
       {{ $siteTip->body }}
@@ -74,13 +74,13 @@
 
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
-      <h3 class="panel-title">{{ trans('template.Site Status') }}</h3>
+      <h3 class="panel-title">{{ lang('Site Status') }}</h3>
     </div>
     <div class="panel-body">
       <ul>
-        <li>{{ trans('template.Total User') }}: {{ $siteStat->user_count }} </li>
-        <li>{{ trans('template.Total Topic') }}: {{ $siteStat->topic_count }} </li>
-        <li>{{ trans('template.Total Reply') }}: {{ $siteStat->reply_count }} </li>
+        <li>{{ lang('Total User') }}: {{ $siteStat->user_count }} </li>
+        <li>{{ lang('Total Topic') }}: {{ $siteStat->topic_count }} </li>
+        <li>{{ lang('Total Reply') }}: {{ $siteStat->reply_count }} </li>
       </ul>
     </div>
   </div>

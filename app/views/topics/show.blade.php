@@ -49,7 +49,7 @@
   <!-- Reply List -->
   <div class="replies panel panel-default list-panel replies-index">
     <div class="panel-heading">
-      <div class="total">{{ trans('template.Total Reply Count') }}: <b>{{ $replies->getTotal() }}</b> </div>
+      <div class="total">{{ lang('Total Reply Count') }}: <b>{{ $replies->getTotal() }}</b> </div>
     </div>
 
     <div class="panel-body">
@@ -57,7 +57,7 @@
       @if (count($replies))
         @include('topics.partials.replies')
       @else
-         <div class="empty-block">{{ trans('template.No comments') }}~~</div>
+         <div class="empty-block">{{ lang('No comments') }}~~</div>
       @endif
 
       <!-- Pager -->
@@ -71,14 +71,14 @@
   <div class="reply-box form box-block">
 
     <ul class="list-inline editor-tool">
-      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ trans('template.Edit') }}</a></li>
-      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ trans('template.Preview') }}</a></li>
+      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ lang('Edit') }}</a></li>
+      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ lang('Preview') }}</a></li>
     </ul>
 
     @include('layouts.partials.errors')
 
     <div class="preview display-none markdown-reply box">
-{{ trans('template.No content.') }}.
+{{ lang('No content.') }}.
     </div>
 
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
@@ -88,29 +88,29 @@
         @if ($currentUser)
           {{ Form::textarea('body', null, ['class' => 'form-control',
                                             'rows' => 5,
-                                            'placeholder' => trans('template.Please using markdown.'),
+                                            'placeholder' => lang('Please using markdown.'),
                                             'style' => "overflow:hidden",
                                             'id' => 'reply_content']) }}
         @else
-          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => trans('template.User Login Required for commenting.')]) }}
+          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => lang('User Login Required for commenting.')]) }}
         @endif
 
       </div>
       <div class="form-group status-post-submit">
 
         @if ($currentUser)
-          {{ Form::submit(trans('template.Reply'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
+          {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
         @else
-          {{ Form::submit(trans('template.Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
+          {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
         @endif
 
       </div>
 
         <ul class="helpblock list">
-          <li>{{ trans('template.publish_typography') }}</li>
-          <li>{{ trans('template.publish_markdown') }}</li>
-          <li>{{ trans('template.publish_emoji') }}</li>
-          <li>{{ trans('template.publish_at_user') }}</li>
+          <li>{{ lang('publish_typography') }}</li>
+          <li>{{ lang('publish_markdown') }}</li>
+          <li>{{ lang('publish_emoji') }}</li>
+          <li>{{ lang('publish_at_user') }}</li>
         </ul>
         <br>
         <br>

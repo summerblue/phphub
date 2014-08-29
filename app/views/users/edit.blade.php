@@ -19,7 +19,7 @@
       <div class="panel-body ">
 
         <div class="alert alert-warning">
-          {{ trans('template.avatar_notice') }}
+          {{ lang('avatar_notice') }}
         </div>
 
         @include('layouts.partials.errors')
@@ -27,39 +27,39 @@
         {{ Form::model($user, ['route' => ['users.update', $user->id], 'method' => 'patch']) }}
 
           <div class="form-group">
-            {{ Form::text('real_name', null, ['class' => 'form-control', 'placeholder' => trans('template.Real Name')]) }}
+            {{ Form::text('real_name', null, ['class' => 'form-control', 'placeholder' => lang('Real Name')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => trans('template.City')]) }}
+            {{ Form::text('city', null, ['class' => 'form-control', 'placeholder' => lang('City')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => trans('template.Company')]) }}
+            {{ Form::text('company', null, ['class' => 'form-control', 'placeholder' => lang('Company')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('twitter_account', null, ['class' => 'form-control', 'placeholder' => trans('template.twitter_placeholder')]) }}
+            {{ Form::text('twitter_account', null, ['class' => 'form-control', 'placeholder' => lang('twitter_placeholder')]) }}
           </div>
 
           <div class="form-group">
-            {{ Form::text('personal_website', null, ['class' => 'form-control', 'placeholder' => trans('template.personal_website_placebolder')]) }}
+            {{ Form::text('personal_website', null, ['class' => 'form-control', 'placeholder' => lang('personal_website_placebolder')]) }}
           </div>
 
           <div class="form-group">
             {{ Form::textarea('signature', null, ['class' => 'form-control',
                                               'rows' => 3,
-                                              'placeholder' => trans('template.signature_placeholder')]) }}
+                                              'placeholder' => lang('signature_placeholder')]) }}
           </div>
 
           <div class="form-group">
             {{ Form::textarea('introduction', null, ['class' => 'form-control',
                                               'rows' => 3,
-                                              'placeholder' => trans('template.introduction_placeholder')]) }}
+                                              'placeholder' => lang('introduction_placeholder')]) }}
           </div>
 
           <div class="form-group status-post-submit">
-            {{ Form::submit(trans('template.Publish'), ['class' => 'btn btn-primary', 'id' => 'user-edit-submit']) }}
+            {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'user-edit-submit']) }}
           </div>
 
         {{ Form::close() }}

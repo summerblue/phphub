@@ -1,13 +1,13 @@
 @extends('layouts.default')
 
 @section('title')
-{{ trans('template.About Us') }}_@parent
+{{ lang('About Us') }}_@parent
 @stop
 
 @section('content')
 
     <div class="panel">
-    	<div class="panel-body">
+        <div class="panel-body">
 
         <div class="markdown-body" id="emojify">
 
@@ -93,7 +93,7 @@
 
         </div>
 
-    	</div>
+        </div>
     </div>
 
 @stop

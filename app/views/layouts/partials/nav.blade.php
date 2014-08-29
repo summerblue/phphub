@@ -7,15 +7,15 @@
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ trans('template.Topics') }}</a></li>
-        <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ trans('template.Wiki') }}</a></li>
-        <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">{{ trans('template.Users') }}</a></li>
-        <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ trans('template.About') }}</a></li>
+        <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
+        <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ lang('Wiki') }}</a></li>
+        <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">{{ lang('Users') }}</a></li>
+        <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ lang('About') }}</a></li>
       </ul>
 
       {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
         <div class="form-group">
-          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => trans('template.Search')]) }}
+          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => lang('Search')]) }}
         </div>
         <button type="submit" class="btn btn-default btn-circle"><i class="fa fa-search"></i></button>
       {{ Form::close() }}
@@ -36,13 +36,13 @@
             </li>
             <li>
                 <a class="button" href="{{ URL::route('logout') }}">
-                    <i class="fa fa-sign-out"></i> {{ trans('template.Logout') }}
+                    <i class="fa fa-sign-out"></i> {{ lang('Logout') }}
                 </a>
             </li>
         @else
             <a href="{{ URL::route('login') }}" class="btn btn-info" id="login-btn">
               <i class="fa fa-github-alt"></i>
-              {{ trans('template.Login') }}
+              {{ lang('Login') }}
             </a>
         @endif
 

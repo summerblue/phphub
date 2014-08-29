@@ -1,46 +1,46 @@
 @extends('layouts.default')
 
 @section('title')
-{{ trans('template.Topic List') }} @parent
+{{ lang('Topic List') }} @parent
 @stop
 
 @section('content')
 
 <div class="col-md-9 topics-index main-col">
-	<div class="panel panel-default">
+    <div class="panel panel-default">
 
 
-		<div class="panel-heading">
-	      @if (isset($node))
-	      	<div class="pull-left panel-title">{{ trans('template.Current Node') }}: {{{ $node->name }}}</div>
-	      @endif
+        <div class="panel-heading">
+          @if (isset($node))
+            <div class="pull-left panel-title">{{ lang('Current Node') }}: {{{ $node->name }}}</div>
+          @endif
 
-		  @include('topics.partials.filter')
+          @include('topics.partials.filter')
 
-	      <div class="clearfix"></div>
-	    </div>
+          <div class="clearfix"></div>
+        </div>
 
-		@if ( ! $topics->isEmpty())
+        @if ( ! $topics->isEmpty())
 
-			<div class="panel-body remove-padding-horizontal">
-				@include('topics.partials.topics', ['column' => false])
-			</div>
+            <div class="panel-body remove-padding-horizontal">
+                @include('topics.partials.topics', ['column' => false])
+            </div>
 
-			<div class="panel-footer text-right remove-padding-horizontal pager-footer">
-				<!-- Pager -->
-				{{ $topics->appends(Request::except('page'))->links(); }}
-			</div>
+            <div class="panel-footer text-right remove-padding-horizontal pager-footer">
+                <!-- Pager -->
+                {{ $topics->appends(Request::except('page'))->links(); }}
+            </div>
 
-		@else
-			<div class="panel-body">
-				<div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
-			</div>
-		@endif
+        @else
+            <div class="panel-body">
+                <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
+            </div>
+        @endif
 
-	</div>
+    </div>
 
-	<!-- Nodes Listing -->
-	@include('nodes.partials.list')
+    <!-- Nodes Listing -->
+    @include('nodes.partials.list')
 
 </div>
 

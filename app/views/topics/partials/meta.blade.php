@@ -8,18 +8,18 @@
     {{{ $topic->user->name }}}
   </a>
   •
-  {{ trans('template.at') }} <abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
+  {{ lang('at') }} <abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
   •
 
   @if (count($topic->lastReplyUser))
-    {{ trans('template.Last Reply by') }}
+    {{ lang('Last Reply by') }}
       <a href="{{{ URL::route('users.show', [$topic->lastReplyUser->id]) }}}">
         {{{ $topic->lastReplyUser->name }}}
       </a>
-     {{ trans('template.at') }} <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr>
+     {{ lang('at') }} <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr>
     •
   @endif
 
-  {{ $topic->view_count }} {{ trans('template.Reads') }}
+  {{ $topic->view_count }} {{ lang('Reads') }}
 </div>
 <div class="clearfix"></div>

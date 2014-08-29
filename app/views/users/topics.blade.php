@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ trans('template.Topic List') }}_@parent
+{{{ $user->name }}} {{ lang('Topic List') }}_@parent
 @stop
 
 @section('content')
@@ -27,7 +27,7 @@
 	        {{ $topics->links(); }}
 	    </div>
       @else
-        <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
+        <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
       @endif
 
     </div>

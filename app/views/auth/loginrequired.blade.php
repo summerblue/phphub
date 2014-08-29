@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ trans('template.User Login Require') }}_@parent
+{{ lang('User Login Require') }}_@parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">{{ trans('template.Login') }}</h3>
+          <h3 class="panel-title">{{ lang('Login') }}</h3>
         </div>
         <div class="panel-body">
 
@@ -17,7 +17,7 @@
 
             <fieldset>
               <div class="alert alert-warning">
-                  {{ trans('template.You need to login to proceed.') }}
+                  {{ lang('You need to login to proceed.') }}
               </div>
               {{ Form::submit(trans('Login with Github'), ['class' => 'btn btn-lg btn-success btn-block', 'id' => 'login-required-submit']) }}
             </fieldset>

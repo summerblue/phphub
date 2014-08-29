@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ trans('template.Basic Info') }}_@parent
+{{{ $user->name }}} {{ lang('Basic Info') }}_@parent
 @stop
 
 @section('content')
@@ -27,8 +27,8 @@
     <div class="panel panel-default">
 
       <ul class="nav nav-tabs user-info-nav" role="tablist">
-        <li class="active"><a href="#recent_replies" role="tab" data-toggle="tab">{{ trans('template.Recent Replies') }}</a></li>
-        <li><a href="#recent_topics" role="tab" data-toggle="tab">{{ trans('template.Recent Topics') }}</a></li>
+        <li class="active"><a href="#recent_replies" role="tab" data-toggle="tab">{{ lang('Recent Replies') }}</a></li>
+        <li><a href="#recent_topics" role="tab" data-toggle="tab">{{ lang('Recent Topics') }}</a></li>
       </ul>
 
       <div class="panel-body remove-padding-vertically remove-padding-horizontal">
@@ -40,7 +40,7 @@
             @if (count($replies))
               @include('users.partials.replies')
             @else
-              <div class="empty-block">{{ trans('template.Dont have any comment yet') }}~~</div>
+              <div class="empty-block">{{ lang('Dont have any comment yet') }}~~</div>
             @endif
 
           </div>
@@ -49,7 +49,7 @@
             @if (count($topics))
               @include('users.partials.topics')
             @else
-              <div class="empty-block">{{ trans('template.Dont have any data Yet') }}~~</div>
+              <div class="empty-block">{{ lang('Dont have any data Yet') }}~~</div>
             @endif
           </div>
 

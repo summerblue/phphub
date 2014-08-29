@@ -14,7 +14,7 @@
 {{ $reply->body }}
       </div>
     @else
-      <div class="deleted text-center">{{ trans('template.Data has been deleted.') }}</div>
+      <div class="deleted text-center">{{ lang('Data has been deleted.') }}</div>
     @endif
 
   </li>

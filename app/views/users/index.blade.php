@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ trans('template.Newly Registered User List') }}_@parent
+{{ lang('Newly Registered User List') }}_@parent
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
 <div class="panel panel-default users-index">
 
     <div class="panel-heading text-center">
-        {{ trans('template.Newly Registered User List') }} ( {{ trans('template.Total User') }} {{ $siteStat->user_count }} )
+        {{ lang('Newly Registered User List') }} ( {{ lang('Total User') }} {{ $siteStat->user_count }} )
     </div>
 
     <div class="panel-body">

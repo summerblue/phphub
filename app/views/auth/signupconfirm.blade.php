@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ trans('template.Create New Account') }}_@parent
+{{ lang('Create New Account') }}_@parent
 @stop
 
 @section('content')
@@ -9,21 +9,21 @@
     <div class="col-md-4 col-md-offset-4">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <h3 class="panel-title">{{ trans('template.Create New Account') }}</h3>
+          <h3 class="panel-title">{{ lang('Create New Account') }}</h3>
         </div>
         <div class="panel-body">
 
             {{ Form::open() }}
 
                 <div class="form-group">
-                    <label class="control-label" for="name">{{ trans('template.Avatar') }}</label>
+                    <label class="control-label" for="name">{{ lang('Avatar') }}</label>
                     <div class="form-group">
                         <img src="{{ $githubUser['image_url'] }}" width="100%" />
                     </div>
                 </div>
 
                 <div class="form-group {{{ $errors->has('name') ? 'has-error' : '' }}}">
-                    <label class="control-label" for="name">{{ trans('template.Username') }}</label>
+                    <label class="control-label" for="name">{{ lang('Username') }}</label>
                     {{ Form::text('name', ($githubUser['name'] ?: ''), ['class' => 'form-control']) }}
                     {{ $errors->first('name', '<span class="help-block">:message</span>') }}
                 </div>
@@ -35,12 +35,12 @@
                 </div>
 
                 <div class="form-group {{{ $errors->has('email') ? 'has-error' : '' }}}">
-                    <label class="control-label" for="email">{{ trans('template.Email') }}</label>
+                    <label class="control-label" for="email">{{ lang('Email') }}</label>
                     {{ Form::text('email', ($githubUser['email'] ?: ''), ['class' => 'form-control', 'readonly'=>'readonly']) }}
                     {{ $errors->first('email', '<span class="help-block">:message</span>') }}
                 </div>
 
-                {{ Form::submit(trans('template.Confirm'), ['class' => 'btn btn-lg btn-success btn-block']) }}
+                {{ Form::submit(lang('Confirm'), ['class' => 'btn btn-lg btn-success btn-block']) }}
 
             {{ Form::close() }}
 

@@ -13,7 +13,7 @@
     <div class="reply-box form box-block">
 
       <div class="alert alert-warning">
-          {{ trans('template.be_nice') }}
+          {{ lang('be_nice') }}
       </div>
 
       @include('layouts.partials.errors')
@@ -27,7 +27,7 @@
         <div class="form-group">
             <select class="selectpicker form-control" name="node_id" >
 
-              <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>{{ trans('template.Pick a node') }}</option>
+              <option value="" disabled {{ App::make('Topic')->present()->haveDefaultNode($node, null) ?: 'selected'; }}>{{ lang('Pick a node') }}</option>
 
               @foreach ($nodes['top'] as $top_node)
                 <optgroup label="{{{ $top_node->name }}}">
@@ -40,16 +40,16 @@
         </div>
 
         <div class="form-group">
-          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => trans('template.Please write down a topic')]) }}
+          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => lang('Please write down a topic')]) }}
         </div>
 
         <ul class="list-inline editor-tool">
-          <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ trans('template.Edit') }}</a></li>
-          <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ trans('template.Preview') }}</a></li>
+          <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ lang('Edit') }}</a></li>
+          <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ lang('Preview') }}</a></li>
         </ul>
 
         <div class="preview display-none markdown-reply box">
-{{ trans('template.No content.') }}..
+{{ lang('No content.') }}..
         </div>
 
         <div class="form-group">
@@ -57,11 +57,11 @@
                                             'rows' => 20,
                                             'style' => "overflow:hidden",
                                             'id' => 'reply_content',
-                                            'placeholder' => trans('template.Please using markdown.')]) }}
+                                            'placeholder' => lang('Please using markdown.')]) }}
         </div>
 
         <div class="form-group status-post-submit">
-          {{ Form::submit(trans('template.Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
+          {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
         </div>
 
       {{ Form::close() }}
@@ -75,7 +75,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.Current Node') }} : {{{ $node->name }}}</h3>
+        <h3 class="panel-title">{{ lang('Current Node') }} : {{{ $node->name }}}</h3>
       </div>
       <div class="panel-body">
         {{ $node->description }}
@@ -86,7 +86,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.Writting Format Notice') }}</h3>
+        <h3 class="panel-title">{{ lang('Writting Format Notice') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -103,7 +103,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.This kind of topic is not allowed.') }}</h3>
+        <h3 class="panel-title">{{ lang('This kind of topic is not allowed.') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">
@@ -116,7 +116,7 @@
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ trans('template.We can benefit from it.') }}</h3>
+        <h3 class="panel-title">{{ lang('We can benefit from it.') }}</h3>
       </div>
       <div class="panel-body">
         <ul class="list">

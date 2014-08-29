@@ -30,7 +30,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
         $reply->topic->decrement('reply_count', 1);
 
-        Flash::success(trans('template.Operation succed.'));
+        Flash::success(lang('Operation succed.'));
 
         return Redirect::route('topics.show', $reply->topic_id);
     }
@@ -43,13 +43,13 @@ class RepliesController extends \BaseController implements CreatorListener
 
     public function creatorFailed($errors)
     {
-    	Flash::error(trans('template.Operation succed.'));
+    	Flash::error(lang('Operation succed.'));
         return Redirect::back();
     }
 
     public function creatorSucceed($reply)
     {
-        Flash::success(trans('template.Operation succed.'));
+        Flash::success(lang('Operation succed.'));
         return Redirect::route('topics.show', array(Input::get('topic_id')));
     }
 

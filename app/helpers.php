@@ -12,3 +12,8 @@ function cdn( $filepath )
     }
 
 }
+
+function lang($text)
+{
+    return trans('phphub.'.$text);
+}

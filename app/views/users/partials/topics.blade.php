@@ -13,7 +13,7 @@
           {{{ $topic->node->name }}}
         </a>
         <span> • </span>
-        {{ $topic->reply_count }} {{ trans('template.Replies') }}
+        {{ $topic->reply_count }} {{ lang('Replies') }}
         <span> • </span>
         <span class="timeago">{{ $topic->created_at }}</span>
 

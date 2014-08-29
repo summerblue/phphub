@@ -6,12 +6,12 @@
 
 <dl class="dl-horizontal">
 
-  <dt><lable>&nbsp; </lable></dt><dd> {{ trans('template.User ID:') }} {{ $user->id }}</dd>
+  <dt><lable>&nbsp; </lable></dt><dd> {{ lang('User ID:') }} {{ $user->id }}</dd>
 
   <dt><label>Name:</label></dt><dd><strong>{{{ $user->name }}}</strong></dd>
 
   @if ($user->real_name)
-    <dt class="adr"><label> {{ trans('template.Real Name') }}:</label></dt><dd><span class="org">{{{ $user->real_name }}}</span></dd>
+    <dt class="adr"><label> {{ lang('Real Name') }}:</label></dt><dd><span class="org">{{{ $user->real_name }}}</span></dd>
   @endif
 
   <dt><label>Github:</label></dt>
@@ -22,11 +22,11 @@
   </dd>
 
   @if ($user->company)
-    <dt class="adr"><label> {{ trans('template.Company') }}:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>
+    <dt class="adr"><label> {{ lang('Company') }}:</label></dt><dd><span class="org">{{{ $user->company }}}</span></dd>
   @endif
 
   @if ($user->city)
-    <dt class="adr"><label> {{ trans('template.City') }}:</label></dt><dd><span class="org"><i class="fa fa-map-marker"></i> {{{ $user->city }}}</span></dd>
+    <dt class="adr"><label> {{ lang('City') }}:</label></dt><dd><span class="org"><i class="fa fa-map-marker"></i> {{{ $user->city }}}</span></dd>
   @endif
 
   @if ($user->twitter_account)
@@ -38,7 +38,7 @@
   @endif
 
   @if ($user->personal_website)
-  <dt><label>{{ trans('template.Blog') }}:</label></dt>
+  <dt><label>{{ lang('Blog') }}:</label></dt>
   <dd>
     <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
       <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 25) }}}
@@ -47,7 +47,7 @@
   @endif
 
   @if ($user->signature)
-    <dt><label>{{ trans('template.Signature') }}:</label></dt><dd><span>{{{ $user->signature }}}</span></dd>
+    <dt><label>{{ lang('Signature') }}:</label></dt><dd><span>{{{ $user->signature }}}</span></dd>
   @endif
 
   <dt>
@@ -59,6 +59,6 @@
 
 @if ($currentUser && $currentUser->id == $user->id)
   <a class="btn btn-primary btn-block" href="{{ route('users.edit', $user->id) }}" id="user-edit-button">
-    <i class="icon-edit"></i> {{ trans('template.Edit Profile') }}
+    <i class="icon-edit"></i> {{ lang('Edit Profile') }}
   </a>
 @endif

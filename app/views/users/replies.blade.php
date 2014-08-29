@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{{ $user->name }}} {{ trans('template.Reply List') }}_@parent
+{{{ $user->name }}} {{ lang('Reply List') }}_@parent
 @stop
 
 @section('content')
@@ -28,7 +28,7 @@
 	        {{ $replies->links(); }}
 	      </div>
       @else
-	       <div class="empty-block">{{ trans('template.Dont have any comment yet') }}~~</div>
+	       <div class="empty-block">{{ lang('Dont have any comment yet') }}~~</div>
       @endif
 
     </div>
