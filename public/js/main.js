@@ -20,6 +20,7 @@
             self.initTimeAgo();
             self.initEmoji();
             self.initScrollToTop();
+            self.initTextareaAutoResize();
         },
         initExternalLink: function(){
             // Open External Links In New Window
@@ -42,6 +43,9 @@
         },
         initEmoji: function(){
             emojify.run();
+        },
+        initTextareaAutoResize: function(){
+            $('textarea').autosize();
         },
         initScrollToTop: function(){
             $.scrollUp();

@@ -122,18 +122,3 @@
 @include('layouts.partials.sidebar')
 
 @stop
-
-
-@section('styles')
-    <link rel="stylesheet" href="{{ cdn('css/prism.css') }}">
-@stop
-
-@section('scripts')
-    <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
-    <script src="{{ cdn('js/prism.js') }}"></script>
-    <script>
-        $(document).ready(function(){
-            $('textarea').autosize();
-        });
-    </script>
-@stop
