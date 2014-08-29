@@ -65,7 +65,9 @@ class Notification extends \Eloquent
 			$toUser->increment('notification_count', 1);
 		}
 
-		Notification::insert($data);
+        if (count($data)) {
+            Notification::insert($data);
+        }
 	}
 
     public function scopeRecent($query)
