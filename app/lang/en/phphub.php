@@ -116,5 +116,6 @@ return array (
     'Up Vote your reply' => 'Up Vote your reply',
     'has mark your topic as wiki:' => 'has mark your topic as wiki:',
     'has recomended your topic:' => 'has recomended your topic:',
+    'Are you sure want to logout?' => 'Are you sure want to logout?',
 
 );

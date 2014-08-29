@@ -647,20 +647,67 @@ and (orientation : portrait) {
 and (min-device-width : 120px)
 and (max-device-width : 480px) {
 
-  .meta, .operate {
-    float: none!important;
-    display: block;
-  }
-  .markdown-reply p {
-    margin-bottom: 0px!important;
-  }
-  .list-group .list-group-item {
-    padding: 8px 8px;
-  }
-  .media>.pull-left {
-    margin-right: 6px;
-  }
+    .container {
+        padding: 0 7px;
+    }
+    .meta, .operate {
+        float: none!important;
+        display: block;
+    }
+    .markdown-reply p {
+        margin-bottom: 0px!important;
+    }
+    .list-group .list-group-item {
+        padding: 8px 8px;
+    }
+    .media>.pull-left {
+        margin-right: 6px;
+    }
 
+    .navbar {
+        .container:before, .container:after, .container-fluid:before, .navbar-header:before, .navbar-header:after, .navbar-collapse:before, .navbar-collapse:after {
+            display: table;
+            content: initial;
+        }
+    }
+    .topnav {
+        .navbar-brand {
+            height: 38px;
+            padding-top: 15px;
+            padding-left: 25px;
+        }
+        .navbar-collapse {
+            /* padding-right: 15px; */
+            /* padding-left: 22px; */
+            /* word-spacing: 2px; */
+            padding-right: 18px;
+            text-align: right;
+            margin-right: 0px;
+        }
+        .nav > li {
+            display: inline-block;
+            margin-left: 0px;
+            margin-right: 0px;
+            word-spacing: 0px;
+        }
+        .nav > li > a {
+            padding: 8px 10px 9px;
+            line-height: 15px;
+        }
+        .navbar-form {
+            display: none;
+        }
+        .github-login {
+            text-align: right;
+        }
+        .navbar-nav.navbar-right:last-child {
+            margin-right: -15px;
+        }
+
+    }
+    .topnav, .box, .panel{
+        margin-bottom: 12px;
+    }
 }
 
 /* Smartphones (landscape) ----------- */

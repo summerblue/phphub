@@ -2,10 +2,10 @@
 <div role="navigation" class="navbar navbar-default navbar-static-top topnav">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" data-toggle="collapse" data-target="#top-navbar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+
       <a href="/" class="navbar-brand">PHPHub</a>
     </div>
-    <div id="top-navbar-collapse" class="navbar-collapse collapse">
+    <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
         <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
         <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ lang('Wiki') }}</a></li>
@@ -35,7 +35,7 @@
                 </a>
             </li>
             <li>
-                <a class="button" href="{{ URL::route('logout') }}">
+                <a class="button" href="{{ URL::route('logout') }}" onclick=" return confirm('{{ lang('Are you sure want to logout?') }}')">
                     <i class="fa fa-sign-out"></i> {{ lang('Logout') }}
                 </a>
             </li>
