@@ -14,6 +14,11 @@
             });
             self.siteBootUp();
         },
+
+        /*
+        * Things to be execute when normal page load
+        * and pjax page load.
+        */
         siteBootUp: function(){
             var self = this;
             self.initExternalLink();
@@ -22,8 +27,11 @@
             self.initScrollToTop();
             self.initTextareaAutoResize();
         },
+
+        /**
+         * Open External Links In New Window
+         */
         initExternalLink: function(){
-            // Open External Links In New Window
             $('a[href^="http://"], a[href^="https://"]').each(function() {
                var a = new RegExp('/' + window.location.host + '/');
                if(!a.test(this.href) ) {
@@ -35,20 +43,38 @@
                }
             });
         },
+
+        /**
+         * Automatically transform any Date format to human
+         * friendly format, all you need to do is add a
+         * `.timeago` class.
+         */
         initTimeAgo: function(){
             moment.lang('zh-cn');
             $('.timeago').each(function(){
                 $(this).text( moment( $(this).text() ).fromNow());
             });
         },
+
+        /**
+         * Enable emoji everywhere.
+         */
         initEmoji: function(){
             emojify.run();
         },
+
+        /**
+         * Autoresizing the textarea when you typing.
+         */
         initTextareaAutoResize: function(){
             $('textarea').autosize();
         },
+
+        /**
+         * Scroll to top in one click.
+         */
         initScrollToTop: function(){
-            $.scrollUp();
+            $.scrollUp.init();
         }
     }
     window.PHPHub = PHPHub;
