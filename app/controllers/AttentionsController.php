@@ -15,6 +15,7 @@ class AttentionsController extends \BaseController
 		{
 			$message = trans('template.Successfully_attention');
 			Auth::user()->attentTopics()->attach($topic->id);
+            Notification::notify('topic_attent', Auth::user(), $topic->user, $topic);
 		}
 		Flash::success($message);
 		return Redirect::back();

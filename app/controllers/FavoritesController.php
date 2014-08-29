@@ -13,6 +13,7 @@ class FavoritesController extends \BaseController
 		else
 		{
 			Auth::user()->favoriteTopics()->attach($topic->id);
+            Notification::notify('topic_favorite', Auth::user(), $topic->user, $topic);
 		}
 		Flash::success(trans('template.Operation succed.'));
 		return Redirect::back();

@@ -109,4 +109,12 @@ return array (
     'Operation succed.' => 'Operation succed.',
     'Congratulation and Welcome!' => 'Congratulation and Welcome!',
     'Operation failed!' => 'Operation failed!',
+
+    'Favorited your topic:' => 'Favorited your topic:',
+    'Attented your topic:' => 'Attented your topic:',
+    'Up Vote your topic' => 'Up Vote your topic',
+    'Up Vote your reply' => 'Up Vote your reply',
+    'has mark your topic as wiki:' => 'has mark your topic as wiki:',
+    'has recomended your topic:' => 'has recomended your topic:',
+
 );

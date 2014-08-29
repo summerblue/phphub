@@ -114,9 +114,8 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic = Topic::findOrFail($id);
 		$topic->is_excellent = (!$topic->is_excellent);
 		$topic->save();
-
 		Flash::success(trans('template.Operation succed.'));
-
+        Notification::notify('topic_mark_excellent', Auth::user(), $topic->user, $topic);
 		return Redirect::route('topics.show', $topic->id);
 	}
 
@@ -125,9 +124,8 @@ class TopicsController extends \BaseController implements CreatorListener
 		$topic = Topic::findOrFail($id);
 		$topic->is_wiki = (!$topic->is_wiki);
 		$topic->save();
-
 		Flash::success(trans('template.Operation succed.'));
-
+        Notification::notify('topic_mark_wiki', Auth::user(), $topic->user, $topic);
 		return Redirect::route('topics.show', $topic->id);
 	}
 

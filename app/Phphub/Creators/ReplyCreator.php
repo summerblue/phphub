@@ -44,7 +44,7 @@ class ReplyCreator
 
         Auth::user()->increment('reply_count', 1);
 
-        App::make('Phphub\Notification\Notifier')->notify(Auth::user(), $this->mentionParser, $topic, $reply);
+        App::make('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
 
         return $observer->creatorSucceed($reply);
     }

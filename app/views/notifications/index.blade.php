@@ -23,7 +23,7 @@
 					@if (count($notification->topic))
 						<div class="avatar pull-left">
 							<a href="{{ route('users.show', [$notification->from_user_id]) }}">
-								<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:48px;height:48px;"/>
+								<img class="media-object img-thumbnail avatar" alt="{{{ $notification->fromUser->name }}}" src="{{ $notification->fromUser->present()->gravatar }}"  style="width:32px;height:32px;"/>
 							</a>
 						</div>
 
@@ -35,13 +35,7 @@
 								{{{ $notification->fromUser->name }}}
 							</a>
 							 •
-							@if ($notification->type == 'new_reply')
-								{{ trans('template.Your topic have new reply: ') }}
-							@elseif ($notification->type == 'attention')
-								{{ trans('template.Attented topic has new reply: ') }}
-							@elseif ($notification->type == 'at')
-								{{ trans('template.Mention you At: ') }}
-							@endif
+                            {{ $notification->present()->lableUp }}
 
 						  	<a href="{{ route('topics.show', [$notification->topic->id]) }}" title="{{{ $notification->topic->title }}}">
 						  		{{{ str_limit($notification->topic->title, '100') }}}

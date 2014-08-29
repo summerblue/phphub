@@ -9,7 +9,7 @@ class Notifier
 {
     public $notifiedUsers = [];
 
-    public function notify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)
+    public function newReplyNotify(User $fromUser, Mention $mentionParser, Topic $topic, Reply $reply)
     {
         // Notify the author
         Notification::batchNotify(
