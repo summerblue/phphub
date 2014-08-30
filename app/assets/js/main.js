@@ -83,7 +83,7 @@
                         }));
                     },
                     template: function (value) {
-                        return '<img src="' + Config.cdnDomain + 'images/emoji/' + value + '.png"></img>' + value;
+                        return '<img src="' + Config.cdnDomain + 'assets/images/emoji/' + value + '.png"></img>' + value;
                     },
                     replace: function (value) {
                         return ':' + value + ': ';

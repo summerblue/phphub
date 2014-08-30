@@ -17,5 +17,5 @@ return [
 
     // App config
     'url'           => 'http://localhost:8000/',
-    'url_static'    => '',
+    // 'url_static'    => 'http://phphub.qiniudn.com',
 ];
