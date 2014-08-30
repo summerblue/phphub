@@ -26,6 +26,7 @@
             self.initEmoji();
             self.initScrollToTop();
             self.initTextareaAutoResize();
+            self.initHeightLight();
         },
 
         /**
@@ -75,7 +76,16 @@
          */
         initScrollToTop: function(){
             $.scrollUp.init();
+        },
+
+        /**
+         * Code heightlight.
+         */
+        initHeightLight: function(){
+            Prism.highlightAll();
         }
+
+
     }
     window.PHPHub = PHPHub;
 })(jQuery);
