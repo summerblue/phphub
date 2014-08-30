@@ -11,3 +11,6 @@ Thumbs.db
 tests/_output/*
 
 Envoy.blade.php
+
+public/assets/css/*
+public/assets/js/*

@@ -16,7 +16,8 @@
         "michelf/php-markdown": "1.4.*",
         "nickcernis/html-to-markdown": "2.1.*",
         "mews/purifier": "dev-master",
-        "rcrowe/turbo": "0.2.*"
+        "rcrowe/turbo": "0.2.*",
+        "summerblue/asset-manager": "0.2.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",
@@ -25,6 +26,12 @@
 		"laracasts/testdummy": "~1.0",
 		"fzaninotto/faker": "1.4.*"
 	},
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/summerblue/asset-manager"
+        }
+    ],
 	"autoload": {
 		"classmap": [
 			"app/commands",

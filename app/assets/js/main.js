@@ -63,7 +63,7 @@
          */
         initEmoji: function(){
             emojify.setConfig({
-                img_dir : Config.cdnDomain + 'images/emoji',
+                img_dir : Config.cdnDomain + 'assets/images/emoji',
                 ignored_tags : {
                     'SCRIPT'  : 1,
                     'TEXTAREA': 1,

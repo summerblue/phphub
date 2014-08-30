@@ -32,12 +32,7 @@ PHPhub - PHP & Laravel的中文社区
 		<meta name="author" content="The PHP China Community." />
 		<meta name="description" content="@section('description') PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
 
-		<link rel="stylesheet" href="//cdn.staticfile.org/twitter-bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.1.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="{{ cdn('css/main.css') }}">
-        <link rel="stylesheet" href="{{ cdn('css/markdown.css') }}">
-		<link rel="stylesheet" href="{{ cdn('css/nprogress.css') }}">
-        <link rel="stylesheet" href="{{ cdn('css/prism.css') }}">
+        <link rel="stylesheet" href="{{ cdn('assets/css/'.Asset::styles('frontend')) }}">
 
         <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
 
@@ -79,26 +74,7 @@ PHPhub - PHP & Laravel的中文社区
 	    </div>
 	  </div>
 
-		<script src="//cdn.staticfile.org/jquery/1.11.1/jquery.min.js"></script>
-		<script src="//cdn.staticfile.org/twitter-bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script src="//cdn.staticfile.org/holder/2.3.1/holder.min.js"></script>
-		<script src="//cdn.staticfile.org/moment.js/2.7.0/moment.min.js"></script>
-        @if (Lang::locale() == 'zh-CN')
-            <script src="//cdn.staticfile.org/moment.js/2.7.0/lang/zh-cn.min.js"></script>
-        @endif
-
-		<script src="{{ cdn('js/emojify.min.js') }}"></script>
-		<script src="{{ cdn('js/marked.min.js') }}"></script>
-        <script src="{{ cdn('js/jquery.scrollUp.js') }}"></script>
-        <script src="{{ cdn('js/jquery.pjax.js') }}"></script>
-		<script src="{{ cdn('js/nprogress.js') }}"></script>
-
-        <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
-        <script src="{{ cdn('js/prism.js') }}"></script>
-        <script src="{{ cdn('js/jquery.textcomplete.js') }}"></script>
-        <script src="{{ cdn('js/emoji.js') }}"></script>
-        <script src="{{ cdn('js/ekko-lightbox.js') }}"></script>
-        <script src="{{ cdn('js/main.js') }}"></script>
+        <script src="{{ cdn('assets/js/'.Asset::scripts('frontend')) }}"></script>
 
 	    @yield('scripts')
 

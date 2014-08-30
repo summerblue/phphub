@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "417f1c7c990f3e0f68fa169b050928ad",
+    "hash": "b1a4cd455d491eefeb7efc83b855d856",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -1456,6 +1456,45 @@
                 "stack"
             ],
             "time": "2014-01-28 19:42:24"
+        },
+        {
+            "name": "summerblue/asset-manager",
+            "version": "0.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/summerblue/asset-manager.git",
+                "reference": "3e635c28575762ffab6572a7a0a84b9356d86ad5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/summerblue/asset-manager/zipball/3e635c28575762ffab6572a7a0a84b9356d86ad5",
+                "reference": "3e635c28575762ffab6572a7a0a84b9356d86ad5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~4.2",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Modbase\\AssetManager\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stijn Geselle",
+                    "email": "stijn.geselle@gmail.com"
+                }
+            ],
+            "description": "A very basic asset manager to be used in combination with versioned assets.",
+            "support": {
+                "source": "https://github.com/summerblue/asset-manager/tree/0.2.2"
+            },
+            "time": "2014-08-30 13:34:49"
         },
         {
             "name": "swiftmailer/swiftmailer",
