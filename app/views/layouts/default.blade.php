@@ -95,6 +95,8 @@ PHPhub - PHP & Laravel的中文社区
 
         <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
         <script src="{{ cdn('js/prism.js') }}"></script>
+        <script src="{{ cdn('js/jquery.textcomplete.js') }}"></script>
+        <script src="{{ cdn('js/emoji.js') }}"></script>
         <script src="{{ cdn('js/main.js') }}"></script>
 
 	    @yield('scripts')

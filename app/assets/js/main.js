@@ -72,6 +72,25 @@
                 }
             });
             emojify.run();
+
+            $('#reply_content').textcomplete([
+                { // emoji strategy
+                    match: /\B:([\-+\w]*)$/,
+                    search: function (term, callback) {
+                        callback($.map(emojies, function (emoji) {
+                            return emoji.indexOf(term) === 0 ? emoji : null;
+                        }));
+                    },
+                    template: function (value) {
+                        return '<img src="' + Config.cdnDomain + 'images/emoji/' + value + '.png"></img>' + value;
+                    },
+                    replace: function (value) {
+                        return ':' + value + ': ';
+                    },
+                    index: 1,
+                    maxCount: 5
+                }
+            ]);
         },
 
         /**
