@@ -50,7 +50,7 @@ class RepliesController extends \BaseController implements CreatorListener
     public function creatorSucceed($reply)
     {
         Flash::success(lang('Operation succed.'));
-        return Redirect::route('topics.show', array(Input::get('topic_id')));
+        return Redirect::route('topics.show', array(Input::get('topic_id'), '#reply'.$reply->id));
     }
 
 }
