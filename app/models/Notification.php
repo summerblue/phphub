@@ -80,6 +80,9 @@ class Notification extends \Eloquent
         if ($fromUser->id == $toUser->id)
             return;
 
+        if (Notification::isNotified($fromUser->id, $toUser->id, $topic->id, $type))
+            return;
+
         $nowTimestamp = Carbon::now()->toDateTimeString();
 
 
@@ -98,5 +101,35 @@ class Notification extends \Eloquent
 
         Notification::insert($data);
     }
+
+    public static function isNotified($from_user_id, $user_id, $topic_id, $type)
+    {
+        $notifys = Notification::fromwhom($from_user_id)
+                        ->toWhom($user_id)
+                        ->atTopic($topic_id)
+                        ->withType($type)->get();
+        return $notifys->count();
+    }
+
+    public function scopeFromWhom($query, $from_user_id)
+    {
+        return $query->where('from_user_id', '=', $from_user_id);
+    }
+
+    public function scopeToWhom($query, $user_id)
+    {
+        return $query->where('user_id', '=', $user_id);
+    }
+
+    public function scopeWithType($query, $type)
+    {
+        return $query->where('type', '=', $type);
+    }
+
+    public function scopeAtTopic($query, $topic_id)
+    {
+        return $query->where('topic_id', '=', $topic_id);
+    }
+
 
 }

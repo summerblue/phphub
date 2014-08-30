@@ -28,7 +28,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
     {
         Auth::logout();
         Flash::success(lang('Operation succed.'));
-        return Redirect::back();
+        return Redirect::back('home');
     }
 
     public function loginRequired()

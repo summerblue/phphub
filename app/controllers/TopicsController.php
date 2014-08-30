@@ -93,14 +93,14 @@ class TopicsController extends \BaseController implements CreatorListener
     {
         $topic = Topic::find($id);
         App::make('Phphub\Vote\Voter')->topicUpVote($topic);
-        return Redirect::back();
+        return Redirect::route('topics.show', $topic->id);
     }
 
     public function downvote($id)
     {
         $topic = Topic::find($id);
         App::make('Phphub\Vote\Voter')->topicDownVote($topic);
-        return Redirect::back();
+        return Redirect::route('topics.show', $topic->id);
     }
 
     /**

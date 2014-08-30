@@ -19,7 +19,7 @@ class RepliesController extends \BaseController implements CreatorListener
     {
         $reply = Reply::find($id);
         App::make('Phphub\Vote\Voter')->replyUpVote($reply);
-        return Redirect::back();
+        return Redirect::route('topics.show', [$reply->topic_id, '#reply'.$reply->id]);
     }
 
     public function delete($id)
@@ -43,7 +43,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
     public function creatorFailed($errors)
     {
-    	Flash::error(lang('Operation succed.'));
+    	Flash::error(lang('Operation failed.'));
         return Redirect::back();
     }
 

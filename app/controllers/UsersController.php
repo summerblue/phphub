@@ -42,7 +42,7 @@ class UsersController extends \BaseController {
         $user->update($data);
 
         Flash::success(lang('Operation succed.'));
-        return Redirect::back();
+        return Redirect::route('users.show', $id);
     }
 
     public function destroy($id)

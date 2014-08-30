@@ -16,7 +16,7 @@ class FavoritesController extends \BaseController
             Notification::notify('topic_favorite', Auth::user(), $topic->user, $topic);
         }
         Flash::success(lang('Operation succed.'));
-        return Redirect::back();
+        return Redirect::route('topics.show', $topic->id);
     }
 
 

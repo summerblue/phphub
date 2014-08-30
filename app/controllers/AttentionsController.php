@@ -18,6 +18,6 @@ class AttentionsController extends \BaseController
             Notification::notify('topic_attent', Auth::user(), $topic->user, $topic);
         }
         Flash::success($message);
-        return Redirect::back();
+        return Redirect::route('topics.show', $topic->id);
     }
 }
