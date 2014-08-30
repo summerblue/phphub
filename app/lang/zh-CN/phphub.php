@@ -123,5 +123,6 @@ return array(
     'has mark your topic as wiki:' => '把你的主题收录为社区 Wiki',
     'has recomended your topic:' => '推荐了你的主题',
     'Are you sure want to logout?' => '你确定要退出吗?',
+    'No comments' => '暂无评论',
 );
 
