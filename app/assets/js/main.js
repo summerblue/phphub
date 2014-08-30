@@ -4,7 +4,7 @@
 
         init: function(){
             var self = this;
-            $(document).pjax('a', 'body');
+            $(document).pjax('a:not(a[target="_blank"])', 'body');
             $(document).on('pjax:start', function() {
                 NProgress.start();
             });
