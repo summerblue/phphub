@@ -13,6 +13,7 @@
                 self.siteBootUp();
             });
             self.siteBootUp();
+            self.initLightBox();
         },
 
         /*
@@ -112,7 +113,23 @@
          */
         initHeightLight: function(){
             Prism.highlightAll();
-        }
+        },
+
+        /**
+         * lightbox
+         */
+        initLightBox: function(){
+            $(document).delegate('.panel-body img:not(.emoji)', 'click', function(event) {
+                event.preventDefault();
+                return $(this).ekkoLightbox({
+                    onShown: function() {
+                        if (window.console) {
+                            // return console.log('Checking our the events huh?');
+                        }
+                    }
+                });
+            });
+        },
 
 
     }
