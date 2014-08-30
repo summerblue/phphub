@@ -40,6 +40,13 @@ PHPhub - PHP & Laravel的中文社区
         <link rel="stylesheet" href="{{ cdn('css/prism.css') }}">
 
         <link rel="shortcut icon" href="{{ cdn('favicon.ico') }}"/>
+
+        <script>
+            Config = {
+                'cdnDomain': '{{ getCdnDomain() }}',
+            };
+        </script>
+
 	    @yield('styles')
 
 	</head>
@@ -90,20 +97,7 @@ PHPhub - PHP & Laravel的中文社区
         <script src="{{ cdn('js/prism.js') }}"></script>
         <script src="{{ cdn('js/main.js') }}"></script>
 
-	    <script>
-	    emojify.setConfig({
-			    img_dir : '{{ cdn('images/emoji') }}',
-			    ignored_tags : {
-			        'SCRIPT'  : 1,
-			        'TEXTAREA': 1,
-			        'A'       : 1,
-			        'PRE'     : 1,
-			        'CODE'    : 1
-			    }
-			});
-	    </script>
 	    @yield('scripts')
-
 
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
