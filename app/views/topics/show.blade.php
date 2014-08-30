@@ -36,7 +36,7 @@
       @include('topics.partials.meta')
     </div>
 
-    <div class="body entry-content panel-body">
+    <div class="content-body entry-content panel-body">
 
       @include('topics.partials.body', array('body' => $topic->body))
 

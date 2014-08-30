@@ -39,7 +39,7 @@
 
       </div>
 
-      <div class="media-body markdown-reply">
+      <div class="media-body markdown-reply content-body">
 {{ $reply->body }}
       </div>
 

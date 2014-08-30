@@ -45,7 +45,7 @@
                                  • {{ lang('at') }} • <span class="timeago">{{ $notification->created_at }}</span>
                             </span>
                           </div>
-                          <div class="media-body markdown-reply">
+                          <div class="media-body markdown-reply content-body">
 {{ $notification->body }}
                           </div>
 
