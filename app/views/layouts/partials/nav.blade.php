@@ -3,7 +3,7 @@
   <div class="container">
     <div class="navbar-header">
 
-      <a href="/" class="navbar-brand">PHPHub</a>
+      <a href="/" class="navbar-brand">PHPChina</a>
     </div>
     <div id="top-navbar-collapse" class="navbar-collapse">
       <ul class="nav navbar-nav">
