@@ -17,6 +17,7 @@ before_script:
   - "mysql -e 'create database `phphub`;'"
   - composer install -n --prefer-source
   - php artisan migrate --seed -n
+  - echo '{"frontend.scripts":["scripts.js"],"frontend.styles":["styles.css"]}' > asset_manifest.json
   - ./vendor/bin/codecept build
 
 script:
