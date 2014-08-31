@@ -1,11 +1,10 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var rev = require('gulp-rev');
-var clean = require('gulp-clean');
+var del = require('del');
 var filename = require('gulp-asset-manifest');
 var minifycss = require('gulp-minify-css');
 
@@ -49,7 +48,7 @@ gulp.task('css', function() {
         .pipe(gulp.dest('app/assets/css'));
 
     // Cleanup old assets
-    gulp.src('public/assets/css/styles-*.css', { read: false }).pipe(clean());
+    del(['public/assets/css/styles-*.css'], function (err) {});
 
     // Prefix, compress and concat the CSS assets
     // Afterwards add the MD5 hash to the filename
@@ -64,7 +63,7 @@ gulp.task('css', function() {
 // JavaScript task
 gulp.task('js', function() {
     // Cleanup old assets
-    gulp.src('public/assets/js/scripts-*.js', { read: false }).pipe(clean());
+    del(['public/assets/js/scripts-*.js'], function (err) {});
 
     // Concat and uglify the JavaScript assets
     // Afterwards add the MD5 hash to the filename
@@ -86,5 +85,3 @@ gulp.task('watch', function(){
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['build', 'watch']);
-
-
