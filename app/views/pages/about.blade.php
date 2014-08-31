@@ -16,7 +16,8 @@
 
 <h2 id="toc_1">说明</h2>
 
-<p>PHP China 是积极向上的 PHP &amp; Laravel 开发者社区, 我们是一个公益组织, 致力于推动 Laravel 等国外 PHP 新技术, 新思想在中国的发展.</p>
+<p>PHP China 是积极向上的 PHP &amp; Laravel 开发者社区</p>
+<p>我们是一个公益组织, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.</p>
 
 <p>在这里没有商业广告, 没有灌水, 没有千篇一律新手问答, 有的是关于新技术的讨论和分享. </p>
 
