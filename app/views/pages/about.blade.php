@@ -85,9 +85,9 @@
 
 <h2 id="toc_8">Logo 和 icon</h2>
 
-<p><img src="http://phphub.org/images/banner_transparent.png" alt=""></p>
+<p><img src="{{ cdn('assets/images/banner_transparent.png') }}" alt=""></p>
 
-<p><img src="http://phphub.org/images/favicon.png" alt=""></p>
+<p><img src="{{ cdn('assets/images/favicon.png') }}" alt=""></p>
 
 
 
