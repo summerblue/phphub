@@ -8,7 +8,7 @@ ______                            _              _                              
                                           __/ |
                                          |___/
   ========================================================
-                                           phphub.org
+                                           php-china.org
 
   --------------------------------------------------------
   Laravel: v4.2.8
@@ -22,7 +22,7 @@ ______                            _              _                              
 
 		<title>
 			@section('title')
-PHPhub - PHP & Laravel的中文社区
+PHP China  - PHP & Laravel的中文社区
 			@show
 		</title>
 
@@ -30,7 +30,7 @@ PHPhub - PHP & Laravel的中文社区
 
 		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
 		<meta name="author" content="The PHP China Community." />
-		<meta name="description" content="@section('description') PHPhub是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
+		<meta name="description" content="@section('description') PHP China 是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
 
         <link rel="stylesheet" href="{{ cdn('assets/css/'.Asset::styles('frontend')) }}">
 
@@ -79,14 +79,15 @@ PHPhub - PHP & Laravel的中文社区
 	    @yield('scripts')
 
 		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-53903425-1', 'auto');
-		  ga('send', 'pageview');
-		</script>
+          ga('create', 'UA-54336572-1', 'auto');
+          ga('send', 'pageview');
+
+        </script>
 
 	</body>
 </html>

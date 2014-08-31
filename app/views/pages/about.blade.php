@@ -12,11 +12,11 @@
         <div class="markdown-body" id="emojify">
 
 
-<h1 id="toc_0">关于 PHPHub</h1>
+<h1 id="toc_0">关于 PHP China</h1>
 
 <h2 id="toc_1">说明</h2>
 
-<p>PHPHub 是积极向上的 PHP &amp; Laravel 开发者社区. </p>
+<p>PHP China 是积极向上的 PHP &amp; Laravel 开发者社区. </p>
 
 <p>在这里没有商业广告, 没有灌水, 没有千篇一律新手问答, 有的是关于新技术的讨论和分享. </p>
 
@@ -35,7 +35,7 @@
 <h2 id="toc_3">远景 Vision</h2>
 
 <blockquote>
-<p>下面是 PHPHub 创建的初衷, 与君共勉. </p>
+<p>下面是 php-china.org 创建的初衷, 与君共勉. </p>
 </blockquote>
 
 <h3 id="toc_4">在这里的我们</h3>
@@ -81,7 +81,7 @@
 
 <p><a href="http://www.zhihu.com/question/19558755/answer/23062110">知乎上的答案 - 最好的 PHP 框架是什么？为什么？</a></p>
 
-<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 因为 <code>PHPHub</code> 是 <code>PHP</code> 社区多一点, 并且我们很开放.</p>
+<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 因为 <code>PHP China</code> 是 <code>PHP</code> 社区多一点, 并且我们很开放.</p>
 
 <h2 id="toc_8">Logo 和 icon</h2>
 
