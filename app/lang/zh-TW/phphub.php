@@ -104,13 +104,11 @@ return array(
     'publish_markdown' => '支援 Markdown 格式,<strong>**粗體**</strong>、~~刪除線~~、<code>`單行程式碼`</code>',
     'publish_emoji' => '支援表情，見 <a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a>',
     'publish_at_user' => '@name 會連結到帳號頁面，並且通知他',
-
     'Successfully remove attention.' => '成功取消關注',
     'Successfully_attention' => '成功關注主题, 系统會通知您關於此主題最新的討論.',
     'Operation succed.' => '操作成功!',
     'Congratulation and Welcome!' => '恭喜, 你已經成功加入 Phphub.',
     'Operation failed!' => '操作失败!',
-
     'Favorited your topic:' => '收藏了你的主题',
     'Attented your topic:' => '關注了你的主题',
     'Up Vote your topic' => '贊了你的主题',
