@@ -84,7 +84,7 @@
 
 <p><a href="http://www.zhihu.com/question/19558755/answer/23062110">知乎上的答案 - 最好的 PHP 框架是什么？为什么？</a></p>
 
-<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 因为 <code>PHP China</code> 是 <code>PHP</code> 社区多一点, 并且我们很开放.</p>
+<p>需要补充的一句是, <code>绝不排斥</code> 别的框架的讨论, 因为 <code>PHPHub</code> 是 <code>PHP</code> 社区多一点, 并且我们很开放.</p>
 
 <h2 id="toc_8">Logo 和 icon</h2>
 

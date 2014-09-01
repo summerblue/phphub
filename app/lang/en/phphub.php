@@ -90,7 +90,7 @@ return array (
     'Dont have any comment yet' => 'Dont have any comment yet',
     'Recent Replies' => 'Recent Replies',
     'Recent Topics' => 'Recent Topics',
-    'site_intro' => 'PHP China is a PHP & Laravel Developer Forum, More Intro <a href="about">See Here</a>.',
+    'site_intro' => 'PHPHub is a PHP & Laravel Developer Forum, More Intro <a href="about">See Here</a>.',
     'contributing' => 'This project is under developement, Please feel free to <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub" target="_blank">Contribute to the code</a> OR <a href="https://github.com/summerblue/phphub/issues" target="_blank">Submit Issue</a>.',
     'be_nice' => 'This is public place, please be nice. ;-)',
     'publish_typography' => 'Please be careful with the Chinese and English Typography <a href="https://github.com/sparanoid/chinese-copywriting-guidelines">take refrence</a>',
