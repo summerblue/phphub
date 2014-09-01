@@ -20,19 +20,22 @@
     </div>
   </div>
 
-    <div class="panel panel-default corner-radius">
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Learning Resources') }}</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="list">
-            <li><a href="http://wulijun.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
-            <li><a href="http://laravel-china.org/">Laravel4.2 文档</a></li>
-            <li><a href="https://github.com/PizzaLiu/PHP-FIG">PHP-FIG 编程规范中文</a></li>
-            <li><a href="http://www.phpcomposer.com/">Composer 中文文档</a></li>
-        </ul>
-      </div>
-    </div>
+    @if (Route::currentRouteName() == 'topics.index')
+        <div class="panel panel-default corner-radius">
+          <div class="panel-heading text-center">
+            <h3 class="panel-title">{{ lang('Learning Resources') }}</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list">
+                <li><a href="http://wulijun.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
+                <li><a href="http://laravel-china.org/">Laravel4.2 文档</a></li>
+                <li><a href="https://github.com/PizzaLiu/PHP-FIG">PHP-FIG 编程规范中文</a></li>
+                <li><a href="http://www.phpcomposer.com/">Composer 中文文档</a></li>
+            </ul>
+          </div>
+        </div>
+    @endif
+
 
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
