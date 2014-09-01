@@ -118,5 +118,5 @@ return array (
     'has recomended your topic:' => 'порекоммендовал вашу тему:',
     'Are you sure want to logout?' => 'Вы уверены что хотите выйти?',
     'No comments' => 'Нет комментариев',
-
+    'Learning Resources' => 'Рекомендуемые учебные ресурсы',
 );
