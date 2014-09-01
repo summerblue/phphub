@@ -12,14 +12,16 @@
         <div class="markdown-body" id="emojify">
 
 
-<h1 id="toc_0">关于 PHP China</h1>
+<h1 id="toc_0">关于 PHPHub</h1>
 
 <h2 id="toc_1">说明</h2>
 
-<p>PHP China 是积极向上的 PHP &amp; Laravel 开发者社区</p>
+<p>PHPHub 是积极向上的 PHP &amp; Laravel 开发者社区</p>
 <p>我们是一个公益组织, 致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展.</p>
 
 <p>在这里没有商业广告, 没有灌水, 没有千篇一律新手问答, 有的是关于新技术的讨论和分享. </p>
+
+<p>名字的灵感来自伟大的 Github, <b>hub</b> 有 "中心", "集线器" 的意思, 意味着 PHPer 们齐聚一堂, 互相交换着信息流. </p>
 
 <p>本项目基于 MIT Licence 开源, <a href="https://github.com/summerblue/phphub">源代码在此 at Github</a>, 欢迎贡献代码, Feature Request 和 Bug Report <a href="https://github.com/summerblue/phphub/issues">请到此发表</a>.</p>
 

@@ -22,7 +22,7 @@ ______                            _              _                              
 
 		<title>
 			@section('title')
-PHP China  - PHP & Laravel的中文社区
+PHPHub  - PHP & Laravel的中文社区
 			@show
 		</title>
 
