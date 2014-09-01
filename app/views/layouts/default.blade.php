@@ -30,7 +30,7 @@ PHPHub  - PHP & Laravel的中文社区
 
 		<meta name="keywords" content="PHP,Laravel,PHP论坛,Laravel论坛,PHP社区,Laravel社区" />
 		<meta name="author" content="The PHP China Community." />
-		<meta name="description" content="@section('description') PHP China 是 PHP 和 Laravel 的中文社区，在这里我们讨论技术, 分享技术。 @show" />
+		<meta name="description" content="@section('description') PHP China 是 PHP 和 Laravel 的中文社区，致力于推动 Laravel, php-fig 等国外 PHP 新技术, 新理念在中国的发展。 @show" />
 
         <link rel="stylesheet" href="{{ cdn('assets/css/'.Asset::styles('frontend')) }}">
 
@@ -78,6 +78,7 @@ PHPHub  - PHP & Laravel的中文社区
 
 	    @yield('scripts')
 
+        @if (App::environment() == 'production')
 		<script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -88,6 +89,7 @@ PHPHub  - PHP & Laravel的中文社区
           ga('send', 'pageview');
 
         </script>
+        @endif
 
 	</body>
 </html>

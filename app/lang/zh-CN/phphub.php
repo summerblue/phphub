@@ -117,4 +117,5 @@ return array(
     'has recomended your topic:' => '推荐了你的主题',
     'Are you sure want to logout?' => '你确定要退出吗?',
     'No comments' => '暂无评论',
+    'Learning Resources' => '推荐学习资源',
 );
