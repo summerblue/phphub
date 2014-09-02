@@ -13,6 +13,10 @@ body {
     height: 71px;
   }
 }
+abbr[data-original-title], abbr[title] {
+    cursor: none;
+    border-bottom: none;
+}
 a.stats{
   display: block;
   margin-top: 10px;
