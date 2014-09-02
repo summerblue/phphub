@@ -47,7 +47,7 @@ return array (
     'at' => 'в',
     'Last Reply by' => 'Последний ответ от',
     'Reads' => '- просмотрено раз.',
-    'template.Are you sure want to delete is topic?' => 'Вы уверены, что хотите удалить эту тему?',
+    'Are you sure want to delete is topic?' => 'Вы уверены, что хотите удалить эту тему?',
     'This topic has been mark as Excenllent Topic.' => 'Эта тема помечена как лучшая.',
     'This is a Community Wiki.' => 'Это Wiki сообщества.',
     'Share on Weibo' => 'Поделиться на Weibo',

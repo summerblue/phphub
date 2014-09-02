@@ -47,7 +47,7 @@ return array (
     'at' => 'at',
     'Last Reply by' => 'Last Reply by',
     'Reads' => 'Reads',
-    'template.Are you sure want to delete is topic?' => 'template.Are you sure want to delete is topic?',
+    'Are you sure want to delete is topic?' => 'Are you sure want to delete is topic?',
     'This topic has been mark as Excenllent Topic.' => 'This topic has been mark as Excenllent Topic.',
     'This is a Community Wiki.' => 'This is a Community Wiki.',
     'Share on Weibo' => 'Share on Weibo',

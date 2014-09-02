@@ -47,7 +47,7 @@ return array(
     'at' => '於',
     'Last Reply by' => '最後由',
     'Reads' => '閱讀',
-    'template.Are you sure want to delete is topic?' => '確定刪除此主題嗎？',
+    'Are you sure want to delete is topic?' => '確定刪除此主題嗎？',
     'This topic has been mark as Excenllent Topic.' => '本文章已經被設定為精選！',
     'This is a Community Wiki.' => '本文章已經被收錄到 Wiki！',
     'Share on Weibo' => '分享到微博',
