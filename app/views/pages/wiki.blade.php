@@ -6,7 +6,7 @@
 
 @section('content')
 
-<div class="{{ count($topics) > 20 ?: 'col-md-6 col-md-offset-3' }} remove-padding-vertically" >
+<div class="{{ count($topics) > 14 ?: 'col-md-6 col-md-offset-3' }} remove-padding-vertically" >
 
   <div class="panel panel-default">
 
