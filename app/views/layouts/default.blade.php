@@ -64,12 +64,12 @@ PHPHub  - PHP & Laravel的中文社区
 	  <div id="footer" class="footer">
 	    <div class="container small">
 	      <p class="pull-left">
-	      	<i class="fa fa-heart-o"></i> Lovingly Made By The EST Group. <br>
-			&nbsp;<i class="fa fa-lightbulb-o"></i> Inspire by v2ex & ruby-china.
+	      	<i class="fa fa-heart-o"></i> Made With Love By The EST Group. <br>
+			&nbsp;<i class="fa fa-lightbulb-o"></i> Inspired by v2ex & ruby-china.
 	      </p>
 
 	      <p class="pull-right">
-	      	<i class="fa fa-cloud"></i> Power by <a href="https://www.linode.com/?r=3cfb2c09c29cf2b6e6c87cc1f71ffdc2f9ea5722" target="_blank">Linode <i class="fa fa-external-link"></i></a>.
+	      	<i class="fa fa-cloud"></i> Powered by <a href="https://www.linode.com/?r=3cfb2c09c29cf2b6e6c87cc1f71ffdc2f9ea5722" target="_blank">Linode <i class="fa fa-external-link"></i></a>.
 	      </p>
 	    </div>
 	  </div>
