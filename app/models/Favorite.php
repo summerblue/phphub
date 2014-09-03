@@ -1,17 +1,17 @@
 <?php
 
-class Favorite extends \Eloquent 
+class Favorite extends \Eloquent
 {
 	protected $fillable = [];
 
-    public function post() 
+    public function post()
     {
-        return $this->belongs_to('Post');
+        return $this->belongsTo('Post');
     }
 
     public function user()
     {
-        return $this->belongs_to('User');
+        return $this->belongsTo('User');
     }
 
     public static function isUserFavoritedTopic(User $user, Topic $topic)

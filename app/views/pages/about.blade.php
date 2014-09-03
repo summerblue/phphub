@@ -38,7 +38,7 @@
 <h2 id="toc_3">远景 Vision</h2>
 
 <blockquote>
-<p>下面是 php-china.org 创建的初衷, 与君共勉. </p>
+<p>下面是 phphub.org 创建的初衷, 与君共勉. </p>
 </blockquote>
 
 <h3 id="toc_4">在这里的我们</h3>

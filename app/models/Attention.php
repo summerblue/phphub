@@ -1,17 +1,17 @@
 <?php
 
-class Attention extends \Eloquent 
+class Attention extends \Eloquent
 {
-	protected $fillable = [];	
+	protected $fillable = [];
 
-    public function post() 
+    public function post()
     {
-        return $this->belongs_to('Post');
+        return $this->belongsTo('Post');
     }
 
     public function user()
     {
-        return $this->belongs_to('User');
+        return $this->belongsTo('User');
     }
 
     public static function isUserAttentedTopic(User $user, Topic $topic)
