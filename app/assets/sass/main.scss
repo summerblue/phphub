@@ -444,13 +444,14 @@ box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.19);
 
 .editor-tool {
   margin-left: 0px;
+  margin-bottom: 12px;
   li {
     font-size: 12px;
     line-height: 1;
     text-align: center;
   }
 
-  li.active {
+  span, li.active {
     background: #fff;
     border: 1px solid #ddd;
     display: inline-block;
@@ -874,3 +875,13 @@ only screen and (min-device-pixel-ratio : 1.5) {
     text-indent: -999999px;
 }
 
+div#reply_notice {
+    color: gray;
+    padding: 16px;
+    border: dashed 1px;
+}
+
+div#preview-box {
+    border: dashed 1px;
+    margin-bottom: 80px;
+}

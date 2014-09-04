@@ -70,50 +70,47 @@
   <!-- Reply Box -->
   <div class="reply-box form box-block">
 
-    <ul class="list-inline editor-tool">
-      <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ lang('Edit') }}</a></li>
-      <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ lang('Preview') }}</a></li>
-    </ul>
-
     @include('layouts.partials.errors')
-
-    <div class="preview display-none markdown-reply box">
-{{ lang('No content.') }}.
-    </div>
 
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
       <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
-      <div class="form-group">
 
-        @if ($currentUser)
-          {{ Form::textarea('body', null, ['class' => 'form-control',
-                                            'rows' => 5,
-                                            'placeholder' => lang('Please using markdown.'),
-                                            'style' => "overflow:hidden",
-                                            'id' => 'reply_content']) }}
-        @else
-          {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => lang('User Login Required for commenting.')]) }}
-        @endif
 
-      </div>
-      <div class="form-group status-post-submit">
+        <div id="reply_notice" class="box" style="display:none">
+            <ul class="helpblock list">
+              <li>{{ lang('publish_typography') }}</li>
+              <li>{{ lang('publish_markdown') }}</li>
+              <li>{{ lang('publish_emoji') }}</li>
+              <li>{{ lang('publish_at_user') }}</li>
+            </ul>
+        </div>
 
-        @if ($currentUser)
-          {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
-        @else
-          {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
-        @endif
+        <div class="form-group">
+            @if ($currentUser)
+              {{ Form::textarea('body', null, ['class' => 'form-control',
+                                                'rows' => 5,
+                                                'placeholder' => lang('Please using markdown.'),
+                                                'style' => "overflow:hidden",
+                                                'id' => 'reply_content']) }}
+            @else
+              {{ Form::textarea('body', null, ['class' => 'form-control', 'disabled' => 'disabled', 'rows' => 5, 'placeholder' => lang('User Login Required for commenting.')]) }}
+            @endif
+        </div>
 
-      </div>
+        <div class="form-group status-post-submit">
 
-        <ul class="helpblock list">
-          <li>{{ lang('publish_typography') }}</li>
-          <li>{{ lang('publish_markdown') }}</li>
-          <li>{{ lang('publish_emoji') }}</li>
-          <li>{{ lang('publish_at_user') }}</li>
-        </ul>
-        <br>
-        <br>
+            @if ($currentUser)
+              {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary', 'id' => 'reply-create-submit']) }}
+            @else
+              {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
+            @endif
+
+        </div>
+
+        <div class="box preview markdown-reply" id="preview-box" style="display:none;">
+
+        </div>
+
     {{ Form::close() }}
   </div>
 

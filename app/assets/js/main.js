@@ -14,6 +14,7 @@
             });
             self.siteBootUp();
             self.initLightBox();
+            self.initEditorPreview();
         },
 
         /*
@@ -131,6 +132,27 @@
             });
         },
 
+        /**
+         * Init post content preview
+         */
+        initEditorPreview: function() {
+            $("#reply_content").focus(function(event) {
+                $("#reply_notice").fadeIn(1500);
+                $("#preview-box").fadeIn(1500);
+                $("#preview-lable").fadeIn(1500);
+            });
+            $('#reply_content').keyup(function(){
+                var replyContent = $("#reply_content");
+                var oldContent = replyContent.val();
+
+                if (oldContent) {
+                    marked(oldContent, function (err, content) {
+                      $('#preview-box').html(content);
+                      emojify.run(document.getElementById('preview-box'));
+                    });
+                }
+            });
+        }
 
     }
     window.PHPHub = PHPHub;
@@ -140,30 +162,6 @@ $(document).ready(function()
 {
     PHPHub.init();
 });
-
-function preview(){
-	replyContent = $("#reply_content");
-	oldContent = replyContent.val();
-	replyContent.fadeOut();
-
-	if (oldContent) {
-		marked(oldContent, function (err, content) {
-		  $('.preview').html(content);
-		});
-	}
-
-	$('.preview').fadeIn();
-	$('#edit-btn').toggleClass('active');
-	$('#preview-btn').toggleClass('active');
-}
-
-function showEditor(){
-	$('.preview').fadeOut();
-	$('#reply_content').fadeIn();
-
-	$('#edit-btn').toggleClass('active');
-	$('#preview-btn').toggleClass('active');
-}
 
 // reply a reply
 function replyOne(username){

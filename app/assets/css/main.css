@@ -325,12 +325,13 @@ embed {
   margin-left: 58px; }
 
 .editor-tool {
-  margin-left: 0px; }
+  margin-left: 0px;
+  margin-bottom: 12px; }
   .editor-tool li {
     font-size: 12px;
     line-height: 1;
     text-align: center; }
-  .editor-tool li.active {
+  .editor-tool span, .editor-tool li.active {
     background: #fff;
     border: 1px solid #ddd;
     display: inline-block;
@@ -608,3 +609,12 @@ embed {
   height: 38px;
   /* Height of image */
   text-indent: -999999px; }
+
+div#reply_notice {
+  color: gray;
+  padding: 16px;
+  border: dashed 1px; }
+
+div#preview-box {
+  border: dashed 1px;
+  margin-bottom: 80px; }

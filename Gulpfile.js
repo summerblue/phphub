@@ -24,6 +24,7 @@ var paths = {
             'app/assets/js/prism.js',
             'app/assets/js/jquery.textcomplete.js',
             'app/assets/js/emoji.js',
+            'app/assets/js/marked.min.js',
             'app/assets/js/ekko-lightbox.js',
             'app/assets/js/main.js',
         ],
