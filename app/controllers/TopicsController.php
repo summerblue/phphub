@@ -79,7 +79,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
         $topic->update($data);
 
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', $topic->id);
     }
 
@@ -114,7 +114,7 @@ class TopicsController extends \BaseController implements CreatorListener
         $topic = Topic::findOrFail($id);
         $topic->is_excellent = (!$topic->is_excellent);
         $topic->save();
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         Notification::notify('topic_mark_excellent', Auth::user(), $topic->user, $topic);
         return Redirect::route('topics.show', $topic->id);
     }
@@ -124,7 +124,7 @@ class TopicsController extends \BaseController implements CreatorListener
         $topic = Topic::findOrFail($id);
         $topic->is_wiki = (!$topic->is_wiki);
         $topic->save();
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         Notification::notify('topic_mark_wiki', Auth::user(), $topic->user, $topic);
         return Redirect::route('topics.show', $topic->id);
     }
@@ -140,7 +140,7 @@ class TopicsController extends \BaseController implements CreatorListener
     {
         $topic = Topic::find($id);
         $topic->delete();
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
 
         return Redirect::route('topics.index');
     }
@@ -158,7 +158,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
     public function creatorSucceed($topic)
     {
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
 
         return Redirect::route('topics.show', array($topic->id));
     }

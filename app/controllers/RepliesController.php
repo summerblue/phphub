@@ -30,7 +30,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
         $reply->topic->decrement('reply_count', 1);
 
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
 
         return Redirect::route('topics.show', $reply->topic_id);
     }
@@ -49,7 +49,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
     public function creatorSucceed($reply)
     {
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', array(Input::get('topic_id'), '#reply'.$reply->id));
     }
 

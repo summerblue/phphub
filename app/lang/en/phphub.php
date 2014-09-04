@@ -106,8 +106,8 @@ return array (
     'User Login Required for commenting.' => 'User Login Required for commenting.',
     'Successfully remove attention.' => 'Successfully remove attention.',
     'Successfully_attention' => 'Successfully add attention, system will notify you when reply created.',
-    'Operation succed.' => 'Operation succed.',
-    'Congratulation and Welcome!' => 'Congratulation and Welcome!',
+    'Operation succeeded.' => 'Operation succeeded.',
+    'Congratulations and Welcome!' => 'Congratulations and Welcome!',
     'Operation failed!' => 'Operation failed!',
 
     'Favorited your topic:' => 'Favorited your topic:',

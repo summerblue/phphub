@@ -15,7 +15,7 @@ class FavoritesController extends \BaseController
             Auth::user()->favoriteTopics()->attach($topic->id);
             Notification::notify('topic_favorite', Auth::user(), $topic->user, $topic);
         }
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', $topic->id);
     }
 

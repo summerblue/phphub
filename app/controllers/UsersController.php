@@ -41,7 +41,7 @@ class UsersController extends \BaseController {
 
         $user->update($data);
 
-        Flash::success(lang('Operation succed.'));
+        Flash::success(lang('Operation succeeded.'));
         return Redirect::route('users.show', $id);
     }
 
