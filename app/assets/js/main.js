@@ -14,7 +14,6 @@
             });
             self.siteBootUp();
             self.initLightBox();
-            self.initEditorPreview();
         },
 
         /*
@@ -29,6 +28,7 @@
             self.initScrollToTop();
             self.initTextareaAutoResize();
             self.initHeightLight();
+            self.initEditorPreview();
         },
 
         /**
