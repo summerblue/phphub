@@ -15,8 +15,10 @@
                 NProgress.done();
                 self.siteBootUp();
             });
+
             self.siteBootUp();
             self.initLightBox();
+            self.initNotificationsCount();
         },
 
         /*
@@ -162,6 +164,28 @@
                     });
                 }
             });
+        },
+
+        /**
+         * Notify user unread notifications when they stay on the
+         * page for too long.
+         */
+        initNotificationsCount: function(argumen) {
+            var original_title = document.title;
+            if (Config.user_id > 0) {
+                function scheduleGetNotification(){
+                    $.get( Config.routes.notificationsCount, function( data ) {
+                        var nCount = parseInt(data)
+                        if (nCount > 0) {
+                            $('#notification-count').text(nCount);
+                            $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
+                            document.title = '(' + nCount + ') '+ original_title;
+                        }
+                        setTimeout(scheduleGetNotification, 15000);
+                    });
+                };
+                setTimeout(scheduleGetNotification, 15000);
+            }
         }
 
     }

@@ -30,4 +30,9 @@ class NotificationsController extends \BaseController {
 		return Redirect::route('notifications.index');
 	}
 
+    public function count()
+    {
+        return Auth::user()->notification_count;
+    }
+
 }

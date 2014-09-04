@@ -39,6 +39,10 @@ PHPHub  - PHP & Laravel的中文社区
         <script>
             Config = {
                 'cdnDomain': '{{ getCdnDomain() }}',
+                'user_id': {{ $currentUser ? $currentUser->id : 0 }},
+                'routes': {
+                    'notificationsCount' : '{{ route('notifications.count') }}'
+                },
             };
         </script>
 

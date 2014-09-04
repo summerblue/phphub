@@ -24,7 +24,7 @@
         @if (Auth::check())
             <li>
                 <a href="{{ route('notifications.index') }}" class="text-warning">
-                    <span class="badge badge-{{ $currentUser->notification_count > 0 ? 'important' : 'fade'; }}">
+                    <span class="badge badge-{{ $currentUser->notification_count > 0 ? 'important' : 'fade'; }}" id="notification-count">
                         {{ $currentUser->notification_count }}
                     </span>
                 </a>

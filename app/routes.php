@@ -54,8 +54,14 @@ Route::get('/favorites/{id}', [
 ]);
 
 Route::get('/notifications', [
-	'as' => 'notifications.index',
-	'uses' => 'NotificationsController@index',
+    'as' => 'notifications.index',
+    'uses' => 'NotificationsController@index',
+    'before' => 'auth'
+]);
+
+Route::get('/notifications/count', [
+	'as' => 'notifications.count',
+	'uses' => 'NotificationsController@count',
 	'before' => 'auth'
 ]);
 
