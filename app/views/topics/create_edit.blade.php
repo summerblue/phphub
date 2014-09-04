@@ -43,14 +43,7 @@
           {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => lang('Please write down a topic')]) }}
         </div>
 
-        <ul class="list-inline editor-tool">
-          <li class="active" id="edit-btn"><a href="javascript:void(0)" onclick="showEditor();" >{{ lang('Edit') }}</a></li>
-          <li id="preview-btn"><a href="javascript:void(0)" onclick="preview();" >{{ lang('Preview') }}</a></li>
-        </ul>
-
-        <div class="preview display-none markdown-reply box">
-{{ lang('No content.') }}..
-        </div>
+        @include('topics.partials.composing_help_block')
 
         <div class="form-group">
           {{ Form::textarea('body', null, ['class' => 'form-control',
@@ -64,12 +57,14 @@
           {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'topic-create-submit']) }}
         </div>
 
+        <div class="box preview markdown-body" id="preview-box" style="display:none;"></div>
+
       {{ Form::close() }}
 
     </div>
   </div>
 
-  <div class="col-sm-4 side-bar">
+  <div class="col-md-4 side-bar">
 
     @if ( $node )
 
@@ -83,23 +78,6 @@
     </div>
 
     @endif
-
-    <div class="panel panel-default corner-radius help-box">
-      <div class="panel-heading text-center">
-        <h3 class="panel-title">{{ lang('Writting Format Notice') }}</h3>
-      </div>
-      <div class="panel-body">
-        <ul class="list">
-          <li>请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a></li>
-          <li>支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code></li>
-          <li>支持表情，见<a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a></li>
-          <li>@name  会链接到用户页面，并会通知他</li>
-          <li>![Alt text here](http://foo.com/bar.jpg) 显示图片</li>
-          <li>http://example.org 自动加链接</li>
-          <li>在标题中写入城市名称会自动归类到对应的城市节点上. [还未实现]</li>
-        </ul>
-      </div>
-    </div>
 
     <div class="panel panel-default corner-radius help-box">
       <div class="panel-heading text-center">
@@ -133,14 +111,4 @@
   </div>
 </div>
 
-@stop
-
-@section('scripts')
-    <script src="{{ cdn('js/jquery.autosize.min.js') }}"></script>
-
-    <script>
-        $(document).ready(function(){
-            $('textarea').autosize();
-        });
-    </script>
 @stop

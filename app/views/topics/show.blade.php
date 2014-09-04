@@ -75,15 +75,7 @@
     {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
       <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
 
-
-        <div id="reply_notice" class="box" style="display:none">
-            <ul class="helpblock list">
-              <li>{{ lang('publish_typography') }}</li>
-              <li>{{ lang('publish_markdown') }}</li>
-              <li>{{ lang('publish_emoji') }}</li>
-              <li>{{ lang('publish_at_user') }}</li>
-            </ul>
-        </div>
+        @include('topics.partials.composing_help_block')
 
         <div class="form-group">
             @if ($currentUser)
@@ -107,9 +99,7 @@
 
         </div>
 
-        <div class="box preview markdown-reply" id="preview-box" style="display:none;">
-
-        </div>
+        <div class="box preview markdown-reply" id="preview-box" style="display:none;"></div>
 
     {{ Form::close() }}
   </div>

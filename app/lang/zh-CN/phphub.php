@@ -101,7 +101,7 @@ return array(
     'contributing' => '功能正在完善中, 欢迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub" target="_blank">贡献代码</a> 或 <a href="https://github.com/summerblue/phphub/issues" target="_blank">提交 Issue</a>.',
     'be_nice' => '我们希望 PHPHub 能够成为技术氛围最好的 PHP 社区，而实现这个目标，需要我们所有人的共同努力：友善，公平，尊重知识和事实。',
     'publish_typography' => '请注意单词拼写，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">参考此页</a>',
-    'publish_markdown' => '支持 Markdown 格式,<strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code>',
+    'publish_markdown' => '支持 Markdown 格式, <strong>**粗体**</strong>、~~删除线~~、<code>`单行代码`</code>, 更多语法请见这里 <a href="https://github.com/riku/Markdown-Syntax-CN/blob/master/syntax.md">Markdown 语法</a>',
     'publish_emoji' => '支持表情，见 <a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a>',
     'publish_at_user' => '@name 会链接到用户页面，并会通知他',
     'Successfully remove attention.' => '成功取消关注',
