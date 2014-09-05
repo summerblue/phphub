@@ -9,5 +9,9 @@
     "gulp-rev": "^1.1.0",
     "gulp-sass": "^0.7.3",
     "gulp-uglify": "^1.0.0"
+  },
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build"
   }
 }
