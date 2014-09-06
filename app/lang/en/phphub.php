@@ -119,4 +119,5 @@ return array (
     'Are you sure want to logout?' => 'Are you sure want to logout?',
     'No comments' => 'No comments',
     'Learning Resources' => 'Learning Resources',
+    'Create New Topic' => 'Create New Topic',
 );

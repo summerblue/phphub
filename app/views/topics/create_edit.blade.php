@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-创建新话题_@parent
+{{ lang('Create New Topic') }}_@parent
 @stop
 
 @section('content')
@@ -18,10 +18,8 @@
 
       @include('layouts.partials.errors')
 
-      @if(isset($topic))
-          {{ Form::model($topic, ['route' => ['topics.update', $topic->id], 'method' => 'patch']) }}
-      @else
-          {{ Form::open(['route' => 'topics.store', 'method' => 'post']) }}
+      @if (isset($topic)) {{ Form::model($topic, ['route' => ['topics.update', $topic->id], 'method' => 'patch']) }}
+      @else {{ Form::open(['route' => 'topics.store', 'method' => 'post']) }}
       @endif
 
         <div class="form-group">
