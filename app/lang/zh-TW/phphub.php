@@ -98,7 +98,7 @@ return array(
     'Reply' => '回覆',
     'User Login Required for commenting.' => '需要登入後才可以發表留言.',
     'site_intro' => '此為 Laravel 開發者討論區, 更多介紹 <a href="about">可以參考</a>.',
-    'contributing' => '功能正在開發中, 歡迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/summerblue/phphub" target="_blank">貢獻程式碼</a> 或 <a href="https://github.com/summerblue/phphub/issues" target="_blank">提交 Issue</a>.',
+    'contributing' => '功能正在開發中, 歡迎 <i class="fa fa-github" style="font-size:15px"></i> <a href="https://github.com/laravel.tw/phphub" target="_blank">貢獻程式碼</a> 或 <a href="https://github.com/laravel.tw/phphub/issues" target="_blank">提交 Issue</a>.',
     'be_nice' => '我們希望 Laravel 台灣 能夠成為技術氛圍最好的 PHP 社群，而實現這個目標，需要大家共同努力：友善，公平，尊重知識和事實。',
     'publish_typography' => '請注意單字拼寫，以及中英文排版，<a href="https://github.com/sparanoid/chinese-copywriting-guidelines">參考此頁</a>',
     'publish_markdown' => '支援 Markdown 格式,<strong>**粗體**</strong>、~~刪除線~~、<code>`單行程式碼`</code>',
