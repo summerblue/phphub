@@ -118,4 +118,5 @@ return array(
     'Are you sure want to logout?' => '你確定要登出嗎?',
     'No comments' => '無任何留言',
     'Learning Resources' => '推薦學習資源',
+    'Create New Topic' => '建立新主題',
 );
