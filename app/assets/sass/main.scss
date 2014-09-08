@@ -5,7 +5,7 @@ body {
 
   font-size: 13px;
   color: #333333;
-  font-family: "Heiti  SC Light","Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
+  font-family: "Heiti SC Light","Helvetica Neue",Verdana,微软雅黑,Arial,sans-serif;
   background: #e5e5e5;
 }
 .navbar-default{
@@ -201,6 +201,17 @@ ul.list {
     border-top:none;
     background-color: #fcfcfc;
   }
+}
+
+.topic {
+    .panel-body {
+        border-bottom: none;
+    }
+    .panel-footer {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-top:none;
+    }
 }
 
 .list-panel {
