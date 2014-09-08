@@ -31,10 +31,10 @@ var paths = {
         styles: [
             'app/assets/css/bootstrap.min.css',
             'app/assets/css/font-awesome.min.css',
-            'app/assets/css/main.css',
-            'app/assets/css/markdown.css',
-            'app/assets/css/nprogress.css',
-            'app/assets/css/prism.css',
+            'app/assets/css/dist/main.css',
+            'app/assets/css/dist/markdown.css',
+            'app/assets/css/dist/nprogress.css',
+            'app/assets/css/dist/prism.css',
         ]
     }
 }
@@ -46,7 +46,7 @@ gulp.task('css', function() {
     gulp.src('app/assets/sass/**/*.scss')
         .pipe(sass())
         .pipe(autoprefixer('last 10 version'))
-        .pipe(gulp.dest('app/assets/css'));
+        .pipe(gulp.dest('app/assets/css/dist'));
 
     // Cleanup old assets
     del(['public/assets/css/styles-*.css'], function (err) {});
