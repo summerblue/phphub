@@ -106,7 +106,7 @@ return array(
     'publish_at_user' => '@name 會連結到帳號頁面，並且通知他',
     'Successfully remove attention.' => '成功取消關注',
     'Successfully_attention' => '成功關注主題, 系統會通知您關於此主題最新的討論.',
-    'Operation succed.' => '操作成功!',
+    'Operation succeeded.' => '操作成功!',
     'Congratulation and Welcome!' => '恭喜, 你已經成功加入 Laravel 台灣',
     'Operation failed!' => '操作失敗!',
     'Favorited your topic:' => '收藏了你的主題',
