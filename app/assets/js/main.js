@@ -62,7 +62,7 @@
             $('.timeago').each(function(){
                 var time_str = $(this).text();
                 if(moment(time_str, "YYYY-MM-DD HH:mm:ss", true).isValid()) {
-                    $(this).text( moment( new Date(time_str) ).fromNow());
+                    $(this).text(moment(time_str).fromNow());
                 }
             });
         },
