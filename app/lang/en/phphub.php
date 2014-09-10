@@ -120,4 +120,5 @@ return array (
     'No comments' => 'No comments',
     'Learning Resources' => 'Learning Resources',
     'Create New Topic' => 'Create New Topic',
+    'Can not vote your feedback' => 'You can\'t vote your feedback.',
 );

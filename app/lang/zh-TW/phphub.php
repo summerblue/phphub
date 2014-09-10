@@ -119,4 +119,5 @@ return array(
     'No comments' => '無任何留言',
     'Learning Resources' => '推薦學習資源',
     'Create New Topic' => '建立新主題',
+    'Can not vote your feedback' => '不能給自己的回覆點讚',
 );
