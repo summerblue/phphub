@@ -31,7 +31,7 @@ return array (
     'My Notifications' => 'My Notifications',
     'Your topic have new reply:' => 'Your topic has a new reply:',
     'Attented topic has new reply: ' => 'Attended topic has a new reply:',
-    'Mention you At:' => 'You are mentioned at:',
+    'Mention you At:' => 'Mentioned you at:',
     'Data has been deleted.' => 'Data has been deleted.',
     'You dont have any notice yet!' => 'You don\'t have any notice yet!',
     'About Us' => 'About Us',
