@@ -18,6 +18,10 @@
       <div class="box text-center">{{{ $user->introduction }}}</div>
     @endif
 
+    @if ($user->is_banned)
+      <div class="text-center alert alert-info"><b>{{ lang('This user is banned!') }}</b></div>
+    @endif
+
     <div class="panel panel-default">
       @include('users.partials.infonav', ['current' => 'basicinfo'])
 

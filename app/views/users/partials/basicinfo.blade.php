@@ -57,8 +57,14 @@
 </dl>
 <div class="clearfix"></div>
 
-@if ($currentUser && $currentUser->id == $user->id)
+@if ($currentUser && ($currentUser->id == $user->id || Entrust::can('manage_users')))
   <a class="btn btn-primary btn-block" href="{{ route('users.edit', $user->id) }}" id="user-edit-button">
-    <i class="icon-edit"></i> {{ lang('Edit Profile') }}
+    <i class="fa fa-edit"></i> {{ lang('Edit Profile') }}
+  </a>
+@endif
+
+@if ($currentUser && Entrust::can('manage_users'))
+  <a class="btn btn-{{ $user->is_banned ? 'warning' : 'danger' }} btn-block" href="{{ route('users.blocking', $user->id) }}" id="user-edit-button" onclick=" return confirm('{{ lang('Are you sure want to block this User?') }}')">
+    <i class="fa fa-times"></i> {{ $user->is_banned ? lang('Unblock User') : lang('Block User') }}
   </a>
 @endif

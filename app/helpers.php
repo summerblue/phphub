@@ -10,7 +10,6 @@ function cdn( $filepath )
     {
         return Config::get('app.url') . $filepath;
     }
-
 }
 
 function getCdnDomain()
@@ -20,5 +19,5 @@ function getCdnDomain()
 
 function lang($text)
 {
-    return trans('phphub.'.$text);
+    return str_replace('phphub.', '', trans('phphub.'.$text));
 }

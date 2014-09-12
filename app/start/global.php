@@ -95,9 +95,9 @@ App::down(function()
 |
 */
 
-require app_path().'/filters.php';
-
-
 Event::listen('turbo.pjax', function($request, $response) {
     $response->header('X-PJAX-URL', Request::getUri());
 });
+
+require app_path().'/filters.php';
+

@@ -4,12 +4,8 @@ use Phphub\Exceptions\ManageTopicsException;
 
 class BaseController extends Controller {
 
-
     public function __construct()
     {
-        // csrf check for every post request
-        $this->beforeFilter('csrf', array('on' => 'post'));
-
         // for clockwork debuger
         $this->beforeFilter(function()
 		{
@@ -19,6 +15,12 @@ class BaseController extends Controller {
 		{
 		    Event::fire('clockwork.controller.end');
 		});
+
+        // csrf check for every post request
+        $this->beforeFilter('csrf', ['on' => 'post']);
+
+        // Check if a user is banned.
+        $this->beforeFilter('check_banned_user', ['except' => ['userBanned', 'logout']]);
     }
 
 	/**

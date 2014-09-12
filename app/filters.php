@@ -13,7 +13,7 @@
 
 App::before(function($request)
 {
-	//
+
 });
 
 
@@ -91,12 +91,33 @@ Route::filter('csrf', function()
 
 Route::filter('manage_topics', function()
 {
-	if (Auth::guest())
-	{
-		return Redirect::guest('login-required');
-	} 
-	elseif ( ! Entrust::can('manage_topics') ) // Checks the current user
+    if (Auth::guest())
+    {
+        return Redirect::guest('login-required');
+    }
+    elseif ( ! Entrust::can('manage_topics') ) // Checks the current user
     {
         return Redirect::route('admin-required');
+    }
+});
+
+Route::filter('manage_users', function()
+{
+    if (Auth::guest())
+    {
+        return Redirect::guest('login-required');
+    }
+    elseif ( ! Entrust::can('manage_users') ) // Checks the current user
+    {
+        return Redirect::route('admin-required');
+    }
+});
+
+Route::filter('check_banned_user', function()
+{
+	// Check Banned User
+    if (Auth::check() && !Route::is('user-banned') && Auth::user()->is_banned)
+    {
+        return Redirect::route('user-banned');
     }
 });

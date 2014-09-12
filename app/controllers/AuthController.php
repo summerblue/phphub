@@ -67,6 +67,14 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         return App::make('Phphub\Creators\UserCreator')->create($this, $githubUser);
     }
 
+    public function userBanned()
+    {
+        if (Auth::check() && !Auth::user()->is_banned)
+        {
+            return Redirect::route('home');
+        }
+        return View::make('auth.userbanned');
+    }
 
     /**
      * ----------------------------------------
@@ -116,6 +124,6 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
     // 用户屏蔽
     public function userIsBanned($user)
     {
-        return Redirect::route('home');
+        return Redirect::route('user-banned');
     }
 }

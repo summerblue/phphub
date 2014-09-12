@@ -70,4 +70,12 @@ class UsersController extends \BaseController {
         $topics = $user->favoriteTopics()->paginate(15);
         return View::make('users.favorites', compact('user', 'topics'));
     }
+
+    public function blocking($id)
+    {
+        $user = User::findOrFail($id);
+        $user->is_banned = (!$user->is_banned);
+        $user->save();
+        return Redirect::route('users.show', $id);
+    }
 }

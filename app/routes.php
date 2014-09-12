@@ -84,8 +84,13 @@ Route::get('login-required', [
 ]);
 
 Route::get('admin-required', [
-	'as' => 'admin-required',
-	'uses' => 'AuthController@adminRequired'
+    'as' => 'admin-required',
+    'uses' => 'AuthController@adminRequired'
+]);
+
+Route::get('user-banned', [
+    'as' => 'user-banned',
+    'uses' => 'AuthController@userBanned'
 ]);
 
 Route::get('signup', [
@@ -143,23 +148,30 @@ Route::group(['before' => 'auth'], function(){
 # ------------------ Admin Route ------------------------
 
 Route::group(['before' => 'manage_topics'], function(){
-	Route::get('topics/recomend/{id}',  [
-		'as' => 'topics.recomend',
-		'uses' => 'TopicsController@recomend',
-	]);
+    Route::get('topics/recomend/{id}',  [
+        'as' => 'topics.recomend',
+        'uses' => 'TopicsController@recomend',
+    ]);
 
-	Route::get('topics/wiki/{id}',  [
-		'as' => 'topics.wiki',
-		'uses' => 'TopicsController@wiki',
-	]);
+    Route::get('topics/wiki/{id}',  [
+        'as' => 'topics.wiki',
+        'uses' => 'TopicsController@wiki',
+    ]);
 
-	Route::get('topics/pin/{id}',  [
-		'as' => 'topics.pin',
-		'uses' => 'TopicsController@pin',
-	]);
+    Route::get('topics/pin/{id}',  [
+        'as' => 'topics.pin',
+        'uses' => 'TopicsController@pin',
+    ]);
 
-	Route::get('topics/delete/{id}',  [
-		'as' => 'topics.delete',
-		'uses' => 'TopicsController@delete',
+    Route::get('topics/delete/{id}',  [
+        'as' => 'topics.delete',
+        'uses' => 'TopicsController@delete',
+    ]);
+});
+
+Route::group(['before' => 'manage_users'], function(){
+	Route::get('users/blocking/{id}',  [
+		'as' => 'users.blocking',
+		'uses' => 'UsersController@blocking',
 	]);
 });
