@@ -37,7 +37,7 @@
                              •
                             {{ $notification->present()->lableUp }}
 
-                            <a href="{{ route('topics.show', [$notification->topic->id]) }}" title="{{{ $notification->topic->title }}}">
+                            <a href="{{ route('topics.show', [$notification->topic->id]) }}{{{ !empty($notification->reply_id) ? '#reply' . $notification->reply_id : '' }}}" title="{{{ $notification->topic->title }}}">
                                 {{{ str_limit($notification->topic->title, '100') }}}
                             </a>
 
