@@ -47,9 +47,17 @@
         <i class="fa fa-graduation-cap"></i>
       </a>
 
+    @if ($topic->order >= 0)
       <a id="topic-pin-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="{{ lang('Pin it on Top') }}">
         <i class="fa fa-thumb-tack"></i>
       </a>
+    @endif
+
+    @if ($topic->order <= 0)
+        <a id="topic-sink-button" href="{{ route('topics.sink', [$topic->id]) }}" class="admin {{ $topic->order < 0 ? 'active' : '' }}" title="{{ lang('Sink This Topic') }}">
+            <i class="fa fa-anchor"></i>
+        </a>
+    @endif
 
       <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" onclick=" return confirm('{{ lang('Are you sure want to delete is topic?') }}')" title="{{ lang('Delete') }}" class="admin">
         <i class="fa fa-trash-o"></i>

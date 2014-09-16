@@ -167,6 +167,11 @@ Route::group(['before' => 'manage_topics'], function(){
         'as' => 'topics.delete',
         'uses' => 'TopicsController@delete',
     ]);
+
+    Route::get('topics/sink/{id}',  [
+        'as' => 'topics.sink',
+        'uses' => 'TopicsController@sink',
+    ]);
 });
 
 Route::group(['before' => 'manage_users'], function(){
