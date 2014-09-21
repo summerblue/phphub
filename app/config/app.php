@@ -48,7 +48,7 @@ return array(
     |
     */
 
-    'timezone' => getenv('timezone') ?: 'Asia/Shanghai',
+    'timezone' => getenv('timezone') ?: 'UTC',
 
     /*
     |--------------------------------------------------------------------------
@@ -61,7 +61,7 @@ return array(
     |
     */
 
-    'locale' => getenv('locale') ?: 'zh-CN',
+    'locale' => getenv('locale') ?: 'en',
 
     /*
     |--------------------------------------------------------------------------
