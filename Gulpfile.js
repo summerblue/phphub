@@ -26,7 +26,7 @@ var paths = {
             'app/assets/js/emoji.js',
             'app/assets/js/marked.min.js',
             'app/assets/js/ekko-lightbox.js',
-            'app/assets/js/main.js',
+            'app/assets/js/main.js'
         ],
         styles: [
             'app/assets/css/bootstrap.min.css',
@@ -34,7 +34,7 @@ var paths = {
             'app/assets/css/dist/main.css',
             'app/assets/css/dist/markdown.css',
             'app/assets/css/dist/nprogress.css',
-            'app/assets/css/dist/prism.css',
+            'app/assets/css/dist/prism.css'
         ]
     }
 }
@@ -53,7 +53,7 @@ gulp.task('css', function() {
 
     // Prefix, compress and concat the CSS assets
     // Afterwards add the MD5 hash to the filename
-    gulp.src(paths.frontend.styles)
+    return gulp.src(paths.frontend.styles)
         .pipe(concat('styles.css'))
         .pipe(rev())
         .pipe(filename({ bundleName: 'frontend.styles' })) // This will create/update the assets.json file
@@ -68,7 +68,7 @@ gulp.task('js', function() {
 
     // Concat and uglify the JavaScript assets
     // Afterwards add the MD5 hash to the filename
-    gulp.src(paths.frontend.scripts)
+    return gulp.src(paths.frontend.scripts)
         .pipe(concat('scripts.js'))
         .pipe(uglify())
         .pipe(rev())
@@ -78,11 +78,11 @@ gulp.task('js', function() {
 
 gulp.task('build', ['css', 'js']);
 
-gulp.task('watch', function(){
+gulp.task('watch', ['build'],  function(){
     gulp.watch('app/assets/sass/**/*.scss', ['css']);
     gulp.watch('app/assets/css/**/*.css', ['css']);
     gulp.watch('app/assets/js/**/*.js', ['js']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['build', 'watch']);
+gulp.task('default', ['watch']);
