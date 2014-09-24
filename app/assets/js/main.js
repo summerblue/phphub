@@ -187,7 +187,7 @@
                 };
                 setTimeout(scheduleGetNotification, 15000);
             }
-        }
+        },
 
         /*
          * Use Ctrl + Enter for reply
