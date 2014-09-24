@@ -97,6 +97,7 @@
               {{ Form::submit(lang('Reply'), ['class' => 'btn btn-primary disabled', 'id' => 'reply-create-submit']) }}
             @endif
 
+            <span class="help-inline" title="Or Command + Enter">Ctrl+Enter</span>
         </div>
 
         <div class="box preview markdown-reply" id="preview-box" style="display:none;"></div>

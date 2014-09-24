@@ -34,6 +34,7 @@
             self.initTextareaAutoResize();
             self.initHeightLight();
             self.initEditorPreview();
+            self.initReplyOnPressKey();
         },
 
         /**
@@ -186,6 +187,19 @@
                 };
                 setTimeout(scheduleGetNotification, 15000);
             }
+        }
+
+        /*
+         * Use Ctrl + Enter for reply
+         */
+        initReplyOnPressKey: function() {
+            $(document).on("keydown", "#reply_content", function(e)
+            {
+                if ((e.keyCode == 10 || e.keyCode == 13) && e.ctrlKey) {
+                    $(this).parents("form").submit();
+                    return false;
+                }
+            });
         }
 
     }
