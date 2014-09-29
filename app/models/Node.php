@@ -9,7 +9,7 @@ class Node extends \Eloquent
 
 	public function topics($filter)
 	{
-		return $this->hasMany('Topic')->getTopicsWithFilter($filter);;
+		return $this->hasMany('Topic')->getTopicsWithFilter($filter);
 	}
 
 	public static function allLevelUp()
