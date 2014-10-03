@@ -15,4 +15,6 @@ return array(
 
 	'debug' => true,
 
+    'locale' => 'zh-CN'
+
 );
