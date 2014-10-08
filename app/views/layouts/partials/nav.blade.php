@@ -1,4 +1,3 @@
-
 <div role="navigation" class="navbar navbar-default navbar-static-top topnav">
   <div class="container">
     <div class="navbar-header">
@@ -13,14 +12,13 @@
         <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ lang('About') }}</a></li>
       </ul>
 
-      {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
-        <div class="form-group">
-          {{ Form::text('q', null, ['class' => 'form-control mac-style', 'placeholder' => lang('Search')]) }}
-        </div>
-        <button type="submit" class="btn btn-default btn-circle"><i class="fa fa-search"></i></button>
-      {{ Form::close() }}
-
       <ul class="nav navbar-nav navbar-right github-login" >
+        {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
+          <div class="form-group">
+          {{ Form::text('q', null, ['class' => 'form-control search-input mac-style', 'placeholder' => lang('Search')]) }}
+          </div>
+        {{ Form::close() }}
+
         @if (Auth::check())
             <li>
                 <a href="{{ route('notifications.index') }}" class="text-warning">
