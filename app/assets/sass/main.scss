@@ -11,6 +11,16 @@ body {
 .navbar-default{
     background-color: #fff;
 }
+.search-input {
+  background-image: url('../images/icon-search.png');
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 25px;
+  border: 1px solid #c6c6c6;
+  box-shadow: none;
+  -webkit-transition: all 0.15s ease-in 0s;
+  transition: all 0.15s ease-in 0s;
+}
 .topic-list {
   .list-group-item {
     height: 71px;
