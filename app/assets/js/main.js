@@ -36,6 +36,7 @@
             self.initHeightLight();
             self.initEditorPreview();
             self.initReplyOnPressKey();
+            self.initDeleteForm();
         },
 
         /**
@@ -233,7 +234,25 @@
                     return false;
                 }
             });
-        }
+        },
+
+        /*
+         * Construct a form when using the following code, makes more clean code.
+         *   {{ link_to_route('tasks.destroy', 'D', $task->id, ['data-method'=>'delete']) }}
+         * See this answer: http://stackoverflow.com/a/23082278/689832
+         */
+        initDeleteForm: function() {
+            $('[data-method]').append(function(){
+                return "\n"+
+                "<form action='"+$(this).attr('href')+"' method='POST' style='display:none'>\n"+
+                "   <input type='hidden' name='_method' value='"+$(this).attr('data-method')+"'>\n"+
+                "   <input type='hidden' name='_token' value='"+Config.token+"'>\n"+
+                "</form>\n"
+           })
+           .removeAttr('href')
+           .attr('style','cursor:pointer;')
+           .attr('onclick','$(this).find("form").submit();');
+        },
 
     }
     window.PHPHub = PHPHub;

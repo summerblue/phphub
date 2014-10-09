@@ -120,9 +120,9 @@ Route::resource('users', 'UsersController');
 # ------------------ Replies ------------------------
 
 Route::resource('replies', 'RepliesController', ['only' => ['store']]);
-Route::get('replies/delete/{id}',  [
-	'as' => 'replies.delete',
-	'uses' => 'RepliesController@delete',
+Route::delete('replies/delete/{id}',  [
+	'as' => 'replies.destroy',
+	'uses' => 'RepliesController@destroy',
 	'before' => 'auth'
 ]);
 
@@ -163,9 +163,9 @@ Route::group(['before' => 'manage_topics'], function(){
         'uses' => 'TopicsController@pin',
     ]);
 
-    Route::get('topics/delete/{id}',  [
-        'as' => 'topics.delete',
-        'uses' => 'TopicsController@delete',
+    Route::delete('topics/delete/{id}',  [
+        'as' => 'topics.destroy',
+        'uses' => 'TopicsController@destroy',
     ]);
 
     Route::get('topics/sink/{id}',  [

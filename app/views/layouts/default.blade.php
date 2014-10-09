@@ -43,6 +43,7 @@ PHPHub  - PHP & Laravel的中文社区
                 'routes': {
                     'notificationsCount' : '{{ route('notifications.count') }}'
                 },
+                'token': '{{ csrf_token() }}',
             };
         </script>
 

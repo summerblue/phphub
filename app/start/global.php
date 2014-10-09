@@ -103,7 +103,8 @@ App::down(function()
 |
 */
 
-Event::listen('turbo.pjax', function($request, $response) {
+Event::listen('turbo.pjax', function($request, $response)
+{
     $response->header('X-PJAX-URL', Request::getUri());
 });
 

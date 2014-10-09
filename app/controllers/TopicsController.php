@@ -143,7 +143,7 @@ class TopicsController extends \BaseController implements CreatorListener
         return Redirect::route('topics.show', $topic->id);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $topic = Topic::findOrFail($id);
         $topic->delete();

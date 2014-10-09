@@ -22,7 +22,7 @@ class RepliesController extends \BaseController implements CreatorListener
         return Redirect::route('topics.show', [$reply->topic_id, '#reply'.$reply->id]);
     }
 
-    public function delete($id)
+    public function destroy($id)
     {
         $reply = Reply::findOrFail($id);
         $this->authorOrAdminPermissioinRequire($reply->user_id);

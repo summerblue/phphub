@@ -59,9 +59,10 @@
         </a>
     @endif
 
-      <a id="topic-delete-button" href="{{ route('topics.delete', [$topic->id]) }}" onclick=" return confirm('{{ lang('Are you sure want to delete is topic?') }}')" title="{{ lang('Delete') }}" class="admin">
+    <a data-method="delete" id="topic-delete-button" href="{{ route('topics.destroy', [$topic->id]) }}" title="{{ lang('Delete') }}" class="admin">
         <i class="fa fa-trash-o"></i>
-      </a>
+    </a>
+
     @endif
 
     @if ( $currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $topic->user_id) )
