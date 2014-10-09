@@ -22,9 +22,8 @@
         <a name="reply{{ $reply->id }}" class="anchor" href="#reply{{ $reply->id }}" aria-hidden="true">#{{ $reply->id }}</a>
 
         <span class="operate pull-right">
-          <a href="{{ route('replies.vote', $reply->id) }}" title="赞一个" id="reply-up-vote-{{ $reply->id }}">
-            <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i>
-            {{ $reply->vote_count }}
+          <a data-method="post" id="reply-up-vote-{{ $reply->id }}" href="{{ route('replies.vote', $reply->id) }}" title="{{ lang('Vote Up') }}">
+             <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i> {{ $reply->vote_count ?: '' }}
           </a>
           <span> •  </span>
 

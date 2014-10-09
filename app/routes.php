@@ -47,7 +47,7 @@ Route::get('/users/{id}/favorites', [
 	'uses' => 'UsersController@favorites'
 ]);
 
-Route::get('/favorites/{id}', [
+Route::post('/favorites/{id}', [
 	'as' => 'favorites.createOrDelete',
 	'uses' => 'FavoritesController@createOrDelete',
 	'before' => 'auth'
@@ -65,7 +65,7 @@ Route::get('/notifications/count', [
 	'before' => 'auth'
 ]);
 
-Route::get('/attentions/{id}', [
+Route::post('/attentions/{id}', [
 	'as' => 'attentions.createOrDelete',
 	'uses' => 'AttentionsController@createOrDelete',
 	'before' => 'auth'
@@ -129,17 +129,17 @@ Route::delete('replies/delete/{id}',  [
 # ------------------ Votes ------------------------
 
 Route::group(['before' => 'auth'], function(){
-	Route::get('/topics/{id}/upvote', [
+	Route::post('/topics/{id}/upvote', [
 		'as' => 'topics.upvote',
 		'uses' => 'TopicsController@upvote',
 	]);
 
-	Route::get('/topics/{id}/downvote', [
+	Route::post('/topics/{id}/downvote', [
 		'as' => 'topics.downvote',
 		'uses' => 'TopicsController@downvote',
 	]);
 
-	Route::get('/replies/{id}/vote', [
+	Route::post('/replies/{id}/vote', [
 		'as' => 'replies.vote',
 		'uses' => 'RepliesController@vote',
 	]);
@@ -148,17 +148,17 @@ Route::group(['before' => 'auth'], function(){
 # ------------------ Admin Route ------------------------
 
 Route::group(['before' => 'manage_topics'], function(){
-    Route::get('topics/recomend/{id}',  [
+    Route::post('topics/recomend/{id}',  [
         'as' => 'topics.recomend',
         'uses' => 'TopicsController@recomend',
     ]);
 
-    Route::get('topics/wiki/{id}',  [
+    Route::post('topics/wiki/{id}',  [
         'as' => 'topics.wiki',
         'uses' => 'TopicsController@wiki',
     ]);
 
-    Route::get('topics/pin/{id}',  [
+    Route::post('topics/pin/{id}',  [
         'as' => 'topics.pin',
         'uses' => 'TopicsController@pin',
     ]);
@@ -168,7 +168,7 @@ Route::group(['before' => 'manage_topics'], function(){
         'uses' => 'TopicsController@destroy',
     ]);
 
-    Route::get('topics/sink/{id}',  [
+    Route::post('topics/sink/{id}',  [
         'as' => 'topics.sink',
         'uses' => 'TopicsController@sink',
     ]);

@@ -19,42 +19,42 @@
   <div class="pull-right">
 
     @if ($currentUser && Attention::isUserAttentedTopic($currentUser, $topic))
-      <a id="topic-attent-cancel-button" href="{{ route('attentions.createOrDelete', $topic->id) }}">
+      <a data-method="post" id="topic-attent-cancel-button" href="{{ route('attentions.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-eye-open" style="color:#ce8a81"></i> <span>{{ lang('Cancel') }}</span>
       </a>
     @else
-      <a id="topic-attent-button" href="{{ route('attentions.createOrDelete', $topic->id) }}">
+      <a data-method="post" id="topic-attent-button" href="{{ route('attentions.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-eye-open"></i> <span>{{ lang('Attent') }}</span>
       </a>
     @endif
 
     @if ($currentUser && Favorite::isUserFavoritedTopic($currentUser, $topic))
-      <a id="topic-favorite-cancel-button" href="{{ route('favorites.createOrDelete', $topic->id) }}">
+      <a data-method="post" id="topic-favorite-cancel-button" href="{{ route('favorites.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-bookmark" style="color:#ce8a81"></i> <span>{{ lang('Cancel') }}</span>
       </a>
     @else
-      <a id="topic-favorite-button" href="{{ route('favorites.createOrDelete', $topic->id) }}">
+      <a data-method="post" id="topic-favorite-button" href="{{ route('favorites.createOrDelete', $topic->id) }}">
         <i class="glyphicon glyphicon-bookmark"></i> <span>{{ lang('Favorite') }}</span>
       </a>
     @endif
 
     @if ($currentUser && $currentUser->can("manage_topics") )
-      <a id="topic-recomend-button" href="{{ route('topics.recomend', [$topic->id]) }}" class="admin {{ $topic->is_excellent ? 'active' :'';}}" title="{{ lang('Mark as Excellent') }}">
+      <a data-method="post" id="topic-recomend-button" href="{{ route('topics.recomend', [$topic->id]) }}" class="admin {{ $topic->is_excellent ? 'active' :'';}}" title="{{ lang('Mark as Excellent') }}">
         <i class="fa fa-trophy"></i>
       </a>
 
-      <a id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}" class="admin {{ $topic->is_wiki ? 'active' : '' }}" title="{{ lang('Mark as Community Wiki') }}">
+      <a data-method="post" id="topic-wiki-button" href="{{ route('topics.wiki', [$topic->id]) }}" class="admin {{ $topic->is_wiki ? 'active' : '' }}" title="{{ lang('Mark as Community Wiki') }}">
         <i class="fa fa-graduation-cap"></i>
       </a>
 
     @if ($topic->order >= 0)
-      <a id="topic-pin-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="{{ lang('Pin it on Top') }}">
+      <a data-method="post" id="topic-pin-button" href="{{ route('topics.pin', [$topic->id]) }}" class="admin {{ $topic->order > 0 ? 'active' : '' }}" title="{{ lang('Pin it on Top') }}">
         <i class="fa fa-thumb-tack"></i>
       </a>
     @endif
 
     @if ($topic->order <= 0)
-        <a id="topic-sink-button" href="{{ route('topics.sink', [$topic->id]) }}" class="admin {{ $topic->order < 0 ? 'active' : '' }}" title="{{ lang('Sink This Topic') }}">
+        <a data-method="post" id="topic-sink-button" href="{{ route('topics.sink', [$topic->id]) }}" class="admin {{ $topic->order < 0 ? 'active' : '' }}" title="{{ lang('Sink This Topic') }}">
             <i class="fa fa-anchor"></i>
         </a>
     @endif

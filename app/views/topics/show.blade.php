@@ -25,11 +25,13 @@
       <h1 class="panel-title topic-title">{{{ $topic->title }}}</h1>
 
       <div class="votes">
-        <a href="{{ route('topics.upvote', $topic->id) }}" id="up-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count() ? 'active' :''; }}">
-          <li class="fa fa-chevron-up"></li> {{ $topic->vote_count }}
-        </a> &nbsp;
-        <a href="{{ route('topics.downvote', $topic->id) }}" id="down-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count() ? 'active' :''; }}">
-          <li class="fa fa-chevron-down"></li>
+
+        <a data-method="post" href="{{ route('topics.upvote', $topic->id) }}" title="{{ lang('Up Vote') }}" id="up-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::user()->id)->WithType('upvote')->count() ? 'active' :''; }}">
+            <li class="fa fa-chevron-up"></li> {{ $topic->vote_count }}
+        </a>
+         &nbsp;
+        <a data-method="post" href="{{ route('topics.downvote', $topic->id) }}" title="{{ lang('Down Vote') }}" id="down-vote" class="vote {{ $currentUser && $topic->votes()->ByWhom(Auth::user()->id)->WithType('downvote')->count() ? 'active' :''; }}">
+            <li class="fa fa-chevron-down"></li>
         </a>
       </div>
 
