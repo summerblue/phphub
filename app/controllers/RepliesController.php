@@ -24,7 +24,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
     public function delete($id)
     {
-        $reply = Reply::find($id);
+        $reply = Reply::findOrFail($id);
         $this->authorOrAdminPermissioinRequire($reply->user_id);
         $reply->delete();
 

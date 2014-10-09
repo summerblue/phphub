@@ -68,6 +68,14 @@ App::error(function(Phphub\Exceptions\ManageTopicsException $exception, $code)
     return Redirect::route('admin-required');
 });
 
+/**
+ *  Model not found
+ */
+App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e)
+{
+    return Response::make('Not Found', 404);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler

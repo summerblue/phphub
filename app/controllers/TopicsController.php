@@ -145,7 +145,7 @@ class TopicsController extends \BaseController implements CreatorListener
 
     public function delete($id)
     {
-        $topic = Topic::find($id);
+        $topic = Topic::findOrFail($id);
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
