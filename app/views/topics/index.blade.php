@@ -9,7 +9,6 @@
 <div class="col-md-9 topics-index main-col">
     <div class="panel panel-default">
 
-
         <div class="panel-heading">
           @if (isset($node))
             <div class="pull-left panel-title">{{ lang('Current Node') }}: {{{ $node->name }}}</div>
