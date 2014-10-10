@@ -1,8 +1,10 @@
 <?php namespace Phphub\Markdown;
 
 use HTML_To_Markdown;
-use Michelf\MarkdownExtra;
+use GrahamCampbell\Markdown\Markdown as GMarkdown;
+
 use Purifier;
+use ParsedownExtra;
 
 class Markdown
 {
@@ -14,9 +16,7 @@ class Markdown
         $this->htmlParser = new HTML_To_markdown;
         $this->htmlParser->set_option('header_style', 'atx');
 
-        $this->markdownParser = new MarkdownExtra;
-        $this->markdownParser->no_markup = true;
-        $this->markdownParser->code_class_prefix = 'language-';
+        $this->markdownParser = new GMarkdown(new ParsedownExtra());
     }
 
     public function convertHtmlToMarkdown($html)
@@ -26,7 +26,7 @@ class Markdown
 
     public function convertMarkdownToHtml($markdown)
     {
-        $convertedHmtl = $this->markdownParser->transform($markdown);
+        $convertedHmtl = $this->markdownParser->render($markdown);
         return Purifier::clean($convertedHmtl, 'user_topic_body');
     }
 }
