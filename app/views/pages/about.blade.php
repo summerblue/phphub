@@ -35,7 +35,7 @@
 
 <p>如果觉得你的问题比较独占, 需要单独提问的话, 请到 <a href="http://segmentfault.com/t/php">Segmentfault 的 PHP 节点下</a> 发表你的问题, 谢谢. </p>
 
-<h2 id="toc_3">远景 Vision</h2>
+<h2 id="toc_3">愿景 Vision</h2>
 
 <blockquote>
 <p>下面是 phphub.org 创建的初衷, 与君共勉. </p>
