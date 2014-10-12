@@ -13,7 +13,7 @@
         "itsgoingd/clockwork": "1.*",
         "zizaco/entrust": "1.2.*@dev",
         "thujohn/rss": "dev-master",
-        "graham-campbell/markdown": "~2.0",
+        "erusev/parsedown": "~1.1",
         "nickcernis/html-to-markdown": "2.1.*",
         "mews/purifier": "dev-master",
         "rcrowe/turbo": "0.2.*",
