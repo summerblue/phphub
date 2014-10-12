@@ -42,18 +42,12 @@
       <div class="panel-heading text-center">
         <h3 class="panel-title">{{ lang('Links') }}</h3>
       </div>
-      <div class="panel-body">
-        <ul class="list">
-
-          @foreach ($links as $link)
-            <li>
-            <a href="{{ $link->link }}">
-              {{{ $link->title }}}
+      <div class="panel-body text-center" style="padding-top: 5px;">
+        @foreach ($links as $link)
+            <a href="{{ $link->link }}" target="_blank" rel="nofollow" title="{{ $link->title }}">
+                <img src="{{ $link->cover }}" style="width:150px; margin: 3px 0;">
             </a>
-            </li>
-          @endforeach
-
-        </ul>
+        @endforeach
       </div>
     </div>
   @endif
