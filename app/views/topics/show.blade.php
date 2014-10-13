@@ -18,7 +18,7 @@
 
       <div class="pull-right avatar_large">
         <a href="{{ route('users.show', $topic->user->id) }}">
-          <img src="{{ $topic->user->present()->gravatar }}" style="width:52px; height:52px;" class="img-thumbnail avatar" />
+          <img src="{{ $topic->user->present()->gravatar }}" style="width:65px; height:65px;" class="img-thumbnail avatar" />
         </a>
       </div>
 
