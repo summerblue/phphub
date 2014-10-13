@@ -175,7 +175,7 @@ Route::group(['before' => 'manage_topics'], function(){
 });
 
 Route::group(['before' => 'manage_users'], function(){
-	Route::get('users/blocking/{id}',  [
+	Route::post('users/blocking/{id}',  [
 		'as' => 'users.blocking',
 		'uses' => 'UsersController@blocking',
 	]);

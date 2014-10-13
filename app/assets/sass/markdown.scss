@@ -16,6 +16,14 @@
     outline: 0;
   }
 
+  ol li {
+    margin: 8px 0;
+  }
+
+    pre[class*=language-] {
+        margin: 1.2em 0!important;
+    }
+
   strong {
     font-weight: bold;
   }
@@ -184,7 +192,7 @@
   h5,
   h6 {
     position: relative;
-    margin-top: .5em;
+    margin-top: 1.0em;
     margin-bottom: 16px;
     font-weight: bold;
     line-height: 1.4;
@@ -281,11 +289,15 @@
   }
 
   blockquote>:first-child {
-    margin-top: 0;
+    margin-top: 20;
   }
 
   blockquote>:last-child {
-    margin-bottom: 0;
+    margin-bottom: 20;
+  }
+
+  blockquote {
+    margin: 20px 0!important;
   }
 
   table {
@@ -335,6 +347,7 @@
     padding-top: 0.2em;
     padding-bottom: 0.2em;
     margin: 0;
+    color: #C2627B;
     background-color: rgba(0,0,0,0.04);
     border-radius: 3px;
   }
@@ -712,4 +725,8 @@
     color: #777;
   }
 
+}
+
+.markdown-body > h2:first-child{
+    margin-top: 0.4em;
 }
