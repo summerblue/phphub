@@ -215,6 +215,12 @@
                             $('#notification-count').text(nCount);
                             $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
                             document.title = '(' + nCount + ') '+ original_title;
+                        } else {
+                            document.title =  original_title;
+                            $('#notification-count').text(0);
+                            $('#notification-count').addClass('badge-fade');
+                            $('#notification-count').removeClass('badge-important');
+
                         }
                         setTimeout(scheduleGetNotification, 15000);
                     });
