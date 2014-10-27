@@ -46,10 +46,27 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 |
 */
 
-
 App::error(function(Exception $exception, $code)
 {
-    Log::error($exception);
+    $pathInfo = Request::getPathInfo();
+    $message = $exception->getMessage() ?: 'Exception';
+    Log::error("$code - $message @ $pathInfo\r\n$exception");
+
+    if (Config::get('app.debug')) {
+        return;
+    }
+
+    switch ($code)
+    {
+        case 403:
+            return Response::view('errors/403', [], 403);
+
+        case 500:
+            return Response::view('errors/500', [], 500);
+
+        default:
+            return Response::view('errors/404', [], $code);
+    }
 });
 
 /*
@@ -73,7 +90,10 @@ App::error(function(Phphub\Exceptions\ManageTopicsException $exception, $code)
  */
 App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e)
 {
-    return Response::make('Not Found', 404);
+    if (Config::get('app.debug'))
+        return;
+
+    return Response::view('errors/404', [], 404);
 });
 
 /*
