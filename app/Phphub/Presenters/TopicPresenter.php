@@ -8,9 +8,10 @@ class TopicPresenter extends Presenter
     public function topicFilter($filter)
     {
         $query_append = '';
-        if (Input::except('filter'))
+        $query = Input::except('filter', '_pjax');
+        if ($query)
         {
-            $query_append = '&'.http_build_query(Input::except('filter'));
+            $query_append = '&'.http_build_query($query);
         }
         $link = URL::to('topics') . '?filter=' . $filter . $query_append;
         $selected = Input::get('filter') ? (Input::get('filter') == $filter ? ' class="selected"':'') : '';

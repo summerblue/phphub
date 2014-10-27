@@ -27,7 +27,7 @@
 
             <div class="panel-footer text-right remove-padding-horizontal pager-footer">
                 <!-- Pager -->
-                {{ $topics->appends(Request::except('page'))->links(); }}
+                {{ $topics->appends(Request::except('page', '_pjax'))->links(); }}
             </div>
 
         @else
