@@ -26,6 +26,11 @@ body {
   .list-group-item {
     height: 71px;
   }
+  .media-heading {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 abbr[data-original-title], abbr[title] {
     cursor: none;

@@ -20,7 +20,7 @@
 
           <div class="media-heading">
             <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
-                {{{ $column ? str_limit($topic->title, '30') : str_limit($topic->title, '100') }}}
+                {{{ $topic->title }}}
             </a>
             @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
                 <i class="fa fa-thumb-tack" style="color:#969595;padding-left: 2px;"></i>
