@@ -19,5 +19,5 @@ return [
     'url'           => 'http://localhost:8000/',
     // 'timezone'      => 'Asia/Shanghai',
     // 'locale'        => 'zh-CN',
-    // 'url_static'    => 'http://phphub.qiniudn.com',
+    // 'url_static'    => 'https://dn-phphub.qbox.me',
 ];
