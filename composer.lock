@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5bae9107e2cfe4a3aa67648a892c98c2",
+    "hash": "c466519584a1a50d1f57ba96b3d80175",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -53,6 +53,73 @@
                 "php"
             ],
             "time": "2014-08-07 07:18:32"
+        },
+        {
+            "name": "aws/aws-sdk-php",
+            "version": "2.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aws/aws-sdk-php.git",
+                "reference": "21115c088549520a8b268557601987c12d835f4b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/21115c088549520a8b268557601987c12d835f4b",
+                "reference": "21115c088549520a8b268557601987c12d835f4b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzle/guzzle": "~3.7",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.0",
+                "ext-openssl": "*",
+                "monolog/monolog": "~1.4",
+                "phpunit/phpunit": "~4.0",
+                "symfony/yaml": "~2.1"
+            },
+            "suggest": {
+                "doctrine/cache": "Adds support for caching of credentials and responses",
+                "ext-apc": "Allows service description opcode caching, request and response caching, and credentials caching",
+                "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
+                "monolog/monolog": "Adds support for logging HTTP requests and responses",
+                "symfony/yaml": "Eases the ability to write manifests for creating jobs in AWS Import/Export"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Aws": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Amazon Web Services",
+                    "homepage": "http://aws.amazon.com"
+                }
+            ],
+            "description": "AWS SDK for PHP - Use Amazon Web Services in your PHP project",
+            "homepage": "http://aws.amazon.com/sdkforphp",
+            "keywords": [
+                "amazon",
+                "aws",
+                "cloud",
+                "dynamodb",
+                "ec2",
+                "glacier",
+                "s3",
+                "sdk"
+            ],
+            "time": "2014-10-23 20:13:09"
         },
         {
             "name": "classpreloader/classpreloader",
@@ -136,17 +203,56 @@
             "time": "2014-01-17 12:21:18"
         },
         {
-            "name": "erusev/parsedown",
-            "version": "1.1.0",
+            "name": "dropbox/dropbox-sdk",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/erusev/parsedown.git",
-                "reference": "c62365adc4488e1c35a8f45ea86f7d4a22bd58a0"
+                "url": "https://github.com/dropbox/dropbox-sdk-php.git",
+                "reference": "73e5add2f6d5d0355fa04e758f895e10c08d240a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/c62365adc4488e1c35a8f45ea86f7d4a22bd58a0",
-                "reference": "c62365adc4488e1c35a8f45ea86f7d4a22bd58a0",
+                "url": "https://api.github.com/repos/dropbox/dropbox-sdk-php/zipball/73e5add2f6d5d0355fa04e758f895e10c08d240a",
+                "reference": "73e5add2f6d5d0355fa04e758f895e10c08d240a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">= 5.3"
+            },
+            "require-dev": {
+                "apigen/apigen": "2.8.2",
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "2.0.0RC3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Dropbox": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Dropbox SDK for PHP",
+            "keywords": [
+                "dropbox"
+            ],
+            "time": "2014-10-21 21:09:01"
+        },
+        {
+            "name": "erusev/parsedown",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "da5d75e97e1ed19e57bd54fa6cb595a6a0879a67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/da5d75e97e1ed19e57bd54fa6cb595a6a0879a67",
+                "reference": "da5d75e97e1ed19e57bd54fa6cb595a6a0879a67",
                 "shasum": ""
             },
             "type": "library",
@@ -172,7 +278,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2014-09-25 23:06:16"
+            "time": "2014-10-29 20:29:46"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -276,6 +382,166 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "guzzle/guzzle",
+            "version": "v3.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle3.git",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle3/zipball/54991459675c1a2924122afbb0e5609ade581155",
+                "reference": "54991459675c1a2924122afbb0e5609ade581155",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "php": ">=5.3.3",
+                "symfony/event-dispatcher": "~2.1"
+            },
+            "replace": {
+                "guzzle/batch": "self.version",
+                "guzzle/cache": "self.version",
+                "guzzle/common": "self.version",
+                "guzzle/http": "self.version",
+                "guzzle/inflection": "self.version",
+                "guzzle/iterator": "self.version",
+                "guzzle/log": "self.version",
+                "guzzle/parser": "self.version",
+                "guzzle/plugin": "self.version",
+                "guzzle/plugin-async": "self.version",
+                "guzzle/plugin-backoff": "self.version",
+                "guzzle/plugin-cache": "self.version",
+                "guzzle/plugin-cookie": "self.version",
+                "guzzle/plugin-curlauth": "self.version",
+                "guzzle/plugin-error-response": "self.version",
+                "guzzle/plugin-history": "self.version",
+                "guzzle/plugin-log": "self.version",
+                "guzzle/plugin-md5": "self.version",
+                "guzzle/plugin-mock": "self.version",
+                "guzzle/plugin-oauth": "self.version",
+                "guzzle/service": "self.version",
+                "guzzle/stream": "self.version"
+            },
+            "require-dev": {
+                "doctrine/cache": "~1.3",
+                "monolog/monolog": "~1.0",
+                "phpunit/phpunit": "3.7.*",
+                "psr/log": "~1.0",
+                "symfony/class-loader": "~2.1",
+                "zendframework/zend-cache": "2.*,<2.3",
+                "zendframework/zend-log": "2.*,<2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Guzzle": "src/",
+                    "Guzzle\\Tests": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                },
+                {
+                    "name": "Guzzle Community",
+                    "homepage": "https://github.com/guzzle/guzzle/contributors"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2014-08-11 04:32:36"
+        },
+        {
+            "name": "heybigname/backup-manager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heybigname/backup-manager.git",
+                "reference": "ea63d7751386b30a36e5450017fd48415fbb49d5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heybigname/backup-manager/zipball/ea63d7751386b30a36e5450017fd48415fbb49d5",
+                "reference": "ea63d7751386b30a36e5450017fd48415fbb49d5",
+                "shasum": ""
+            },
+            "require": {
+                "aws/aws-sdk-php": "~2.4",
+                "league/flysystem": ">=0.3.1",
+                "php": ">=5.4.0",
+                "symfony/process": "2.*"
+            },
+            "require-dev": {
+                "dropbox/dropbox-sdk": "1.1.*",
+                "illuminate/console": "4.x",
+                "illuminate/container": "4.x",
+                "illuminate/support": "4.x",
+                "mockery/mockery": "dev-master",
+                "phpspec/phpspec": "~2.0",
+                "phpunit/phpunit": "3.7.*",
+                "rackspace/php-opencloud": "1.9.*",
+                "satooshi/php-coveralls": "~0.6"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Enables AWS S3 storage",
+                "dropbox/dropbox-sdk": "Enables Dropbox storage",
+                "phpseclib/phpseclib": "Enables SFTP storage",
+                "rackspace/php-opencloud": "Enables Rackspace Cloud storage",
+                "sabre/dav": "Enables WebDav storage"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.3-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "BigName\\BackupManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shawn McCool",
+                    "email": "shawn@heybigname.com",
+                    "homepage": "http://heybigname.com/"
+                },
+                {
+                    "name": "Mitchell van Wijngaarden",
+                    "email": "mitchell@kooding.nl",
+                    "homepage": "http://heybigname.com/"
+                }
+            ],
+            "description": "Database backup manager for dumping to and restoring databases from S3, Dropbox, FTP, and SFTP.",
+            "time": "2014-10-22 12:03:09"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -751,6 +1017,94 @@
                 "validation"
             ],
             "time": "2014-02-25 20:39:04"
+        },
+        {
+            "name": "league/flysystem",
+            "version": "0.5.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/flysystem.git",
+                "reference": "96fe7ec1ebed35e3dc1e1dce4bbdab2eca0140a2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/96fe7ec1ebed35e3dc1e1dce4bbdab2eca0140a2",
+                "reference": "96fe7ec1ebed35e3dc1e1dce4bbdab2eca0140a2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "aws/aws-sdk-php": "~2.4",
+                "barracuda/copy": "~1.1.4",
+                "dropbox/dropbox-sdk": "~1.1.1",
+                "ext-fileinfo": "*",
+                "guzzlehttp/guzzle": "~4.0",
+                "league/event": "~1.0",
+                "league/phpunit-coverage-listener": "~1.1",
+                "mockery/mockery": "~0.9",
+                "phpseclib/phpseclib": "~0.3.5",
+                "phpspec/phpspec": "~2.0",
+                "phpunit/phpunit": "~4.0",
+                "predis/predis": "~1.0",
+                "rackspace/php-opencloud": "~1.10.0",
+                "sabre/dav": "~2.0.2",
+                "tedivm/stash": "~0.12.0"
+            },
+            "suggest": {
+                "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
+                "barracuda/copy": "Allows you to use Copy.com storage",
+                "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
+                "ext-fileinfo": "Required for MimeType",
+                "guzzlehttp/guzzle": "Allows you to use http files (reading only)",
+                "league/event": "Required for EventableFilesystem",
+                "phpseclib/phpseclib": "Allows SFTP server storage",
+                "predis/predis": "Allows you to use Predis for caching",
+                "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
+                "sabre/dav": "Enables WebDav support",
+                "tedivm/stash": "Allows you to use Stash as cache implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "League\\Flysystem\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Many filesystems, one API.",
+            "keywords": [
+                "Cloud Files",
+                "WebDAV",
+                "aws",
+                "cloud",
+                "copy.com",
+                "dropbox",
+                "file systems",
+                "files",
+                "filesystem",
+                "ftp",
+                "rackspace",
+                "remote",
+                "s3",
+                "sftp",
+                "storage"
+            ],
+            "time": "2014-10-28 11:35:42"
         },
         {
             "name": "lusitanian/oauth",
@@ -2564,22 +2918,23 @@
         },
         {
             "name": "facebook/webdriver",
-            "version": "v0.4",
+            "version": "v0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-webdriver.git",
-                "reference": "342df507312ea5ae5337be47e16e4268d7ed661f"
+                "reference": "fab0b484142430f4f598baef45680f945a60eb4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/342df507312ea5ae5337be47e16e4268d7ed661f",
-                "reference": "342df507312ea5ae5337be47e16e4268d7ed661f",
+                "url": "https://api.github.com/repos/facebook/php-webdriver/zipball/fab0b484142430f4f598baef45680f945a60eb4f",
+                "reference": "fab0b484142430f4f598baef45680f945a60eb4f",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.19"
             },
             "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
                 "phpunit/phpunit": "3.7.*"
             },
             "type": "library",
@@ -2600,7 +2955,7 @@
                 "selenium",
                 "webdriver"
             ],
-            "time": "2014-02-21 18:22:11"
+            "time": "2014-10-28 20:04:04"
         },
         {
             "name": "fzaninotto/faker",
@@ -2824,12 +3179,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/padraic/mockery.git",
-                "reference": "8e567de2249a8f7eb8051a855b9d0a6472d38c8e"
+                "reference": "83fd9101183547a3a8cd68c155a5a6f63e7baefb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/padraic/mockery/zipball/8e567de2249a8f7eb8051a855b9d0a6472d38c8e",
-                "reference": "8e567de2249a8f7eb8051a855b9d0a6472d38c8e",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/83fd9101183547a3a8cd68c155a5a6f63e7baefb",
+                "reference": "83fd9101183547a3a8cd68c155a5a6f63e7baefb",
                 "shasum": ""
             },
             "require": {
@@ -2882,7 +3237,7 @@
                 "test double",
                 "testing"
             ],
-            "time": "2014-10-16 09:15:15"
+            "time": "2014-10-31 12:40:15"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -3631,6 +3986,7 @@
         "zizaco/entrust": 20,
         "thujohn/rss": 20,
         "mews/purifier": 20,
+        "heybigname/backup-manager": 20,
         "mockery/mockery": 20
     },
     "prefer-stable": false,

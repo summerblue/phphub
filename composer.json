@@ -17,7 +17,9 @@
         "nickcernis/html-to-markdown": "2.1.*",
         "mews/purifier": "dev-master",
         "summerblue/turbo": "0.3.*",
-        "summerblue/asset-manager": "0.2.*"
+        "summerblue/asset-manager": "0.2.*",
+        "heybigname/backup-manager": "0.3.*@dev",
+        "dropbox/dropbox-sdk": "1.1.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

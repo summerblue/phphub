@@ -142,7 +142,8 @@ return array(
         'Phphub\Markdown\MarkdownServiceProvider',
         'Mews\Purifier\PurifierServiceProvider',
         'Turbo\Provider\Laravel\TurboServiceProvider',
-        'Modbase\AssetManager\AssetManagerServiceProvider'
+        'Modbase\AssetManager\AssetManagerServiceProvider',
+        'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
 
     ),
 
