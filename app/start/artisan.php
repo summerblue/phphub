@@ -16,3 +16,6 @@ Artisan::add(new TopicMakeExcerptCommand);
 Artisan::add(new UserRenameCommand);
 Artisan::add(new UserMigrateGithubUsernameCommand);
 Artisan::add(new ReplyMarkdownCommand);
+
+// Backing up database
+Artisan::add(new DatabaseBackupCommand);
