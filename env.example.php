@@ -15,11 +15,15 @@ return [
     'client_id'     => 'eefd4111fbcb0e1d0fb9',
     'client_secret' => '3dce7078f20bc10a1f6bef559b81787648f1b372',
 
+    // Github Card
+    'github_card_client_id'     => 'eefd4111fbcb0e1d0fb9',
+    'github_card_client_secret' => '3dce7078f20bc10a1f6bef559b81787648f1b372',
+
     // App config
     'url'           => 'http://localhost:8000/',
     // 'timezone'      => 'Asia/Shanghai',
     // 'locale'        => 'zh-CN',
-    // 'url_static'    => 'https://dn-phphub.qbox.me',
+    // 'url_static'    => 'https://dn-phphub.qbox.me/',
     //
 
     'BACK_MANAGER_ROOT' => '',

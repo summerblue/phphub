@@ -29,7 +29,7 @@
 
 <p>这个社区不是用来问新手问题的, 如果你是新手, 请先看 <a href="http://www.phptherightway.com/">PHP The Right Way</a> , 里面有中文版本, 此文档能为你构建一个合理的 PHP 基础知识体系. </p>
 
-<p>第一次接触 Laravel? 这里是 <a href="http://laravel.com/docs/quick">官方文档</a>, 中文翻译见 <a href="http://www.golaravel.com/">Laravel 中文网</a>, Laravel 的出名, 也得益于这份撰写精炼的文档, 值得多读几遍.</p>
+<p>第一次接触 Laravel? 这里是 <a href="http://laravel.com/docs/quick">官方文档</a>, 中文翻译见 <a href="http://laravel-china.org/">Laravel 中文网</a>, Laravel 的出名, 也得益于这份撰写精炼的文档, 值得多读几遍.</p>
 
 <p>在学习上遇到问题的时候, 请先 Google. </p>
 
