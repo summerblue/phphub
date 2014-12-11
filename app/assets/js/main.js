@@ -316,8 +316,6 @@
                 $('.topics-show #reply_content').keyup(function(){
                     localforage.setItem('reply_content', $(this).val());
                 });
-
-
             })
         },
 
@@ -325,17 +323,17 @@
          * Upload image
          */
         initInlineAttach: function() {
+            var self = this;
             $('#reply_content').inlineattach({
                 uploadUrl: Config.routes.upload_image,
                 extraParams: {
                   '_token': Config.token,
                 },
+                onUploadedFile: function(response) {
+                    setTimeout(self.runPreview, 200);
+                },
             });
         },
-
-
-
-
 
     }
     window.PHPHub = PHPHub;
