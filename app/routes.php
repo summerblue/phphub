@@ -186,5 +186,3 @@ Route::post('upload_image', [
     'uses' => 'TopicsController@uploadImage',
     'before' => 'auth'
 ]);
-
-Bugsnag::notifyError('ErrorType', 'Test Error');
