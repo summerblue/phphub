@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group">
-          {{ Form::text('title', null, ['class' => 'form-control', 'placeholder' => lang('Please write down a topic')]) }}
+          {{ Form::text('title', null, ['class' => 'form-control', 'id' => 'topic-title', 'placeholder' => lang('Please write down a topic')]) }}
         </div>
 
         @include('topics.partials.composing_help_block')

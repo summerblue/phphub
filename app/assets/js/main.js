@@ -37,6 +37,7 @@
             self.initEditorPreview();
             self.initReplyOnPressKey();
             self.initDeleteForm();
+            self.initLocalStorage();
         },
 
         /**
@@ -266,6 +267,36 @@
                     }
                 });
            // attr('onclick',' if (confirm("Are you sure want to proceed?")) { $(this).find("form").submit(); };');
+        },
+
+        /**
+         * Init post content preview
+         */
+        initLocalStorage: function() {
+
+            // Topic Title ON Topic Creation View
+            localforage.getItem('topic-title', function(err, value) {
+                if (!err) $('.topic_create #topic-title').val(value);
+            });
+            $('.topic_create #topic-title').keyup(function(){
+                localforage.setItem('topic-title', $(this).val());
+            });
+
+            // Topic Content ON Topic Creation View
+            localforage.getItem('topic_create_content', function(err, value) {
+                if (!err) $('.topic_create #reply_content').val(value);
+            });
+            $('.topic_create #reply_content').keyup(function(){
+                localforage.setItem('topic_create_content', $(this).val());
+            });
+
+            // Topic Content ON Topic Detail View
+            localforage.getItem('reply_content', function(err, value) {
+                if (!err) $('.topics-show #reply_content').val(value);
+            });
+            $('.topics-show #reply_content').keyup(function(){
+                localforage.setItem('reply_content', $(this).val());
+            });
         },
 
     }
