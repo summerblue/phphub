@@ -277,7 +277,9 @@
 
             // Topic Title ON Topic Creation View
             localforage.getItem('topic-title', function(err, value) {
-                if (!err) $('.topic_create #topic-title').val(value);
+                if ($('.topic_create #topic-title').val() == '' && !err) {
+                    $('.topic_create #topic-title').val(value);
+                };
             });
             $('.topic_create #topic-title').keyup(function(){
                 localforage.setItem('topic-title', $(this).val());
@@ -285,7 +287,9 @@
 
             // Topic Content ON Topic Creation View
             localforage.getItem('topic_create_content', function(err, value) {
-                if (!err) $('.topic_create #reply_content').val(value);
+                if ($('.topic_create #reply_content').val() == '' && !err) {
+                    $('.topic_create #reply_content').val(value);
+                }
             });
             $('.topic_create #reply_content').keyup(function(){
                 localforage.setItem('topic_create_content', $(this).val());
@@ -293,7 +297,9 @@
 
             // Topic Content ON Topic Detail View
             localforage.getItem('reply_content', function(err, value) {
-                if (!err) $('.topics-show #reply_content').val(value);
+                if ($('.topics-show #reply_content').val() == '' && !err) {
+                    $('.topics-show #reply_content').val(value);
+                }
             });
             $('.topics-show #reply_content').keyup(function(){
                 localforage.setItem('reply_content', $(this).val());
