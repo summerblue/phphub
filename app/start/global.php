@@ -34,6 +34,28 @@ ClassLoader::addDirectories(array(
 $logFile = php_sapi_name().'.log';
 Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 
+
+/*
+|--------------------------------------------------------------------------
+| Bugsnag
+|--------------------------------------------------------------------------
+*/
+// Bugsnag::setReleaseStage("production");
+Bugsnag::setErrorReportingLevel(E_ALL & ~E_NOTICE);
+Bugsnag::setBeforeNotifyFunction("before_bugsnag_notify");
+
+function before_bugsnag_notify($error) {
+    // Do any custom error handling here
+
+    // Also add some meta data to each error
+    if (Auth::check()) {
+        $user = Auth::user()->toArray();
+        $error->setMetaData(array(
+            "user" => $user
+        ));
+    }
+}
+
 /*
 |--------------------------------------------------------------------------
 | Application Error Handler
@@ -56,6 +78,8 @@ App::error(function(Exception $exception, $code)
     if (Config::get('app.debug')) {
         return;
     }
+
+    Bugsnag::notifyException($exception);
 
     switch ($code)
     {

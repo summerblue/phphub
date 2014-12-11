@@ -33,4 +33,6 @@ return [
     'BACK_MANAGER_DROPBOX_secret' => '',
     'BACK_MANAGER_DROPBOX_app' => '',
     'BACK_MANAGER_DROPBOX_root' => '',
+
+    'bugsnag_api_key'   => 'you key here',
 ];

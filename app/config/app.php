@@ -152,6 +152,7 @@ return array(
         'Modbase\AssetManager\AssetManagerServiceProvider',
         'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
         'Intervention\Image\ImageServiceProvider',
+        'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
     ),
 
     /*
@@ -228,6 +229,7 @@ return array(
         'Markdown'          => 'Phphub\Markdown\Markdown',
         'Purifier'          => 'Mews\Purifier\Facades\Purifier',
         'Image'             => 'Intervention\Image\Facades\Image',
+        'Bugsnag'           => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
     ),
 
 );
