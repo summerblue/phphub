@@ -144,7 +144,7 @@ return array(
         'Turbo\Provider\Laravel\TurboServiceProvider',
         'Modbase\AssetManager\AssetManagerServiceProvider',
         'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
-
+        'Intervention\Image\ImageServiceProvider',
     ),
 
     /*
@@ -220,6 +220,7 @@ return array(
         'Rss'               => 'Thujohn\Rss\RssFacade',
         'Markdown'          => 'Phphub\Markdown\Markdown',
         'Purifier'          => 'Mews\Purifier\Facades\Purifier',
+        'Image'             => 'Intervention\Image\Facades\Image',
     ),
 
 );

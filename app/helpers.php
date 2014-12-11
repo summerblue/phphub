@@ -17,6 +17,11 @@ function getCdnDomain()
     return Config::get('app.url_static') ?: Config::get('app.url');
 }
 
+function getUserStaticDomain()
+{
+    return Config::get('app.user_static') ?: Config::get('app.url');
+}
+
 function lang($text)
 {
     return str_replace('phphub.', '', trans('phphub.'.$text));

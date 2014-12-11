@@ -41,7 +41,8 @@ PHPHub  - PHP & Laravel的中文社区
                 'cdnDomain': '{{ getCdnDomain() }}',
                 'user_id': {{ $currentUser ? $currentUser->id : 0 }},
                 'routes': {
-                    'notificationsCount' : '{{ route('notifications.count') }}'
+                    'notificationsCount' : '{{ route('notifications.count') }}',
+                    'upload_image' : '{{ route('upload_image') }}'
                 },
                 'token': '{{ csrf_token() }}',
             };

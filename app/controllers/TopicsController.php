@@ -152,6 +152,35 @@ class TopicsController extends \BaseController implements CreatorListener
         return Redirect::route('topics.index');
     }
 
+    public function uploadImage()
+    {
+        if ($file = Input::file('file'))
+        {
+            $fileName        = $file->getClientOriginalName();
+            $extension       = $file->getClientOriginalExtension() ?: 'png';
+            $folderName      = '/uploads/images/' . date("Ym", time()) .'/'.date("d", time()) .'/'. Auth::user()->id;
+            $destinationPath = public_path() . $folderName;
+            $safeName        = str_random(10).'.'.$extension;
+            $file->move($destinationPath, $safeName);
+
+            // open an image file
+            $img = Image::make($destinationPath . '/' . $safeName);
+            // prevent possible upsizing
+            $img->resize(1440, null, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+            // finally we save the image as a new file
+            $img->save();
+            $data['filename'] = getUserStaticDomain() . $folderName .'/'. $safeName;
+        }
+        else
+        {
+            $data['error'] = 'Error while uploading file';
+        }
+        return $data;
+    }
+
     /**
      * ----------------------------------------
      * CreatorListener Delegate
@@ -169,5 +198,4 @@ class TopicsController extends \BaseController implements CreatorListener
 
         return Redirect::route('topics.show', array($topic->id));
     }
-
 }

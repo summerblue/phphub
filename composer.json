@@ -19,7 +19,8 @@
         "summerblue/turbo": "0.3.*",
         "summerblue/asset-manager": "0.2.*",
         "heybigname/backup-manager": "0.3.*@dev",
-        "dropbox/dropbox-sdk": "1.1.*"
+        "dropbox/dropbox-sdk": "1.1.*",
+        "intervention/image": "2.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

@@ -180,3 +180,9 @@ Route::group(['before' => 'manage_users'], function(){
 		'uses' => 'UsersController@blocking',
 	]);
 });
+
+Route::post('upload_image', [
+    'as' => 'upload_image',
+    'uses' => 'TopicsController@uploadImage',
+    'before' => 'auth'
+]);

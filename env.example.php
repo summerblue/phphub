@@ -24,6 +24,7 @@ return [
     // 'timezone'      => 'Asia/Shanghai',
     // 'locale'        => 'zh-CN',
     // 'url_static'    => 'https://dn-phphub.qbox.me/',
+    // 'user_static'    => 'https://dn-phphub.qbox.me/',
     //
 
     'BACK_MANAGER_ROOT' => '',
