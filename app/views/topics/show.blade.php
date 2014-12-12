@@ -74,7 +74,7 @@
 
     @include('layouts.partials.errors')
 
-    {{ Form::open(['route' => 'replies.store', 'method' => 'post']) }}
+    {{ Form::open(['route' => 'replies.store', 'id' => 'reply-form', 'method' => 'post']) }}
       <input type="hidden" name="topic_id" value="{{ $topic->id }}" />
 
         @include('topics.partials.composing_help_block')
