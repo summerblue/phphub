@@ -18,8 +18,10 @@
 
       @include('layouts.partials.errors')
 
-      @if (isset($topic)) {{ Form::model($topic, ['route' => ['topics.update', $topic->id], 'method' => 'patch']) }}
-      @else {{ Form::open(['route' => 'topics.store', 'method' => 'post']) }}
+      @if (isset($topic))
+        {{ Form::model($topic, ['route' => ['topics.update', $topic->id], 'id' => 'topic-create-form', 'method' => 'patch']) }}
+      @else
+        {{ Form::open(['route' => 'topics.store','id' => 'topic-create-form', 'method' => 'post']) }}
       @endif
 
         <div class="form-group">

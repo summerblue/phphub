@@ -317,6 +317,15 @@
                     localforage.setItem('reply_content', $(this).val());
                 });
             })
+
+            // Clear Local Storage on submit
+            $("#topic-create-form").submit(function(event){
+                localforage.removeItem('topic_create_content');
+                localforage.removeItem('topic-title');
+            });
+            $("#reply-form").submit(function(event){
+                localforage.removeItem('reply_content');
+            });
         },
 
         /**
