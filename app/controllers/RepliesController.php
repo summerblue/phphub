@@ -32,6 +32,8 @@ class RepliesController extends \BaseController implements CreatorListener
 
         Flash::success(lang('Operation succeeded.'));
 
+        $reply->topic->generateLastReplyUserInfo();
+
         return Redirect::route('topics.show', $reply->topic_id);
     }
 

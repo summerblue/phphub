@@ -65,6 +65,14 @@ class Topic extends \Eloquent
 		return $this->where('is_wiki', '=', true)->orderBy('created_at', 'desc')->get();
 	}
 
+    public function generateLastReplyUserInfo()
+    {
+        $lastReply = $this->replies()->recent()->first();
+
+        $this->last_reply_user_id = $lastReply ? $lastReply->user_id : 0;
+        $this->save();
+    }
+
 	public function getRepliesWithLimit($limit = 30)
 	{
 		return $this->replies()
