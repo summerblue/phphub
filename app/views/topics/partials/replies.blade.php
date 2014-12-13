@@ -22,13 +22,13 @@
         <a name="reply{{ $reply->id }}" class="anchor" href="#reply{{ $reply->id }}" aria-hidden="true">#{{ $reply->id }}</a>
 
         <span class="operate pull-right">
-          <a data-method="post" id="reply-up-vote-{{ $reply->id }}" href="{{ route('replies.vote', $reply->id) }}" title="{{ lang('Vote Up') }}">
+          <a data-method="post" id="reply-up-vote-{{ $reply->id }}" href="javascript:void(0);" data-url="{{ route('replies.vote', $reply->id) }}" title="{{ lang('Vote Up') }}">
              <i class="fa fa-thumbs-o-up" style="font-size:14px;"></i> {{ $reply->vote_count ?: '' }}
           </a>
           <span> •  </span>
 
           @if ($currentUser && ($currentUser->can("manage_topics") || $currentUser->id == $reply->user_id) )
-            <a id="reply-delete-{{ $reply->id }}" data-method="delete"  href="{{ route('replies.destroy', [$reply->id]) }}" title="{{ lang('Delete') }}">
+            <a id="reply-delete-{{ $reply->id }}" data-method="delete"  href="javascript:void(0);" data-url="{{ route('replies.destroy', [$reply->id]) }}" title="{{ lang('Delete') }}">
                 <i class="fa fa-trash-o"></i>
             </a>
             <span> •  </span>
