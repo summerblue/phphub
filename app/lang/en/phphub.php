@@ -97,6 +97,7 @@ return array (
     'publish_markdown' => 'Support for Markdown format, <strong>**Strong**</strong>、~~Line Delete~~、<code>`Quick Code`</code>',
     'publish_emoji' => 'Support Emoji see <a href="http://www.emoji-cheat-sheet.com" target="_blank" rel="nofollow">Emoji cheat sheet</a>',
     'publish_at_user' => '@name link to the user, and send him a notification in the meantime.',
+    'publish_image' => 'Upload image, support both `drag and drop` and `pasting from the clipboard`, format limited to - jpg, png, gif',
     'avatar_notice' => 'Please go to the <a href="https://github.com/settings/profile" target="_blank">Github Profile Page</a> to change your avatar, it might take some time for the change to take effect.',
     'twitter_placeholder' => 'Your Twitter account, no need to prefix https://twitter.com/',
     'personal_website_placebolder' => 'Your Personal website, no need to prefix http://',

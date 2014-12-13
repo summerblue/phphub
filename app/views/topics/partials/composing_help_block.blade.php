@@ -4,5 +4,6 @@
       <li>{{ lang('publish_markdown') }}</li>
       <li>{{ lang('publish_emoji') }}</li>
       <li>{{ lang('publish_at_user') }}</li>
+      <li>{{ lang('publish_image') }}</li>
     </ul>
 </div>
