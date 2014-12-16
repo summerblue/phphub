@@ -186,3 +186,9 @@ Route::post('upload_image', [
     'uses' => 'TopicsController@uploadImage',
     'before' => 'auth'
 ]);
+
+// Health Checking
+Route::get('heartbeat', function()
+{
+    return Node::first();
+});
