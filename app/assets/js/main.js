@@ -39,6 +39,7 @@
             self.initReplyOnPressKey();
             self.initDeleteForm();
             self.initInlineAttach();
+            self.snowing();
         },
 
         /**
@@ -340,6 +341,18 @@
                 onUploadedFile: function(response) {
                     setTimeout(self.runPreview, 200);
                 },
+            });
+        },
+
+        /**
+         * Snowing around the world
+         */
+        snowing: function() {
+            $('#body').snowfall({
+                flakeCount: 100,
+                minSize: 2,
+                maxSize:5,
+                round: true
             });
         },
 
