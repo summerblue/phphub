@@ -25,6 +25,16 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
     protected $hidden     = ['github_id'];
     protected $guarded    = ['id', 'notifications', 'is_banned'];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function($topic)
+        {
+            SiteStatus::newUser();
+        });
+    }
+
     public function favoriteTopics()
     {
         return $this->belongsToMany('Topic', 'favorites')->withTimestamps();

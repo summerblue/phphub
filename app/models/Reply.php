@@ -9,6 +9,16 @@ class Reply extends \Eloquent {
 		'body_original',
 	];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function($topic)
+        {
+            SiteStatus::newReply();
+        });
+    }
+
 	public function votes()
 	{
 		return $this->morphMany('Vote', 'votable');

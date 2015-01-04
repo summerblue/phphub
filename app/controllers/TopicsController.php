@@ -183,6 +183,8 @@ class TopicsController extends \BaseController implements CreatorListener
             }
 
             $data['filename'] = getUserStaticDomain() . $folderName .'/'. $safeName;
+
+            SiteStatus::newImage();
         }
         else
         {
