@@ -39,6 +39,7 @@
             self.initReplyOnPressKey();
             self.initDeleteForm();
             self.initInlineAttach();
+            self.snowing();
         },
 
         /**
@@ -341,6 +342,25 @@
                     setTimeout(self.runPreview, 200);
                 },
             });
+        },
+
+        /**
+         * Snowing around the world
+         */
+        snowing: function() {
+
+            // only show snow in Christmas
+            var today = new Date()
+            var christmas = new Date(today.getFullYear(), 11, 25) // Month is 0-11 in JavaScript
+            if (today.getMonth() == 11 && (today.getDate() > 22 && today.getDate() < 30))
+            {
+                $('#body').snowfall({
+                    flakeCount: 100,
+                    minSize: 2,
+                    maxSize:5,
+                    round: true
+                });
+            }
         },
 
     }

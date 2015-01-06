@@ -25,6 +25,16 @@ class Topic extends \Eloquent
 		'updated_at'
 	];
 
+    public static function boot()
+    {
+        parent::boot();
+
+        static::created(function($topic)
+        {
+            SiteStatus::newTopic();
+        });
+    }
+
 	public function votes()
 	{
 		return $this->morphMany('Vote', 'votable');

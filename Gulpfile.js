@@ -28,6 +28,7 @@ var paths = {
             'app/assets/js/ekko-lightbox.js',
             'app/assets/js/localforage.min.js',
             'app/assets/js/jquery.inline-attach.min.js',
+            'app/assets/js/snowfall.jquery.min.js',
             'app/assets/js/main.js'
         ],
         styles: [
