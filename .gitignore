@@ -8,7 +8,7 @@ composer.phar
 .DS_Store
 Thumbs.db
 
-tests/_output/*
+/tests
 
 Envoy.blade.php
 
@@ -16,3 +16,6 @@ public/assets/css/*
 public/assets/js/*
 app/assets/css/dist/*
 asset_manifest.json
+/.vagrant
+/Homestead
+Vagrantfile
