@@ -44,17 +44,21 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 Bugsnag::setErrorReportingLevel(E_ALL & ~E_NOTICE);
 Bugsnag::setBeforeNotifyFunction("before_bugsnag_notify");
 
-function before_bugsnag_notify($error) {
-    // Do any custom error handling here
+if(!function_exists('before_bugsnag_notify'))
+{
+    function before_bugsnag_notify($error) {
+        // Do any custom error handling here
 
-    // Also add some meta data to each error
-    if (Auth::check()) {
-        $user = Auth::user()->toArray();
-        $error->setMetaData(array(
-            "user" => $user
-        ));
-    }
+        // Also add some meta data to each error
+        if (Auth::check()) {
+            $user = Auth::user()->toArray();
+            $error->setMetaData(array(
+                "user" => $user
+            ));
+        }
+    }    
 }
+
 
 /*
 |--------------------------------------------------------------------------
