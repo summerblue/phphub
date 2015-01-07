@@ -1,19 +1,28 @@
 <?php namespace Phphub\Presenters;
 
 use Laracasts\Presenter\Presenter;
-use Input, URL;
+use Input, URL, Request;
 
 class TopicPresenter extends Presenter
 {
     public function topicFilter($filter)
     {
-        $query_append = '';
-        $query = Input::except('filter', '_pjax');
-        if ($query)
+        $node_id = Request::segment(2);
+        $node_append = '';
+        if($node_id)
         {
-            $query_append = '&'.http_build_query($query);
+            $link = URL::to('nodes', $node_id) . '?filter=' . $filter;
         }
-        $link = URL::to('topics') . '?filter=' . $filter . $query_append;
+        else
+        {
+            $query_append = '';
+            $query = Input::except('filter', '_pjax');
+            if ($query)
+            {
+                $query_append = '&'.http_build_query($query);
+            }
+            $link = URL::to('topics') . '?filter=' . $filter . $query_append . $node_append;
+        }
         $selected = Input::get('filter') ? (Input::get('filter') == $filter ? ' class="selected"':'') : '';
 
         return 'href="' . $link . '"' . $selected;
