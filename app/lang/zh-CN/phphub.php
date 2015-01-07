@@ -122,4 +122,6 @@ return array(
     'Create New Topic' => '创建新主题',
     'Can not vote your feedback' => '不允许给自己点赞',
     'Recomended Resources' => '推荐资源',
+    'Stick' => '置顶',
+    'Recommended' => '推荐',
 );

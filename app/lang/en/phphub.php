@@ -122,4 +122,6 @@ return array (
     'Learning Resources' => 'Learning Resources',
     'Create New Topic' => 'Create a New Topic',
     'Can not vote your feedback' => 'You can\'t vote on your own feedback.',
+    'Stick' => 'Stick',
+    'Recommended' => 'Recommended',
 );

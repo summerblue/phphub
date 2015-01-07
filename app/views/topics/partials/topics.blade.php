@@ -19,12 +19,18 @@
         <div class="infos">
 
           <div class="media-heading">
+
+            @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
+                <span class="label label-warning">{{ lang('Stick') }}</span>
+            @endif
+
+            @if ($topic->is_excellent && !Input::get('filter') && Route::currentRouteName() != 'home' )
+                <span class="label label-success">{{ lang('Recommended') }}</span>
+            @endif
+
             <a href="{{ route('topics.show', [$topic->id]) }}" title="{{{ $topic->title }}}">
                 {{{ $topic->title }}}
             </a>
-            @if ($topic->order > 0 && !Input::get('filter') && Route::currentRouteName() != 'home' )
-                <i class="fa fa-thumb-tack" style="color:#969595;padding-left: 2px;"></i>
-            @endif
           </div>
           <div class="media-body meta">
 
