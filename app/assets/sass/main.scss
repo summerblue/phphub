@@ -24,11 +24,15 @@ body {
 }
 
 .topic-list {
+  .label {
+    position: inherit;
+    font-size: 11px;
+  }
   a, a:focus, a:hover{
     color: #555;
   }
   a:visited {
-    color: #aaa;
+    color: #888;
   }
   .list-group-item {
     height: 71px;
