@@ -10,9 +10,6 @@
             });
             $(document).on('pjax:end', function() {
                 NProgress.done();
-            });
-            $(document).on('pjax:complete', function() {
-                NProgress.done();
                 self.siteBootUp();
             });
 
