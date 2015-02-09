@@ -15,7 +15,7 @@ class TopicCreator
 
     public function create(CreatorListener $observer, $data)
     {
-        $data['user_id'] = Auth::user()->id;
+        $data['user_id'] = Auth::id();
         $data['created_at'] = Carbon::now()->toDateTimeString();
         $data['updated_at'] = Carbon::now()->toDateTimeString();
 
