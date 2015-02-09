@@ -52,7 +52,7 @@ class TopicPresenter extends Presenter
 
     public function voteState($vote_type)
     {
-        if ($this->votes()->ByWhom(Auth::user()->id)->WithType($vote_type)->count())
+        if ($this->votes()->ByWhom(Auth::id())->WithType($vote_type)->count())
         {
             return 'active';
         }

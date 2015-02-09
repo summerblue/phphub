@@ -42,7 +42,7 @@ class BaseController extends Controller {
 
 	public function authorOrAdminPermissioinRequire($author_id)
 	{
-		if (! Entrust::can('manage_topics') && $author_id != Auth::user()->id)
+		if (! Entrust::can('manage_topics') && $author_id != Auth::id())
 		{
 			throw new ManageTopicsException("permission-required");
 		}
