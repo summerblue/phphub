@@ -19,7 +19,7 @@ class ReplyCreator
 
     public function create(CreatorListener $observer, $data)
     {
-        $data['user_id'] = Auth::user()->id;
+        $data['user_id'] = Auth::id();
         $data['body'] = $this->mentionParser->parse($data['body']);
 
         $markdown = new Markdown;
@@ -37,7 +37,7 @@ class ReplyCreator
 
         // Add the reply user
         $topic = Topic::find($data['topic_id']);
-        $topic->last_reply_user_id = Auth::user()->id;
+        $topic->last_reply_user_id = Auth::id();
         $topic->reply_count++;
         $topic->updated_at = Carbon::now()->toDateTimeString();
         $topic->save();
