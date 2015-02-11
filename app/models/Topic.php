@@ -165,6 +165,10 @@ class Topic extends \Eloquent
         return $query->where('is_excellent', '=', true);
     }
 
+	public function getTitleAttribute($value){
+		return auto_space($value);
+	}
+
     public static function makeExcerpt($body)
     {
         $html = $body;
