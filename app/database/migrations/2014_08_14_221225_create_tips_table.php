@@ -39,7 +39,7 @@ class CreateTipsTable extends Migration {
 			['body' => '<a href="http://packalyst.com/" target="_blank">Packalyst</a> 上可以了解更多 Laravel 的 package.'],
 			['body' => '<a href="http://userscape.com/laracon/2014/" target="_blank">Laracon 2014</a> 这里是 Laracon NYC 2014 的现场录像'],
 			['body' => '<a href="http://cheats.jesse-obrien.ca/" target="_blank">Laravel Cheat Sheet</a> 这里是 Laravel 的 Cheat Sheet.'],
-			['body' => 'laravel.com/docs 没事多读读文档, 每一次都可以收获不少.'],
+			['body' => '<a href="http://laravel-china.org/" target="_blank">http://laravel-china.org</a> 没事多读读文档, 每一次都可以收获不少.'],
 			['body' => 'Laravel 在 HHVM 运行单元测试 100% 通过.'],
 			['body' => 'Learn something about everything and everything about something.'],
 			['body' => 'Any fool can write code that a computer can understand. Good programmers write code that humans can understand.'],
