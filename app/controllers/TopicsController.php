@@ -62,6 +62,20 @@ class TopicsController extends \BaseController implements CreatorListener
         return View::make('topics.create_edit', compact('topic', 'nodes', 'node'));
     }
 
+    public function append($id)
+    {
+        $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
+
+        $markdown = new Markdown;
+        $content = $markdown->convertMarkdownToHtml(Input::get('content'));
+
+        $append = Append::create(['topic_id' => $topic->id, 'content' => $content]);
+
+        Flash::success(lang('Operation succeeded.'));
+        return Redirect::route('topics.show', $topic->id);
+    }
+
     public function update($id)
     {
         $topic = Topic::findOrFail($id);

@@ -45,6 +45,18 @@
       @include('topics.partials.ribbon')
     </div>
 
+    @foreach ($topic->appends as $index => $append)
+
+        <div class="appends">
+            <span class="meta">{{ lang('Append') }} {{ $index }} &nbsp;·&nbsp; <abbr title="{{ $topic->updated_at }}" class="timeago">{{ $topic->updated_at }}</abbr></span>
+            <div class="sep5"></div>
+            <div class="markdown-reply append-content">
+                {{ $append->content }}
+            </div>
+        </div>
+
+    @endforeach
+
     @include('topics.partials.topic_operate')
   </div>
 

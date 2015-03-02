@@ -124,4 +124,10 @@ return array (
     'Can not vote your feedback' => 'You can\'t vote on your own feedback.',
     'Stick' => 'Stick',
     'Recommended' => 'Recommended',
+
+    'Append' => 'Append',
+    'Append Content' => 'Append Content',
+    'append_notice' => 'You can append content to a topic, and it will notify everyone who are involve in this conversation.',
+    'Submit' => 'Submit',
+    'Close' => 'Close',
 );

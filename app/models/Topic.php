@@ -65,9 +65,14 @@ class Topic extends \Eloquent
 		return $this->belongsTo('User', 'last_reply_user_id');
 	}
 
-	public function replies()
+    public function replies()
+    {
+        return $this->hasMany('Reply');
+    }
+
+	public function appends()
 	{
-		return $this->hasMany('Reply');
+		return $this->hasMany('Append');
 	}
 
 	public function getWikiList()

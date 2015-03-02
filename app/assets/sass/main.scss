@@ -929,3 +929,18 @@ div#preview-box {
     margin-bottom: 80px;
     background: rgb(250, 245, 235);
 }
+
+.appends {
+  background-color: #FFFAE2;
+  border-left: 5px solid #F2C69A;
+  padding: 10px;
+  font-size: 12px;
+  line-height: 120%;
+  text-align: left;
+  border-bottom: 1px dotted #E8E8E8;
+
+  .append-content {
+    padding-top: 10px;
+    margin-bottom: -10px;
+  }
+}

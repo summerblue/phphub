@@ -143,6 +143,11 @@ Route::group(['before' => 'auth'], function(){
 		'as' => 'replies.vote',
 		'uses' => 'RepliesController@vote',
 	]);
+
+    Route::post('/topics/{id}/append', [
+        'as' => 'topics.append',
+        'uses' => 'TopicsController@append',
+    ]);
 });
 
 # ------------------ Admin Route ------------------------

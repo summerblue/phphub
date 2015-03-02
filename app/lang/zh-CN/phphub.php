@@ -124,4 +124,10 @@ return array(
     'Recomended Resources' => '推荐资源',
     'Stick' => '置顶',
     'Recommended' => '推荐',
+
+    'Append' => '附言',
+    'Append Content' => '添加附言',
+    'append_notice' => '附加内容, 使用此功能的话, 会给所有参加过讨论的人发送提醒.',
+    'Submit' => '提交',
+    'Close' => '关闭',
 );
