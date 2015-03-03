@@ -63,7 +63,8 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         {
             return Redirect::route('login');
         }
-        $githubUser = array_merge(Session::get('userGithubData'), Input::only('name', 'github_name'));
+        $githubUser = array_merge(Session::get('userGithubData'), Input::only('name', 'github_name', 'email'));
+        unset($githubUser['emails']);
         return App::make('Phphub\Creators\UserCreator')->create($this, $githubUser);
     }
 
