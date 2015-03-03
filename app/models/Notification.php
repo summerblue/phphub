@@ -34,14 +34,14 @@ class Notification extends \Eloquent
 
 	/**
 	 * Create a notification
-	 * @param  [type] $type     currently have 'at', 'new_reply', 'attention'
+	 * @param  [type] $type     currently have 'at', 'new_reply', 'attention', 'append'
 	 * @param  User   $fromUser come from who
 	 * @param  array   $users   to who, array of users
 	 * @param  Topic  $topic    cuurent context
 	 * @param  Reply  $reply    the content
 	 * @return [type]           none
 	 */
-	public static function batchNotify($type, User $fromUser, $users, Topic $topic, Reply $reply = null)
+	public static function batchNotify($type, User $fromUser, $users, Topic $topic, Reply $reply = null, $content = null)
 	{
 		$nowTimestamp = Carbon::now()->toDateTimeString();
 		$data = [];
@@ -55,8 +55,8 @@ class Notification extends \Eloquent
 				'from_user_id' => $fromUser->id,
 				'user_id'      => $toUser->id,
 				'topic_id'     => $topic->id,
-				'reply_id'     => $reply->id,
-				'body'         => $reply->body,
+				'reply_id'     => $content ?: $reply->id,
+				'body'         => $content ?: $reply->body,
 				'type'         => $type,
 				'created_at'   => $nowTimestamp,
 				'updated_at'   => $nowTimestamp

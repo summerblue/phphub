@@ -130,4 +130,6 @@ return array(
     'append_notice' => '附加内容, 使用此功能的话, 会给所有参加过讨论的人发送提醒.',
     'Submit' => '提交',
     'Close' => '关闭',
+    'Attented topic has new update:' => '关注的话题有新附言',
+    'Commented topic has new update:' => '参与的话题有新附言',
 );

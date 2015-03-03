@@ -130,4 +130,7 @@ return array (
     'append_notice' => 'You can append content to a topic, and it will notify everyone who are involve in this conversation.',
     'Submit' => 'Submit',
     'Close' => 'Close',
+
+    'Attented topic has new update:' => 'Attented topic has new update:',
+    'Commented topic has new update:' => 'Commented topic has new update:',
 );

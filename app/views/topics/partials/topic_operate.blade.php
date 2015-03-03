@@ -87,9 +87,9 @@
         <h4 class="modal-title" id="exampleModalLabel">{{ lang('Append Content') }}</h4>
       </div>
 
-      <div class="modal-body">
+     {{ Form::open(['route' => ['topics.append', $topic->id],'method' => 'post']) }}
 
-         {{ Form::open(['route' => ['topics.append', $topic->id],'method' => 'post']) }}
+        <div class="modal-body">
 
           <div class="alert alert-warning">
               {{ lang('append_notice') }}
@@ -109,7 +109,7 @@
             <button type="submit" class="btn btn-primary">{{ lang('Submit') }}</button>
           </div>
 
-          {{ Form::close() }}
+      {{ Form::close() }}
 
     </div>
   </div>

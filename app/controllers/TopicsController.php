@@ -72,6 +72,8 @@ class TopicsController extends \BaseController implements CreatorListener
 
         $append = Append::create(['topic_id' => $topic->id, 'content' => $content]);
 
+        App::make('Phphub\Notification\Notifier')->newAppendNotify(Auth::user(), $topic, $append);
+
         Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', $topic->id);
     }
