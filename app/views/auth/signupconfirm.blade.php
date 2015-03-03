@@ -36,7 +36,7 @@
 
                 <div class="form-group {{{ $errors->has('email') ? 'has-error' : '' }}}">
                     <label class="control-label" for="email">{{ lang('Email') }}</label>
-                    {{ Form::text('email', ($githubUser['email'] ?: ''), ['class' => 'form-control', 'readonly'=>'readonly']) }}
+                    {{ Form::select('email', $githubUser['emails'], $githubUser['email'], ['class' => 'form-control']) }}
                     {{ $errors->first('email', '<span class="help-block">:message</span>') }}
                 </div>
 

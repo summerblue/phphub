@@ -15,7 +15,8 @@ class GithubUserDataReader
         $github = OAuth::consumer('GitHub');
         $oauthTokenObject = $github->requestAccessToken($code);
         $githubData = json_decode($github->request('user'), true);
-        $githubData['email'] = last(json_decode($github->request('user/emails'), true));
+        $emails = json_decode($github->request('user/emails'), true);
+        $githubData['emails'] = array_combine($emails, $emails);
         return $githubData;
     }
 
@@ -25,6 +26,7 @@ class GithubUserDataReader
             'id'         => $data['id'],
             'name'       => $data['login'],
             'email'      => $data['email'],
+            'emails'      => $data['emails'],
             'github_id'  => $data['id'],
             'github_url' => $data['html_url'],
             'image_url'  => $data['avatar_url'],
