@@ -19,3 +19,4 @@ Artisan::add(new ReplyMarkdownCommand);
 
 // Backing up database
 Artisan::add(new DatabaseBackupCommand);
+Artisan::add(new OpcacheClearCommand);
