@@ -6,21 +6,21 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"laracasts/commander": "~1.0",
-        "laracasts/validation": "~1.0",
-        "laracasts/flash": "~1.0",
-        "artdarek/oauth-4-laravel": "dev-master",
-        "laracasts/presenter": "0.1.*",
-        "itsgoingd/clockwork": "1.*",
-        "zizaco/entrust": "1.2.*@dev",
-        "thujohn/rss": "dev-master",
-        "erusev/parsedown": "~1.1",
-        "nickcernis/html-to-markdown": "2.1.*",
-        "mews/purifier": "dev-master",
-        "summerblue/turbo": "0.3.*",
-        "summerblue/asset-manager": "0.2.*",
-        "heybigname/backup-manager": "0.3.*@dev",
-        "dropbox/dropbox-sdk": "1.1.*",
-        "intervention/image": "2.*",
+		"laracasts/validation": "~1.0",
+		"laracasts/flash": "~1.0",
+		"artdarek/oauth-4-laravel": "dev-master",
+		"laracasts/presenter": "0.1.*",
+		"itsgoingd/clockwork": "1.*",
+		"zizaco/entrust": "1.2.*@dev",
+		"thujohn/rss": "dev-master",
+		"erusev/parsedown": "~1.1",
+		"nickcernis/html-to-markdown": "2.1.*",
+		"mews/purifier": "dev-master",
+		"summerblue/turbo": "0.3.*",
+		"summerblue/asset-manager": "0.2.*",
+		"heybigname/backup-manager": "0.3.*@dev",
+		"dropbox/dropbox-sdk": "1.1.*",
+		"intervention/image": "2.*",
 		"bugsnag/bugsnag-laravel": "1.*"
 	},
 	"require-dev": {
@@ -30,16 +30,16 @@
 		"laracasts/testdummy": "~1.0",
 		"fzaninotto/faker": "1.4.*"
 	},
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/summerblue/asset-manager"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/summerblue/Turbo"
-        }
-    ],
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/summerblue/asset-manager"
+		},
+		{
+			"type": "vcs",
+			"url": "https://github.com/summerblue/Turbo"
+		}
+	],
 	"autoload": {
 		"classmap": [
 			"app/commands",
@@ -50,12 +50,12 @@
 			"app/tests/TestCase.php",
 			"tests/unit/UnitTestCase.php"
 		],
-        "files": [
-            "app/helpers.php"
-        ],
-        "psr-4": {
-            "Phphub\\": "app/Phphub"
-        }
+		"files": [
+			"app/helpers.php"
+		],
+		"psr-4": {
+			"Phphub\\": "app/Phphub"
+		}
 	},
 	"scripts": {
 		"post-install-cmd": [
