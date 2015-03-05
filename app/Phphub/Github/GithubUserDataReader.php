@@ -15,6 +15,7 @@ class GithubUserDataReader
         $github = OAuth::consumer('GitHub');
         $oauthTokenObject = $github->requestAccessToken($code);
         $githubData = json_decode($github->request('user'), true);
+        $githubData['email'] = !isset($githubData['email']) ?: last(json_decode($github->request('user/emails'), true));
         $emails = json_decode($github->request('user/emails'), true);
         $githubData['emails'] = array_combine($emails, $emails);
         return $githubData;
