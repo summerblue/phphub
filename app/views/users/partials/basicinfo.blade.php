@@ -41,7 +41,7 @@
   <dt><label>{{ lang('Blog') }}:</label></dt>
   <dd>
     <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
-      <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 25) }}}
+      <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 22) }}}
     </a>
   </dd>
   @endif
@@ -63,7 +63,7 @@
   </a>
 @endif
 
-@if ($currentUser && Entrust::can('manage_users'))
+@if ($currentUser && Entrust::can('manage_users') && ($currentUser->id != $user->id))
   <a data-method="post" class="btn btn-{{ $user->is_banned ? 'warning' : 'danger' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.blocking', $user->id) }}" id="user-edit-button" onclick=" return confirm('{{ lang('Are you sure want to block this User?') }}')">
     <i class="fa fa-times"></i> {{ $user->is_banned ? lang('Unblock User') : lang('Block User') }}
   </a>
