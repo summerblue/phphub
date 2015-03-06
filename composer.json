@@ -21,7 +21,8 @@
 		"heybigname/backup-manager": "0.3.*@dev",
 		"dropbox/dropbox-sdk": "1.1.*",
 		"intervention/image": "2.*",
-		"bugsnag/bugsnag-laravel": "1.*"
+		"bugsnag/bugsnag-laravel": "1.*",
+		"roumen/sitemap": "2.4.*"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

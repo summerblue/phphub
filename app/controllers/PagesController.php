@@ -75,4 +75,12 @@ class PagesController extends \BaseController {
 
 	    return Response::make($feed, 200, array('Content-Type' => 'text/xml'));
 	}
+
+	/**
+	 * Sitemap function
+	 */
+	public function sitemap()
+	{
+		return App::make('Phphub\Sitemap\Builder')->render();
+	}
 }

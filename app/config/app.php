@@ -153,6 +153,9 @@ return array(
         'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
         'Intervention\Image\ImageServiceProvider',
         'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
+        'Roumen\Sitemap\SitemapServiceProvider',
+        'Phphub\Sitemap\SitemapServiceProvider',
+
     ),
 
     /*

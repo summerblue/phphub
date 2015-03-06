@@ -30,6 +30,9 @@ Route::get('/feed', [
 	'uses' => 'PagesController@feed'
 ]);
 
+Route::get('/sitemap', 'PagesController@sitemap');
+Route::get('/sitemap.xml', 'PagesController@sitemap');
+
 # ------------------ User stuff ------------------------
 
 Route::get('/users/{id}/replies', [
