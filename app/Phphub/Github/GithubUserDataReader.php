@@ -17,6 +17,7 @@ class GithubUserDataReader
         $githubData = json_decode($github->request('user'), true);
         $emails = json_decode($github->request('user/emails'), true);
         $githubData['emails'] = array_combine($emails, $emails);
+        $githubData['email'] = !isset($githubData['email']) ?: last($emails);
         return $githubData;
     }
 
