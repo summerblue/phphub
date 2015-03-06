@@ -63,7 +63,7 @@
   </a>
 @endif
 
-@if ($currentUser && Entrust::can('manage_users'))
+@if ($currentUser && Entrust::can('manage_users') && ($currentUser->id != $user->id))
   <a data-method="post" class="btn btn-{{ $user->is_banned ? 'warning' : 'danger' }} btn-block" href="javascript:void(0);" data-url="{{ route('users.blocking', $user->id) }}" id="user-edit-button" onclick=" return confirm('{{ lang('Are you sure want to block this User?') }}')">
     <i class="fa fa-times"></i> {{ $user->is_banned ? lang('Unblock User') : lang('Block User') }}
   </a>
