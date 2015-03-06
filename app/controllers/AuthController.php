@@ -74,6 +74,9 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
         {
             return Redirect::route('home');
         }
+
+        //force logout
+        Auth::logout();
         return View::make('auth.userbanned');
     }
 
