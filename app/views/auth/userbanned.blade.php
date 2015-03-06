@@ -1,7 +1,7 @@
 @extends('layouts.default')
 
 @section('title')
-{{ lang('Permission Deny') }}
+{{ lang('Operation Deny') }}
 @stop
 
 @section('content')
