@@ -41,7 +41,7 @@
   <dt><label>{{ lang('Blog') }}:</label></dt>
   <dd>
     <a href="http://{{ $user->personal_website }}" rel="nofollow" target="_blank" class="url">
-      <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 25) }}}
+      <i class="fa fa-globe"></i> {{{ str_limit($user->personal_website, 22) }}}
     </a>
   </dd>
   @endif
