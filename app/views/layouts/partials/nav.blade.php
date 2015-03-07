@@ -10,6 +10,7 @@
         <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ lang('Wiki') }}</a></li>
         <li class="{{ (Request::is('users*') ? ' active' : '') }}"><a href="{{ route('users.index') }}">{{ lang('Users') }}</a></li>
         <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ lang('About') }}</a></li>
+        <li><a href="http://laravel-china.org/" target="_blank">{{ lang('Document') }}</a></li>
       </ul>
 
       <div class="navbar-right">
