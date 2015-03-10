@@ -4,16 +4,16 @@ use Phphub\Core\CreatorListener;
 
 class RepliesController extends \BaseController implements CreatorListener
 {
-	public function __construct()
+    public function __construct()
     {
         parent::__construct();
         $this->beforeFilter('auth');
     }
 
-	public function store()
-	{
-		return App::make('Phphub\Creators\ReplyCreator')->create($this, Input::except('_token'));
-	}
+    public function store()
+    {
+        return App::make('Phphub\Creators\ReplyCreator')->create($this, Input::except('_token'));
+    }
 
     public function vote($id)
     {
@@ -45,7 +45,7 @@ class RepliesController extends \BaseController implements CreatorListener
 
     public function creatorFailed($errors)
     {
-    	Flash::error(lang('Operation failed.'));
+        Flash::error(lang('Operation failed.'));
         return Redirect::back();
     }
 
@@ -54,5 +54,4 @@ class RepliesController extends \BaseController implements CreatorListener
         Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', array(Input::get('topic_id'), '#reply'.$reply->id));
     }
-
 }

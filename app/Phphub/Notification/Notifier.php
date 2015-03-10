@@ -3,7 +3,13 @@
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
 use Phphub\Notification\Mention;
-use Reply, Auth, Topic, Notification, Carbon, User, Append;
+use Reply;
+use Auth;
+use Topic;
+use Notification;
+use Carbon;
+use User;
+use Append;
 
 class Notifier
 {
@@ -63,10 +69,8 @@ class Notifier
     public function removeDuplication($users)
     {
         $notYetNotifyUsers = [];
-        foreach ($users as $user)
-        {
-            if (!in_array($user->id, $this->notifiedUsers))
-            {
+        foreach ($users as $user) {
+            if (!in_array($user->id, $this->notifiedUsers)) {
                 $notYetNotifyUsers[] = $user;
                 $this->notifiedUsers[] = $user->id;
             }

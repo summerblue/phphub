@@ -1,7 +1,9 @@
 <?php namespace Phphub\Presenters;
 
 use Laracasts\Presenter\Presenter;
-use Input, URL, Request;
+use Input;
+use URL;
+use Request;
 
 class TopicPresenter extends Presenter
 {
@@ -9,16 +11,12 @@ class TopicPresenter extends Presenter
     {
         $node_id = Request::segment(2);
         $node_append = '';
-        if($node_id)
-        {
+        if ($node_id) {
             $link = URL::to('nodes', $node_id) . '?filter=' . $filter;
-        }
-        else
-        {
+        } else {
             $query_append = '';
             $query = Input::except('filter', '_pjax');
-            if ($query)
-            {
+            if ($query) {
                 $query_append = '&'.http_build_query($query);
             }
             $link = URL::to('topics') . '?filter=' . $filter . $query_append . $node_append;
@@ -32,8 +30,7 @@ class TopicPresenter extends Presenter
     {
         $filters = ['noreply', 'vote', 'excellent','recent'];
         $request_filter = Input::get('filter');
-        if ( in_array($request_filter, $filters) )
-        {
+        if (in_array($request_filter, $filters)) {
             return $request_filter;
         }
         return 'default';
@@ -41,25 +38,23 @@ class TopicPresenter extends Presenter
 
     public function haveDefaultNode($node, $snode)
     {
-        if (count($node) && ($snode && $node->id == $snode->id ))
+        if (count($node) && ($snode && $node->id == $snode->id)) {
             return true;
+        }
 
-        if (Input::old('node_id') && ( $snode && Input::old('node_id') == $snode->id))
+        if (Input::old('node_id') && ($snode && Input::old('node_id') == $snode->id)) {
             return true;
+        }
 
         return false;
     }
 
     public function voteState($vote_type)
     {
-        if ($this->votes()->ByWhom(Auth::id())->WithType($vote_type)->count())
-        {
+        if ($this->votes()->ByWhom(Auth::id())->WithType($vote_type)->count()) {
             return 'active';
-        }
-        else
-        {
+        } else {
             return;
         }
     }
-
 }

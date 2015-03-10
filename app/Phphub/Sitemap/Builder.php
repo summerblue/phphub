@@ -67,7 +67,6 @@ class Builder
     public function render()
     {
         if (!$this->sitemap->isCached()) {
-
             $this->addStaticPages();
 
             foreach ($this->getTypes() as $type => $config) {

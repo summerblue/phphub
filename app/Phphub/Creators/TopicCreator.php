@@ -2,7 +2,10 @@
 
 use Phphub\Forms\TopicCreationForm;
 use Phphub\Core\CreatorListener;
-use Topic, Auth, Carbon, Markdown;
+use Topic;
+use Auth;
+use Carbon;
+use Markdown;
 
 class TopicCreator
 {
@@ -28,8 +31,7 @@ class TopicCreator
         $this->form->validate($data);
 
         $topic = Topic::create($data);
-        if ( ! $topic)
-        {
+        if (! $topic) {
             return $observer->creatorFailed($topic->getErrors());
         }
 

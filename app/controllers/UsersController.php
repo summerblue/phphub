@@ -1,6 +1,7 @@
 <?php
 
-class UsersController extends \BaseController {
+class UsersController extends \BaseController
+{
 
 
     public function __construct(Topic $topic)

@@ -1,3 +1,5 @@
 <?php namespace Phphub\Exceptions;
 
-class ManageTopicsException extends \Exception{}
+class ManageTopicsException extends \Exception
+{
+}

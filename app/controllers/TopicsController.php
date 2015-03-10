@@ -170,10 +170,9 @@ class TopicsController extends \BaseController implements CreatorListener
 
     public function uploadImage()
     {
-        if ($file = Input::file('file'))
-        {
+        if ($file = Input::file('file')) {
             $allowed_extensions = ["png", "jpg", "gif"];
-            if ( $file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions) ){
+            if ($file->getClientOriginalExtension() && !in_array($file->getClientOriginalExtension(), $allowed_extensions)) {
                 return ['error' => 'You may only upload png, jpg or gif.'];
             }
 
@@ -185,8 +184,7 @@ class TopicsController extends \BaseController implements CreatorListener
             $file->move($destinationPath, $safeName);
 
             // If is not gif file, we will try to reduse the file size
-            if ($file->getClientOriginalExtension() != 'gif')
-            {
+            if ($file->getClientOriginalExtension() != 'gif') {
                 // open an image file
                 $img = Image::make($destinationPath . '/' . $safeName);
                 // prevent possible upsizing
@@ -201,9 +199,7 @@ class TopicsController extends \BaseController implements CreatorListener
             $data['filename'] = getUserStaticDomain() . $folderName .'/'. $safeName;
 
             SiteStatus::newImage();
-        }
-        else
-        {
+        } else {
             $data['error'] = 'Error while uploading file';
         }
         return $data;

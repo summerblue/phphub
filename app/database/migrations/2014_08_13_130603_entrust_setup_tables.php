@@ -72,7 +72,7 @@ class EntrustSetupTables extends Migration
         Schema::drop('permissions');
     }
 
-    public function setupFoundorAndBaseRolsPermission() 
+    public function setupFoundorAndBaseRolsPermission()
     {
         // Create Roles
         $founder = new Role;
@@ -91,7 +91,7 @@ class EntrustSetupTables extends Migration
             ]);
 
         // Attach Roles to user
-        $user->roles()->attach( $founder->id );
+        $user->roles()->attach($founder->id);
 
         // Create Permissions
         $manageTopics = new Permission;
@@ -105,8 +105,7 @@ class EntrustSetupTables extends Migration
         $manageUsers->save();
 
         // Assign Permission to Role
-        $founder->perms()->sync([$manageTopics->id,$manageUsers->id]);
+        $founder->perms()->sync([$manageTopics->id, $manageUsers->id]);
         $admin->perms()->sync([$manageTopics->id]);
-
     }
 }

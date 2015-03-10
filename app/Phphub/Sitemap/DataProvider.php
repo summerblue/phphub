@@ -1,7 +1,8 @@
 <?php namespace Phphub\Sitemap;
 
 use Illuminate\Routing\UrlGenerator;
-use Topic, Node;
+use Topic;
+use Node;
 
 class DataProvider
 {

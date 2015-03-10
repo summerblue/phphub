@@ -11,13 +11,11 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
     public function login()
     {
         // Redirect from Github
-        if (Input::has('code'))
-        {
+        if (Input::has('code')) {
             return App::make('Phphub\Github\GithubAuthenticator')->authByCode($this, Input::get('code'));
         }
 
-        if (!Session::has('url.intended'))
-        {
+        if (!Session::has('url.intended')) {
             Session::put('url.intended', URL::previous());
         }
         // redirect to the github authentication url
@@ -46,8 +44,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
      */
     public function create()
     {
-        if ( ! Session::has('userGithubData'))
-        {
+        if (! Session::has('userGithubData')) {
             return Redirect::route('login');
         }
         $githubUser = array_merge(Session::get('userGithubData'), Session::get('_old_input', []));
@@ -59,8 +56,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
      */
     public function store()
     {
-        if ( ! Session::has('userGithubData'))
-        {
+        if (! Session::has('userGithubData')) {
             return Redirect::route('login');
         }
         $githubUser = array_merge(Session::get('userGithubData'), Input::only('name', 'github_name', 'email'));
@@ -70,8 +66,7 @@ class AuthController extends BaseController implements GithubAuthenticatorListen
 
     public function userBanned()
     {
-        if (Auth::check() && !Auth::user()->is_banned)
-        {
+        if (Auth::check() && !Auth::user()->is_banned) {
             return Redirect::route('home');
         }
 

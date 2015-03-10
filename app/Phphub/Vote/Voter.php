@@ -1,6 +1,12 @@
 <?php namespace Phphub\Vote;
 
-use Reply, Auth, Topic, Vote, Carbon, User, Notification;
+use Reply;
+use Auth;
+use Topic;
+use Vote;
+use Carbon;
+use User;
+use Notification;
 
 class Voter
 {
@@ -67,5 +73,4 @@ class Voter
             Notification::notify('reply_upvote', Auth::user(), $reply->user, $reply->topic, $reply);
         }
     }
-
 }
