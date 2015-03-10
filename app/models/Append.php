@@ -2,7 +2,7 @@
 
 class Append extends \Eloquent
 {
-	protected $fillable = ['topic_id', 'content'];
+    protected $fillable = ['topic_id', 'content'];
 
     public function topic()
     {

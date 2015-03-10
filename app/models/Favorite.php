@@ -2,7 +2,7 @@
 
 class Favorite extends \Eloquent
 {
-	protected $fillable = [];
+    protected $fillable = [];
 
     public function post()
     {
@@ -16,8 +16,8 @@ class Favorite extends \Eloquent
 
     public static function isUserFavoritedTopic(User $user, Topic $topic)
     {
-    	return Favorite::where('user_id', $user->id)
-    					->where('topic_id', $topic->id)
-    					->first();
+        return Favorite::where('user_id', $user->id)
+                        ->where('topic_id', $topic->id)
+                        ->first();
     }
 }

@@ -3,35 +3,34 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddCoverFieldToLinksTable extends Migration {
+class AddCoverFieldToLinksTable extends Migration
+{
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::table('links', function(Blueprint $table)
-		{
-			$table->text('cover')->nullable();
-		});
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::table('links', function (Blueprint $table) {
+            $table->text('cover')->nullable();
+        });
 
         $this->initData();
-	}
+    }
 
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::table('links', function(Blueprint $table)
-		{
-			$table->dropColumn('cover');
-		});
-	}
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('links', function (Blueprint $table) {
+            $table->dropColumn('cover');
+        });
+    }
 
     public function initData()
     {
@@ -67,7 +66,6 @@ class AddCoverFieldToLinksTable extends Migration {
                 'updated_at' => Carbon::now()->toDateTimeString(),
             ]
         ];
-        DB::table('links')->insert( $links );
+        DB::table('links')->insert($links);
     }
-
 }

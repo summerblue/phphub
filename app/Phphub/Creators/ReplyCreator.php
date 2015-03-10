@@ -4,7 +4,13 @@ use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
 use Phphub\Notification\Mention;
 use Phphub\Notification\Notifier;
-use Reply, Auth, Topic, Notification, Carbon, App, Markdown;
+use Reply;
+use Auth;
+use Topic;
+use Notification;
+use Carbon;
+use App;
+use Markdown;
 
 class ReplyCreator
 {
@@ -30,8 +36,7 @@ class ReplyCreator
         $this->form->validate($data);
 
         $reply = Reply::create($data);
-        if ( ! $reply)
-        {
+        if (! $reply) {
             return $observer->creatorFailed($reply->getErrors());
         }
 

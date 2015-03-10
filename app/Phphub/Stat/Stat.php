@@ -1,6 +1,9 @@
 <?php namespace Phphub\Stat;
 
-use Topic, Reply, User, Cache;
+use Topic;
+use Reply;
+use User;
+use Cache;
 
 class Stat
 {
@@ -9,8 +12,7 @@ class Stat
 
     public function getSiteStat()
     {
-        return Cache::remember(self::CACHE_KEY, self::CACHE_MINUTES, function()
-        {
+        return Cache::remember(self::CACHE_KEY, self::CACHE_MINUTES, function () {
             $entity = new StatEntity();
             $entity->topic_count = Topic::count();
             $entity->reply_count = Reply::count();

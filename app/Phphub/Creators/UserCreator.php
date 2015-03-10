@@ -31,8 +31,7 @@ class UserCreator
     private function createValidUserRecord($observer, $data)
     {
         $user = User::create($data);
-        if ( ! $user)
-        {
+        if (! $user) {
             return $observer->userValidationError($user->getErrors());
         }
 
