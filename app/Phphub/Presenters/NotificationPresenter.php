@@ -7,8 +7,7 @@ class NotificationPresenter extends Presenter
 {
     public function lableUp()
     {
-        switch ($this->type)
-        {
+        switch ($this->type) {
             case 'new_reply':
             $lable = lang('Your topic have new reply:');
                 break;
@@ -47,6 +46,5 @@ class NotificationPresenter extends Presenter
                 break;
         }
         return $lable;
-
     }
 }

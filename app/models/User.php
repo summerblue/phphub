@@ -29,8 +29,7 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
     {
         parent::boot();
 
-        static::created(function($topic)
-        {
+        static::created(function ($topic) {
             SiteStatus::newUser();
         });
     }

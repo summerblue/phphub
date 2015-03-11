@@ -6,13 +6,10 @@ class AttentionsController extends \BaseController
     {
         $topic = Topic::find($id);
 
-        if (Attention::isUserAttentedTopic(Auth::user(), $topic))
-        {
+        if (Attention::isUserAttentedTopic(Auth::user(), $topic)) {
             $message = lang('Successfully remove attention.');
             Auth::user()->attentTopics()->detach($topic->id);
-        }
-        else
-        {
+        } else {
             $message = lang('Successfully_attention');
             Auth::user()->attentTopics()->attach($topic->id);
             Notification::notify('topic_attent', Auth::user(), $topic->user, $topic);

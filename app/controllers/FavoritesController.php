@@ -6,18 +6,13 @@ class FavoritesController extends \BaseController
     {
         $topic = Topic::find($id);
 
-        if (Favorite::isUserFavoritedTopic(Auth::user(), $topic))
-        {
+        if (Favorite::isUserFavoritedTopic(Auth::user(), $topic)) {
             Auth::user()->favoriteTopics()->detach($topic->id);
-        }
-        else
-        {
+        } else {
             Auth::user()->favoriteTopics()->attach($topic->id);
             Notification::notify('topic_favorite', Auth::user(), $topic->user, $topic);
         }
         Flash::success(lang('Operation succeeded.'));
         return Redirect::route('topics.show', $topic->id);
     }
-
-
 }

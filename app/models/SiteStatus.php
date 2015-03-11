@@ -2,10 +2,22 @@
 
 class SiteStatus extends \Eloquent
 {
-    public static function newUser(){ self::collect('new_user'); }
-    public static function newTopic(){ self::collect('new_topic'); }
-    public static function newReply(){ self::collect('new_reply'); }
-    public static function newImage(){ self::collect('new_image'); }
+    public static function newUser()
+    {
+        self::collect('new_user');
+    }
+    public static function newTopic()
+    {
+        self::collect('new_topic');
+    }
+    public static function newReply()
+    {
+        self::collect('new_reply');
+    }
+    public static function newImage()
+    {
+        self::collect('new_image');
+    }
 
     /**
      * Collection site status
@@ -17,8 +29,7 @@ class SiteStatus extends \Eloquent
     {
         $today = Carbon::now()->toDateString();
 
-        if (!$todayStatus = SiteStatus::where('day', $today)->first())
-        {
+        if (!$todayStatus = SiteStatus::where('day', $today)->first()) {
             $todayStatus = new SiteStatus;
             $todayStatus->day = $today;
         }
@@ -40,5 +51,4 @@ class SiteStatus extends \Eloquent
 
         $todayStatus->save();
     }
-
 }

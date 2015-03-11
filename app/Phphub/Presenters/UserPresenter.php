@@ -11,7 +11,7 @@ class UserPresenter extends Presenter
     public function gravatar($size = 80)
     {
         $github_id = $this->github_id;
-        $domainNumber = rand(0,3);
+        $domainNumber = rand(0, 3);
         return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
     }
 
@@ -19,5 +19,4 @@ class UserPresenter extends Presenter
     {
         return Route::currentRouteName() == $anchor ? 'active' : '';
     }
-
 }

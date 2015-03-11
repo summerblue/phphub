@@ -4,7 +4,8 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class OpcacheClearCommand extends Command {
+class OpcacheClearCommand extends Command
+{
 
     /**
      * The console command name.
@@ -37,17 +38,11 @@ class OpcacheClearCommand extends Command {
      */
     public function fire()
     {
-        if (function_exists('opcache_reset'))
-        {
+        if (function_exists('opcache_reset')) {
             opcache_reset();
             $this->info("Done Clear PHP Opcode Cache, have a good day.");
-        }
-        else
-        {
+        } else {
             $this->info("You haven't install PHP Opcode Cache yet, no need to run this command!");
         }
-
-
-
     }
 }
