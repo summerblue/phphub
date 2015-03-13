@@ -89,6 +89,12 @@ class Topic extends \Eloquent
 
     public function getRepliesWithLimit($limit = 30)
     {
+        // 默认显示最新的回复
+        if (is_null(\Input::get(\Paginator::getPageName()))) {
+            $latest_page = ceil($this->reply_count / $limit);
+            \Paginator::setCurrentPage($latest_page ?: 1);
+        }
+
         return $this->replies()
                     ->orderBy('vote_count', 'desc')
                     ->orderBy('created_at', 'asc')
