@@ -2,7 +2,7 @@ preset: psr2
 
 enabled:  
       - strict
-          - strict_param 
+      - strict_param 
 
 disabled:  
       - short_array_syntax
