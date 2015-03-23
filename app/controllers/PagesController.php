@@ -70,6 +70,7 @@ class PagesController extends \BaseController
                 'title' => $topic->title,
                 'description|cdata' => str_limit($topic->body, 200),
                 'link' => URL::route('topics.show', $topic->id),
+                'pubDate' => date('Y-m-d', strtotime($topic->created_at)),
                 ]);
         }
 
