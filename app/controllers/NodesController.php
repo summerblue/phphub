@@ -13,13 +13,6 @@ class NodesController extends \BaseController
         $this->topic = $topic;
     }
 
-    public function index()
-    {
-        $nodes = Node::all();
-
-        return View::make('nodes.index', compact('nodes'));
-    }
-
     public function create()
     {
         return View::make('nodes.create');
@@ -45,13 +38,6 @@ class NodesController extends \BaseController
         $topics = $this->topic->getNodeTopicsWithFilter($filter, $id);
 
         return View::make('topics.index', compact('topics', 'node'));
-    }
-
-    public function edit($id)
-    {
-        $node = Node::find($id);
-
-        return View::make('nodes.edit', compact('node'));
     }
 
     public function update($id)

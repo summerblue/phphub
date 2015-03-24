@@ -115,7 +115,7 @@ Route::get('oauth', 'AuthController@getOauth');
 
 # ------------------ Resource Route ------------------------
 
-Route::resource('nodes', 'NodesController');
+Route::resource('nodes', 'NodesController', ['except' => ['index', 'edit']]);
 Route::resource('topics', 'TopicsController');
 Route::resource('votes', 'VotesController');
 Route::resource('users', 'UsersController');

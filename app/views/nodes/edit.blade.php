@@ -1,1 +1,0 @@
-/home/vagrant/phphub/app/views/nodes/edit.blade.php
