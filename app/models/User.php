@@ -110,4 +110,35 @@ class User extends \Eloquent implements UserInterface, RemindableInterface
     {
         return 'remember_token';
     }
+
+    /**
+     * Cache github avatar to local
+     * @author Xuan
+     */
+    public function cacheAvatar()
+    {
+        //Download Image
+        $guzzle = new GuzzleHttp\Client();
+        $response = $guzzle->get($this->image_url);
+
+        //Get ext
+        $content_type = explode('/', $response->getHeader('Content-Type'));
+        $ext = array_pop($content_type);
+
+        $avatar_name = $this->id . '_' . time() . '.' . $ext;
+        $save_path = public_path('uploads/avatars/') . $avatar_name;
+
+        //Save File
+        $content = $response->getBody()->getContents();
+        file_put_contents($save_path, $content);
+
+        //Delete old file
+        if ($this->avatar) {
+            unlink($this->avatar);
+        }
+
+        //Save to database
+        $this->avatar = $avatar_name;
+        $this->save();
+    }
 }

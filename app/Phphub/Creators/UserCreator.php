@@ -34,7 +34,7 @@ class UserCreator
         if (! $user) {
             return $observer->userValidationError($user->getErrors());
         }
-
+        $user->cacheAvatar();
         return $observer->userCreated($user);
     }
 }
