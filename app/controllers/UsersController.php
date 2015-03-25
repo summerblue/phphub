@@ -99,4 +99,9 @@ class UsersController extends \BaseController
 
         return Response::json($result);
     }
+
+    public function githubCard()
+    {
+        return View::make('users.github-card', compact('user', 'topics'));
+    }
 }

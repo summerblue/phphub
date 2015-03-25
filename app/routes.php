@@ -205,3 +205,8 @@ Route::get('/github-api-proxy/users/{username}', [
     'as' => 'users.github-api-proxy',
     'uses' => 'UsersController@githubApiProxy'
 ]);
+
+Route::get('/github-card', [
+    'as' => 'users.github-card',
+    'uses' => 'UsersController@githubCard'
+]);
