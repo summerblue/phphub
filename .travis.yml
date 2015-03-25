@@ -9,10 +9,6 @@ matrix:
   allow_failures:
     - php: hhvm
 
-branches:
-  except:
-    - gh-pages
-
 before_script:
   - "mysql -e 'create database `phphub`;'"
   - composer install -n --prefer-source
