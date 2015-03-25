@@ -25,7 +25,7 @@
     <div class="panel panel-default">
       @include('users.partials.infonav', ['current' => 'basicinfo'])
 
-      <iframe src="{{ getCdnDomain() }}github-card.html?user={{ $user->github_name }}&client_id={{ getenv('github_card_client_id') }}&client_secret={{ getenv('github_card_client_secret') }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
+      <iframe src="{{ getCdnDomain() }}phphub-github-card.html?user={{ $user->github_name }}&client_id={{ getenv('github_card_client_id') }}&client_secret={{ getenv('github_card_client_secret') }}&target=blank" frameborder="0" scrolling="0" width="100%" height="146px" allowtransparency></iframe>
     </div>
 
     <div class="panel panel-default">

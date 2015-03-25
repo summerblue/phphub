@@ -200,3 +200,8 @@ Route::get('heartbeat', function()
 {
     return Node::first();
 });
+
+Route::get('/github-api-proxy/users/{username}', [
+    'as' => 'users.github-api-proxy',
+    'uses' => 'UsersController@githubApiProxy'
+]);

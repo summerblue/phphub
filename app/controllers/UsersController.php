@@ -79,4 +79,24 @@ class UsersController extends \BaseController
         $user->save();
         return Redirect::route('users.show', $id);
     }
+
+    public function githubApiProxy($username)
+    {
+        $cache_name = 'github_api_proxy_user_'.$username;
+
+        if(Cache::has($cache_name)){
+            return Response::json(Cache::get($cache_name));
+        }
+
+        $client = new GuzzleHttp\Client([
+            'base_url' => 'https://api.github.com/users/',
+        ]);
+
+        $result = $client->get($username . '?' . Request::getQueryString())->json();
+
+        //Cache 1 day
+        Cache::put($cache_name, $result, 1440);
+
+        return Response::json($result);
+    }
 }
