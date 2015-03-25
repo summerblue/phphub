@@ -138,5 +138,6 @@ return array(
     'Submit' => '提交',
     'Close' => '关闭',
     'Attented topic has new update:' => '关注的话题有新附言',
+    'Commented topic has new update:' => '留言的话题有新附言',
     'Document' => '文档',
 );
