@@ -21,4 +21,7 @@ Artisan::add(new ReplyMarkdownCommand);
 Artisan::add(new DatabaseBackupCommand);
 Artisan::add(new OpcacheClearCommand);
 
+
+Artisan::add(new CacheAvatarsCommand);
+
 Artisan::resolve('InstallCommand');
