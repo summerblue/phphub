@@ -13,10 +13,10 @@
 
 ClassLoader::addDirectories(array(
 
-	app_path().'/commands',
-	app_path().'/controllers',
-	app_path().'/models',
-	app_path().'/database/seeds',
+    app_path().'/commands',
+    app_path().'/controllers',
+    app_path().'/models',
+    app_path().'/database/seeds',
 
 ));
 
@@ -44,7 +44,8 @@ Log::useDailyFiles(storage_path().'/logs/'.$logFile);
 Bugsnag::setErrorReportingLevel(E_ALL & ~E_NOTICE);
 Bugsnag::setBeforeNotifyFunction("before_bugsnag_notify");
 
-function before_bugsnag_notify($error) {
+function before_bugsnag_notify($error)
+{
     // Do any custom error handling here
 
     // Also add some meta data to each error
@@ -69,8 +70,7 @@ function before_bugsnag_notify($error) {
 |
 */
 
-App::error(function(Exception $exception, $code)
-{
+App::error(function (Exception $exception, $code) {
     $pathInfo = Request::getPathInfo();
     $message = $exception->getMessage() ?: 'Exception';
     Log::error("$code - $message @ $pathInfo\r\n$exception");
@@ -81,8 +81,7 @@ App::error(function(Exception $exception, $code)
 
     Bugsnag::notifyException($exception);
 
-    switch ($code)
-    {
+    switch ($code) {
         case 403:
             return Response::view('errors/403', [], 403);
 
@@ -97,26 +96,24 @@ App::error(function(Exception $exception, $code)
 /*
  * General Form Validation error handling.
  */
-App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
-{
+App::error(function (Laracasts\Validation\FormValidationException $exception, $code) {
     return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });
 
 /**
  *  Manage Topics Permission error handling.
  */
-App::error(function(Phphub\Exceptions\ManageTopicsException $exception, $code)
-{
+App::error(function (Phphub\Exceptions\ManageTopicsException $exception, $code) {
     return Redirect::route('admin-required');
 });
 
 /**
  *  Model not found
  */
-App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e)
-{
-    if (Config::get('app.debug'))
+App::error(function (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+    if (Config::get('app.debug')) {
         return;
+    }
 
     return Response::view('errors/404', [], 404);
 });
@@ -132,9 +129,8 @@ App::error(function(Illuminate\Database\Eloquent\ModelNotFoundException $e)
 |
 */
 
-App::down(function()
-{
-	return Response::make("Be right back!", 503);
+App::down(function () {
+    return Response::make("Be right back!", 503);
 });
 
 /*
@@ -148,10 +144,8 @@ App::down(function()
 |
 */
 
-Event::listen('turbo.pjax', function($request, $response)
-{
+Event::listen('turbo.pjax', function ($request, $response) {
     $response->header('X-PJAX-URL', Request::getUri());
 });
 
 require app_path().'/filters.php';
-

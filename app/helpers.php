@@ -1,13 +1,10 @@
 <?php
 
-function cdn( $filepath )
+function cdn($filepath)
 {
-    if (Config::get('app.url_static'))
-    {
+    if (Config::get('app.url_static')) {
         return Config::get('app.url_static') . $filepath;
-    }
-    else
-    {
+    } else {
         return Config::get('app.url') . $filepath;
     }
 }

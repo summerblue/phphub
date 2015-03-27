@@ -1,6 +1,6 @@
 <?php
 
-return array (
+return array(
     'Topics' => 'Темы',
     'Wiki' => 'Wiki',
     'Users' => 'Пользователи',

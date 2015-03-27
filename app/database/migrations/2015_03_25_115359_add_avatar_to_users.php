@@ -30,5 +30,4 @@ class AddAvatarToUsers extends Migration
             $table->dropColumn('avatar');
         });
     }
-
 }
