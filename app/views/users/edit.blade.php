@@ -19,7 +19,7 @@
       <div class="panel-body ">
 
         <div class="alert alert-warning">
-          {{ lang('avatar_notice') }}
+          {{ lang('avatar_notice') }} {{ link_to_route('users.refresh_cache', lang('Update Cache'), $user->id) }} .
         </div>
 
         @include('layouts.partials.errors')
@@ -61,6 +61,7 @@
           <div class="form-group status-post-submit">
             {{ Form::submit(lang('Publish'), ['class' => 'btn btn-primary', 'id' => 'user-edit-submit']) }}
           </div>
+
 
         {{ Form::close() }}
 
