@@ -167,6 +167,7 @@ class Topic extends \Eloquent
                         {
                             $q->where('order', '>', 0);
                         })
+                     ->orderBy('order', 'desc')
                      ->orderBy('updated_at', 'desc');
     }
 
