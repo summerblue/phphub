@@ -133,7 +133,7 @@ class Topic extends \Eloquent
                 return $this->recent();
                 break;
             default:
-                return $this->pin()->recentReply();
+                return $this->pinAndRecentReply();
                 break;
         }
     }
@@ -160,14 +160,14 @@ class Topic extends \Eloquent
         return $query->orderBy('created_at', 'desc');
     }
 
-    public function scopePin($query)
+    public function scopePinAndRecentReply($query)
     {
-        return $query->orderBy('order', 'desc');
-    }
-
-    public function scopeRecentReply($query)
-    {
-        return $query->where('created_at', '>', Carbon::today()->subMonth())->orderBy('updated_at', 'desc');
+        return $query->where('created_at', '>', Carbon::today()->subMonth())
+                     ->orWhere(function($q)
+                        {
+                            $q->where('order', '>', 0);
+                        })
+                     ->orderBy('updated_at', 'desc');
     }
 
     public function scopeExcellent($query)
