@@ -123,5 +123,9 @@ class UsersController extends \BaseController
         $user->image_url = $user_info['avatar_url'];
         $user->cacheAvatar();
         $user->save();
+
+        Flash::message(lang('Refresh cache success'));
+
+        return Redirect::route('users.edit', $id);
     }
 }

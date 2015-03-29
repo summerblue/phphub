@@ -132,6 +132,7 @@ return array(
     'Recomended Resources' => '推荐资源',
     'Stick' => '置顶',
     'Recommended' => '推荐',
+    'Refresh cache success' => '刷新缓存成功',
 
     'Append' => '附言',
     'Append Content' => '添加附言',
