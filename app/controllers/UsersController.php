@@ -106,7 +106,7 @@ class UsersController extends \BaseController
 
     public function githubCard()
     {
-        return View::make('users.github-card', compact('user', 'topics'));
+        return View::make('users.github-card');
     }
 
     public function refreshCache($id)
