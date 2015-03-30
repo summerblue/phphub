@@ -96,7 +96,7 @@ class UsersController extends \BaseController
             return Response::json(Cache::get($cache_name));
         }
 
-        $result = (new GithubUserDataReader())->getDataFromUserName($user->github_name);
+        $result = (new GithubUserDataReader())->getDataFromUserName($username);
 
         //Cache 1 day
         Cache::put($cache_name, $result, 1440);
