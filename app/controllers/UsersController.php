@@ -92,16 +92,11 @@ class UsersController extends \BaseController
     {
         $cache_name = 'github_api_proxy_user_'.$username;
 
-        if (Cache::has($cache_name)) {
-            return Response::json(Cache::get($cache_name));
-        }
-
-        $result = (new GithubUserDataReader())->getDataFromUserName($username);
-
         //Cache 1 day
-        Cache::put($cache_name, $result, 1440);
-
-        return Response::json($result);
+        return Cache::remember($cache_name, 1440, function () use ($username) {
+            $result = (new GithubUserDataReader())->getDataFromUserName($username);
+            return Response::json($result);
+        });
     }
 
     public function githubCard()
