@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0eb11c3b254dc39b6a21665d4b0ed2b4",
+    "hash": "84d6dbb29878556f26f06522411b2947",
     "packages": [
         {
             "name": "artdarek/oauth-4-laravel",
@@ -1484,6 +1484,38 @@
                 "templating"
             ],
             "time": "2014-08-26 19:50:10"
+        },
+        {
+            "name": "naux/auto-correct",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NauxLiu/auto-correct.git",
+                "reference": "249aaeae2b6926578ffabc8fa41eb9e306835a4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NauxLiu/auto-correct/zipball/249aaeae2b6926578ffabc8fa41eb9e306835a4e",
+                "reference": "249aaeae2b6926578ffabc8fa41eb9e306835a4e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Naux\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "NauxLiu",
+                    "email": "nauxliu@gmail.com"
+                }
+            ],
+            "time": "2015-04-07 12:09:20"
         },
         {
             "name": "nesbot/carbon",

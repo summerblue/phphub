@@ -1,6 +1,7 @@
 <?php
 
 use Laracasts\Presenter\PresentableTrait;
+use Naux\AutoCorrect;
 
 class Topic extends \Eloquent
 {
@@ -181,5 +182,10 @@ class Topic extends \Eloquent
         $html = $body;
         $excerpt = trim(preg_replace('/\s\s+/', ' ', strip_tags($html)));
         return str_limit($excerpt, 200);
+    }
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = (new AutoCorrect)->convert($value);
     }
 }
