@@ -44,7 +44,7 @@
           <ul class="list">
               <li><a href="http://laravel-china.org/docs/5.0">Laravel 5.0 文档</a></li>
               <li><a href="http://laravel-china.org/docs/4.2">Laravel 4.2 文档</a></li>
-              <li><a href="http://wulijun.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
+              <li><a href="http://laravel-china.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
               <li><a href="https://github.com/PizzaLiu/PHP-FIG">PHP-FIG 编程规范中文</a></li>
               <li><a href="http://www.phpcomposer.com/">Composer 中文文档</a></li>
               <li><a href="https://phphub.org/topics/295">Chrome 插件 PHPHub Notifier</a></li>
