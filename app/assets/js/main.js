@@ -1,7 +1,10 @@
 
 (function($){
-    var PHPHub = {
 
+    var original_title = document.title;
+    var nCount = 0;
+
+    var PHPHub = {
         init: function(){
             var self = this;
             $(document).pjax('a:not(a[target="_blank"])', 'body');
@@ -13,7 +16,9 @@
                 self.siteBootUp();
             });
             $(document).on('pjax:complete', function() {
+                original_title = document.title;
                 NProgress.done();
+                self._resetTitle();
             });
 
             self.siteBootUp();
@@ -217,26 +222,30 @@
          * page for too long.
          */
         initNotificationsCount: function(argumen) {
-            var original_title = document.title;
+            var self = this;
             if (Config.user_id > 0) {
                 function scheduleGetNotification(){
                     $.get( Config.routes.notificationsCount, function( data ) {
-                        var nCount = parseInt(data)
-                        if (nCount > 0) {
-                            $('#notification-count').text(nCount);
-                            $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
-                            document.title = '(' + nCount + ') '+ original_title;
-                        } else {
-                            document.title =  original_title;
-                            $('#notification-count').text(0);
-                            $('#notification-count').addClass('badge-fade');
-                            $('#notification-count').removeClass('badge-important');
 
-                        }
+                        nCount = parseInt(data);
+                        self._resetTitle();
                         setTimeout(scheduleGetNotification, 15000);
                     });
                 };
                 setTimeout(scheduleGetNotification, 15000);
+            }
+        },
+
+        _resetTitle: function() {
+            if (nCount > 0) {
+                $('#notification-count').text(nCount);
+                $('#notification-count').hasClass('badge-important') || $('#notification-count').addClass('badge-important');
+                document.title = '(' + nCount + ') '+ original_title;
+            } else {
+                document.title =  original_title;
+                $('#notification-count').text(0);
+                $('#notification-count').addClass('badge-fade');
+                $('#notification-count').removeClass('badge-important');
             }
         },
 
@@ -375,32 +384,32 @@ $(document).ready(function()
 // reply a reply
 function replyOne(username){
     replyContent = $("#reply_content");
-	oldContent = replyContent.val();
-	prefix = "@" + username + " ";
-	newContent = ''
-	if(oldContent.length > 0){
-	    if (oldContent != prefix) {
-	        newContent = oldContent + "\n" + prefix;
-	    }
-	} else {
-	    newContent = prefix
-	}
-	replyContent.focus();
-	replyContent.val(newContent);
-	moveEnd($("#reply_content"));
+    oldContent = replyContent.val();
+    prefix = "@" + username + " ";
+    newContent = ''
+    if(oldContent.length > 0){
+        if (oldContent != prefix) {
+            newContent = oldContent + "\n" + prefix;
+        }
+    } else {
+        newContent = prefix
+    }
+    replyContent.focus();
+    replyContent.val(newContent);
+    moveEnd($("#reply_content"));
 }
 
 var moveEnd = function(obj){
-	obj.focus();
+  obj.focus();
 
-	var len = obj.value === undefined ? 0 : obj.value.length;
+  var len = obj.value === undefined ? 0 : obj.value.length;
 
-	if (document.selection) {
-		var sel = obj.createTextRange();
-		sel.moveStart('character',len);
-		sel.collapse();
-		sel.select();
-	} else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
-		obj.selectionStart = obj.selectionEnd = len;
-	}
+  if (document.selection) {
+    var sel = obj.createTextRange();
+    sel.moveStart('character',len);
+    sel.collapse();
+    sel.select();
+  } else if (typeof obj.selectionStart == 'number' && typeof obj.selectionEnd == 'number') {
+    obj.selectionStart = obj.selectionEnd = len;
+  }
 }
