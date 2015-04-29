@@ -3,6 +3,7 @@
 return array(
     'Topics' => '社区',
     'Wiki' => 'Wiki',
+    'Jobs' => '招聘',
     'Users' => '会员',
     'About' => '关于',
     'Search' => '搜索',
