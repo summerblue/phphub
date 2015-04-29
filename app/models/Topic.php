@@ -112,7 +112,7 @@ class Topic extends \Eloquent
 
     public function getNodeTopicsWithFilter($filter, $node_id, $limit = 20)
     {
-        return $this->applyFilter($filter)
+        return $this->applyFilter($filter == 'default' ? 'node' : $filter)
                     ->where('node_id', '=', $node_id)
                     ->with('user', 'node', 'lastReplyUser')
                     ->paginate($limit);
@@ -132,6 +132,9 @@ class Topic extends \Eloquent
                 break;
             case 'recent':
                 return $this->recent();
+                break;
+            case 'node':
+                return $this->recentReply();
                 break;
             default:
                 return $this->pinAndRecentReply();
@@ -169,6 +172,12 @@ class Topic extends \Eloquent
                             $q->where('order', '>', 0);
                         })
                      ->orderBy('order', 'desc')
+                     ->orderBy('updated_at', 'desc');
+    }
+
+    public function scopeRecentReply($query)
+    {
+        return $query->orderBy('order', 'desc')
                      ->orderBy('updated_at', 'desc');
     }
 
