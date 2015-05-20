@@ -1,7 +1,13 @@
 <ul class="list-group row">
 
   @foreach ($replies as $index => $reply)
-   <li class="list-group-item media" style="margin-top: 0px;">
+   <li class="list-group-item media"
+           @if($reply->vote_count >= 2)
+                style="margin-top: 0px; background-color: #fffce9"
+           @else
+                style="margin-top: 0px;"
+           @endif
+           >
 
     <div class="avatar pull-left">
       <a href="{{ route('users.show', [$reply->user_id]) }}">
