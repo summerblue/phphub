@@ -97,7 +97,6 @@ class Topic extends \Eloquent
         }
 
         return $this->replies()
-                    ->orderBy('vote_count', 'desc')
                     ->orderBy('created_at', 'asc')
                     ->with('user')
                     ->paginate($limit);
