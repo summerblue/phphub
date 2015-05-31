@@ -8,6 +8,7 @@ The [phphub.org](http://phphub.org) site is entirely open source, and community 
  If you have any questions please don't hesitate to ask them in an issue or email me at phphub.org@gmail.com.
 
 [![Build Status](https://api.travis-ci.org/summerblue/phphub.svg?branch=master)](https://travis-ci.org/summerblue/phphub)
+[![Code Climate](https://codeclimate.com/github/summerblue/phphub/badges/gpa.svg)](https://codeclimate.com/github/summerblue/phphub)
 
 ### Screen Shots
 
