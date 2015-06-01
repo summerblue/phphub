@@ -4,6 +4,7 @@ use Laracasts\Presenter\Presenter;
 use Input;
 use URL;
 use Request;
+use Config;
 
 class TopicPresenter extends Presenter
 {
@@ -56,5 +57,12 @@ class TopicPresenter extends Presenter
         } else {
             return;
         }
+    }
+
+    public function replyFloorFromIndex($index)
+    {
+        $index += 1;
+        $current_page = Input::get('page') ?: 1;
+        return ($current_page - 1) * Config::get('phphub.replies_perpage') + $index;
     }
 }

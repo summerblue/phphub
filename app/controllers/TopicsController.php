@@ -41,7 +41,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function show($id)
     {
         $topic = Topic::findOrFail($id);
-        $replies = $topic->getRepliesWithLimit(80);
+        $replies = $topic->getRepliesWithLimit(Config::get('phphub.replies_perpage'));
         $node = $topic->node;
         $nodeTopics = $topic->getSameNodeTopics();
 
