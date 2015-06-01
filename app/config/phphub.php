@@ -2,6 +2,6 @@
 
 return array(
 
-    'replies_perpage' => 10,
+    'replies_perpage' => 80,
 
 );
