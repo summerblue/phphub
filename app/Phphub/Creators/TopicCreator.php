@@ -2,6 +2,7 @@
 
 use Phphub\Forms\TopicCreationForm;
 use Phphub\Core\CreatorListener;
+use Phphub\Core\Robot;
 use Topic;
 use Auth;
 use Carbon;
@@ -36,6 +37,8 @@ class TopicCreator
         }
 
         Auth::user()->increment('topic_count', 1);
+
+        Robot::notify($data['body_original'], 'Topic', $topic, Auth::user());
 
         return $observer->creatorSucceed($topic);
     }

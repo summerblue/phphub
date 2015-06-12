@@ -23,7 +23,8 @@
 		"intervention/image": "2.*",
 		"bugsnag/bugsnag-laravel": "1.*",
 		"roumen/sitemap": "2.4.*",
-		"naux/auto-correct": "~1.0"
+		"naux/auto-correct": "~1.0",
+		"maknz/slack": "~1.7"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

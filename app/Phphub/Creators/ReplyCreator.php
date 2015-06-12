@@ -2,6 +2,7 @@
 
 use Phphub\Forms\ReplyCreationForm;
 use Phphub\Core\CreatorListener;
+use Phphub\Core\Robot;
 use Phphub\Notification\Mention;
 use Phphub\Notification\Notifier;
 use Reply;
@@ -11,6 +12,7 @@ use Notification;
 use Carbon;
 use App;
 use Markdown;
+use Slack;
 
 class ReplyCreator
 {
@@ -50,6 +52,8 @@ class ReplyCreator
         Auth::user()->increment('reply_count', 1);
 
         App::make('Phphub\Notification\Notifier')->newReplyNotify(Auth::user(), $this->mentionParser, $topic, $reply);
+
+        Robot::notify($data['body_original'], 'Reply', $topic, Auth::user());
 
         return $observer->creatorSucceed($reply);
     }

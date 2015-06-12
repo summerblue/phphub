@@ -155,6 +155,7 @@ return array(
         'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
         'Roumen\Sitemap\SitemapServiceProvider',
         'Phphub\Sitemap\SitemapServiceProvider',
+        'Maknz\Slack\SlackServiceProvider',
 
     ),
 
@@ -233,6 +234,7 @@ return array(
         'Purifier'          => 'Mews\Purifier\Facades\Purifier',
         'Image'             => 'Intervention\Image\Facades\Image',
         'Bugsnag'           => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
+        'Slack'             => 'Maknz\Slack\Facades\Slack',
     ),
 
 );
