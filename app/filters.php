@@ -33,10 +33,16 @@ App::after(function ($request, $response) {
 
 Route::filter('auth', function () {
     if (Auth::guest()) {
-        if (Request::ajax()) {
+        if (Request::ajax())
+        {
             return Response::make('Unauthorized', 401);
-        } else {
-            return Redirect::guest('login-required');
+        }
+        else
+        {
+            $url = Request::isMethod('get') ? URL::current() : URL::previous();
+            Session::put('url.intended', $url);
+
+            return Redirect::to('login-required');
         }
     }
 });

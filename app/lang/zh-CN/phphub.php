@@ -116,6 +116,7 @@ return array(
     'Successfully remove attention.' => '成功取消关注',
     'Successfully_attention' => '成功关注主题, 系统会通知你关于此主题最新的讨论.',
     'Operation succeeded.' => '操作成功!',
+    'Login Successfully.' => '成功登录!',
     'Congratulations and Welcome!' => '恭喜, 你已经成功加入 PHPHub.',
     'Operation failed!' => '操作失败!',
     'Favorited your topic:' => '收藏了你的主题',
