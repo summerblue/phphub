@@ -1,12 +1,13 @@
 <?php namespace Phphub\Core;
 
 use Slack;
+use App;
 
 class Robot
 {
     public static function notify($content, $type, $topic, $user)
     {
-        if (!getenv('slack_endpoint'))
+        if (!getenv('slack_endpoint') || App::environment() != 'production')
         {
             return;
         }
