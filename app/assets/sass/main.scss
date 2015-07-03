@@ -943,3 +943,14 @@ div#preview-box {
     margin-bottom: -10px;
   }
 }
+
+.content-body {
+  .markdown-body {
+    overflow: visible;
+
+    pre, pre[class*=language-] {
+      margin: 5px -15px!important;
+      border-radius: 0px;
+    }
+  }
+}
