@@ -43,16 +43,6 @@
     height: 0;
   }
 
-  pre {
-    overflow: auto;
-  }
-
-  code,
-  pre {
-    font-family: monospace, monospace;
-    font-size: 1em;
-  }
-
   table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -154,12 +144,14 @@
 
   code,
   pre {
-    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-family: monaco, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size:1em;
   }
 
   pre {
     margin-top: 0;
     margin-bottom: 0;
+    overflow: auto;
   }
 
   .markdown-body>*:first-child {
@@ -386,7 +378,7 @@
     background-color: #4e4e4e;
     border-radius: 3px;
     color: #fff;
-    border: 1px dashed #ccc;
+    border: none;
   }
 
   .highlight pre {
