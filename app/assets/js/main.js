@@ -372,6 +372,16 @@
             }
         },
 
+        /**
+         * Force image data type, fixing the "Could not detect remote target type..."
+         * problem.
+         */
+        forceImageDataType: function() {
+          $('.content-body img:not(.emoji)').each(function(){
+              $(this).attr('data-type', 'image');
+          });
+        },
+
     }
     window.PHPHub = PHPHub;
 })(jQuery);
