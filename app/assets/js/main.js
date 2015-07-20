@@ -45,6 +45,7 @@
             self.initDeleteForm();
             self.initInlineAttach();
             self.snowing();
+            self.forceImageDataType();
         },
 
         /**
