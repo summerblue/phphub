@@ -134,4 +134,5 @@ return array(
     'Attented topic has new update:' => 'Attented topic has new update:',
     'Commented topic has new update:' => 'Commented topic has new update:',
     'Document' => 'Document',
+    'Cloud Server Sponsored by UCloud' => 'Cloud Server Sponsored by UCloud',
 );

@@ -75,7 +75,7 @@ PHPHub  - PHP & Laravel的中文社区
 	      </p>
 
 	      <p class="pull-right">
-	      	<i class="fa fa-cloud"></i> Powered by <a href="https://www.linode.com/?r=3cfb2c09c29cf2b6e6c87cc1f71ffdc2f9ea5722" target="_blank">Linode <i class="fa fa-external-link"></i></a>.
+	      	<a href="http://www.ucloud.cn/?ref=phphub" target="_blank"><img src="{{ cdn('assets/images/ucloud.png') }}" width="98" data-toggle="tooltip" data-placement="top" title="本站服务器由 UCloud 赞助"></a>.
 	      </p>
 	    </div>
 	  </div>
