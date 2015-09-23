@@ -46,6 +46,7 @@
             self.initInlineAttach();
             self.snowing();
             self.forceImageDataType();
+            self.initToolTips();
         },
 
         /**
@@ -381,6 +382,10 @@
           $('.content-body img:not(.emoji)').each(function(){
               $(this).attr('data-type', 'image');
           });
+        },
+
+        initToolTips: function() {
+          $('[data-toggle="tooltip"]').tooltip();
         },
 
     }
