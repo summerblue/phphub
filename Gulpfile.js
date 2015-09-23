@@ -45,23 +45,26 @@ var paths = {
 // CSS task
 gulp.task('css', function() {
 
-    // Convert scss first
-    gulp.src('app/assets/sass/**/*.scss')
-        .pipe(sass())
-        .pipe(autoprefixer('last 10 version'))
-        .pipe(gulp.dest('app/assets/css/dist'));
-
-    // Cleanup old assets
+// Cleanup old assets
     del(['public/assets/css/styles-*.css'], function (err) {});
 
-    // Prefix, compress and concat the CSS assets
-    // Afterwards add the MD5 hash to the filename
-    return gulp.src(paths.frontend.styles)
-        .pipe(concat('styles.css'))
-        .pipe(rev())
-        .pipe(filename({ bundleName: 'frontend.styles' })) // This will create/update the assets.json file
-        .pipe(minifycss())
-        .pipe(gulp.dest('public/assets/css'));
+// Convert scss first
+// Prefix, compress and concat the CSS assets
+// Afterwards add the MD5 hash to the filename
+
+    return gulp.src('app/assets/sass/**/*.scss')
+        .pipe(sass())
+        .pipe(autoprefixer('last 10 version'))
+        .pipe(gulp.dest('app/assets/css/dist'))
+        .on('end',function() {
+            gulp.src(paths.frontend.styles)
+                    .pipe(concat('styles.css'))
+                    .pipe(rev())
+                    .pipe(filename({ bundleName: 'frontend.styles' })) // This will create/update the assets.json file
+                    .pipe(minifycss())
+                    .pipe(gulp.dest('public/assets/css'));
+        });
+
 });
 
 // JavaScript task
