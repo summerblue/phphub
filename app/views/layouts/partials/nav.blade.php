@@ -14,7 +14,7 @@
       </ul>
 
       <div class="navbar-right">
-        {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left']) }}
+        {{ Form::open(['route'=>'search', 'method'=>'get', 'class'=>'navbar-form navbar-left', 'target'=>'_blank']) }}
           <div class="form-group">
           {{ Form::text('q', null, ['class' => 'form-control search-input mac-style', 'placeholder' => lang('Search')]) }}
           </div>
