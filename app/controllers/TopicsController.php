@@ -128,6 +128,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function recomend($id)
     {
         $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
         $topic->is_excellent = (!$topic->is_excellent);
         $topic->save();
         Flash::success(lang('Operation succeeded.'));
@@ -138,6 +139,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function wiki($id)
     {
         $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
         $topic->is_wiki = (!$topic->is_wiki);
         $topic->save();
         Flash::success(lang('Operation succeeded.'));
@@ -148,6 +150,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function pin($id)
     {
         $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
         ($topic->order > 0) ? $topic->decrement('order', 1) : $topic->increment('order', 1);
         return Redirect::route('topics.show', $topic->id);
     }
@@ -155,6 +158,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function sink($id)
     {
         $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
         ($topic->order >= 0) ? $topic->decrement('order', 1) : $topic->increment('order', 1);
         return Redirect::route('topics.show', $topic->id);
     }
