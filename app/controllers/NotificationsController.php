@@ -18,19 +18,6 @@ class NotificationsController extends \BaseController
         return View::make('notifications.index', compact('notifications'));
     }
 
-    /**
-     * Remove the specified notification from storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function destroy($id)
-    {
-        Notification::destroy($id);
-
-        return Redirect::route('notifications.index');
-    }
-
     public function count()
     {
         return Auth::user()->notification_count;
