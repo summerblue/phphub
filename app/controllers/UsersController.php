@@ -11,6 +11,13 @@ class UsersController extends \BaseController
         $this->beforeFilter('auth', ['only' => ['edit', 'update', 'destroy']]);
         $this->topic = $topic;
     }
+    
+    public function authorOrAdminPermissioinRequire($author_id)
+    {
+        if (! Entrust::can('manage_users') && $author_id != Auth::id()) {
+            throw new ManageTopicsException("permission-required");
+        }
+    }
 
     public function index()
     {
