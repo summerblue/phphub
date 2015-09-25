@@ -54,11 +54,4 @@ class NodesController extends \BaseController
 
         return Redirect::route('nodes.index');
     }
-
-    public function destroy($id)
-    {
-        Node::destroy($id);
-
-        return Redirect::route('nodes.index');
-    }
 }
