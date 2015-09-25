@@ -162,6 +162,7 @@ class TopicsController extends \BaseController implements CreatorListener
     public function destroy($id)
     {
         $topic = Topic::findOrFail($id);
+        $this->authorOrAdminPermissioinRequire($topic->user_id);
         $topic->delete();
         Flash::success(lang('Operation succeeded.'));
 
