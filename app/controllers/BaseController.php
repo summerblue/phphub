@@ -16,7 +16,7 @@ class BaseController extends Controller
         });
 
         // csrf check for every post request
-        $this->beforeFilter('csrf', ['on' => 'post']);
+        $this->beforeFilter('csrf', ['on' => ['post', 'delete', 'put', 'patch']]);
 
         // Check if a user is banned.
         $this->beforeFilter('check_banned_user', ['except' => ['userBanned', 'logout']]);
