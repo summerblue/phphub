@@ -49,7 +49,7 @@ class ContributorSyncCommand extends Command {
         if (!Role::where(['name' => $this->roleName])->exists())
         {
             $role = new Role;
-            $role->name = $name;
+            $role->name = $this->roleName;
             $role->save();
         }
 
