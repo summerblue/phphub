@@ -10,6 +10,10 @@
 
   <dt><label>Name:</label></dt><dd><strong>{{{ $user->name }}}</strong></dd>
 
+  @if ($user->present()->hasBadge())
+    <dt><label>Role:</label></dt><dd><span class="label label-warning">{{{ $user->present()->badgeName() }}}</span></dd>
+  @endif
+
   @if ($user->real_name)
     <dt class="adr"><label> {{ lang('Real Name') }}:</label></dt><dd><span class="org">{{{ $user->real_name }}}</span></dd>
   @endif
