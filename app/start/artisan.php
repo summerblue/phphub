@@ -23,5 +23,6 @@ Artisan::add(new OpcacheClearCommand);
 
 
 Artisan::add(new CacheAvatarsCommand);
+Artisan::add(new ContributorSyncCommand);
 
 Artisan::resolve('InstallCommand');
