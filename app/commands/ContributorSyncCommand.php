@@ -52,6 +52,14 @@ class ContributorSyncCommand extends Command {
             $role->name = $name;
             $role->save();
         }
+
+        // Change role named `Admin` to `Maintainer`
+        if (Role::where(['name' => 'Admin'])->exists())
+        {
+            $role = Role::where(['name' => 'Admin'])->first();
+            $role->name = 'Maintainer';
+            $role->save();
+        }
     }
 
     public function getContributorsFromGithub()
