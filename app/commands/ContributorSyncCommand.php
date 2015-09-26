@@ -66,7 +66,7 @@ class ContributorSyncCommand extends Command {
         $role = Role::where(['name' => $this->roleName])->first();
         foreach ($users as $user)
         {
-            if ($user->hasRole('Contributor'))
+            if ($user->roles()->count() > 0)
             {
                 continue;
             }
