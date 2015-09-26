@@ -7,6 +7,10 @@
   <a href="{{ route('users.show', $topic->user->id) }}">
     {{{ $topic->user->name }}}
   </a>
+
+  @if ($topic->user->present()->hasBadge())
+    <span class="label label-warning" style="position: relative;">{{{ $topic->user->present()->badgeName() }}}</span>
+  @endif
   •
   {{ lang('at') }} <abbr title="{{ $topic->created_at }}" class="timeago">{{ $topic->created_at }}</abbr>
   •
