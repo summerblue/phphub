@@ -23,10 +23,6 @@
             {{{ $reply->user->name }}}
         </a>
 
-      @if ($reply->user->present()->hasBadge())
-        <span class="label label-warning" style="position: relative;">{{{ $reply->user->present()->badgeName() }}}</span>
-      @endif
-
         <span> •  </span>
         <abbr class="timeago" title="{{ $reply->created_at }}">{{ $reply->created_at }}</abbr>
         <span> •  </span>
