@@ -10,6 +10,7 @@
 
   <div class="col-md-3 box" style="padding: 15px 15px;">
     @include('users.partials.basicinfo')
+    @include('users.partials.login_QR')
   </div>
 
   <div class="main-col col-md-9 left-col">

@@ -24,6 +24,19 @@ class UserPresenter extends Presenter
         return "https://avatars{$domainNumber}.githubusercontent.com/u/{$github_id}?v=2&s={$size}";
     }
 
+    public function loginQR($size = 80)
+    {
+        if(!$this->login_token){
+            $this->entity->login_token = str_random(20);
+            $this->entity->save();
+        }
+
+        return \QrCode::size($size)
+            ->errorCorrection('L')
+            ->margin(0)
+            ->generate($this->github_name . ',' . $this->login_token);
+    }
+
     public function userinfoNavActive($anchor)
     {
         return Route::currentRouteName() == $anchor ? 'active' : '';

@@ -156,6 +156,7 @@ return array(
         'Roumen\Sitemap\SitemapServiceProvider',
         'Phphub\Sitemap\SitemapServiceProvider',
         'Maknz\Slack\SlackServiceProvider',
+        'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
 
     ),
 
@@ -235,6 +236,7 @@ return array(
         'Image'             => 'Intervention\Image\Facades\Image',
         'Bugsnag'           => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
         'Slack'             => 'Maknz\Slack\Facades\Slack',
+        'QrCode'            => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
     ),
 
 );
