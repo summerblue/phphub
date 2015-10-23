@@ -10,9 +10,6 @@
 
   <div class="col-md-3 box" style="padding: 15px 15px;">
     @include('users.partials.basicinfo')
-    @if(Auth::check() && Auth::id() == $user->id)
-      @include('users.partials.login_QR')
-    @endif
   </div>
 
   <div class="main-col col-md-9 left-col">

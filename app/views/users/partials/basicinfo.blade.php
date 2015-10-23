@@ -72,3 +72,7 @@
     <i class="fa fa-times"></i> {{ $user->is_banned ? lang('Unblock User') : lang('Block User') }}
   </a>
 @endif
+
+@if(Auth::check() && Auth::id() == $user->id)
+  @include('users.partials.login_QR')
+@endif

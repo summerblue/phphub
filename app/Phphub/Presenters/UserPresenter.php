@@ -31,7 +31,8 @@ class UserPresenter extends Presenter
             $this->entity->save();
         }
 
-        return \QrCode::size($size)
+        return \QrCode::format('png')
+            ->size(200)
             ->errorCorrection('L')
             ->margin(0)
             ->generate($this->github_name . ',' . $this->login_token);
