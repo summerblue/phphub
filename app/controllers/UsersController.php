@@ -130,4 +130,17 @@ class UsersController extends \BaseController
 
         return Redirect::route('users.edit', $id);
     }
+
+    public function regenerateLoginToken()
+    {
+        if(Auth::check()){
+            Auth::user()->login_token = str_random(rand(20, 32));
+            Auth::user()->save();
+            Flash::success(lang('Regenerate succeeded.'));
+        }else{
+            Flash::error(lang('Regenerate failed.'));
+        }
+
+        return Redirect::route('users.show', Auth::id());
+    }
 }

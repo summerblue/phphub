@@ -55,6 +55,11 @@ Route::get('/users/{id}/refresh_cache', [
     'uses' => 'UsersController@refreshCache',
 ]);
 
+Route::get('users/regenerate_login_token', [
+    'as' => 'users.regenerate_login_token',
+    'uses' => 'UsersController@regenerateLoginToken',
+]);
+
 Route::post('/favorites/{id}', [
     'as' => 'favorites.createOrDelete',
     'uses' => 'FavoritesController@createOrDelete',
