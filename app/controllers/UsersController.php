@@ -86,6 +86,35 @@ class UsersController extends \BaseController
         return View::make('users.favorites', compact('user', 'topics'));
     }
 
+    public function accessTokens($id)
+    {
+        $user = User::findOrFail($id);
+        $sessions = OAuthSession::where([
+            'owner_type' => 'user',
+            'owner_id' => Auth::id(),
+            ])
+            ->with('token')
+            ->lists('id') ?: [];
+    
+        $tokens = AccessToken::whereIn('session_id', $sessions)->get();
+
+        return View::make('users.access_tokens', compact('user', 'tokens'));
+    }
+
+    public function revokeAccessToken($token)
+    {
+        $access_token = AccessToken::with('session')->find($token);
+        
+        if(!$access_token || !Auth::check() || $access_token->session->owner_id != Auth::id()){
+            Flash::error(lang('Revoke Failed'));
+        }else{
+            $access_token->delete();
+            Flash::success(lang('Revoke success'));
+        }
+
+        return Redirect::route('users.access_tokens', Auth::id());
+    }
+
     public function blocking($id)
     {
         $user = User::findOrFail($id);

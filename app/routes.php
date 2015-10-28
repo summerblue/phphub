@@ -55,6 +55,16 @@ Route::get('/users/{id}/refresh_cache', [
     'uses' => 'UsersController@refreshCache',
 ]);
 
+Route::get('/users/{id}/access_tokens', [
+    'as' => 'users.access_tokens',
+    'uses' => 'UsersController@accessTokens',
+]);
+
+Route::get('/access_token/{token}/revoke', [
+    'as' => 'users.access_tokens.revoke',
+    'uses' => 'UsersController@revokeAccessToken',
+]);
+
 Route::get('users/regenerate_login_token', [
     'as' => 'users.regenerate_login_token',
     'uses' => 'UsersController@regenerateLoginToken',
