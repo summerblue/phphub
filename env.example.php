@@ -35,4 +35,8 @@ return [
     'BACK_MANAGER_DROPBOX_root' => '',
 
     'bugsnag_api_key'   => 'you key here',
+
+    'JPUSH_KEY'='',
+    'JPUSH_SECRET'='',
+    'JPUSH_PRODUCTION'=false,
 ];

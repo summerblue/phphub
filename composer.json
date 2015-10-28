@@ -25,7 +25,8 @@
 		"roumen/sitemap": "2.4.*",
 		"naux/auto-correct": "~1.0",
 		"maknz/slack": "~1.7",
-		"simplesoftwareio/simple-qrcode": "^1.3"
+		"simplesoftwareio/simple-qrcode": "^1.3",
+		"jpush/jpush": "^3.2"
 	},
 	"require-dev": {
 		"way/generators": "~2.0",

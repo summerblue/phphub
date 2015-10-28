@@ -28,4 +28,10 @@ return array(
         'secret' => '',
     ),
 
+    'jpush' => array(
+        'app_key'         => getenv('JPUSH_KEY'),
+        'secret'          => getenv('JPUSH_SECRET'),
+        'apns_production' => getenv('JPUSH_PRODUCTION'), //是否推送到生产环境
+    ), 
+
 );

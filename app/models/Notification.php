@@ -1,11 +1,14 @@
 <?php
 
 use Laracasts\Presenter\PresentableTrait;
+use Phphub\Core\Jpush;
 
 class Notification extends \Eloquent
 {
     use PresentableTrait;
     public $presenter = 'Phphub\Presenters\NotificationPresenter';
+
+    private static $jpush = null;
 
     // Don't forget to fill this array
     protected $fillable = [
@@ -68,6 +71,10 @@ class Notification extends \Eloquent
         if (count($data)) {
             Notification::insert($data);
         }
+
+        foreach ($data as $value) {
+            self::pushNotification($value);
+        }
     }
 
     public function scopeRecent($query)
@@ -88,7 +95,7 @@ class Notification extends \Eloquent
         $nowTimestamp = Carbon::now()->toDateTimeString();
 
 
-        $data[] = [
+        $data = [
             'from_user_id' => $fromUser->id,
             'user_id'      => $toUser->id,
             'topic_id'     => $topic->id,
@@ -101,7 +108,68 @@ class Notification extends \Eloquent
 
         $toUser->increment('notification_count', 1);
 
-        Notification::insert($data);
+        Notification::insert([$data]);
+        self::pushNotification($data);
+    }
+
+    public static function pushNotification($data)
+    {
+        $notification = Notification::query()
+                ->with('fromUser', 'topic')
+                ->where($data)
+                ->first();
+
+        if(!$notification){return;}
+
+        $from_user_name = $notification->fromUser->name;
+        $topic_title    = $notification->topic->title;
+        
+        $msg = $from_user_name 
+                . ' • ' . $notification->present()->lableUp()
+                . ' • ' . $topic_title;
+        
+        $push_data = array_only($data, [
+            'topic_id',
+            'from_user_id',
+            'type',
+        ]);
+
+        if ($data['reply_id'] !== 0) {
+            $push_data['reply_id']    = $data['reply_id'];
+            // $push_data['replies_url'] = route('replies.web_view', $data['reply_id']);
+        }
+
+        self::jpush($notification->user_id, $msg, $push_data);
+    }
+
+    /**
+     * 推送消息.
+     *
+     * @param $user_ids
+     * @param $msg
+     * @param $extras
+     */
+    protected static function jpush($user_ids, $msg, $extras = null)
+    {
+        if (!self::$jpush) {
+            self::$jpush = new Jpush();
+        }
+
+        $user_ids = (array) $user_ids;
+        $user_ids = array_map(function ($user_id) {
+            return 'userid_'.$user_id;
+        }, $user_ids);
+
+        try {
+            self::$jpush
+                ->platform('all')
+                ->message($msg)
+                ->toAlias($user_ids)
+                ->extras($extras)
+                ->send();
+        } catch (Exception $e) {
+            // Ignore
+        }
     }
 
     public static function isNotified($from_user_id, $user_id, $topic_id, $type)
