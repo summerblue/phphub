@@ -88,6 +88,9 @@ class UsersController extends \BaseController
 
     public function accessTokens($id)
     {
+        if(!Auth::check() || Auth::id() != $id){
+            return Redirect::route('users.show', $id);
+        }
         $user = User::findOrFail($id);
         $sessions = OAuthSession::where([
             'owner_type' => 'user',
