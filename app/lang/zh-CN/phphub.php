@@ -144,4 +144,5 @@ return array(
     'Commented topic has new update:' => '留言的话题有新附言',
     'Document' => '文档',
     'Cloud Server Sponsored by UCloud' => '本站服务器由 UCloud 赞助',
+    'Community Promotion' => '社区推广',
 );

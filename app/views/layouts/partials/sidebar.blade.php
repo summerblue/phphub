@@ -59,6 +59,19 @@
       </div>
   @endif
 
+  @if (Route::currentRouteName() == 'topics.index')
+      <div class="panel panel-default corner-radius">
+        <div class="panel-heading text-center">
+          <h3 class="panel-title">{{ lang('Community Promotion') }}</h3>
+        </div>
+        <div class="panel-body text-center" style="padding: 7px;">
+          <a href="http://ucloud.cn/site/active/dataark.html?utm_source=zanzhu&utm_campaign=phphub&utm_adgroup=udataark&utm_medium=display" target="_blank" rel="nofollow" title="">
+            <img src="https://dn-phphub.qbox.me/uploads/images/201511/05/1/jZwUJeJ3cC.jpg" style="width:240px;">
+          </a>
+      </div>
+      </div>
+  @endif
+
   @if (isset($nodeTopics) && count($nodeTopics))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
