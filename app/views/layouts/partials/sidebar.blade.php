@@ -31,6 +31,19 @@
     </div>
   </div>
 
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Community Notes') }}</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list">
+          <li><a href="https://phphub.org/topics/776">社区功能引导</a></li>
+          <li><a href="https://phphub.org/topics/817">PHPHub 招聘贴发布版规</a></li>
+          <li><a href="https://phphub.org/topics/777">社区 维护/驱动 的项目墙</a></li>
+      </ul>
+    </div>
+  </div>
+
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">

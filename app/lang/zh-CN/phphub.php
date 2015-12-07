@@ -145,4 +145,6 @@ return array(
     'Document' => '文档',
     'Cloud Server Sponsored by UCloud' => '本站服务器由 UCloud 赞助',
     'Community Promotion' => '社区推广',
+    'Community Notes' => '社区公告栏',
+    'App Download' => 'App 下载',
 );
