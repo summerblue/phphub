@@ -20,6 +20,17 @@
     </div>
   </div>
 
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('App Download') }}</h3>
+    </div>
+    <div class="panel-body text-center" style="padding: 7px;">
+      <a href="https://phphub.org/topics/1531" target="_blank" rel="nofollow" title="">
+        <img src="https://dn-phphub.qbox.me/uploads/images/201512/08/1/cziZFHqkm8.png" style="width:240px;">
+      </a>
+    </div>
+  </div>
+
   @if (isset($links) && count($links))
     <div class="panel panel-default corner-radius">
       <div class="panel-heading text-center">
@@ -65,8 +76,8 @@
           <h3 class="panel-title">{{ lang('Community Promotion') }}</h3>
         </div>
         <div class="panel-body text-center" style="padding: 7px;">
-          <a href="http://ucloud.cn/site/active/dataark.html?utm_source=zanzhu&utm_campaign=phphub&utm_adgroup=udataark&utm_medium=display" target="_blank" rel="nofollow" title="">
-            <img src="https://dn-phphub.qbox.me/uploads/images/201511/05/1/jZwUJeJ3cC.jpg" style="width:240px;">
+          <a href="http://www.ucloud.cn/site/active/tic.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=tic" target="_blank" rel="nofollow" title="">
+            <img src="https://dn-phphub.qbox.me/uploads/images/201511/30/1/UepdL8rncz.jpg" style="width:240px;">
           </a>
       </div>
       </div>
