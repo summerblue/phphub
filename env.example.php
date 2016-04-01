@@ -39,4 +39,6 @@ return [
     'JPUSH_KEY' => '',
     'JPUSH_SECRET' => '',
     'JPUSH_PRODUCTION' => false,
+
+    'GA_Tracking_ID' => '',
 ];
