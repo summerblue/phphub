@@ -66,7 +66,7 @@
         </div>
         <div class="panel-body">
           <ul class="list">
-              <li><a href="http://laravel-china.org/docs/5.0">Laravel 5.0 文档</a></li>
+              <li><a href="http://laravel-china.org/docs/5.1">Laravel 5.1 文档</a></li>
               <li><a href="http://laravel-china.org/docs/4.2">Laravel 4.2 文档</a></li>
               <li><a href="http://laravel-china.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
               <li><a href="https://github.com/PizzaLiu/PHP-FIG">PHP-FIG 编程规范中文</a></li>
@@ -74,10 +74,9 @@
               <li><a href="https://phphub.org/topics/295">Chrome 插件 PHPHub Notifier</a></li>
               <li><a href="https://phphub.org/topics/8">Laravel 4 完整项目源码参考</a></li>
               <li><a href="https://phphub.org/topics/14">Laravel 相关视频收集</a></li>
-              <li><a href="https://phphub.org/topics/85">Composer 国内全量镜像</a></li>
-              <li><a href="http://blog.laravel.com/">Laravel Development Blog</a></li>
               <li><a href="https://itunes.apple.com/us/podcast/the-laravel-podcast/id653204183?mt=2">The Laravel Podcast</a></li>
               <li><a href="https://laracasts.com/">Laravel and PHP Screencasts</a></li>
+              <li><a href="https://easywechat.org/">最优雅的微信公众平台 SDK</a></li>
           </ul>
         </div>
       </div>
