@@ -9,8 +9,8 @@
         <li class="{{ (Request::is('topics*') ? ' active' : '') }}"><a href="{{ route('topics.index') }}">{{ lang('Topics') }}</a></li>
         <li class="{{ (Request::is('nodes/40') ? ' active' : '') }}"><a href="{{ route('nodes.show', 40) }}">{{ lang('Jobs') }}</a></li>
         <li class="{{ (Request::is('wiki*') ? ' active' : '') }}"><a href="{{ route('wiki') }}">{{ lang('Wiki') }}</a></li>
-        <li class="{{ (Request::is('about*') ? ' active' : '') }}"><a href="{{ route('about') }}">{{ lang('About') }}</a></li>
         <li><a href="http://laravel-china.org/" target="_blank">{{ lang('Document') }}</a></li>
+        <li><a href="https://cs.phphub.org/" target="_blank">LTS 速查表</a></li>
       </ul>
 
       <div class="navbar-right">

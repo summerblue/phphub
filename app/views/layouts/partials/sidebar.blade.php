@@ -37,6 +37,7 @@
     </div>
     <div class="panel-body">
       <ul class="list">
+          <li><a href="{{ route('about') }}">关于 PHPHub</a></li>
           <li><a href="https://phphub.org/topics/776">社区功能引导</a></li>
           <li><a href="https://phphub.org/topics/817">PHPHub 招聘贴发布版规</a></li>
           <li><a href="https://phphub.org/topics/777">社区 维护/驱动 的项目墙</a></li>
