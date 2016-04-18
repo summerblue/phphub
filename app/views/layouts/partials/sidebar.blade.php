@@ -92,7 +92,7 @@
           <a href="http://www.ucloud.cn/site/seo.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=shengji&amp;ytag=%5Fphphub%5Fdisplay" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
             <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f2xfmssojsj20dw03cjs5.jpg" style="width:240px;">
           </a>
-          <a href="http://www.ucloud.cn/site/active/tic.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=tic" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
+          <a href="http://devlink.cn/" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
             <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f30vc8m2gaj20dw03cdge.jpg" style="width:240px;">
           </a>
       </div>
