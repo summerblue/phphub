@@ -93,7 +93,7 @@
             <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f2xfmssojsj20dw03cjs5.jpg" style="width:240px;">
           </a>
           <a href="http://devlink.cn/" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
-            <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f30vc8m2gaj20dw03cdge.jpg" style="width:240px;">
+            <img src="http://ww3.sinaimg.cn/large/6d86d850jw1f30wq2n6i8j20dw03ct97.jpg" style="width:240px;">
           </a>
       </div>
       </div>
