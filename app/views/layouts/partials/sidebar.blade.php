@@ -88,9 +88,12 @@
         <div class="panel-heading text-center">
           <h3 class="panel-title">{{ lang('Community Promotion') }}</h3>
         </div>
-        <div class="panel-body text-center" style="padding: 7px;">
-          <a href="http://www.ucloud.cn/site/active/tic.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=tic" target="_blank" rel="nofollow" title="">
-            <img src="https://dn-phphub.qbox.me/uploads/images/201511/30/1/UepdL8rncz.jpg" style="width:240px;">
+        <div class="panel-body text-center" style="padding: 7px; padding-top: 2px;">
+          <a href="http://www.ucloud.cn/site/seo.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=shengji&amp;ytag=%5Fphphub%5Fdisplay" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
+            <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f2xfmssojsj20dw03cjs5.jpg" style="width:240px;">
+          </a>
+          <a href="http://www.ucloud.cn/site/active/tic.html?utm_source=cost&amp;utm_campaign=phphub&amp;utm_medium=display&amp;utm_content=tic" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
+            <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f30vc8m2gaj20dw03cdge.jpg" style="width:240px;">
           </a>
       </div>
       </div>
