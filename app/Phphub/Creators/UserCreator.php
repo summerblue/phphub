@@ -30,6 +30,7 @@ class UserCreator
 
     private function createValidUserRecord($observer, $data)
     {
+        $data['avatar'] = '';
         $user = User::create($data);
         if (! $user) {
             return $observer->userValidationError($user->getErrors());
