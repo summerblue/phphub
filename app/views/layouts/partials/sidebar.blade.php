@@ -20,6 +20,7 @@
     </div>
   </div>
 
+@if (Route::currentRouteName() == 'topics.index')
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
       <h3 class="panel-title">{{ lang('App Download') }}</h3>
@@ -30,6 +31,7 @@
       </a>
     </div>
   </div>
+@endif
 
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
@@ -41,6 +43,35 @@
           <li><a href="https://phphub.org/topics/776">社区功能引导</a></li>
           <li><a href="https://phphub.org/topics/817">PHPHub 招聘贴发布版规</a></li>
           <li><a href="https://phphub.org/topics/777">社区 维护/驱动 的项目墙</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Community Promotion') }}</h3>
+    </div>
+    <div class="panel-body text-center" style="padding: 7px; padding-top: 2px;">
+      <a href="http://www.ucloud.cn/site/seo.html?utm_source=zanzhu&utm_campaign=phphub&utm_medium=display&utm_content=shengji&ytag=phphubshenji" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
+        <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f2xfmssojsj20dw03cjs5.jpg" style="width:240px;">
+      </a>
+  </div>
+  </div>
+
+  <div class="panel panel-default corner-radius">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title">{{ lang('Recomended Resources') }}</h3>
+    </div>
+    <div class="panel-body">
+      <ul class="list">
+          <li><a href="http://laravel-china.org/docs/5.1">Laravel LTS 5.1 文档（精校版）</a></li>
+          <li><a href="https://cs.phphub.org/">Laravel 5.1 LTS 速查表</a></li>
+          <li><a href="https://psr.phphub.org/">PHP-FIG 编程规范中文</a></li>
+          <li><a href="http://laravel-china.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
+          <li><a href="http://www.phpcomposer.com/">Composer 中文文档</a></li>
+          <li><a href="https://phphub.org/topics/295">Chrome 插件 PHPHub Notifier</a></li>
+          <li><a href="https://itunes.apple.com/us/podcast/the-laravel-podcast/id653204183?mt=2">Laravel 官方播客</a></li>
+          <li><a href="https://easywechat.org/">最优雅的微信公众平台 SDK</a></li>
       </ul>
     </div>
   </div>
@@ -58,45 +89,6 @@
         @endforeach
       </div>
     </div>
-  @endif
-
-  @if (Route::currentRouteName() == 'topics.index')
-      <div class="panel panel-default corner-radius">
-        <div class="panel-heading text-center">
-          <h3 class="panel-title">{{ lang('Recomended Resources') }}</h3>
-        </div>
-        <div class="panel-body">
-          <ul class="list">
-              <li><a href="http://laravel-china.org/docs/5.1">Laravel 5.1 文档</a></li>
-              <li><a href="http://laravel-china.org/docs/4.2">Laravel 4.2 文档</a></li>
-              <li><a href="http://laravel-china.github.io/php-the-right-way/">PHP The Right Way 中文版</a></li>
-              <li><a href="https://psr.phphub.org/">PHP-FIG 编程规范中文</a></li>
-              <li><a href="http://www.phpcomposer.com/">Composer 中文文档</a></li>
-              <li><a href="https://phphub.org/topics/295">Chrome 插件 PHPHub Notifier</a></li>
-              <li><a href="https://phphub.org/topics/8">Laravel 4 完整项目源码参考</a></li>
-              <li><a href="https://phphub.org/topics/14">Laravel 相关视频收集</a></li>
-              <li><a href="https://itunes.apple.com/us/podcast/the-laravel-podcast/id653204183?mt=2">The Laravel Podcast</a></li>
-              <li><a href="https://laracasts.com/">Laravel and PHP Screencasts</a></li>
-              <li><a href="https://easywechat.org/">最优雅的微信公众平台 SDK</a></li>
-          </ul>
-        </div>
-      </div>
-  @endif
-
-  @if (Route::currentRouteName() == 'topics.index')
-      <div class="panel panel-default corner-radius">
-        <div class="panel-heading text-center">
-          <h3 class="panel-title">{{ lang('Community Promotion') }}</h3>
-        </div>
-        <div class="panel-body text-center" style="padding: 7px; padding-top: 2px;">
-          <a href="http://www.ucloud.cn/site/seo.html?utm_source=zanzhu&utm_campaign=phphub&utm_medium=display&utm_content=shengji&ytag=phphubshenji" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
-            <img src="http://ww1.sinaimg.cn/large/6d86d850jw1f2xfmssojsj20dw03cjs5.jpg" style="width:240px;">
-          </a>
-          <a href="http://devlink.cn/" target="_blank" rel="nofollow" title="" style="line-height: 66px;">
-            <img src="http://ww3.sinaimg.cn/large/6d86d850jw1f30wq2n6i8j20dw03ct97.jpg" style="width:240px;">
-          </a>
-      </div>
-      </div>
   @endif
 
   @if (isset($nodeTopics) && count($nodeTopics))
@@ -129,7 +121,7 @@
     </div>
   </div>
 
-
+    @if (Route::currentRouteName() == 'topics.index')
   <div class="panel panel-default corner-radius">
     <div class="panel-heading text-center">
       <h3 class="panel-title">{{ lang('Site Status') }}</h3>
@@ -143,5 +135,6 @@
     </div>
   </div>
 
+    @endif
 </div>
 <div class="clearfix"></div>
