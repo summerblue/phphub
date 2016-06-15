@@ -14,5 +14,6 @@ Envoy.blade.php
 
 public/assets/css/*
 public/assets/js/*
+public/uploads/*
 app/assets/css/dist/*
 asset_manifest.json
