@@ -152,10 +152,8 @@ return array(
         'Modbase\AssetManager\AssetManagerServiceProvider',
         'BigName\BackupManager\Integrations\Laravel\BackupManagerServiceProvider',
         'Intervention\Image\ImageServiceProvider',
-        'Bugsnag\BugsnagLaravel\BugsnagLaravelServiceProvider',
         'Roumen\Sitemap\SitemapServiceProvider',
         'Phphub\Sitemap\SitemapServiceProvider',
-        'Maknz\Slack\SlackServiceProvider',
         'SimpleSoftwareIO\QrCode\QrCodeServiceProvider',
 
     ),
@@ -234,8 +232,6 @@ return array(
         'Markdown'          => 'Phphub\Markdown\Markdown',
         'Purifier'          => 'Mews\Purifier\Facades\Purifier',
         'Image'             => 'Intervention\Image\Facades\Image',
-        'Bugsnag'           => 'Bugsnag\BugsnagLaravel\BugsnagFacade',
-        'Slack'             => 'Maknz\Slack\Facades\Slack',
         'QrCode'            => 'SimpleSoftwareIO\QrCode\Facades\QrCode',
     ),
 

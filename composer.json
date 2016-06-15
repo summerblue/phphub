@@ -21,10 +21,8 @@
 		"heybigname/backup-manager": "0.3.*@dev",
 		"dropbox/dropbox-sdk": "1.1.*",
 		"intervention/image": "2.*",
-		"bugsnag/bugsnag-laravel": "1.*",
 		"roumen/sitemap": "2.4.*",
 		"naux/auto-correct": "~1.0",
-		"maknz/slack": "~1.7",
 		"simplesoftwareio/simple-qrcode": "^1.3",
 		"jpush/jpush": "^3.2"
 	},
