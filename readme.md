@@ -11,6 +11,8 @@ You can checkout the others open source projects of PHPHub in the following list
 
 ## Introduction
 
+> Laravel5.1 Version is at https://github.com/summerblue/phphub5 
+
 PHPHub is a `Forum project` written in `Laravel4.2`, and it is also the project build up [PHP & Laravel China community](http://www.phphub.org).
 
 The [phphub.org](http://phphub.org) site is entirely open source, and community involvement is not only encouraged, but required in order to ensure the future success of the project.
