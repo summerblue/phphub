@@ -1,4 +1,7 @@
+## Deprecated (放弃维护)
+
 > Please note that is project is deprecated, Laravel5.1 Version is at https://github.com/summerblue/phphub5 
+> 
 > 此项目已放弃维护，请前往下载最新版 https://github.com/summerblue/phphub5 
 
 
