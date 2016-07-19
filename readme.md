@@ -1,3 +1,6 @@
+> Please note that is project is deprecated, Laravel5.1 Version is at https://github.com/summerblue/phphub5 
+> 此项目已放弃维护，请前往下载最新版 https://github.com/summerblue/phphub5 
+
 
 ## PHPHub related projects
 
@@ -11,7 +14,7 @@ You can checkout the others open source projects of PHPHub in the following list
 
 ## Introduction
 
-> Laravel5.1 Version is at https://github.com/summerblue/phphub5 
+
 
 PHPHub is a `Forum project` written in `Laravel4.2`, and it is also the project build up [PHP & Laravel China community](http://www.phphub.org).
 
