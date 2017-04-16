@@ -23,8 +23,8 @@ return [
     'url'           => 'http://localhost:8000/',
     // 'timezone'      => 'Asia/Shanghai',
     // 'locale'        => 'zh-CN',
-    // 'url_static'    => 'https://dn-phphub.qbox.me/',
-    // 'user_static'    => 'https://dn-phphub.qbox.me/',
+    // 'url_static'    => 'https://dn-phphub.qbox.me',
+    // 'user_static'    => 'https://dn-phphub.qbox.me',
     //
 
     'BACK_MANAGER_ROOT' => '',
