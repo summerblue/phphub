@@ -1,3 +1,11 @@
+<p align="center">
+  <b>Always inventing, Always delivering:</b>
+  <br><br>
+  <a href="https://www.yousails.com">
+    <img src="https://yousails.com/banners/brand.png" width=350>
+  </a>
+</p>
+
 ## Deprecated (放弃维护)
 
 > Please note that is project is deprecated, Laravel5.1 Version is at https://github.com/summerblue/phphub5 
