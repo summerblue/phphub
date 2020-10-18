@@ -22,7 +22,7 @@
 
 ## PHPHub related projects
 
-You can checkout the others open source projects of PHPHub in the following list.
+You can checkout the other interesting open source projects of PHPHub in the following list.
 
 * [PHPHub-iOS](https://github.com/Aufree/phphub-ios) by [@Aufree](https://github.com/Aufree)
 * [PHPHub-Server](https://github.com/NauxLiu/phphub-server) by [@NauxLiu](https://github.com/NauxLiu)
@@ -79,6 +79,6 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## License
 
-Copyright (c) 2014 PHPHub.org
+Copyright (c) 2019 PHPHub.org
 
 The MIT License (MIT). Please see [Opensource MIT License](http://www.opensource.org/licenses/MIT) for more information.
